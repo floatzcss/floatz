@@ -1,2 +1,2 @@
-floatz
-======
+floatz CSS Framework
+====================
