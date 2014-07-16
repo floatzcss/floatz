@@ -1,0 +1,139 @@
+/*****************************************************************************************
+ * floatz.form.css
+ * ---------------------------------------------------------------------------------------
+ * Provides a common baseline as well as specific classes for form elements
+ *
+ * @project       floatz CSS Framework
+ * @version       2.0.0
+ * @see           http://code.google.com/p/floatz/
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2010 by :humml:design
+ * @link          http://design.humml.eu/toolbox/floatz
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2010-02-26
+ */
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form baseline
+ *
+ * Baseline styles for standard form elements
+ */
+
+/* Sets font style to form elements */
+label, 
+fieldset {
+   font-weight: bold;
+}
+optgroup {
+   font-style: italic;
+}
+
+/* Adjusts baseline of input fields and label */
+input, 
+label, 
+select, 
+textarea {
+   margin-bottom: 0.25em;
+   vertical-align: middle;
+}
+
+/* Add border to get same visual appearance to all input elements */
+select,
+textarea {
+   border: 1px solid #000;
+}
+
+/* Clears floats for fieldsets and forms */
+fieldset, 
+form {
+   clear: both;
+}
+
+/**
+ * Sets border styles (because of meyer reset), paddings and encloses floating boxes 
+ * within fieldset using overflow method
+ */
+fieldset {
+   border: 1px solid #000;
+   padding: 1em;
+}
+
+/**
+ * @affected Opera <= 8.5
+ */
+fieldset {
+   overflow: hidden; /* Opera <= 8.5 */
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form elements
+ *
+ * Form elements
+ */
+
+/* Block form element marker class */
+.flz_form label, 
+.flz_form select {
+   display: block;
+   width: 100%;
+}
+
+/* Textarea */
+.flz_form textarea {
+   display: block;
+   width: 99.4%;
+}
+
+/* Textbox */
+.flz_form input[type="text"] {
+   /*background-color: fff;*/
+   border: 1px solid #000;   
+   display: block;
+   width: 99.4%;
+}
+
+/* Inline label */
+.flz_form label.flz_inline {
+   display: inline;
+   margin: 0.25em 0;
+   width: auto;
+}
+
+/* Radio / Checkbox with inline label */
+.flz_form label.flz_inline > input[type="radio"], 
+.flz_form label.flz_inline > input[type="checkbox"] {
+   margin-right: 0.25em;   
+}
+
+/* Button */
+.flz_form input[type="button"] {
+   padding: 0.25em 0.35em;
+}
+
+/* Marker for mandatory fields */
+.flz_mandatory {
+   background-color: yellow;
+}
+
+/* Marker for readonly fields */
+.flz_readonly {
+   background-color: #efefef;
+   color: #aaa;
+}
+
+/* Combifield marker classes to combine fields with images in one line (e.g. date field with 
+   date picker image) */
+.flz_combifield {
+   margin-right: 1.5em;
+   padding-right: 0.5em;
+}
+span.flz_combifield,
+img.flz_combifield {
+   padding: 0;
+   margin: 0;
+   position: absolute;
+   bottom: 0.25em;
+   right: 0;
+} 

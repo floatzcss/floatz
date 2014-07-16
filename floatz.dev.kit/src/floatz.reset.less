@@ -1,0 +1,129 @@
+/*****************************************************************************************
+ * floatz.reset.css
+ * ---------------------------------------------------------------------------------------
+ * Provides a common baseline for the framework itself as well as web pages that are built
+ * on top of it. All form specific elements are defined in separate css file. Attention: 
+ * Load floatz.reset.meyer.css before this stylesheet!
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           http://code.google.com/p/floatz/
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2013 by :humml:design
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-15
+ * @since         1.0.0
+ */
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Baseline styles for basic elements
+ */
+
+/* Sets defaults for all elements */
+* {
+   font-family: "Arial";
+   font-size: 100%;  /* Set input elements to same font-size as in meyer reset */
+}
+
+/* Set basic defaults - corrects font: inherit in meyer reset */
+h1, h2, h3, h4, h5, h6, strong, b {
+	font-weight: bold;
+}
+
+/* Corrects meyer reset */
+sub {
+   vertical-align: sub;
+   font-size: 0.8em;
+}
+sup {
+   vertical-align: super;
+   font-size: 0.8em;
+}
+/*
+ * Corrects meyer reset
+ * @affected IE 5+, 6
+ */
+* html sub, 
+* html sup {
+   font-size: 1em;
+}
+/*
+ * Corrects meyer reset
+ * @affected IE 7
+ */
+*:first-child+html sub, 
+*:first-child+html sup {
+   font-size: 1em;
+}
+
+/* Sets defaults within body */
+body { 
+   background: #fff;
+   color: #000;
+   font-family: "Arial";
+   font-size: 0.85em;
+}
+
+/* Sets font-sizes for headers */
+h1 {
+   font-size: 2em;
+}
+h2 {
+   font-size: 1.8em;
+}
+h3 {
+   font-size: 1.6em;
+}
+h4 {
+   font-size: 1.4em;
+}
+h5 {
+   font-size: 1.2em;
+}
+h6 {
+   font-size: 1.0em;
+}
+
+/* Sets baseline styles for unordered lists */
+ul li {
+   list-style-type: disc;
+   margin-left: 2.8em;
+}
+
+/* Sets baseline styles for ordered lists (IE 5+ and 6 need specific correction using star hack) */
+ol li {
+   list-style-type: decimal;
+   margin-left: 2.8em;
+}
+* html ol li {
+   margin-left: 1.5em;
+}
+
+/* Sets colors and image borders for hyperlinks */
+a, 
+a:active, 
+a:focus, 
+a:link, 
+a:hover, 
+a:visited {
+   color: #000;
+}
+
+/* Clears floats for standard block elements */
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5,
+h6, 
+address, 
+blockquote, 
+ul, 
+ol, 
+dl, 
+pre {
+   clear: both;
+}

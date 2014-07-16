@@ -1,0 +1,30 @@
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form baseline
+ *
+ * Baseline styles for standard form elements
+ */
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE. (hack works only with one 
+ * setting per element)
+ * @affected IE 8
+ */
+fieldset {
+   padding /*\**/: 0 1em 1em 1em \9
+}
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE (hack works only with one 
+ * setting per element)
+ * @affected IE 8
+ */
+legend {
+   margin-top /*\**/: -1em \9
+}
+legend {
+   padding-top /*\**/: 1em \9
+}
+legend {
+   padding-bottom /*\**/: 1em \9
+}

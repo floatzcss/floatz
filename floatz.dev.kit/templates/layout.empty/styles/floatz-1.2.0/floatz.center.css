@@ -1,0 +1,152 @@
+/* floatz CSS Framework v1.2.0
+   Copyright (c) 1998-2013 by :humml:design
+   Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:auto;}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+table{border-collapse:collapse;border-spacing:0}
+*{font-family:"Arial";font-size:100%;}
+h1,h2,h3,h4,h5,h6,strong,b{font-weight:bold}
+sub{vertical-align:sub;font-size:.8em}
+sup{vertical-align:super;font-size:.8em}
+* html sub,* html sup{font-size:1em}
+*:first-child+html sub,*:first-child+html sup{font-size:1em}
+body{background:#fff;color:#000;font-family:"Arial";font-size:.85em}
+h1{font-size:2em}
+h2{font-size:1.8em}
+h3{font-size:1.6em}
+h4{font-size:1.4em}
+h5{font-size:1.2em}
+h6{font-size:1em}
+ul li{list-style-type:disc;margin-left:2.8em}
+ol li{list-style-type:decimal;margin-left:2.8em}
+* html ol li{margin-left:1.5em}
+a,a:active,a:focus,a:link,a:hover,a:visited{color:#000}
+p,h1,h2,h3,h4,h5,h6,address,blockquote,ul,ol,dl,pre{clear:both}
+#flz_page{background-color:#fff;float:left;position:relative;width:985px}
+* html #flz_page{overflow:hidden}
+*:first-child+html #flz_page{overflow:hidden}
+.flz_box{background-color:inherit;clear:none;float:left;width:100%}
+.flz_scrollbox{overflow:auto}
+.flz_spacer,.flz_lspacer,.flz_mspacer,.flz_rspacer,.flz_spacer_mrsc_top,.flz_spacer_mrsc_mid,.flz_spacer_mrsc_bottom,.flz_lspacer_mrmc_top,.flz_lspacer_mrmc_mid,.flz_lspacer_mrmc_bottom,.flz_mspacer_mrmc_top,.flz_mspacer_mrmc_mid,.flz_mspacer_mrmc_bottom,.flz_rspacer_mrmc_top,.flz_rspacer_mrmc_mid,.flz_rspacer_mrmc_bottom,.flz_subspacer,.flz_lsubspacer,.flz_msubspacer,.flz_rsubspacer,.flz_subspacer_mrsc_top,.flz_subspacer_mrsc_mid,.flz_subspacer_mrsc_bottom,.flz_lsubspacer_mrmc_top,.flz_lsubspacer_mrmc_mid,.flz_lsubspacer_mrmc_bottom,.flz_msubspacer_mrmc_top,.flz_msubspacer_mrmc_mid,.flz_msubspacer_mrmc_bottom,.flz_rsubspacer_mrmc_top,.flz_rsubspacer_mrmc_mid,.flz_rsubspacer_mrmc_bottom{display:block}
+.flz_spacer:after,.flz_lspacer:after,.flz_mspacer:after,.flz_rspacer:after,.flz_spacer_mrsc_top:after,.flz_spacer_mrsc_mid:after,.flz_spacer_mrsc_bottom:after,.flz_lspacer_mrmc_top:after,.flz_lspacer_mrmc_mid:after,.flz_lspacer_mrmc_bottom:after,.flz_mspacer_mrmc_top:after,.flz_mspacer_mrmc_mid:after,.flz_mspacer_mrmc_bottom:after,.flz_rspacer_mrmc_top:after,.flz_rspacer_mrmc_mid:after,.flz_rspacer_mrmc_bottom:after,.flz_subspacer:after,.flz_lsubspacer:after,.flz_msubspacer:after,.flz_rsubspacer:after,.flz_subspacer_mrsc_top:after,.flz_subspacer_mrsc_mid:after,.flz_subspacer_mrsc_bottom:after,.flz_lsubspacer_mrmc_top:after,.flz_lsubspacer_mrmc_mid:after,.flz_lsubspacer_mrmc_bottom:after,.flz_msubspacer_mrmc_top:after,.flz_msubspacer_mrmc_mid:after,.flz_msubspacer_mrmc_bottom:after,.flz_rsubspacer_mrmc_top:after,.flz_rsubspacer_mrmc_mid:after,.flz_rsubspacer_mrmc_bottom:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+* html .flz_spacer,* html .flz_lspacer,* html .flz_mspacer,* html .flz_rspacer,* html .flz_spacer_mrsc_top,* html .flz_spacer_mrsc_mid,* html .flz_spacer_mrsc_bottom,* html .flz_lspacer_mrmc_top,* html .flz_lspacer_mrmc_mid,* html .flz_lspacer_mrmc_bottom,* html .flz_mspacer_mrmc_top,* html .flz_mspacer_mrmc_mid,* html .flz_mspacer_mrmc_bottom,* html .flz_rspacer_mrmc_top,* html .flz_rspacer_mrmc_mid,* html .flz_rspacer_mrmc_bottom,* html .flz_subspacer,* html .flz_lsubspacer,* html .flz_msubspacer,* html .flz_rsubspacer,* html .flz_subspacer_mrsc_top,* html .flz_subspacer_mrsc_mid,* html .flz_subspacer_mrsc_bottom,* html .flz_lsubspacer_mrmc_top,* html .flz_lsubspacer_mrmc_mid,* html .flz_lsubspacer_mrmc_bottom,* html .flz_msubspacer_mrmc_top,* html .flz_msubspacer_mrmc_mid,* html .flz_msubspacer_mrmc_bottom,* html .flz_rsubspacer_mrmc_top,* html .flz_rsubspacer_mrmc_mid,* html .flz_rsubspacer_mrmc_bottom{height:1%}
+:first-child+html .flz_spacer,:first-child+html .flz_lspacer,:first-child+html .flz_mspacer,:first-child+html .flz_rspacer,:first-child+html .flz_spacer_mrsc_top,:first-child+html .flz_spacer_mrsc_mid,:first-child+html .flz_spacer_mrsc_bottom,:first-child+html .flz_lspacer_mrmc_top,:first-child+html .flz_lspacer_mrmc_mid,:first-child+html .flz_lspacer_mrmc_bottom,:first-child+html .flz_mspacer_mrmc_top,:first-child+html .flz_mspacer_mrmc_mid,:first-child+html .flz_mspacer_mrmc_bottom,:first-child+html .flz_rspacer_mrmc_top,:first-child+html .flz_rspacer_mrmc_mid,:first-child+html .flz_rspacer_mrmc_bottom,:first-child+html .flz_subspacer,:first-child+html .flz_lsubspacer,:first-child+html .flz_msubspacer,:first-child+html .flz_rsubspacer,:first-child+html .flz_subspacer_mrsc_top,:first-child+html .flz_subspacer_mrsc_mid,:first-child+html .flz_subspacer_mrsc_bottom,:first-child+html .flz_lsubspacer_mrmc_top,:first-child+html .flz_lsubspacer_mrmc_mid,:first-child+html .flz_lsubspacer_mrmc_bottom,:first-child+html .flz_msubspacer_mrmc_top,:first-child+html .flz_msubspacer_mrmc_mid,:first-child+html .flz_msubspacer_mrmc_bottom,:first-child+html .flz_rsubspacer_mrmc_top,:first-child+html .flz_rsubspacer_mrmc_mid,:first-child+html .flz_rsubspacer_mrmc_bottom{display:inline-block}
+.flz_spacer,.flz_lspacer,.flz_mspacer,.flz_rspacer{padding:1em}
+.flz_subspacer_mrsc_top,.flz_lsubspacer_mrmc_top,.flz_msubspacer_mrmc_top,.flz_rsubspacer_mrmc_top{padding-top:0;padding-bottom:.5em}
+.flz_subspacer_mrsc_mid,.flz_lsubspacer_mrmc_mid,.flz_msubspacer_mrmc_mid,.flz_rsubspacer_mrmc_mid{padding-top:.5em;padding-bottom:.5em}
+.flz_subspacer_mrsc_bottom,.flz_lsubspacer_mrmc_bottom,.flz_msubspacer_mrmc_bottom,.flz_rsubspacer_mrmc_bottom{padding-top:.5em;padding-bottom:0}
+.flz_lsubspacer,.flz_msubspacer,.flz_lsubspacer_mrmc_top,.flz_msubspacer_mrmc_top,.flz_lsubspacer_mrmc_mid,.flz_msubspacer_mrmc_mid,.flz_lsubspacer_mrmc_bottom,.flz_msubspacer_mrmc_bottom{padding-right:.5em}
+.flz_rsubspacer,.flz_msubspacer,.flz_msubspacer_mrmc_top,.flz_rsubspacer_mrmc_top,.flz_msubspacer_mrmc_mid,.flz_rsubspacer_mrmc_mid,.flz_msubspacer_mrmc_bottom,.flz_rsubspacer_mrmc_bottom{padding-left:.5em}
+.flz_spacer_mrsc_top,.flz_lspacer_mrmc_top,.flz_mspacer_mrmc_top,.flz_rspacer_mrmc_top{padding-top:1em;padding-bottom:.5em}
+.flz_spacer_mrsc_bottom,.flz_lspacer_mrmc_bottom,.flz_mspacer_mrmc_bottom,.flz_rspacer_mrmc_bottom{padding-top:.5em;padding-bottom:1em}
+.flz_spacer_mrsc_mid,.flz_lspacer_mrmc_mid,.flz_mspacer_mrmc_mid,.flz_rspacer_mrmc_mid{padding-top:.5em;padding-bottom:.5em}
+.flz_spacer_mrsc_top,.flz_spacer_mrsc_bottom,.flz_spacer_mrsc_mid{padding-left:1em;padding-right:1em}
+.flz_lspacer,.flz_mspacer,.flz_lspacer_mrmc_top,.flz_mspacer_mrmc_top,.flz_lspacer_mrmc_mid,.flz_mspacer_mrmc_mid,.flz_lspacer_mrmc_bottom,.flz_mspacer_mrmc_bottom{padding-right:.5em}
+.flz_mspacer,.flz_rspacer,.flz_mspacer_mrmc_top,.flz_rspacer_mrmc_top,.flz_mspacer_mrmc_mid,.flz_rspacer_mrmc_mid,.flz_mspacer_mrmc_bottom,.flz_rspacer_mrmc_bottom{padding-left:.5em}
+.flz_lspacer_mrmc_top,.flz_lspacer_mrmc_mid,.flz_lspacer_mrmc_bottom{padding-left:1em}
+.flz_rspacer_mrmc_top,.flz_rspacer_mrmc_mid,.flz_rspacer_mrmc_bottom{padding-right:1em}
+.flz_l10,.flz_m10,.flz_r10{width:10%}
+.flz_l20,.flz_m20,.flz_r20{width:20%}
+.flz_l25,.flz_m25,.flz_r25{width:25%}
+.flz_l33,.flz_r33{width:33.3%}
+.flz_m33{width:33.4%}
+.flz_l40,.flz_m40,.flz_r40{width:40%}
+.flz_l50,.flz_m50,.flz_r50{width:50%}
+.flz_l60,.flz_m60,.flz_r60{width:60%}
+.flz_l66,.flz_r66{width:66.7%}
+.flz_l75,.flz_r75{width:75%}
+.flz_l80,.flz_m80,.flz_r80{width:80%}
+.flz_l90,.flz_r90{width:90%}
+.flz_r100{width:100%}
+* html .flz_r20,* html .flz_r25,* html .flz_r40,* html .flz_r33,* html .flz_r50,* html .flz_r60,* html .flz_r66,* html .flz_r75,* html .flz_r80,* html .flz_r90,* html .flz_r100{margin-right:-3px}
+* html .flz_r10{margin-right:-5px}
+*:first-child+html .flz_r20,*:first-child+html .flz_r25,*:first-child+html .flz_r40,*:first-child+html .flz_r33,*:first-child+html .flz_r50,*:first-child+html .flz_r60,*:first-child+html .flz_r66,*:first-child+html .flz_r75,*:first-child+html .flz_r80,*:first-child+html .flz_r90,*:first-child+html .flz_r100{margin-right:-3px}
+*:first-child+html .flz_r10{margin-right:-5px}
+.flz_relative{position:relative}
+.flz_clear{clear:both}
+.flz_panel,.flz_scrollpanel{bottom:0;left:0;position:absolute;right:0;top:0}
+.flz_panel{overflow:hidden}
+.flz_scrollpanel{overflow:auto}
+@media print{.flz_panel,.flz_scrollpanel{overflow:visible;position:static;}}
+* html body{text-align:center;}
+#flz_page{float:none;margin:0 auto;overflow:hidden;}
+* html #flz_page{text-align:left;}
+
+a.flz_skiplink{left:0;position:absolute;top:-500px}
+a:active.flz_skiplink,a:focus.flz_skiplink{position:static}
+:first-child+html a:active.flz_skiplink{border:1px dotted #000}
+* html a:active.flz_skiplink{border:1px dotted #000}
+.flz_listnav{background-color:inherit;margin:0;padding:.5em 1em}.flz_listnav li{display:inline;list-style:none;margin:0;padding:0;}.flz_listnav li a{text-decoration:none;}
+.flz_listnav li a:visited{color:inherit}
+.flz_listnav li a:focused,.flz_listnav li a:hover{text-decoration:underline}
+.flz_listnav li a:active{color:inherit}
+.flz_listnav li.flz_selected a{color:inherit;font-weight:bold;}.flz_listnav li.flz_selected a:focus,.flz_listnav li.flz_selected a:hover{color:inherit}
+.flz_listnav li.flz_selected a:active{color:inherit}
+.flz_listnav li.flz_disabled a{color:#aaa;text-decoration:none}
+.flz_breadcrumb,.flz_toolbar,.flz_topnav{position:absolute;top:0}
+.flz_breadcrumb{left:0}
+.flz_toolbar,.flz_topnav{right:0}
+.flz_hmenu{float:left;width:100%;}.flz_hmenu ul{float:right;margin:0;padding:0;}.flz_hmenu ul li{float:left;list-style-type:none;margin:0;padding:0;}.flz_hmenu ul li a{border-left:1px solid #000;display:block;text-decoration:none;padding:.5em 1em;}.flz_hmenu ul li a:hover{text-decoration:underline}
+.flz_hmenu ul li.flz_selected a{font-weight:bold}
+.flz_hmenu ul li.flz_disabled a{color:#aaa;text-decoration:none}
+.flz_vmenu ul{margin:0;padding:0;width:100%;}.flz_vmenu ul li{float:left;list-style-type:none;margin:0;padding:0;width:100%;}.flz_vmenu ul li a{display:block;padding:.5em 1em;text-decoration:none;border-bottom:1px solid #000;}.flz_vmenu ul li a:hover{text-decoration:underline}
+.flz_vmenu ul li.flz_selected>a{font-weight:bold}
+.flz_vmenu ul li.flz_disabled>a{color:#aaa;text-decoration:none}
+.flz_vmenu ul li ul li a{padding-left:1em}
+.flz_vmenu ul li ul li ul li a{padding-left:2em}
+.flz_vmenu ul li ul li ul li ul li a{padding-left:3em}
+.flz_vmenu ul li ul li ul li ul li ul li a{padding-left:4em}
+* html .flz_vmenu ul{}* html .flz_vmenu ul li.flz_selected a{font-weight:expression(/flz_selected/.test(this.parentNode.className) ? "bold" : "inherit")}
+* html .flz_vmenu ul li.flz_disabled a{color:expression(/flz_disabled/.test(this.parentNode.className) ? "#aaa" : "inherit");text-decoration:expression(/flz_disabled/.test(this.parentNode.className) ? "none" : "inherit")}
+.flz_htabmenu,.flz_htabmenu_bottom{float:left;width:100%;}.flz_htabmenu ul,.flz_htabmenu_bottom ul{margin:0;padding:0;}.flz_htabmenu ul li,.flz_htabmenu_bottom ul li{float:left;list-style-type:none;margin:0 1px;padding:0 0 0 .5em;}.flz_htabmenu ul li a,.flz_htabmenu_bottom ul li a{display:block;text-decoration:none;padding:.5em 1em .5em .5em;}
+.flz_htabmenu ul li a a:visited,.flz_htabmenu_bottom ul li a a:visited{color:inherit}
+.flz_htabmenu ul li a:focus,.flz_htabmenu_bottom ul li a:focus,.flz_htabmenu ul li a:active,.flz_htabmenu_bottom ul li a:active{color:inherit;text-decoration:underline}
+.flz_htabmenu ul li:hover.flz_selected a,.flz_htabmenu_bottom ul li:hover.flz_selected a{color:inherit}
+.flz_htabmenu ul li.flz_selected,.flz_htabmenu_bottom ul li.flz_selected{}.flz_htabmenu ul li.flz_selected a,.flz_htabmenu_bottom ul li.flz_selected a{color:inherit;font-weight:bold}.flz_htabmenu ul li.flz_selected a:hover,.flz_htabmenu_bottom ul li.flz_selected a:hover{color:inherit}
+.flz_htabmenu ul li.flz_selected a:focus,.flz_htabmenu_bottom ul li.flz_selected a:focus,.flz_htabmenu ul li.flz_selected a:active,.flz_htabmenu_bottom ul li.flz_selected a:active{color:inherit;text-decoration:underline}
+.flz_htabmenu ul li.flz_disabled a,.flz_htabmenu_bottom ul li.flz_disabled a{color:#aaa}
+.flz_htabmenu{border-bottom:1px solid #000}.flz_htabmenu ul li{background:url(images/htabmenu.gif) no-repeat left top;}.flz_htabmenu ul li a{background:url(images/htabmenu.gif) no-repeat right top;}.flz_htabmenu ul li a:hover{background:url(images/htabmenu.gif) no-repeat right -100px}
+.flz_htabmenu ul li:hover{background:url(images/htabmenu.gif) no-repeat left -100px;}.flz_htabmenu ul li:hover a{background:url(images/htabmenu.gif) no-repeat right -100px}
+.flz_htabmenu ul li:hover.flz_selected{background:url(images/htabmenu.gif) no-repeat left -100px;}.flz_htabmenu ul li:hover.flz_selected a{background:url(images/htabmenu.gif) no-repeat right -100px}
+.flz_htabmenu ul li.flz_selected{margin-bottom:-1px;background:url(images/htabmenu.gif) no-repeat left -200px;}.flz_htabmenu ul li.flz_selected a{background:url(images/htabmenu.gif) no-repeat right -200px;margin-bottom:1px;}.flz_htabmenu ul li.flz_selected a:hover{background:url(images/htabmenu.gif) no-repeat right -100px}
+.flz_htabmenu_bottom{border-top:1px solid #000}.flz_htabmenu_bottom ul li{background:url(images/htabmenu_bottom_inactive.gif) no-repeat left bottom}.flz_htabmenu_bottom ul li a{background:url(images/htabmenu_bottom_inactive.gif) no-repeat right bottom;}.flz_htabmenu_bottom ul li a:hover{background:url(images/htabmenu_bottom_hover.gif) no-repeat right bottom}
+.flz_htabmenu_bottom ul li:hover{background:url(images/htabmenu_bottom_hover.gif) no-repeat left bottom;}.flz_htabmenu_bottom ul li:hover a{background:url(images/htabmenu_bottom_hover.gif) no-repeat right bottom}
+.flz_htabmenu_bottom ul li:hover.flz_selected{background:url(images/htabmenu_bottom_hover.gif) no-repeat left bottom;}.flz_htabmenu_bottom ul li:hover.flz_selected a{background:url(images/htabmenu_bottom_hover.gif) no-repeat right bottom}
+.flz_htabmenu_bottom ul li.flz_selected{margin-top:-1px;background:url(images/htabmenu_bottom_active.gif) no-repeat left bottom;}.flz_htabmenu_bottom ul li.flz_selected a{background:url(images/htabmenu_bottom_active.gif) no-repeat right bottom;margin-top:1px;}.flz_htabmenu_bottom ul li.flz_selected a:hover{background:url(images/htabmenu_bottom_hover.gif) no-repeat right bottom}
+* html .flz_htabmenu ul li{}* html .flz_htabmenu ul li a:hover{background:url(images/htabmenu.gif) no-repeat right top;text-decoration:underline}
+* html .flz_htabmenu ul li.flz_selected a:hover{background:url(images/htabmenu.gif) no-repeat right -200px;text-decoration:underline}
+* html .flz_htabmenu_bottom ul li{}* html .flz_htabmenu_bottom ul li a:hover{background:url(images/htabmenu_bottom_inactive.gif) no-repeat right bottom;text-decoration:underline}
+* html .flz_htabmenu_bottom ul li.flz_selected a:hover{background:url(images/htabmenu_bottom_active.gif) no-repeat right bottom;text-decoration:underline}
+.flz_workflow ul li{display:inline-block;list-style-type:none;margin:0;padding:0;vertical-align:top;margin-left:-0.85em}.flz_workflow ul li:first-child{margin-left:0}
+.flz_workflow ul li a{background-color:#eee;display:inline-block;padding:1.025em;text-decoration:none;vertical-align:top}.flz_workflow ul li a:hover{text-decoration:underline}
+.flz_workflow ul li .flz_endrect,.flz_workflow ul li .flz_startrect{width:0;height:0;border-top:1.65em solid transparent;border-left:1em solid #eee;border-bottom:1.65em solid transparent;margin:0;padding:0;display:inline-block}
+.flz_workflow ul li .flz_endrect{border-top-color:transparent;border-left-color:#eee;border-bottom-color:transparent}
+.flz_workflow ul li .flz_startrect{border-top-color:#eee;border-left-color:transparent;border-bottom-color:#eee}
+.flz_workflow ul li.flz_selected a{font-weight:bold}
+.flz_workflow ul li.flz_disabled a{color:#aaa;cursor:default}.flz_workflow ul li.flz_disabled a:hover{text-decoration:none}
+form{clear:both}
+label{font-weight:bold}
+optgroup{font-style:italic}
+button input,label,select,textarea{margin-bottom:.25em;margin-left:0;vertical-align:middle}
+select,textarea{border:1px solid #000}
+fieldset{clear:both;font-weight:bold;border:1px solid #000;padding:1em;margin-bottom:1em;overflow:hidden;padding:0 1em 1em 1em\0/;}fieldset legend{margin-top:-1em\0/;padding-top:1em\0/;padding-bottom:1em\0/}
+* html fieldset{padding:0 1em 1em 1em;margin-top:-1em;}* html fieldset legend{color:#000;margin-left:-0.5em;padding-top:1em;padding-bottom:1em;padding-left:0}
+*:first-child+html fieldset{padding:0 1em 1em 1em;}*:first-child+html fieldset legend{margin-left:-0.5em;margin-top:-1em;padding-top:1em;padding-bottom:1em;padding-left:0}
+.flz_form{}.flz_form input[type="text"],.flz_form input[type="password"]{background-color:#fff;border:1px solid #000;display:block;width:99.4%;padding-left:0;padding-right:0}
+.flz_form label,.flz_form select{display:block;width:100%}
+.flz_form textarea{display:block;width:99.4%}
+.flz_form input[type="checkbox"]+label,.flz_form input[type="radio"]+label{display:inline;width:auto}
+.flz_form .flz_mandatory{background-color:#ff0}
+.flz_form .flz_readonly{background-color:#efefef;color:#aaa}
+.flz_form .flz_inline{display:inline;width:auto}
+.flz_form .flz_combobox{position:relative;padding-right:2em}.flz_form .flz_combobox a,.flz_form .flz_combobox span{position:absolute;bottom:0;right:0}
+* html .flz_form{}* html .flz_form .flz_textbox{background-color:#fff;border:1px solid #000;display:block;width:99.4%}
+* html .flz_form .flz_textbox,* html .flz_form textarea{margin-right:-10px}
+* html .flz_form .flz_combobox{float:left}
+input[type="button"],input[type="submit"],input[type="reset"],button{padding:.25em .35em}
+* html .flz_button{padding:.25em .35em;overflow:visible;padding:.25em .5em;width:1}
+*:first-child+html input[type=button],*:first-child+html input[type=submit],*:first-child+html input[type=reset],*:first-child+html button{overflow:visible;padding:.25em .5em;width:1}
+.flz_custombutton{background:transparent;border:0}

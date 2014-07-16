@@ -1,0 +1,43 @@
+/* Loads floatz CSS framework */
+@import url(floatz-1.2.0/floatz.liquid.css);
+
+/* Project specific styles */
+body {
+   background: #eeeccc;
+   margin: 0 10em;
+}
+
+#flz_page {
+   background: #cccccc;
+}
+
+.header {
+   background: #aaaccc;
+   height: 5em;
+}
+
+.menu {
+   background: #bbbccc;
+   height: 2em;
+}
+
+.submenu {
+   background: inherit;
+   width: 20em;
+}
+
+.content {
+   background: inherit;
+   margin-left: 20em;
+}
+.content h1, h2 {
+   margin-bottom: 0.5em;
+}
+.content p {
+   margin-bottom: 1em;
+}
+
+.footer {
+   background: #dddccc;
+   height: 2em;
+}

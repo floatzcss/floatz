@@ -1,0 +1,40 @@
+/* Loads floatz CSS framework */
+@import url(floatz-1.2.0/floatz.fixed.css);
+
+/* Project specific styles */
+body {
+   background: #efefef;
+}
+
+.header {
+   height: 5em;
+}
+
+.menu {
+}
+
+.submenu {
+}
+
+.content {
+   padding-top: 3em;
+}
+
+.sidebar .flz_spacer {
+   padding-top: 0.5em;
+}
+
+.footer {
+   height: 3em;
+   text-align: center;
+}
+
+@media print {
+   .header, .menu, .submenu, .sidebar, .footer {
+      display: none;
+   }
+   
+   .content.flz_r80 {
+      width: 100%;
+   }
+}

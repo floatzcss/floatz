@@ -1,0 +1,68 @@
+/*****************************************************************************************
+ * floatz.reset.meyer.css
+ * ---------------------------------------------------------------------------------------
+ * From the original description: smooths out many browser inconsistencies by explicitly 
+ * assigning values to things like element margins and padding, forcing all elements to 
+ * have the same font size, and so on. You can find resets in most CSS frameworks, and 
+ * they're a great starting point for creating your own "baseline" styles. 
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           http://code.google.com/p/floatz/
+ * @author        Harald Humml
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2013-07-15
+ * @since         1.0.0 
+ *
+ * Original version
+ * ----------------
+ * @verson        2.0.0
+ * @lastmodified  2011-01-26
+ * @see           http://meyerweb.com/eric/tools/css/reset/
+ * @author        Eric Meyer
+ *
+ * @see           http://www.meyerweb.com/
+ * @see           http://dgibson.net/blog/article.cfm/articleid=11/CSS-Overcoming-background-transparent-In-IE
+ * @see           http://dgibson.net/blog/article.cfm/articleid=10/Meyers-CSS-Reset-v1-0-Doesnt-Play-Well-With-IE
+ */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;	
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+/* line-height: 1; */      
+   line-height: auto;   /* Changed due to cut off characters in labels */
+}
+ol, ul {
+   list-style: none;
+}
+
+blockquote, q {
+   quotes: none;
+}
+
+/* Note: not used because it leads to a left space in Safari and Google Chrome
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}*/
+
+/* Note: tables still need 'cellspacing="0"' in the markup */
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}

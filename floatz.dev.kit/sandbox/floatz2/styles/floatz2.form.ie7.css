@@ -1,0 +1,50 @@
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form baseline
+ *
+ * Baseline styles for standard form elements
+ */
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE.
+ * @affected IE 7
+ */
+*:first-child+html fieldset {
+   padding: 0 1em 1em 1em;
+}
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE
+ * @affected IE 7
+ */
+*:first-child+html legend {
+   margin-left: -0.5em;
+   margin-top: -1em;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   padding-left: 0;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form elements
+ *
+ * Form elements
+ */
+
+/**
+ * @workaround Omit too much left/right padding in IE
+ * @affected IE 7
+ */
+*:first-child+html input[type="button"] {
+   overflow: visible;
+   padding: 0.25em 0.5em;
+}
+
+/**
+ * @workaround Collapse table cell around button
+ * @affected IE 7
+ */
+*:first-child+html input[type="button"] {
+   width: 1;
+}

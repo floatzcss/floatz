@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+   <head>
+      <title>floatz - Test page for navigation elements</title>
+      <meta http-equiv="content-type" content="text/html; CHARSET=utf-8" />
+      <meta http-equiv="content-script-type" content="text/javascript" />
+      <meta http-equiv="content-style-type" content="text/css" />
+      <meta http-equiv="content-language" content="en" />
+      <meta name="author" content="" />
+      <meta name="robots" content="index,follow" />
+		<!-- For testing shrinked and compiled version -->
+		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.fixed.css" /> -->
+		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.liquid.css" /> -->
+		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.center.css" /> -->
+		<!-- For testing less version -->
+		<link rel="stylesheet/less" type="text/css" href="../src/floatz.less" />
+		<!-- <link rel="stylesheet/less" type="text/css" href="../src/floatz.layout.liquid.less" /> -->
+		<!-- <link rel="stylesheet/less" type="text/css" href="../src/floatz.layout.center.less" /> -->
+		<script type="text/javascript" src="../src/scripts/less-1.7.3.min.js"></script>
+		<!-- Only necessary if using one of the provided javascript modules -->
+		<!-- <script type="text/javascript" src="../src/scripts/LAB-2.0.3.min.js"></script>-->
+		<!-- <script type="text/javascript" src="scripts/demo.js"></script> -->
+      <style type="text/css">
+         .mylistnav {
+            text-align: right;
+         }
+
+         .mylistnav2 {
+            text-align: center;
+         }
+
+         .mycontent {
+            background-color: #efefef;
+            height: 7em;
+            padding-top: 2em;
+         }
+
+         .myheader {
+            background-color: #efefef;
+            height: 5em;
+         }
+
+         .mymenu ul {
+            float: left;
+         }
+
+         .mytabmenu ul {
+            float: right;
+         }
+			
+			.myworkflow {
+				padding-top: 1em;
+			}
+			</style>
+   </head>
+   <body>
+      <!-- page container -->
+      <div id="flz_page">
+         <div class="flz_box">
+            <div class="flz_spacer">
+               <h1>List navigation</h1>
+               <ul class="flz_listnav">
+                  <li class="flz_selected"><a href="#">Item 1</a> |</li>
+                  <li><a href="#">Item 2</a> |</li>
+                  <li><a href="#">Item 3</a> |</li>
+                  <li class="flz_disabled"><a>Disabled Item</a> | </li>
+                  <li><a href="#">Item 4</a></li>
+               </ul>
+               <h1>List navigation (right aligned)</h1>
+               <ul class="flz_listnav mylistnav">
+                  <li class="flz_selected"><a href="#">Item 1</a> |</li>
+                  <li><a href="#">Item 2</a> |</li>
+                  <li><a href="#">Item 3</a> |</li>
+                  <li class="flz_disabled"><a>Disabled Item</a> | </li>
+                  <li><a href="#">Item 4</a></li>
+               </ul>
+               <h1>List navigation (centert aligned)</h1>
+               <ul class="flz_listnav mylistnav2">
+                  <li class="flz_selected"><a href="#">Item 1</a> |</li>
+                  <li><a href="#">Item 2</a> |</li>
+                  <li><a href="#">Item 3</a> |</li>
+                  <li class="flz_disabled"><a>Disabled Item</a> | </li>
+                  <li><a href="#">Item 4</a></li>
+               </ul>
+               <h1>List navigation / breadcrumb</h1>
+               <div class="flz_box flz_relative mycontent">
+                  <ul class="flz_listnav flz_breadcrumb">
+                     <li class="flz_selected"><a href="#">Item 1</a> &gt;</li>
+                     <li><a href="#">Item 2</a> &gt;</li>
+                     <li><a href="#">Item 3</a> &gt;</li>
+                     <li class="flz_disabled"><a>Disabled Item</a> &gt; </li>
+                     <li><a href="#">Item 4</a></li>
+                  </ul>
+                  <div class="flz_spacer">
+                     <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                     </p>
+                  </div>
+               </div>
+               <h1>List navigation / toolbar</h1>
+               <div class="flz_box flz_relative mycontent">
+                  <ul class="flz_listnav flz_toolbar">
+                     <li><a href="#"><img src="images/print.gif" alt="" title="Print page" /></a></li>
+                     <li><a href="#"><img src="images/favorite.gif" alt="" title="Add to favorites" /></a></li>
+                     <li class="flz_disabled"><a><img src="images/datepicker_readonly.gif" alt="" /></a></li>
+                     <li><a href="#"><img src="images/mail.gif" alt="" title="Tell a friend" /></a></li>
+                  </ul>
+                  <div class="flz_spacer">
+                     <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                     </p>
+                  </div>
+               </div>
+               <h1>List navigation / secondary navigation</h1>
+               <div class="flz_box flz_relative myheader">
+                  <ul class="flz_listnav flz_topnav">
+                     <li class="flz_selected"><a href="#">Item 1</a> |</li>
+                     <li><a href="#">Item 2</a> |</li>
+                     <li><a href="#">Item 3</a> |</li>
+                     <li class="flz_disabled"><a>Disabled Item</a> |</li>
+                     <li><a href="#">Item 4</a></li>
+                  </ul>
+                  <div class="flz_spacer">
+                     <a href="#"><img src="images/floatz_logo.jpg" alt="" title="Goto homepage" /></a>
+                  </div>
+               </div>
+               <h1>Horizontal menu</h1>
+               <div class="flz_box flz_hmenu">
+                  <ul>
+                     <li class="flz_selected"><a href="#">Menu 1</a></li>
+                     <li><a href="#">Menu 2</a></li>
+                     <li><a href="#">Menu 3</a></li>
+                     <li class="flz_disabled"><a>Disabled Menu</a></li>
+                     <li><a href="#">Menu 4</a></li>
+                  </ul>
+               </div>
+               <h1>Horizontal menu (left aligned)</h1>
+               <div class="flz_box flz_hmenu mymenu">
+                  <ul>
+                     <li class="flz_selected"><a href="#">Menu 1</a></li>
+                     <li><a href="#">Menu 2</a></li>
+                     <li><a href="#">Menu 3</a></li>
+                     <li class="flz_disabled"><a>Disabled Menu</a></li>
+                     <li><a href="#">Menu 4</a></li>
+                  </ul>
+               </div>
+               <h1>Vertical menu</h1>
+               <div class="flz_box flz_r25 flz_vmenu mymenu">
+                  <ul>
+                     <li class="flz_selected"><a href="#">Menu 1</a>
+                        <ul>
+                           <li class="flz_disabled"><a>Disabled Menu</a>
+                              <ul>
+                                 <li><a href="#">Menu 1</a></li>
+                                 <li><a href="#">Menu 2</a></li>
+                              </ul>                                                                        
+                           </li>
+                           <li><a href="#">Menu 1</a>
+                              <ul>
+                                 <li><a href="http://www.someurl.com">Non-visited menu 1</a>
+                                    <ul>
+                                       <li class="flz_disabled"><a>Disabled Menu</a></li>
+                                       <li><a href="#">Menu 1</a>
+                                          <ul>
+                                             <li><a href="#">Menu 1</a></li>
+                                             <li><a href="#">Menu 2</a></li>
+                                             <li class="flz_disabled"><a>Disabled Menu</a></li>
+                                          </ul>
+                                       </li>
+                                       <li><a href="#">Menu 2</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="#">Menu 2</a></li>
+                              </ul>
+                           </li>
+                           <li><a href="#">Menu 2</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="#">Menu 2</a></li>
+                     <li><a href="#">Menu 3</a></li>
+                     <li><a href="#">Menu 4</a></li>
+                     <li class="flz_disabled"><a>Disabled Menu</a></li>
+                     <li><a href="#">Menu 5</a></li>
+                  </ul>
+               </div>
+               <h1>Horizontal tabbed menu</h1>
+               <div class="flz_box">
+                  <div class="flz_htabmenu">
+                     <ul>
+                        <li class="flz_selected"><a href="#">Tab 1</a></li>
+                        <li><a href="#">Tab 2</a></li>
+                        <li><a href="#">Tab 3</a></li>
+                        <li class="flz_disabled"><a>Disabled Tab</a></li>
+                        <li><a href="#">Tab 4</a></li>
+                     </ul>
+                  </div>
+                  <div class="flz_box">
+                     <div class="flz_spacer mytabcontent">
+                        Lorem ipsum dolor sit amed <a href="#">a link</a>
+                        <ul>
+                           <li><a href="#">a link list</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <h1>Horizontal tabbed menu (right aligned)</h1>
+               <div class="flz_box">
+                  <div class="flz_htabmenu mytabmenu">
+                     <ul>
+                        <li class="flz_selected"><a href="#">Tab 1</a></li>
+                        <li><a href="#">Tab 2</a></li>
+                        <li><a href="#">Tab 3</a></li>
+                        <li class="flz_disabled"><a>Disabled Tab</a></li>
+                        <li><a href="#">Tab 4</a></li>
+                     </ul>
+                  </div>
+                  <div class="flz_box">
+                     <div class="flz_spacer mytabcontent">
+                        Lorem ipsum dolor sit amed <a href="#">a link</a>
+                        <ul>
+                           <li><a href="#">a link list</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <h1>Horizontal/bottom tabbed menu</h1>
+               <div class="flz_box">
+                  <div class="flz_box">
+                     <div class="flz_spacer mytabcontent">
+                        Lorem ipsum dolor sit amed <a href="#">a link</a>
+                        <ul>
+                           <li><a href="#">a link list</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="flz_htabmenu_bottom">
+                     <ul>
+                        <li class="flz_selected"><a href="#">Tab 1</a></li>
+                        <li><a href="#">Tab 2</a></li>
+                        <li><a href="#">Tab 3</a></li>
+                        <li class="flz_disabled"><a>Disabled Tab</a></li>
+                        <li><a href="#">Tab 4</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <h1>Horizontal/bottom tabbed menu (right aligned)</h1>
+               <div class="flz_box">
+                  <div class="flz_box">
+                     <div class="flz_spacer mytabcontent">
+                        Lorem ipsum dolor sit amed <a href="#">a link</a>
+                        <ul>
+                           <li><a href="#">a link list</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="flz_htabmenu_bottom mytabmenu">
+                     <ul>
+                        <li class="flz_selected"><a href="#">Tab 1</a></li>
+                        <li><a href="#">Tab 2</a></li>
+                        <li><a href="#">Tab 3</a></li>
+                        <li class="flz_disabled"><a>Disabled Tab</a></li>
+                        <li><a href="#">Tab 4</a></li>
+                     </ul>
+                  </div>
+               </div>
+					<h1>Workflow navigation</h1>
+					<div class="flz_box flz_workflow">
+						<ul>
+							<li class="flz_passed"><a href="#">First step</a><div class="flz_stop">&nbsp;</div></li>
+							<li class="flz_passed"><div class="flz_start">&nbsp;</div><a href="#">Second step</a><div class="flz_stop">&nbsp;</div></li>
+							<li class="flz_selected"><div class="flz_start">&nbsp;</div><a href="#">Three</a><div class="flz_stop">&nbsp;</div></li>
+							<li><div class="flz_start">&nbsp;</div><a>The fourth step</a><div class="flz_stop">&nbsp;</div></li>
+							<li><div class="flz_start">&nbsp;</div><a>The last step</a></li>
+						</ul>						
+					</div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

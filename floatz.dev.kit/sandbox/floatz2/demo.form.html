@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+   <head>
+      <title>floatz - Test page for fixed page layout</title>
+      <meta http-equiv="content-type" content="text/html; CHARSET=iso-8859-1" />
+      <meta http-equiv="content-script-type" content="text/javascript" />
+      <meta http-equiv="content-style-type" content="text/css" />
+      <meta http-equiv="content-language" content="en" />
+      <meta name="author" content="" />
+      <meta name="robots" content="index,follow" />
+      <meta name="description" content="" />
+      <script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
+      <script type="text/javascript" src="scripts/floatz2.js"></script>
+      <script type="text/javascript" src="scripts/demo.js"></script>
+      <link rel="stylesheet" type="text/css" href="styles/demo.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="../src/debug/floatz.layout.debug.css" /> -->
+      <style type="text/css">
+         body {
+            background-color: #efefef;
+         }
+
+         .myheader {
+            height: 5em;
+         }
+
+         .mycontent {
+            padding-top: 2em;
+         }
+
+         .mycontent h1, .mycontent h2, .mycontent p {
+            margin-bottom: 1em;
+         }
+  
+         .myfooter {
+            height: 2em;
+         }         
+      </style>
+   </head>
+   <body>
+      <!-- page container -->
+      <div id="flz_page">
+         <div class="flz_spacer">
+            <div class="flz_form">
+               <h1>Form 1</h1>
+               <label>Textbox</label>
+               <input id="textbox1" type="text" value="text" />
+               <label for="radiobutton1" class="flz_inline">Choice 1</label>
+               <input id="radiobutton1" type="radio" name="radiogroup1" />
+               <label for="radiobutton2" class="flz_inline">Choice 2</label>
+               <input id="radiobutton2" type="radio" name="radiogroup1" checked="checked" />
+               <input type="button" value="Submit" />
+            </div>
+            <div class="flz_form">
+               <h1>Form 2</h1>
+               <label for="radiobutton1" class="flz_inline">Choice 1</label>
+               <input id="radiobutton1" type="radio" name="radiogroup1" />
+               <label for="radiobutton2" class="flz_inline">Choice 2</label>
+               <input id="radiobutton2" type="radio" name="radiogroup1" checked="checked" />
+               <label>Textbox</label>
+               <input type="text" value="text" />
+               <input type="button" value="Submit" />
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

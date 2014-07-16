@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>floatz - Layout.Empty</title>
+<meta http-equiv="content-type" content="text/html; CHARSET=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en" />
+<meta name="author" content="" />
+<meta name="robots" content="index,follow" />
+<meta name="description" content="" />
+<!-- Load project CSS without less -->
+<link rel="stylesheet" type="text/css" href="styles/project2.css" />
+<!-- Load project CSS with less -->
+<!-- <link rel="stylesheet/less" type="text/css" href="styles/project.less" />
+<script type="text/javascript" src="styles/floatz-1.2.0/scripts/less-1.7.3.min.js"></script> -->
+<!-- -->
+<script type="text/javascript" src="styles/floatz-1.2.0/scripts/LAB-2.0.3.min.js"></script>
+<script type="text/javascript" src="scripts/project.js"></script>
+</head>
+<body>
+	<!-- page -->
+	<div id="flz_page">
+		<!-- header -->
+		<div class="flz_box header">Header</div>
+		<!-- menu -->
+		<div class="flz_box menu">Menu</div>
+		<!-- submenu -->
+		<div class="flz_box flz_l20 submenu">Submenu</div>
+		<!-- content -->
+		<div class="flz_box flz_r80 content">
+			<div class="flz_spacer">
+				<form class="flz_form" action="">
+					<label for="custno">Customer Number</label> <input
+						class="flz_textbox flz_readonly" id="custno" type="text"
+						readonly="readonly" /> <label for="firstname">First Name*</label>
+					<input class="flz_textbox flz_mandatory" id="firstname" type="text" />
+					<label for="lastname">Last Name*</label> <input
+						class="flz_textbox flz_mandatory" id="lastname" type="text" /> <label
+						for="birthday">Birthday</label> <input class="flz_textbox"
+						id="birthday" type="text" /> <img src="images/datepicker.gif"
+						alt="Pick a date" /> <label for="street">Street*</label> <input
+						class="flz_textbox flz_mandatory" id="street" type="text" /> <label
+						for="zip">Zip*</label> <input class="flz_textbox flz_mandatory"
+						id="zip" type="text" /> <label for="city">City*</label> <input
+						class="flz_textbox flz_mandatory" id="city" type="text" /> <label
+						for="country">Country*</label> <select class="flz_mandatory"
+						id="country">
+						<option>Austria</option>
+						<option>France</option>
+						<option>Germany</option>
+						<option>Italy</option>
+						<option>Spain</option>
+					</select> <label for="info">Additional information</label>
+					<textarea id="info" cols="1" rows="5"></textarea>
+					<input id="press" type="checkbox" /> <label class="flz_inline"
+						for="press">Press news</label> <input id="products"
+						type="checkbox" /> <label class="flz_inline" for="products">Product
+						news</label> <input class="flz_button" id="save" type="button"
+						value="Save" /> <input class="flz_button" id="cancel"
+						type="button" value="Cancel" />
+				</form>
+			</div>
+		</div>
+		<!-- footer -->
+		<div class="flz_box flz_r100 footer">Footer</div>
+	</div>
+</body>
+</html>

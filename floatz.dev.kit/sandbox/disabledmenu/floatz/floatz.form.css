@@ -1,0 +1,288 @@
+/*****************************************************************************************
+ * floatz.form.css
+ * ---------------------------------------------------------------------------------------
+ * Provides a common baseline as well as specific classes for form elements
+ *
+ * @project       floatz CSS Framework
+ * @version       1.1.1
+ * @see           http://code.google.com/p/floatz/
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2010 by :humml:design
+ * @link          http://design.humml.eu/toolbox/floatz
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2010-08-01
+ */
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form baseline
+ *
+ * Baseline styles for standard form elements
+ */
+
+/* Sets font style to form elements */
+label, 
+fieldset {
+   font-weight: bold;
+}
+optgroup {
+   font-style: italic;
+}
+
+/* Adjusts baseline of input fields and label */
+input, 
+label, 
+select, 
+textarea {
+   margin-bottom: 0.25em;
+   vertical-align: middle;
+}
+
+/* Special class for custom buttons that removes unnecessary formatting */
+.flz_custombutton {
+   background: transparent;
+   border: 0;
+}
+
+/* Add border to get same visual appearance to all input elements */
+select,
+textarea {
+   border: 1px solid #000;
+}
+
+/* Clears floats for fieldsets and forms */
+fieldset, 
+form {
+   clear: both;
+}
+
+/**
+ * Sets border styles (because of meyer reset), paddings and encloses floating boxes 
+ * within fieldset using overflow method
+ */
+fieldset {
+   border: 1px solid #000;
+   padding: 1em;
+}
+/**
+ * @affected Opera <= 8.5
+ */
+fieldset {
+   overflow: hidden; /* Opera <= 8.5 */
+}
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE.
+ * @affected IE 5, 6
+ */
+
+* html fieldset {
+   padding: 0 1em 1em 1em;
+   margin-top: -1em; /* Margin-top corrects additional padding of legend - see below */
+}
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE.
+ * @affected IE 7
+ */
+*:first-child+html fieldset {
+   padding: 0 1em 1em 1em;
+}
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE. (hack works only with one 
+ * setting per element)
+ * @affected IE 8
+ */
+fieldset {
+   padding /*\**/: 0 1em 1em 1em \9
+}
+
+/**
+ * Change color of fieldset
+ * @affected IE 5, 6
+ */
+* html fieldset legend {
+   color: #000;
+}
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE
+ * @affected IE 5, 6
+ */
+* html legend {
+   margin-left: -0.5em;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   padding-left: 0;
+}
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE
+ * @affected IE 7
+ */
+*:first-child+html legend {
+   margin-left: -0.5em;
+   margin-top: -1em;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   padding-left: 0;
+}
+
+/**
+ * @workaround Wrong padding behaviour of fieldset in IE (hack works only with one 
+ * setting per element)
+ * @affected IE 8
+ */
+legend {
+   margin-top /*\**/: -1em \9
+}
+legend {
+   padding-top /*\**/: 1em \9
+}
+legend {
+   padding-bottom /*\**/: 1em \9
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form elements
+ *
+ * Form elements
+ */
+
+/* Textbox */
+.flz_form input[type="text"],
+.flz_form input[type="password"] {
+   background-color: fff;
+   border: 1px solid #000;
+   display: block;
+   width: 99.4%;
+}
+/**
+ * @workaround Differentiate input type text
+ * @affected IE 5, 6
+ */
+* html .flz_textbox {
+   background-color: fff;
+   border: 1px solid #000;
+   display: block;
+   width: 99.4%;
+}
+
+/* Button  */
+.flz_form input[type="button"],
+.flz_form input[type="submit"],
+.flz_form input[type="reset"],
+.flz_form button {
+   padding: 0.25em 0.35em;
+}
+/**
+ * @workaround Differentiate input type button, submit
+ * @affected IE 5, 6
+ */
+* html .flz_button {
+   padding: 0.25em 0.35em;
+}
+/**
+ * @workaround Omit too much left/right padding
+ * @affected IE 5, 6
+ */
+* html .flz_button {
+   overflow: visible;
+   padding: 0.25em 0.5em;
+}
+/**
+ * @workaround Omit too much left/right padding
+ * @affected IE 7
+ */
+*:first-child+html input[type=button],
+*:first-child+html input[type=submit],
+*:first-child+html input[type=reset],
+*:first-child+html button {
+   overflow: visible;
+   padding: 0.25em 0.5em;
+}
+/**
+ * @workaround Collapse tabele cell around button
+ * @affected IE 5+, 6
+ */
+* html .flz_button {
+   width: 1;
+}
+/**
+ * @workaround Collapse table cell around button
+ * @affected IE 7
+ */
+*:first-child+html input[type=button],
+*:first-child+html input[type=submit],
+*:first-child+html input[type=reset],
+*:first-child+html button {
+   width: 1;
+}
+
+/* Marker for mandatory fields */
+.flz_mandatory {
+   background-color: yellow;
+}
+
+/* Marker for readonly fields */
+.flz_readonly {
+   background-color: #efefef;
+   color: #aaa;
+}
+
+/* Label, Selectbox */
+.flz_form label,
+.flz_form select {
+   display: block;
+   width: 100%;
+}
+
+/* Textarea */
+.flz_form textarea {
+   display: block;
+   width: 99.4%;
+}
+
+/* Label in combination with checkbox or radio should be inline */
+.flz_form input[type="checkbox"] + label,
+.flz_form input[type="radio"] + label {
+   display: inline;
+   width: auto;
+}
+/**
+ * Label in combination with checkbox or radio should be inline
+ * @workaround Handle situations when label comes before radiobutton, checkbox and to
+ *             support inline labels in combination with checkbox in IE 5, 6
+ * @affected all browsers
+ */
+
+/* Separate inline class (for IE 5,6 and when label comes before radiobutton, checkbox) */
+.flz_form .flz_inline {
+   display: inline;
+   width: auto;
+}
+   
+/**
+ * @workaround Correct margins of input type text and textareas within blocked forms
+ * @affected IE 5, 6
+ */
+* html .flz_textbox, 
+* html .flz_form textarea {
+   margin-right: -10px;
+}
+
+/* Combobox marker classes to combine fields with images in one line (e.g. date field with 
+   date picker image) */
+.flz_combobox {
+   margin-right: 1.5em;
+   padding-right: 0.5em;
+}
+span.flz_combobox,
+img.flz_combobox {
+   padding: 0;
+   margin: 0;
+   position: absolute;
+   bottom: 0.25em;
+   right: 0;
+}

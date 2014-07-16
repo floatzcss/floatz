@@ -1,0 +1,64 @@
+/* Loads floatz CSS framework */
+@import url(floatz-1.2.0/floatz.liquid.css);
+
+/* Project specific styles */
+body {
+   background: #eeeccc;
+}
+
+.header {
+   background: #aaaccc;
+   bottom: auto;
+   height: 5em;
+}
+
+.menu {
+   background: #bbbccc;
+   bottom: auto;
+   height: 2em;
+   top: 5em;
+}
+
+.submenu {
+   background: inherit;
+   bottom: 2em;
+   right: 15em;
+   top: 7em;
+}
+
+.content {
+   background: #cccccc;
+   bottom: 2em;
+   left: 15em;
+   top: 7em;
+}
+.content h1, h2 {
+   margin-bottom: 0.5em;
+}
+.content p {
+   margin-bottom: 1em;
+}
+
+.footer {
+   background: #dddccc;
+   height: 2em;
+   top: auto;
+}
+
+@media print {
+  .header {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .content {
+    left: 0;
+  }
+  .submenu {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+   <head>
+      <title>floatz - Test page for panels</title>
+      <meta http-equiv="content-type" content="text/html; CHARSET=utf-8" />
+      <meta http-equiv="content-script-type" content="text/javascript" />
+      <meta http-equiv="content-style-type" content="text/css" />
+      <meta http-equiv="content-language" content="en" />
+      <meta name="author" content="" />
+      <meta name="robots" content="index,follow" />
+      <meta name="description" content="" />
+      <link rel="stylesheet/less" type="text/css" href="../../src/floatz.less" />
+      <link rel="stylesheet/less" type="text/css" href="../../src/floatz.layout.liquid.less" />
+      <script type="text/javascript" src="../../src/scripts/less-1.3.3.min.js"></script> 
+      <script type="text/javascript" src="../../src/scripts/LAB-2.0.3.min.js"></script>
+      <script type="text/javascript" src="scripts/demo.js"></script>
+      <style type="text/css">
+        h1 {
+        	padding-bottom: 1em;
+        }
+      
+      	.flz_hmenu ul {
+      		float: left;
+      	}
+      	
+      	.popupMenu {
+      		position: fixed;
+      		border: 1px solid #000;
+      	}
+
+		.popupMenu .flz_vmenu li a {
+			background-color: #fff;
+			padding: 0.75em 1em;
+			border-left: 0;	
+		}
+
+		.popupMenu .flz_vmenu li:last-child a {
+			border-bottom: 0;			
+		}
+
+        .box {
+        	z-index: 99; /* Otherwise popup overlapped by subsequent panel */
+        	position: relative; /* Otherwise popup overlapped by subsequent panel */
+        }
+
+		.panel {
+			top: 10em;
+			height: 2.3em;
+			background-color: #dfdfdf;
+			z-index: 98; /* Otherwise popup overlapped by subsequent panel */
+		}
+		
+		.panel2 {
+			top: 12.3em;
+			background-color: #efefef;
+		}
+      </style>
+   </head>
+   <body>
+   	  <div class="flz_box box">
+	      <h1>Popup positioning</h1>   
+	      <div class="flz_hmenu">
+	         <ul>
+	             <li><a href="#">Menu 1</a>
+	             	<div class="popupMenu" style="display:none;">
+	                	<div class="flz_vmenu">
+	                		<ul>
+	                			<li><a href="#">Submenu 1</a></li>
+	                			<li><a href="#">Submenu 2</a></li>
+	                			<li><a href="#">Submenu 3</a></li>
+	                	   		<li><a href="#">Submenu 4</a></li>
+	                		   	<li><a href="#">Submenu 5</a></li>
+	                		</ul>
+	                 	</div>
+	             	</div>
+	             </li>
+	             <li><a href="#">Menu 2</a>
+	             	<div class="popupMenu" style="display:none;">
+	                	<div class="flz_vmenu">
+	                		<ul>
+	                			<li><a href="#">Submenu 1</a></li>
+	                			<li><a href="#">Submenu 2</a></li>
+	                			<li><a href="#">Submenu 3</a></li>
+	                	   		<li><a href="#">Submenu 4</a></li>
+	                		   	<li><a href="#">Submenu 5</a></li>
+	                		</ul>
+	                 	</div>
+	             	</div>
+	             </li>
+	             <li><a href="#">Menu 3</a>
+	             	<div class="popupMenu" style="display:none;">
+	                	<div class="flz_vmenu">
+	                		<ul>
+	                			<li><a href="#">Submenu 1</a></li>
+	                			<li><a href="#">Submenu 2</a></li>
+	                			<li><a href="#">Submenu 3</a></li>
+	                	   		<li><a href="#">Submenu 4</a></li>
+	                		   	<li><a href="#">Submenu 5</a></li>
+	                		</ul>
+	                 	</div>
+	             	</div>
+	             </li>
+	             <li><a href="#">Menu 4</a>
+	             	<div class="popupMenu" style="display:none;">
+	                	<div class="flz_vmenu">
+	                		<ul>
+	                			<li><a href="#">Submenu 1</a></li>
+	                			<li><a href="#">Submenu 2</a></li>
+	                			<li><a href="#">Submenu 3</a></li>
+	                	   		<li><a href="#">Submenu 4</a></li>
+	                		   	<li><a href="#">Submenu 5</a></li>
+	                		</ul>
+	                 	</div>
+	             	</div>
+	             </li>
+	         </ul>      
+	      </div>
+   	  </div>
+   	  
+      <h1>Popup positioning in flz_panel</h1>
+      <p>
+         The panel that should trigger the popup must have a z-index hight than the subsequent panel and the popup must have position: fixed.
+         Otherwise the popup (e.g. when using position: absolute) will be hidden under the menu panel.
+      </p>
+      <div class="flz_panel panel">
+	      <div class="flz_hmenu">
+	         <ul>
+	             <li><a href="#">Menu 1</a>
+	             	<div class="popupMenu" style="display:none;">
+	                	<div class="flz_vmenu">
+	                		<ul>
+	                			<li><a href="#">Submenu 1</a></li>
+	                			<li><a href="#">Submenu 2</a></li>
+	                			<li><a href="#">Submenu 3</a></li>
+	                	   		<li><a href="#">Submenu 4</a></li>
+	                		   	<li><a href="#">Submenu 5</a></li>
+	                		</ul>
+	                 	</div>
+	             	</div>
+	             </li>
+	             <li><a href="#">Menu 2</a>
+	             	<div class="popupMenu" style="display:none;">
+	                	<div class="flz_vmenu">
+	                		<ul>
+	                			<li><a href="#">Submenu 1</a></li>
+	                			<li><a href="#">Submenu 2</a></li>
+	                			<li><a href="#">Submenu 3</a></li>
+	                	   		<li><a href="#">Submenu 4</a></li>
+	                		   	<li><a href="#">Submenu 5</a></li>
+	                		</ul>
+	                 	</div>
+	             	</div>
+	             </li>
+	             <li><a href="#">Menu 3</a>
+	             	<div class="popupMenu" style="display:none;">
+	                	<div class="flz_vmenu">
+	                		<ul>
+	                			<li><a href="#">Submenu 1</a></li>
+	                			<li><a href="#">Submenu 2</a></li>
+	                			<li><a href="#">Submenu 3</a></li>
+	                	   		<li><a href="#">Submenu 4</a></li>
+	                		   	<li><a href="#">Submenu 5</a></li>
+	                		</ul>
+	                 	</div>
+	             	</div>
+	             </li>
+	             <li><a href="#">Menu 4</a>
+	             	<div class="popupMenu" style="display:none;">
+	                	<div class="flz_vmenu">
+	                		<ul>
+	                			<li><a href="#">Submenu 1</a></li>
+	                			<li><a href="#">Submenu 2</a></li>
+	                			<li><a href="#">Submenu 3</a></li>
+	                	   		<li><a href="#">Submenu 4</a></li>
+	                		   	<li><a href="#">Submenu 5</a></li>
+	                		</ul>
+	                 	</div>
+	             	</div>
+	             </li>
+	         </ul>      
+	      </div>
+      </div>
+      <div class="flz_panel panel2">
+      	Panel content
+      </div>
+   </body>
+</html>

@@ -1,0 +1,51 @@
+/*****************************************************************************************
+ * floatz.layout.liquid.css
+ * ---------------------------------------------------------------------------------------
+ * Basic layouting elements for fluid layout
+ *
+ * @project       floatz CSS Framework
+ * @version       1.1.1
+ * @see           http://code.google.com/p/floatz/
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2010 by :humml:design
+ * @link          http://design.humml.eu/toolbox/floatz
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2010-02-02
+ */
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Page container (overloaded)
+ * @app-base_css  fluidfloatz.layout.css
+ *
+ * Adds fluid layout and min-width (default 1024x768) support to page container.
+ */
+
+#flz_page {
+   min-width: 985px;
+   width: 100%;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Min-width container
+ * @css-for       IE 5+, IE 6
+ * @valid         true
+ * @see           http://www.cssplay.co.uk/boxes/minwidth.html
+ *
+ * Adds min-width support for IE <= 6 by adding additional markup to the html page. Use 
+ * additional containers in the following order: #page #minwidth #minwidthcontent #...
+ * If you use IE 7+ you can omit these containers, because min-width is set to #page 
+ * container in fluid layout mode by default.
+ */
+
+* html #flz_minwidth {  
+   border-left: 985px solid #fff;   /* must be same as #page width */
+   position: relative;
+   float: left;
+}
+* html #flz_minwidthcontent {
+   margin-left: -960px;             /* must be 25px less (!) than #page width */
+   position: relative;
+   float: left;
+}

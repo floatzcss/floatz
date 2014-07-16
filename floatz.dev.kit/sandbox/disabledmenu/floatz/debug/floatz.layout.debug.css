@@ -1,0 +1,137 @@
+/*****************************************************************************************
+ * floatz.layout.debug.css
+ * ---------------------------------------------------------------------------------------
+ * Debug CSS for layout elements
+ *
+ * @project       floatz CSS Framework
+ * @version       1.1.0
+ * @see           http://code.google.com/p/floatz/
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2010 by :humml:design
+ * @link          http://design.humml.eu/toolbox/floatz
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2010-01-26
+ */
+
+.flz_spacer {
+   background-color: #222fff;
+   border: 1px dotted #000;
+}
+
+.flz_lspacer, .flz_mspacer, .flz_rspacer {
+   background-color: #444fff;
+   border: 1px dotted #000;
+}
+
+.flz_spacer_mrsc_top, .flz_spacer_mrsc_mid, .flz_spacer_mrsc_bottom {
+   background-color: #666fff;
+   border: 1px dotted #000;
+}
+
+.flz_lspacer_mrmc_top, .flz_mspacer_mrmc_top, .flz_rspacer_mrmc_top, .flz_lspacer_mrmc_mid, .flz_mspacer_mrmc_mid,
+.flz_rspacer_mrmc_mid, .flz_lspacer_mrmc_bottom, .flz_mspacer_mrmc_bottom, .flz_rspacer_mrmc_bottom {
+   background-color: #888fff;
+   border: 1px dotted #000;
+}
+
+.flz_subspacer {
+   border: 1px dotted #000;
+}
+
+.flz_lsubspacer, .flz_msubspacer, .flz_rsubspacer {
+   background-color: #aaafff;
+   border: 1px dotted #000;
+}
+
+.flz_subspacer_mrsc_top, .flz_subspacer_mrsc_mid, .flz_subspacer_mrsc_bottom {
+   background-color: #cccfff;
+   border: 1px dotted #000;
+}
+
+.flz_lsubspacer_mrmc_top, .flz_msubspacer_mrmc_top, .flz_rsubspacer_mrmc_top, .flz_lsubspacer_mrmc_mid,
+.flz_msubspacer_mrmc_mid, .flz_rsubspacer_mrmc_mid, .flz_lsubspacer_mrmc_bottom, .flz_msubspacer_mrmc_bottom,
+.flz_rsubspacer_mrmc_bottom {
+   background-color: #eeefff;
+   border: 1px dotted #000;
+}
+
+.flz_r100 {
+   background-color: #111;
+}
+
+.flz_l90, .flz_r90 {
+   background-color: #222;
+}
+
+.flz_l80, .flz_r80 {
+   background-color: #333;
+}
+
+.flz_l75, .flz_r75 {
+   background-color: #444;
+}
+
+.flz_l66, .flz_r66 {
+   background-color: #555;
+}
+
+.flz_l60, .flz_r60 {
+   background-color: #666;
+}
+
+.flz_l50 {
+   background-color: #777;
+}
+.flz_r50 {
+   background-color: #888;
+}
+
+.flz_l40 {
+   background-color: #999;
+}
+.flz_m40 {
+   background-color: #aaa;
+}
+.flz_r40 {
+   background-color: #bbb;
+}
+
+.flz_l33 {
+   background-color: #ccc
+}
+.flz_m33 {
+   background-color: #ddd;
+}
+.flz_r33 {
+   background-color: #eee;
+}
+
+.flz_l25 {
+   background-color: #111fff;
+}
+.flz_m25 {
+   background-color: #333fff;
+}
+.flz_r25 {
+   background-color: #444fff;
+}
+
+.flz_l20 {
+   background-color: #666fff;
+}
+.flz_m20 {
+   background-color: #888fff;
+}
+.flz_r20 {
+   background-color: #aaafff;
+}
+
+.flz_l10 {
+   background-color: #bbbfff;
+}
+.flz_m10 {
+   background-color: #cccfff;
+}
+.flz_r10 {
+   background-color: #dddfff;
+}

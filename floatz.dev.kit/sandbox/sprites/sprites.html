@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+   <head>
+      <title>floatz sandbox - Using CSS sprite images</title>
+      <meta http-equiv="content-type" content="text/html; CHARSET=iso-8859-1" />
+      <meta http-equiv="content-script-type" content="text/javascript" />
+      <meta http-equiv="content-style-type" content="text/css" />
+      <meta http-equiv="content-language" content="en" />
+      <meta name="author" content="" />
+      <meta name="robots" content="index,follow" />
+      <meta name="description" content="" />
+      <link rel="stylesheet" type="text/css" href="styles/sprites.css" />
+      <link rel="stylesheet" type="text/css" href="../../src/floatz.layout.liquid.css" />
+      <!--<link rel="stylesheet" type="text/css" href="../../src/debug/floatz.layout.debug.css" />-->
+      <style type="text/css">
+         .h_tab_sprite_default {
+            background: url(images/h_tab_sprite.gif) no-repeat;
+            font-size: 2em;
+         }
+         .h_tab_sprite_tab1 {
+            background: url(images/h_tab_sprite.gif) no-repeat left top;
+            font-size: 2em;
+         }
+         .h_tab_sprite_tab2 {
+            background: url(images/h_tab_sprite.gif) no-repeat -232px top;
+            font-size: 2em;
+         }
+         .h_tab_sprite_tab3 {
+            background: url(images/h_tab_sprite.gif) no-repeat -464px top;
+            font-size: 2em;
+         }
+         .h_tab_sprite_tab4 {
+            background: url(images/h_tab_sprite.gif) no-repeat -189px top;
+            font-size: 2em;
+         }
+         .h_tab_sprite_tab5 {
+            background: url(images/h_tab_sprite.gif) no-repeat -421px top;
+            font-size: 2em;
+         }
+         .h_tab_sprite_tab6 {
+            background: url(images/h_tab_sprite.gif) no-repeat -653px top;
+            font-size: 2em;
+         }
+         .v_tab_sprite_default {
+            background: url(images/v_tab_sprite.gif) no-repeat;
+            font-size: 2em;
+         }
+         .v_tab_sprite_tab1 {
+            background: url(images/v_tab_sprite.gif) no-repeat left top;
+            font-size: 2em;
+         }
+         .v_tab_sprite_tab2 {
+            background: url(images/v_tab_sprite.gif) no-repeat left -100px;
+            font-size: 2em;
+         }
+         .v_tab_sprite_tab3 {
+            background: url(images/v_tab_sprite.gif) no-repeat left -200px;
+            font-size: 2em;
+         }
+         .v_tab_sprite_tab4 {
+            background: url(images/v_tab_sprite.gif) no-repeat right top;
+            font-size: 2em;
+         }
+         .v_tab_sprite_tab5 {
+            background: url(images/v_tab_sprite.gif) no-repeat right -100px;
+            font-size: 2em;
+         }
+         .v_tab_sprite_tab6 {
+            background: url(images/v_tab_sprite.gif) no-repeat right -200px;
+            font-size: 2em;
+         }
+         .v_tabbottom_sprite_tab1 {
+            background: url(images/v_tabbottom_sprite.gif) no-repeat left bottom;
+            font-size: 2em;
+         }
+         .v_tabbottom_sprite_tab2 {
+            background: url(images/v_tabbottom_sprite.gif) no-repeat left -168px;
+            font-size: 2em;
+         }
+         .v_tabbottom_sprite_tab3 {
+            background: url(images/v_tabbottom_sprite.gif) no-repeat left -268px;
+            font-size: 2em;
+         }
+         .v_tabbottom_sprite_tab4 {
+            background: url(images/v_tabbottom_sprite.gif) no-repeat -189px bottom;
+            font-size: 2em;
+         }
+         .v_tabbottom_sprite_tab5 {
+            background: url(images/v_tabbottom_sprite.gif) no-repeat -189px -168px;
+            font-size: 2em;
+         }
+         .v_tabbottom_sprite_tab6 {
+            background: url(images/v_tabbottom_sprite.gif) no-repeat -189px -268px;
+            font-size: 2em;
+         }
+         .v_tabbottom_inactive_left {
+            background: url(images/vtabbottom_inactive.gif) no-repeat left bottom;
+            font-size: 2em;
+         }
+         .v_tabbottom_inactive_right {
+            background: url(images/vtabbottom_inactive.gif) no-repeat right bottom;
+            font-size: 2em;
+         }
+         .v_tabbottom_hover_left {
+            background: url(images/vtabbottom_hover.gif) no-repeat left bottom;
+            font-size: 2em;
+         }
+         .v_tabbottom_hover_right {
+            background: url(images/vtabbottom_hover.gif) no-repeat right bottom;
+            font-size: 2em;
+         }
+         .v_tabbottom_active_left {
+            background: url(images/vtabbottom_active.gif) no-repeat left bottom;
+            font-size: 2em;
+         }
+         .v_tabbottom_active_right {
+            background: url(images/vtabbottom_active.gif) no-repeat right bottom;
+            font-size: 2em;
+         }
+
+         .error {
+            color: red;
+            font-weight: bold;
+         }
+
+
+         .bigfont {
+            font-size: 3em;
+         }
+      </style>
+   </head>
+   <body>
+      <!-- page container -->
+      <div id="flz_page">
+         <div class="flz_box">
+            <div class="flz_spacer">
+               <h1>Using CSS sprite images</h1>
+
+               <h2>Horizontal image for horizontal tabs</h2>
+
+               <div class="flz_box flz_l40">
+                  Original image
+               </div>
+               <div class="flz_box flz_r60">
+                  <img src="images/h_tab_sprite.gif" />
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/left corner of first tab in sprite image (default)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="h_tab_sprite_default">text</span>
+                  <span class="h_tab_sprite_default">longer</span>
+                  <span class="h_tab_sprite_default bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/left corner of first tab in sprite image (left top)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="h_tab_sprite_tab1">text</span>
+                  <span class="h_tab_sprite_tab1">longer</span>
+                  <span class="h_tab_sprite_tab1 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/left corner of second tab in sprite image (-232px top)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="h_tab_sprite_tab2">text</span>
+                  <span class="h_tab_sprite_tab2">longer</span>
+                  <span class="h_tab_sprite_tab2 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/left corner of third tab in sprite image (-464px top)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="h_tab_sprite_tab3">text</span>
+                  <span class="h_tab_sprite_tab3">longer</span>
+                  <span class="h_tab_sprite_tab3 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/right corner of first tab in sprite image (-189px top)
+                  <p class="error">
+                     Does not work if text or font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="h_tab_sprite_tab4">text</span>
+                  <span class="h_tab_sprite_tab4">longer</span>
+                  <span class="h_tab_sprite_tab4 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/right corner of second tab in sprite image (-421px top)
+                  <p class="error">
+                     Does not work if text or font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="h_tab_sprite_tab5">text</span>
+                  <span class="h_tab_sprite_tab5">longer</span>
+                  <span class="h_tab_sprite_tab5 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/right corner of third tab in sprite image (-653px top)
+                  <p class="error">
+                     Does not work if text or font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="h_tab_sprite_tab6">text</span>
+                  <span class="h_tab_sprite_tab6">longer</span>
+                  <span class="h_tab_sprite_tab6 bigfont">bigger</span>
+               </div>
+
+               <h2>Vertical image for horizontal tabs</h2>
+
+               <div class="flz_box flz_l40">
+                  Original image
+               </div>
+               <div class="flz_box flz_r60">
+                  <img src="images/v_tab_sprite.gif" />
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/left corner of first tab in sprite image (default)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tab_sprite_default">text</span>
+                  <span class="v_tab_sprite_default">longer</span>
+                  <span class="v_tab_sprite_default bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/left corner of first tab in sprite image (left top)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tab_sprite_tab1">text</span>
+                  <span class="v_tab_sprite_tab1">longer</span>
+                  <span class="v_tab_sprite_tab1 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/left corner of second tab in sprite image (left -100px)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tab_sprite_tab2">text</span>
+                  <span class="v_tab_sprite_tab2">longer</span>
+                  <span class="v_tab_sprite_tab2 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/left corner of third tab in sprite image (left -200px)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tab_sprite_tab3">text</span>
+                  <span class="v_tab_sprite_tab3">longer</span>
+                  <span class="v_tab_sprite_tab3 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/right corner of first tab in sprite image (right top)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tab_sprite_tab4">text</span>
+                  <span class="v_tab_sprite_tab4">longer</span>
+                  <span class="v_tab_sprite_tab4 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/right corner of second tab in sprite image (right -100px)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tab_sprite_tab5">text</span>
+                  <span class="v_tab_sprite_tab5">longer</span>
+                  <span class="v_tab_sprite_tab5 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get top/right corner of third tab in sprite image (right -200px)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tab_sprite_tab6">text</span>
+                  <span class="v_tab_sprite_tab6">longer</span>
+                  <span class="v_tab_sprite_tab6 bigfont">bigger</span>
+               </div>
+
+               <h2>Vertical image for horizontal bottom aligned tabs</h2>
+
+               <div class="flz_box flz_l40">
+                  Original image
+               </div>
+               <div class="flz_box flz_r60">
+                  <img src="images/v_tabbottom_sprite.gif" />
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/left corner of first tab in sprite image (left bottom)
+                  <p class="error">
+                     Does not work if font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_sprite_tab1">text</span>
+                  <span class="v_tabbottom_sprite_tab1">longer</span>
+                  <span class="v_tabbottom_sprite_tab1 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/left corner of second tab in sprite image (left -168px)
+                  <p class="error">
+                     Does not work if font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_sprite_tab2">text</span>
+                  <span class="v_tabbottom_sprite_tab2">longer</span>
+                  <span class="v_tabbottom_sprite_tab2 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/left corner of third tab in sprite image (left -268px)
+                  <p class="error">
+                     Does not work if font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_sprite_tab3">text</span>
+                  <span class="v_tabbottom_sprite_tab3">longer</span>
+                  <span class="v_tabbottom_sprite_tab3 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/right corner of first tab in sprite image (-189px bottom)
+                  <p class="error">
+                     Does not work if text or font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_sprite_tab4">text</span>
+                  <span class="v_tabbottom_sprite_tab4">longer</span>
+                  <span class="v_tabbottom_sprite_tab4 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/right corner of second tab in sprite image (-189px -168px)
+                  <p class="error">
+                     Does not work if text or font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_sprite_tab5">text</span>
+                  <span class="v_tabbottom_sprite_tab5">longer</span>
+                  <span class="v_tabbottom_sprite_tab5 bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/right corner of third tab in sprite image (-189px -268px)
+                  <p class="error">
+                     Does not work if text or font size is changed (in code or in browser)
+                  </p>
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_sprite_tab6">text</span>
+                  <span class="v_tabbottom_sprite_tab6">longer</span>
+                  <span class="v_tabbottom_sprite_tab6 bigfont">bigger</span>
+               </div>
+               <h2>Vertical single images for horizontal bottom aligned tabs</h2>
+
+               <div class="flz_box flz_l40">
+                  Original image
+               </div>
+               <div class="flz_box flz_r60">
+                  <img src="images/vtabbottom_inactive.gif" />
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/left corner of tab image (left bottom)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_inactive_left">text</span>
+                  <span class="v_tabbottom_inactive_left">longer</span>
+                  <span class="v_tabbottom_inactive_left bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/right corner of tab image (right bottom)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_inactive_right">text</span>
+                  <span class="v_tabbottom_inactive_right">longer</span>
+                  <span class="v_tabbottom_inactive_right bigfont">bigger</span>
+               </div>
+
+               <div class="flz_box flz_l40">
+                  Original image
+               </div>
+               <div class="flz_box flz_r60">
+                  <img src="images/vtabbottom_hover.gif" />
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/left corner of tab image (left bottom)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_hover_left">text</span>
+                  <span class="v_tabbottom_hover_left">longer</span>
+                  <span class="v_tabbottom_hover_left bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/right corner of tab image (right bottom)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_hover_right">text</span>
+                  <span class="v_tabbottom_hover_right">longer</span>
+                  <span class="v_tabbottom_hover_right bigfont">bigger</span>
+               </div>
+
+               <div class="flz_box flz_l40">
+                  Original image
+               </div>
+               <div class="flz_box flz_r60">
+                  <img src="images/vtabbottom_active.gif" />
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/left corner of tab image (left bottom)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_active_left">text</span>
+                  <span class="v_tabbottom_active_left">longer</span>
+                  <span class="v_tabbottom_active_left bigfont">bigger</span>
+               </div>
+               <div class="flz_box flz_l40">
+                  Get bottom/right corner of tab image (right bottom)
+               </div>
+               <div class="flz_box flz_r60">
+                  <span class="v_tabbottom_active_right">text</span>
+                  <span class="v_tabbottom_active_right">longer</span>
+                  <span class="v_tabbottom_active_right bigfont">bigger</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

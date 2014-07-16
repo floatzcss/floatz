@@ -1,0 +1,9 @@
+/* Load the CSS modules in the following order */
+@import url(../../../src/floatz.reset.meyer.css);
+@import url(../../../src/floatz.reset.css);
+@import url(../../../src/floatz.layout.css);
+@import url(floatz2.form.css);
+@import url(floatz2.form.ie6.css);
+@import url(floatz2.form.ie7.css);
+@import url(floatz2.form.ie8.css);
+@import url(../../../src/floatz.nav.css);

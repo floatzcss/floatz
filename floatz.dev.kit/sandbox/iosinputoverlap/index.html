@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>floatz - Layout.Empty</title>
+<meta http-equiv="content-type" content="text/html; CHARSET=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en" />
+<meta name="author" content="" />
+<meta name="robots" content="index,follow" />
+<meta name="description" content="" />
+<!-- Load project CSS without less -->
+<!-- <link rel="stylesheet" type="text/css" href="styles/project.css" /> -->
+<!-- Load project CSS with less -->
+<link rel="stylesheet/less" type="text/css" href="styles/project.less" />
+<script type="text/javascript" src="styles/floatz-1.2.0/scripts/less-1.3.3.min.js"></script>
+<!-- -->
+<script type="text/javascript" src="styles/floatz-1.2.0/scripts/LAB-2.0.3.min.js"></script>
+<script type="text/javascript" src="scripts/project.js"></script>
+<style>
+	.testBox, .testBoxSimple {
+		background-color: #eeefff;
+	}
+	
+	.testBoxSimple {
+		padding: 14px;
+	}
+	
+	.testInput, .testTextarea, .testSelect, .testLabel {
+		width: 100%;
+	}
+	
+	.flz_form input[type=text].newInput, 
+	.flz_form textarea.newTextarea, 
+	.flz_form select.newSelect {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	
+</style>
+</head>
+<body>
+	<!-- page -->
+	<div id="flz_page">
+		<div class="flz_spacer">
+			<div class="testBoxSimple">
+				<h1>Test without floatz</h1>
+				<label class="testLabel">Input</label>
+				<input class="testInput" type="text" />
+				<label class="testLabel">Textarea</label>
+				<textarea class="testTextarea" rows="5"></textarea>
+				<label class="testLabel">Select</label>
+				<select class="testSelect">
+					<option>Option 1</option>
+					<option>Option 2</option>
+					<option>Option 3</option>
+				</select>
+			</div>
+			<div class="flz_box testBox">
+				<div class="flz_spacer">
+					<h1>Test with floatz using flz_spacer (but simple inputs)</h1>
+					<label class="testLabel">Input</label>
+					<input class="testInput" type="text" />
+					<label class="testLabel">Textarea</label>
+					<textarea class="testTextarea" rows="5"></textarea>
+					<label class="testLabel">Select</label>
+					<select class="testSelect">
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+					</select>
+				</div>
+			</div>
+			<div class="flz_box flz_form testBox">
+				<div class="flz_spacer">
+					<h1>Test with floatz using flz_form and flz_spacer</h1>
+					<label>Input</label>
+					<input type="text" />
+					<label>Textarea</label>
+					<textarea rows="5"></textarea>
+					<label>Select</label>
+					<select>
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+					</select>
+				</div>
+			</div>
+			<div class="flz_box flz_form testBox">
+				<div class="flz_spacer">
+					<h1>Test with floatz using flz_form, flz_spacer and inputs without margin and padding</h1>
+					<label>Input</label>
+					<input class="newInput" type="text" />
+					<label>Textarea</label>
+					<textarea class="newTextarea" rows="5"></textarea>
+					<label>Select</label>
+					<select class="newSelect">
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

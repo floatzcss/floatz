@@ -1,0 +1,54 @@
+/* Loads floatz CSS framework */
+@import url(floatz-1.2.0/floatz.fixed.css);
+
+/* Project specific styles */
+body {
+   background: #eeeccc;
+}
+
+#flz_page {
+   background: #cccccc;
+}
+
+.header {
+   background: #aaaccc;
+   height: 5em;
+}
+
+.menu {
+   background: #bbbccc;
+   height: 2.20em;
+}
+
+.menu ul {
+   float: left;
+}
+
+.menu ul li a {
+   border-left: none;
+   border-right: 1px solid #000;
+}
+
+.menu .flz_listnav {
+   text-align: right;
+}
+
+.submenu {
+   background: inherit;
+}
+
+.content {
+   background: inherit;
+   padding-top: 2em;
+}
+.content h1, h2 {
+   margin-bottom: 0.5em;
+}
+.content p {
+   margin-bottom: 1em;
+}
+
+.footer {
+   background: #dddccc;
+   height: 2em;
+}
