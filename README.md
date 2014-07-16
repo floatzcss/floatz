@@ -1,7 +1,4 @@
-floatz
-======
+floatz CSS framrework
+===
 
-CSS Framework
-
-floatz
---
+floatz - contains minified, compiled CSS code (this is exactly was is packed)
