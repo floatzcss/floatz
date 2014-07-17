@@ -67,13 +67,14 @@ window.floatz.userAgent = (function () {
 		},
 
 
-		/* User agent */
+		/* User agent fields */
 		browser: "",
 		browserVersion: "",
 		device: "",
 		engine: "",
 		platform: "",
 		platformVersion: "",
+
 		isMobileWebkit: isMobileWebkit,
 		isMobile: isMobile,
 		isBrowser: isBrowser,
