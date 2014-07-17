@@ -16,9 +16,9 @@
  * @copyright     Copyright (c) 1998-2014 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2012-11-05
+ * @lastmodified  2014-07-17
  */
-window.floatz.mobile = (function() {
+window.floatz.mobile = (function () {
 	"use strict";
 
 	////////////////////////////////////////////////////
@@ -27,15 +27,15 @@ window.floatz.mobile = (function() {
 	var self = {
 
 		/* Fields */
-		module : {
-			name : "floatz.mobile",
-			version : "1.3.0",
-			start : start,
-			bind : bind
+		module: {
+			name: "floatz.mobile",
+			version: "1.3.0",
+			start: start,
+			bind: bind
 		},
 
 		/* Bind to DOM (re-bind safe) */
-		bind : bind
+		bind: bind
 	};
 
 	////////////////////////////////////////////////////
@@ -47,15 +47,14 @@ window.floatz.mobile = (function() {
 	////////////////////////////////////////////////////
 	// Private functions
 
-   /**
-	* Start module.
-	*
-    * @since 1.2.0
-	*/
+	/**
+	 * Start module.
+	 * @since 1.2.0
+	 */
 	function start() {
 
 		// Optimize mobile webkit behavior
-		if(floatz.userAgent.isMobileWebkit()) {
+		if (floatz.userAgent.isMobileWebkit()) {
 
 			////////
 			// TODO - Check if -webkit-text-size-adjust: 100% would solve that problem directly in CSS?
@@ -63,7 +62,7 @@ window.floatz.mobile = (function() {
 
 			// Prevent unpredictable automatic resizing of fonts on iOS devices
 			// See: http://blog.55minutes.com/2012/04/iphone-text-resizing/
-			if(document.styleSheets.length > 0) {
+			if (document.styleSheets.length > 0) {
 				floatz.log(floatz.LOGLEVEL.DEBUG, "Adding -webkit-text-size-adjust: none to * in mobile webkit", module.name);
 				document.styleSheets[0].addRule("*", "-webkit-text-size-adjust: none;");
 			} else {

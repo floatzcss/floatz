@@ -112,6 +112,7 @@ window.floatz.userAgent = (function () {
 	/**
 	 * Analyze user agent.
 	 * @param agent User agent string
+	 * @since 1.3.0
 	 */
 	function analyze(agent) {
 
@@ -203,6 +204,7 @@ window.floatz.userAgent = (function () {
 	 * Check browser.
 	 * @param browser Browser contant
 	 * @returns {boolean} true if browser, false if not
+	 * @since 1.3.0
 	 */
 	function isBrowser(browser) {
 		return self.browser === browser;
@@ -212,6 +214,7 @@ window.floatz.userAgent = (function () {
 	 * Check engine.
 	 * @param engine Engine constant
 	 * @returns {boolean} true if engine, false if not
+	 * @since 1.3.0
 	 */
 	function isEngine(engine) {
 		return self.engine === engine;
@@ -221,6 +224,7 @@ window.floatz.userAgent = (function () {
 	 * Check platform.
 	 * @param platform Platform constant
 	 * @returns {boolean} true if platform, false if not
+	 * @since 1.3.0
 	 */
 	function isPlatform(platform) {
 		return self.platform === platform;
@@ -230,6 +234,7 @@ window.floatz.userAgent = (function () {
 	 * Check device.
 	 * @param device Device constant
 	 * @returns {boolean} true if device, false if not
+	 * @since 1.3.0
 	 */
 	function isDevice(device) {
 		return self.device === device;
