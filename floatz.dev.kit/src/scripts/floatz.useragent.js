@@ -21,7 +21,6 @@
 
 /**
  * TODO Test for different user agent strings.
- * TODO Solve version number in safari, not set
  * TODO Other platforms? Firefox OS, Blackberry?
  */
 
@@ -140,7 +139,7 @@ window.floatz.userAgent = (function () {
 		} else if (/webkit/.test(ua) && !/chrome/.test(ua)) {
 			self.browser = BROWSER.SAFARI;
 		}
-		self.browserVersion = (ua.match(/.+(?:rv|it|ra|ie|me|ve)[\/: ]([\d.]+)/) || [])[1];
+		self.browserVersion = (ua.match(/.+(?:rv|it|ra|ie|me|ve|ion)[\/: ]([\d.]+)/) || [])[1];
 
 		// Read device and version
 		if (/ipad/.test(ua)) {
