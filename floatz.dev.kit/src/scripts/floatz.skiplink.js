@@ -66,7 +66,7 @@ window.floatz.skiplink = (function () {
 	 * @since 1.1.0
 	 */
 	function fixSkipLinks() {
-		if (!floatz.browser.isMobile() && (floatz.browser.webkit || floatz.browser.opera)) {
+		if (!floatz.userAgent.isMobile() && (floatz.userAgent.isEngine(floatz.userAgent.ENGINE.WEBKIT) || floatz.userAgent.isBrowser(floatz.userAgent.PLATFORM.OPERA))) {
 			floatz.log(floatz.LOGLEVEL.DEBUG, "Adding click handler that sets focus to all flz_skipnav a", module.name);
 			$(".flz_skipnav a").click(function () {
 				$(this.href.substring(this.href.indexOf("#"), this.href.length)).focus();
@@ -85,7 +85,8 @@ window.floatz.skiplink = (function () {
 	 * @since 1.1.0
 	 */
 	function fixSkipLinkAnchors() {
-		if (!floatz.browser.isMobile() && (floatz.browser.webkit || floatz.browser.opera || floatz.browser.msie)) {
+		if (!floatz.userAgent.isMobile() && (floatz.userAgent.isEngine(floatz.userAgent.ENGINE.WEBKIT) || floatz.userAgent.isBrowser(floatz.userAgent.PLATFORM.OPERA) ||
+			floatz.userAgent.isBrowser(floatz.userAgent.PLATFORM.MSIE))) {
 			floatz.log(floatz.LOGLEVEL.DEBUG, "Adding tabindex: -1 to all a:flz_anchor", module.name);
 			$("a.flz_anchor").attr("tabindex", "-1");
 		}

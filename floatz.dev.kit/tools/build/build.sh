@@ -45,7 +45,7 @@ function updateTemplate() {
 	fi
 	
 	cp ../../../floatz/scripts/floatz.js ../../templates/$template/styles/floatz-$FLOATZ_VERSION/scripts/
-	cp ../../../floatz/scripts/floatz.browser.js ../../templates/$template/styles/floatz-$FLOATZ_VERSION/scripts/
+	cp ../../../floatz/scripts/floatz.useragent.js ../../templates/$template/styles/floatz-$FLOATZ_VERSION/scripts/
 	cp ../../../floatz/scripts/floatz.skiplink.js ../../templates/$template/styles/floatz-$FLOATZ_VERSION/scripts/
 	cp ../../../floatz/scripts/floatz.mobile.js ../../templates/$template/styles/floatz-$FLOATZ_VERSION/scripts/
 	cp ../../src/scripts/jquery-$JQUERY_VERSION.min.js ../../templates/$template/styles/floatz-$FLOATZ_VERSION/scripts/
@@ -119,10 +119,10 @@ then
 	../jsmin/jsmin < ../../src/scripts/floatz.js >> floatz.js.tmp
 	mv floatz.js.tmp ../../../floatz/scripts/floatz.js
 
-	echo "floatz.build | INFO  | Creating minified version of floatz.browser.js"
-	createFile floatz.browser.js.tmp
-	../jsmin/jsmin < ../../src/scripts/floatz.browser.js >> floatz.browser.js.tmp
-	mv floatz.browser.js.tmp ../../../floatz/scripts/floatz.browser.js
+	echo "floatz.build | INFO  | Creating minified version of floatz.useragent.js"
+	createFile floatz.useragent.js.tmp
+	../jsmin/jsmin < ../../src/scripts/floatz.useragent.js >> floatz.useragent.js.tmp
+	mv floatz.useragent.js.tmp ../../../floatz/scripts/floatz.useragent.js
 
 	echo "floatz.build | INFO  | Creating minified version of floatz.skiplink.js"
 	createFile floatz.skiplink.js.tmp

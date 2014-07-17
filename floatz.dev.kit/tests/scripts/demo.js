@@ -1,7 +1,7 @@
 // Load jquery, less and floatz in correct order
 $LAB.script("../src/scripts/jquery-1.11.1.min.js")
 	 .script("../src/scripts/floatz.js").wait()
-	 .script("../src/scripts/floatz.browser.js").wait()
+	 .script("../src/scripts/floatz.useragent.js").wait()
 	 .script("../src/scripts/floatz.mobile.js")
 	 .script("../src/scripts/floatz.skiplink.js")
 	 .script("scripts/custom.js")
@@ -25,7 +25,7 @@ function start() {
 	var panel = $("#browserList");
 	if(panel.length > 0) {
 		var html = "";
-		html +="<h2>User agent</h2>";
+/*		html +="<h2>User agent</h2>";
 		html += navigator.userAgent.toLowerCase();
 
 		html += "<h2>Browser</h2>";
@@ -50,8 +50,15 @@ function start() {
 		html += "<p style=color:" + (floatz.browser.ipad ? "red;" : "inherit") + ">Mobile: " + floatz.browser.isMobile() + "</p>";
 		html += "<p style=color:" + (floatz.browser.iphone ? "red;" : "inherit") + ">iPhone: " + floatz.browser.iphone + ", Version: " + floatz.browser.iphoneVersion + "</p>";
 		html += "<p style=color:" + (floatz.browser.ipad ? "red;" : "inherit") + ">iPad: " + floatz.browser.ipad + ", Version: " + floatz.browser.ipadVersion + "</p>";
-		html += "<p style=color:" + (floatz.browser.winPhone ? "red;" : "inherit") + ">Windows Phone: " + floatz.browser.winPhone + ", Version: " + floatz.browser.winPhoneVersion + "</p>";
+		html += "<p style=color:" + (floatz.browser.winPhone ? "red;" : "inherit") + ">Windows Phone: " + floatz.browser.winPhone + ", Version: " + floatz.browser.winPhoneVersion + "</p>";*/
 
+		html += "User agent: " + navigator.userAgent + "<br />"
+		html += "Browser: " + floatz.userAgent.browser + "<br />";
+		html += "Browser Version: " + floatz.userAgent.browserVersion + "<br />";
+		html += "Platform: " + floatz.userAgent.platform + "<br />";
+		html += "Platform Version: " + floatz.userAgent.platformVersion + "<br />";
+		html += "Engine: " + floatz.userAgent.engine + "<br />";
+		html += "Device: " + floatz.userAgent.device + "<br />";
 		panel.append(html);
 	}
 }

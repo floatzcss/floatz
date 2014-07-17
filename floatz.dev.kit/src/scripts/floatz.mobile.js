@@ -55,7 +55,7 @@ window.floatz.mobile = (function() {
 	function start() {
 
 		// Optimize mobile webkit behavior
-		if(floatz.browser.isMobileWebkit()) {
+		if(floatz.userAgent.isMobileWebkit()) {
 
 			////////
 			// TODO - Check if -webkit-text-size-adjust: 100% would solve that problem directly in CSS?
