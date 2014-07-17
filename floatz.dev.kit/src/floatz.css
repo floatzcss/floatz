@@ -294,7 +294,7 @@ pre {
  * @copyright     Copyright (c) 1998-2013 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-07-15
+ * @lastmodified  2014-07-16
  * @since         1.0.0
  */
 /**
@@ -633,10 +633,10 @@ pre {
 }
 .flz_l33,
 .flz_r33 {
-  width: 33.3%;
+  width: 33.33333%;
 }
 .flz_m33 {
-  width: 33.4%;
+  width: 33.33333%;
 }
 .flz_l40,
 .flz_m40,
@@ -655,7 +655,7 @@ pre {
 }
 .flz_l66,
 .flz_r66 {
-  width: 66.7%;
+  width: 66.66666%;
 }
 .flz_l75,
 .flz_r75 {
@@ -771,7 +771,7 @@ pre {
  * @copyright     Copyright (c) 1998-2013 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-07-15
+ * @lastmodified  2014-07-16
  * @since         1.0.0
  */
 /**
@@ -814,32 +814,32 @@ fieldset {
 
   font-weight: bold;
   /**
-    * Sets border styles (because of meyer reset), paddings and encloses floating boxes 
-    * within fieldset using overflow method
-    */
+     * Sets border styles (because of meyer reset), paddings and encloses floating boxes
+     * within fieldset using overflow method
+     */
 
   border: 1px solid #000;
   padding: 1em;
   margin-bottom: 1em;
   /**
-    * @affected Opera <= 8.5
-    */
+     * @affected Opera <= 8.5
+     */
 
   overflow: hidden;
   /* Opera <= 8.5 */
 
   /**
-    * @workaround Wrong padding behaviour of fieldset in IE. (hack works only with one 
-    * setting per element)
-    * @affected IE 8
-    */
+     * @workaround Wrong padding behaviour of fieldset in IE. (hack works only with one
+     * setting per element)
+     * @affected IE 8
+     */
 
   padding: 0 1em 1em 1em\0/;
   /**
-    * @workaround Wrong padding behaviour of fieldset in IE (hack works only with one 
-    * setting per element)
-    * @affected IE 8
-    */
+     * @workaround Wrong padding behaviour of fieldset in IE (hack works only with one
+     * setting per element)
+     * @affected IE 8
+     */
 
 }
 fieldset legend {
@@ -850,9 +850,9 @@ fieldset legend {
 /* Fieldset workarounds */
 * html fieldset {
   /**
-    * @workaround Wrong padding behaviour of fieldset in IE.
-    * @affected IE 5, 6
-    */
+     * @workaround Wrong padding behaviour of fieldset in IE.
+     * @affected IE 5, 6
+     */
 
   padding: 0 1em 1em 1em;
   margin-top: -1em;
@@ -861,15 +861,15 @@ fieldset legend {
 }
 * html fieldset legend {
   /**
-       * Change color of fieldset
-       * @affected IE 5, 6
-       */
+         * Change color of fieldset
+         * @affected IE 5, 6
+         */
 
   color: #000;
   /**
-       * @workaround Wrong padding behaviour of fieldset in IE
-       * @affected IE 5, 6
-       */
+         * @workaround Wrong padding behaviour of fieldset in IE
+         * @affected IE 5, 6
+         */
 
   margin-left: -0.5em;
   padding-top: 1em;
@@ -879,15 +879,15 @@ fieldset legend {
 /* Fieldset workarounds */
 *:first-child + html fieldset {
   /**
-    * @workaround Wrong padding behaviour of fieldset in IE.
-    * @affected IE 7
-    */
+     * @workaround Wrong padding behaviour of fieldset in IE.
+     * @affected IE 7
+     */
 
   padding: 0 1em 1em 1em;
   /**
-    * @workaround Wrong padding behaviour of fieldset in IE
-    * @affected IE 7
-    */
+     * @workaround Wrong padding behaviour of fieldset in IE
+     * @affected IE 7
+     */
 
 }
 *:first-child + html fieldset legend {
@@ -911,23 +911,21 @@ fieldset legend {
 
   /* Textarea */
 
-  /* Label in combination with checkbox or radio should be inline */
-
   /* Marker for mandatory fields */
 
   /* Marker for readonly fields */
 
   /**
-    * Label in combination with checkbox or radio should be inline
-    * @workaround Handle situations when label comes before radiobutton, checkbox and to
-    *             support inline labels in combination with checkbox in IE 5, 6
-    * @affected all browsers
-    */
+     * Label in combination with checkbox or radio should be inline
+     * @workaround Handle situations when label comes before radiobutton, checkbox and to
+     *             support inline labels in combination with checkbox in IE 5, 6
+     * @affected all browsers
+     */
 
   /* Separate inline class (for IE 5,6 and when label comes before radiobutton, checkbox) */
 
-  /* Combobox marker classes to combine fields with images in one line (e.g. date field with 
-      date picker image) */
+  /* Combobox marker classes to combine fields with images in one line (e.g. date field with
+       date picker image) */
 
 }
 .flz_form input[type="text"],
@@ -949,6 +947,12 @@ fieldset legend {
 .flz_form textarea {
   display: block;
   width: 99.4%;
+}
+.flz_form input[type="checkbox"],
+.flz_form input[type="radio"] {
+  margin: 0;
+  /* Label in combination with checkbox or radio should be inline */
+
 }
 .flz_form input[type="checkbox"] + label,
 .flz_form input[type="radio"] + label {
@@ -979,19 +983,19 @@ fieldset legend {
 /* Form workarounds */
 * html .flz_form {
   /**
-    * @workaround Differentiate input type text due to lack of selector support
-    * @affected IE 5, 6
-    */
+     * @workaround Differentiate input type text due to lack of selector support
+     * @affected IE 5, 6
+     */
 
   /**
-    * @workaround Correct margins of input type text and textareas within blocked forms
-    * @affected IE 5, 6
-    */
+     * @workaround Correct margins of input type text and textareas within blocked forms
+     * @affected IE 5, 6
+     */
 
   /**
-   * @workaround Correct margins in combobox 
-   * @affected IE 5, 6
-   */
+    * @workaround Correct margins in combobox
+    * @affected IE 5, 6
+    */
 
 }
 * html .flz_form .flz_textbox {
@@ -1013,26 +1017,28 @@ input[type="submit"],
 input[type="reset"],
 button {
   padding: 0.25em 0.35em;
+  margin: 0;
 }
 /* Button workarounds */
 * html .flz_button {
   /**
-    * @workaround Differentiate input type button, submit
-    * @affected IE 5, 6
-    */
+     * @workaround Differentiate input type button, submit
+     * @affected IE 5, 6
+     */
 
   padding: 0.25em 0.35em;
+  margin: 0;
   /**
-    * @workaround Omit too much left/right padding
-    * @affected IE 5, 6
-    */
+     * @workaround Omit too much left/right padding
+     * @affected IE 5, 6
+     */
 
   overflow: visible;
   padding: 0.25em 0.5em;
   /**
-    * @workaround Collapse tabele cell around button
-    * @affected IE 5+, 6
-    */
+     * @workaround Collapse tabele cell around button
+     * @affected IE 5+, 6
+     */
 
   width: 1;
 }
@@ -1042,16 +1048,17 @@ button {
 *:first-child + html input[type=reset],
 *:first-child + html button {
   /**
-    * @workaround Omit too much left/right padding
-    * @affected IE 7
-    */
+     * @workaround Omit too much left/right padding
+     * @affected IE 7
+     */
 
   overflow: visible;
   padding: 0.25em 0.5em;
+  margin: 0;
   /**
-    * @workaround Collapse table cell around button
-    * @affected IE 7
-    */
+     * @workaround Collapse table cell around button
+     * @affected IE 7
+     */
 
   width: 1;
 }

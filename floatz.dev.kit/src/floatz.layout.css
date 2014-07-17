@@ -10,7 +10,7 @@
  * @copyright     Copyright (c) 1998-2013 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-07-15
+ * @lastmodified  2014-07-16
  * @since         1.0.0
  */
 /**
@@ -349,10 +349,10 @@
 }
 .flz_l33,
 .flz_r33 {
-  width: 33.3%;
+  width: 33.33333%;
 }
 .flz_m33 {
-  width: 33.4%;
+  width: 33.33333%;
 }
 .flz_l40,
 .flz_m40,
@@ -371,7 +371,7 @@
 }
 .flz_l66,
 .flz_r66 {
-  width: 66.7%;
+  width: 66.66666%;
 }
 .flz_l75,
 .flz_r75 {

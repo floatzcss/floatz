@@ -1,183 +1,229 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-   <head>
-      <title>floatz - Test page for typography</title>
-      <meta http-equiv="content-type" content="text/html; CHARSET=iso-8859-1" />
-      <meta http-equiv="content-script-type" content="text/javascript" />
-      <meta http-equiv="content-style-type" content="text/css" />
-      <meta http-equiv="content-language" content="en" />
-      <meta name="author" content="" />
-      <meta name="robots" content="index,follow" />
-      <meta name="description" content="" />
-		<!-- For testing shrinked and compiled version -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.fixed.css" /> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.liquid.css" /> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.center.css" /> -->
-		<!-- For testing less version -->
-		<link rel="stylesheet/less" type="text/css" href="../src/floatz.less" />
-		<!-- <link rel="stylesheet/less" type="text/css" href="../src/floatz.layout.liquid.less" /> -->
-		<!-- <link rel="stylesheet/less" type="text/css" href="../src/floatz.layout.center.less" /> -->
-		<script type="text/javascript" src="../src/scripts/less-1.7.3.min.js"></script>
-		<!-- Only necessary if using one of the provided javascript modules -->
-		<!-- <script type="text/javascript" src="../src/scripts/LAB-2.0.3.min.js"></script> -->
-		<!-- <script type="text/javascript" src="scripts/demo.js"></script> -->
-      <style type="text/css">
-      </style>
-   </head>
-   <body>
-      <!-- page container -->
-      <div id="flz_page">
-         <h1>Header 1</h1>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h2>Header 2</h2>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h3>Header 3</h3>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h4>Header 4</h4>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h5>Header 5</h5>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h6>Header 6</h6>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h1>Text with image</h1>
-         <p>
-            <img src="images/floatz_logo.jpg" alt="" />
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h1>Unordered list</h1>
-         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
-         </ul>
-         <h1>Unordered list with text</h1>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
-         </ul>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h1>Nested unordered list</h1>
-         <ul>
-            <li>Item 1</li>
-            <li>Item 2
-               <ul>
-                  <li>Subitem 1</li>
-                  <li>Subitem 2
-                     <ul>
-                        <li>Subitem 1</li>
-                        <li>Subitem 2</li>
-                        <li>Subitem 3</li>
-                        <li>Subitem 4</li>
-                     </ul>
-                  </li>
-                  <li>Subitem 3</li>
-                  <li>Subitem 4</li>
-               </ul>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>floatz - Test page for typography</title>
+    <meta http-equiv="content-type" content="text/html; CHARSET=iso-8859-1"/>
+    <meta http-equiv="content-script-type" content="text/javascript"/>
+    <meta http-equiv="content-style-type" content="text/css"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="author" content=""/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content=""/>
+    <!-- For testing shrinked and compiled version -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.fixed.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.liquid.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.center.css" /> -->
+    <!-- For testing compiled less css -->
+    <link rel="stylesheet" type="text/css" href="../src/floatz.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="../src/floatz.layout.liquid.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../src/floatz.layout.center.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../src/debug/floatz.layout.debug.css"/> -->
+    <!-- Only necessary if using one of the provided javascript modules -->
+    <!-- <script type="text/javascript" src="../src/scripts/LAB-2.0.3.min.js"></script>-->
+    <!-- <script type="text/javascript" src="scripts/demo.js"></script> -->
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<!-- page container -->
+<div id="flz_page">
+<h1>Header 1</h1>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+
+<h2>Header 2</h2>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+
+<h3>Header 3</h3>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+<h4>Header 4</h4>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+<h5>Header 5</h5>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+<h6>Header 6</h6>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+
+<h1>Text with image</h1>
+
+<p>
+    <img src="images/floatz_logo.jpg" alt=""/>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+
+<h1>Unordered list</h1>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ul>
+<h1>Unordered list with text</h1>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ul>
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+
+<h1>Nested unordered list</h1>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2
+        <ul>
+            <li>Subitem 1</li>
+            <li>Subitem 2
+                <ul>
+                    <li>Subitem 1</li>
+                    <li>Subitem 2</li>
+                    <li>Subitem 3</li>
+                    <li>Subitem 4</li>
+                </ul>
             </li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
-         </ul>
-         <h1>Ordered List</h1>
-         <ol>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
-         </ol>
-         <h1>Ordered list with text</h1>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <ol>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
-         </ol>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h1>Nested ordered list</h1>
-         <ol>
-            <li>Item 1</li>
-            <li>Item 2
-               <ol>
-                  <li>Subitem 1</li>
-                  <li>Subitem 2
-                     <ol>
-                        <li>Subitem 1</li>
-                        <li>Subitem 2</li>
-                        <li>Subitem 3</li>
-                        <li>Subitem 4</li>
-                     </ol>
-                  </li>
-                  <li>Subitem 3</li>
-                  <li>Subitem 4</li>
-               </ol>
+            <li>Subitem 3</li>
+            <li>Subitem 4</li>
+        </ul>
+    </li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ul>
+<h1>Ordered List</h1>
+<ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ol>
+<h1>Ordered list with text</h1>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+<ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ol>
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+
+<h1>Nested ordered list</h1>
+<ol>
+    <li>Item 1</li>
+    <li>Item 2
+        <ol>
+            <li>Subitem 1</li>
+            <li>Subitem 2
+                <ol>
+                    <li>Subitem 1</li>
+                    <li>Subitem 2</li>
+                    <li>Subitem 3</li>
+                    <li>Subitem 4</li>
+                </ol>
             </li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
-         </ol>
-         <h1>Definition list</h1>
-         <dl>
-            <dt>Term 1</dt>
-            <dd>Definition 1</dd>
-         </dl>
-         <dl>
-            <dt>Term 2</dt>
-            <dd>Definition 2</dd>
-         </dl>
-         <dl>
-            <dt>Term 3</dt>
-            <dd>Definition 3</dd>
-         </dl>
-         <h1>Blockquote</h1>
-         <blockquote>
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </blockquote>
-         <h1>Blockquote with text</h1>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <blockquote>
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </blockquote>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <h1>Address</h1>
-         <address>
-            Lorem ipsum dolor sit amet,
-            consetetur sadipscing elitr,
-            sed diam nonumy eirmod tempor
-         </address>
-         <h1>Preformatted text</h1>
+            <li>Subitem 3</li>
+            <li>Subitem 4</li>
+        </ol>
+    </li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ol>
+<h1>Definition list</h1>
+<dl>
+    <dt>Term 1</dt>
+    <dd>Definition 1</dd>
+</dl>
+<dl>
+    <dt>Term 2</dt>
+    <dd>Definition 2</dd>
+</dl>
+<dl>
+    <dt>Term 3</dt>
+    <dd>Definition 3</dd>
+</dl>
+<h1>Blockquote</h1>
+<blockquote>
+    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+    Lorem ipsum dolor sit amet.
+</blockquote>
+<h1>Blockquote with text</h1>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+<blockquote>
+    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+    Lorem ipsum dolor sit amet.
+</blockquote>
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+
+<h1>Address</h1>
+<address>
+    Lorem ipsum dolor sit amet,
+    consetetur sadipscing elitr,
+    sed diam nonumy eirmod tempor
+</address>
+<h1>Preformatted text</h1>
 <pre>Lorem ipsum dolor sit amet,
    consetetur sadipscing elitr,
       sed diam nonumy eirmod tempor
@@ -187,120 +233,130 @@
       duo dolores et ea rebum. Stet
    clita kasd gubergren,
 no sea takimata sanctus est Lorem ipsum dolor sit amet.</pre>
-         <h1>Preformatted code</h1>
+<h1>Preformatted code</h1>
 <pre><code>.flz_box {
-   background-color: inherit;
-   clear: none;
-   float: left;
-   width: 100%;
-}</code></pre>
-         <h1>Logical text decoration</h1>
-         <p>
-            <em>em</em>
-            <em>strong</em>
-            <code>code</code>
-            <samp>samp</samp>
-            <kbd>kbd</kbd>
-            <cite>cite</cite>
-            <dfn>dfn</dfn>
-            <abbr>abbr</abbr>
-            <acronym>abbr</acronym>
-            <q>quote</q>
-            <del>del</del>
-            <ins>ins</ins>
-            <bdo dir="rtl">odb</bdo>
-         </p>
-         <h1>Physical text decoration</h1>
-         <p>
-            <b>bold</b>
-            <i>italic</i>
-            <tt>tt</tt>
-            <u>underline</u>
-            <strike>strike</strike>
-            <big>big</big>
-            <small>small</small>
-            <sup>sup</sup>
-            <sub>sub</sub>
-         </p>
-         <h1>Hyperlink</h1>
-         <a href="#">Hyperlink</a>
-         <a href="#"><img src="images/datepicker.gif" alt="" title="klick on me" /></a>
-         <h1>Text elements</h1>
-         <div>div 1</div>
-         <div>div 2</div>
-         <span>span 1</span> <span>span 2</span>
-         <h1>Horizontal rule</h1>
-         <hr />
-         <h1>Table</h1>
-         <table>
-            <caption>
-               Table caption
-            </caption>
-            <thead>
-               <tr>
-                  <th>Table header 1</th>
-                  <th>Table header 2</th>
-                  <th>Table header 3</th>
-               </tr>
-            </thead>
-            <tfoot>
-               <tr>
-                  <td>Table footer 1</td>
-                  <td>Table footer 2</td>
-                  <td>Table footer 3</td>
-               </tr>
-            </tfoot>
-            <tbody>
-               <tr>
-                  <td>Table data 1</td>
-                  <td>Table data 2</td>
-                  <td>Table data 3</td>
-               </tr>
-               <tr>
-                  <td>Table data 3</td>
-                  <td>Table data 4</td>
-                  <td>Table data 5</td>
-               </tr>
-            </tbody>
-         </table>
-         <h1>Table with text</h1>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-         <table>
-            <caption>
-               Table caption
-            </caption>
-            <thead>
-               <tr>
-                  <th>Table header 1</th>
-                  <th>Table header 2</th>
-                  <th>Table header 3</th>
-               </tr>
-            </thead>
-            <tfoot>
-               <tr>
-                  <td>Table footer 1</td>
-                  <td>Table footer 2</td>
-                  <td>Table footer 3</td>
-               </tr>
-            </tfoot>
-            <tbody>
-               <tr>
-                  <td>Table data 1</td>
-                  <td>Table data 2</td>
-                  <td>Table data 3</td>
-               </tr>
-               <tr>
-                  <td>Table data 3</td>
-                  <td>Table data 4</td>
-                  <td>Table data 5</td>
-               </tr>
-            </tbody>
-         </table>
-         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-         </p>
-      </div>
-   </body>
+    background-color: inherit;
+    clear: none;
+    float: left;
+    width: 100%;
+    }</code></pre>
+<h1>Logical text decoration</h1>
+
+<p>
+    <em>em</em>
+    <em>strong</em>
+    <code>code</code>
+    <samp>samp</samp>
+    <kbd>kbd</kbd>
+    <cite>cite</cite>
+    <dfn>dfn</dfn>
+    <abbr>abbr</abbr>
+    <acronym>abbr</acronym>
+    <q>quote</q>
+    <del>del</del>
+    <ins>ins</ins>
+    <bdo dir="rtl">odb</bdo>
+</p>
+<h1>Physical text decoration</h1>
+
+<p>
+    <b>bold</b>
+    <i>italic</i>
+    <tt>tt</tt>
+    <u>underline</u>
+    <strike>strike</strike>
+    <big>big</big>
+    <small>small</small>
+    <sup>sup</sup>
+    <sub>sub</sub>
+</p>
+<h1>Hyperlink</h1>
+<a href="#">Hyperlink</a>
+<a href="#"><img src="images/datepicker.gif" alt="" title="klick on me"/></a>
+
+<h1>Text elements</h1>
+
+<div>div 1</div>
+<div>div 2</div>
+<span>span 1</span> <span>span 2</span>
+
+<h1>Horizontal rule</h1>
+<hr/>
+<h1>Table</h1>
+<table>
+    <caption>
+        Table caption
+    </caption>
+    <thead>
+    <tr>
+        <th>Table header 1</th>
+        <th>Table header 2</th>
+        <th>Table header 3</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <td>Table footer 1</td>
+        <td>Table footer 2</td>
+        <td>Table footer 3</td>
+    </tr>
+    </tfoot>
+    <tbody>
+    <tr>
+        <td>Table data 1</td>
+        <td>Table data 2</td>
+        <td>Table data 3</td>
+    </tr>
+    <tr>
+        <td>Table data 3</td>
+        <td>Table data 4</td>
+        <td>Table data 5</td>
+    </tr>
+    </tbody>
+</table>
+<h1>Table with text</h1>
+
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+<table>
+    <caption>
+        Table caption
+    </caption>
+    <thead>
+    <tr>
+        <th>Table header 1</th>
+        <th>Table header 2</th>
+        <th>Table header 3</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <td>Table footer 1</td>
+        <td>Table footer 2</td>
+        <td>Table footer 3</td>
+    </tr>
+    </tfoot>
+    <tbody>
+    <tr>
+        <td>Table data 1</td>
+        <td>Table data 2</td>
+        <td>Table data 3</td>
+    </tr>
+    <tr>
+        <td>Table data 3</td>
+        <td>Table data 4</td>
+        <td>Table data 5</td>
+    </tr>
+    </tbody>
+</table>
+<p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+</div>
+</body>
 </html>

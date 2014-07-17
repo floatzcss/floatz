@@ -1,200 +1,271 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-   <head>
-      <title>floatz - Test page for panels</title>
-      <meta http-equiv="content-type" content="text/html; CHARSET=utf-8" />
-      <meta http-equiv="content-script-type" content="text/javascript" />
-      <meta http-equiv="content-style-type" content="text/css" />
-      <meta http-equiv="content-language" content="en" />
-      <meta name="author" content="" />
-      <meta name="robots" content="index,follow" />
-      <meta name="description" content="" />
-		<!-- For testing shrinked and compiled version -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.fixed.css" /> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.liquid.css" /> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.center.css" /> -->
-		<!-- For testing less version -->
-		<link rel="stylesheet/less" type="text/css" href="../src/floatz.less" />
-		<link rel="stylesheet/less" type="text/css" href="../src/floatz.layout.liquid.less" />
-		<!-- <link rel="stylesheet/less" type="text/css" href="../src/floatz.layout.center.less" /> -->
-		<script type="text/javascript" src="../src/scripts/less-1.7.3.min.js"></script>
-		<!-- Only necessary if using one of the provided javascript modules -->
-		<script type="text/javascript" src="../src/scripts/LAB-2.0.3.min.js"></script>
-		<script type="text/javascript" src="scripts/demo.js"></script>
-      <style type="text/css">
-      	.myheader {
-      		bottom: auto;
-      		height: 5em;
-      	}
-      	.mymenu {
-      		top: 5em;
-      		height: 2.2em;
-      		bottom: auto;
-      	}
-      	.mysidebar {
-      		bottom: 2em;
-      		right: auto;
-      		top: 7.2em;
-      		width: 20em;
-      	}
-      	.mycontent {
-      		bottom: 2em;
-      		left: 20em;
-      		top: 7.2em;
-      		padding-top: 1em;
-      	}
-         .mycontent h1, .mycontent h2, .mycontent p {
-            padding-bottom: 0.5em;
-         }
-         .mycontent h2 {
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>floatz - Test page for panels</title>
+    <meta http-equiv="content-type" content="text/html; CHARSET=utf-8"/>
+    <meta http-equiv="content-script-type" content="text/javascript"/>
+    <meta http-equiv="content-style-type" content="text/css"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="author" content=""/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content=""/>
+    <!-- For testing shrinked and compiled version -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.fixed.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.liquid.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.center.css" /> -->
+    <!-- For testing compiled less css -->
+    <link rel="stylesheet" type="text/css" href="../src/floatz.css"/>
+    <link rel="stylesheet" type="text/css" href="../src/floatz.layout.liquid.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../src/floatz.layout.center.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../src/debug/floatz.layout.debug.css"/> -->
+    <!-- Only necessary if using one of the provided javascript modules -->
+    <script type="text/javascript" src="../src/scripts/LAB-2.0.3.min.js"></script>
+    <script type="text/javascript" src="scripts/demo.js"></script>
+    <style type="text/css">
+        .myheader {
+            bottom: auto;
+            height: 5em;
+        }
+
+        .mymenu {
+            top: 5em;
+            height: 2.2em;
+            bottom: auto;
+        }
+
+        .mysidebar {
+            bottom: 2em;
+            right: auto;
+            top: 7.2em;
+            width: 20em;
+        }
+
+        .mycontent {
+            bottom: 2em;
+            left: 20em;
+            top: 7.2em;
             padding-top: 1em;
-         }
-      	.mybreadcrumb {
-      		height: 3em;
-      		bottom: auto;
-      	}
-      	.myarticle {
-      		top: 3em;
-      	}
-      	.myfooter {
-      		height: 2em;
-      		top: auto;
-      	}
-      	
-      	@media print {
-      	  .myheader, .mymenu, .mysidebar, .myfooter {
-      	     display: none;
-      	  }
-      	}      	
-      </style>
-   </head>
-   <body>
-   	<div class="flz_panel">
-   		<div class="flz_panel myheader">
-            <ul class="flz_listnav flz_topnav">
-               <li class="flz_selected"><a href="#">Item 1</a> |</li>
-               <li><a href="#">Item 2</a> |</li>
-               <li><a href="#">Item 3</a> |</li>
-               <li><a href="#">Item 4</a></li>
-            </ul>
-            header
-         </div>
-   		</div>
-   		<div class="flz_panel mymenu">
-            <div class="flz_box flz_hmenu">
-               <ul>
-                  <li class="flz_selected"><a href="#">Menu 1</a></li>
-                  <li><a href="#">Menu 2</a></li>
-                  <li><a href="#">Menu 3</a></li>
-                  <li><a href="#">Menu 4</a></li>
-               </ul>
-            </div>
-   		</div>
-   		<div class="flz_scrollpanel mysidebar">
-            <div class="flz_box flz_vmenu">
-               <ul>
-                  <li class="flz_selected"><a href="#">Menu 1</a>
-                     <ul>
-                        <li><a href="#">Menu 1</a>
-                           <ul>
-                              <li><a href="#">Menu 1</a>
-                                 <ul>
+        }
+
+        .mycontent h1, .mycontent h2, .mycontent p {
+            padding-bottom: 0.5em;
+        }
+
+        .mycontent h2 {
+            padding-top: 1em;
+        }
+
+        .mybreadcrumb {
+            height: 3em;
+            bottom: auto;
+        }
+
+        .myarticle {
+            top: 3em;
+        }
+
+        .myfooter {
+            height: 2em;
+            top: auto;
+        }
+
+        @media print {
+            .myheader, .mymenu, .mysidebar, .myfooter {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="flz_panel">
+    <div class="flz_panel myheader">
+        <ul class="flz_listnav flz_topnav">
+            <li class="flz_selected"><a href="#">Item 1</a> |</li>
+            <li><a href="#">Item 2</a> |</li>
+            <li><a href="#">Item 3</a> |</li>
+            <li><a href="#">Item 4</a></li>
+        </ul>
+        header
+    </div>
+</div>
+<div class="flz_panel mymenu">
+    <div class="flz_box flz_hmenu">
+        <ul>
+            <li class="flz_selected"><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+            <li><a href="#">Menu 4</a></li>
+        </ul>
+    </div>
+</div>
+<div class="flz_scrollpanel mysidebar">
+    <div class="flz_box flz_vmenu">
+        <ul>
+            <li class="flz_selected"><a href="#">Menu 1</a>
+                <ul>
+                    <li><a href="#">Menu 1</a>
+                        <ul>
+                            <li><a href="#">Menu 1</a>
+                                <ul>
                                     <li><a href="#">Menu 1</a>
-                                       <ul>
-                                          <li><a href="#">Menu 1</a></li>
-                                          <li><a href="#">Menu 2</a></li>
-                                       </ul>
+                                        <ul>
+                                            <li><a href="#">Menu 1</a></li>
+                                            <li><a href="#">Menu 2</a></li>
+                                        </ul>
                                     </li>
                                     <li><a href="#">Menu 2</a></li>
-                                 </ul>
-                              </li>
-                              <li><a href="#">Menu 2</a></li>
-                           </ul>
-                        </li>
-                        <li><a href="#">Menu 2</a></li>
-                     </ul>
-                  </li>
-                  <li><a href="#">Menu 2</a></li>
-                  <li><a href="#">Menu 3</a></li>
-                  <li><a href="#">Menu 4</a></li>
-                  <li><a href="#">Menu 5</a></li>
-               </ul>
-            </div>   		
-   		</div>
-   		<div class="flz_panel mycontent">
-   			<div class="flz_panel mybreadcrumb">
-	            <ul class="flz_listnav flz_breadcrumb">
-	               <li class="flz_selected"><a href="#">Item 1</a> &gt;</li>
-	               <li><a href="#">Item 2</a> &gt;</li>
-	               <li><a href="#">Item 3</a> &gt;</li>
-	               <li><a href="#">Item 4</a></li>
-	            </ul>
-   			</div>
-				<div class="flz_scrollpanel myarticle">
-	            <div class="flz_spacer">
-	               <h1>Lorem ipsum</h1>
-	               <p>
-	                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	               </p>
-	               <h2>Lorem ipsum</h2>
-	               <div class="flz_box flz_l50">
-	                  <div class="flz_lsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <div class="flz_box flz_r50">
-	                  <div class="flz_rsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <h2>Lorem ipsum</h2>
-	               <div class="flz_box flz_l50">
-	                  <div class="flz_lsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <div class="flz_box flz_r50">
-	                  <div class="flz_rsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <h2>Lorem ipsum</h2>
-	               <div class="flz_box flz_l50">
-	                  <div class="flz_lsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <div class="flz_box flz_r50">
-	                  <div class="flz_rsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <h2>Lorem ipsum</h2>
-	               <div class="flz_box flz_l50">
-	                  <div class="flz_lsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <div class="flz_box flz_r50">
-	                  <div class="flz_rsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <h2>Lorem ipsum</h2>
-	               <div class="flz_box flz_l50">
-	                  <div class="flz_lsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-	               <div class="flz_box flz_r50">
-	                  <div class="flz_rsubspacer">
-	                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	                  </div>
-	               </div>
-					</div> 
+                                </ul>
+                            </li>
+                            <li><a href="#">Menu 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Menu 2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+            <li><a href="#">Menu 4</a></li>
+            <li><a href="#">Menu 5</a></li>
+        </ul>
+    </div>
+</div>
+<div class="flz_panel mycontent">
+    <div class="flz_panel mybreadcrumb">
+        <ul class="flz_listnav flz_breadcrumb">
+            <li class="flz_selected"><a href="#">Item 1</a> &gt;</li>
+            <li><a href="#">Item 2</a> &gt;</li>
+            <li><a href="#">Item 3</a> &gt;</li>
+            <li><a href="#">Item 4</a></li>
+        </ul>
+    </div>
+    <div class="flz_scrollpanel myarticle">
+        <div class="flz_spacer">
+            <h1>Lorem ipsum</h1>
+
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+
+            <h2>Lorem ipsum</h2>
+
+            <div class="flz_box flz_l50">
+                <div class="flz_lsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
             </div>
-   		</div>
-   		<div class="flz_panel myfooter">Footer</div>
-   	</div>
-   </body>
+            <div class="flz_box flz_r50">
+                <div class="flz_rsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <h2>Lorem ipsum</h2>
+
+            <div class="flz_box flz_l50">
+                <div class="flz_lsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <div class="flz_box flz_r50">
+                <div class="flz_rsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <h2>Lorem ipsum</h2>
+
+            <div class="flz_box flz_l50">
+                <div class="flz_lsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <div class="flz_box flz_r50">
+                <div class="flz_rsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <h2>Lorem ipsum</h2>
+
+            <div class="flz_box flz_l50">
+                <div class="flz_lsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <div class="flz_box flz_r50">
+                <div class="flz_rsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <h2>Lorem ipsum</h2>
+
+            <div class="flz_box flz_l50">
+                <div class="flz_lsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <div class="flz_box flz_r50">
+                <div class="flz_rsubspacer">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="flz_panel myfooter">Footer</div>
+</div>
+</body>
 </html>

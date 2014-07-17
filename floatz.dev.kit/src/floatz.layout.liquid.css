@@ -4,13 +4,13 @@
  * Basic layouting elements for fluid layout
  *
  * @project       floatz CSS Framework
- * @version       1.3.0
+ * @version       1.2.0
  * @see           http://code.google.com/p/floatz/
  * @author        Harald Humml
  * @copyright     Copyright (c) 1998-2013 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-07-15
+ * @lastmodified  2014-07-16
  * @since         1.0.0
  */
 /**
@@ -18,10 +18,9 @@
  * @section       Page container (overloaded)
  * @app-base_css  fluidfloatz.layout.css
  *
- * Adds fluid layout and min-width (default 1024x768) support to page container.
+ * Adds fluid layout support to page container.
  */
 #flz_page {
-  min-width: 985px;
   width: 100%;
 }
 /**

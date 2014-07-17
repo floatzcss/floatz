@@ -1,185 +1,198 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-   <head>
-      <title>floatz - Test page for layouter</title>
-      <meta http-equiv="content-type" content="text/html; CHARSET=utf-8" />
-      <meta http-equiv="content-script-type" content="text/javascript" />
-      <meta http-equiv="content-style-type" content="text/css" />
-      <meta http-equiv="content-language" content="en" />
-      <meta name="author" content="" />
-      <meta name="robots" content="index,follow" />
-      <meta name="description" content="" />
-		<!-- For testing shrinked and compiled version -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.fixed.css" /> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.liquid.css" /> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.center.css" /> -->
-		<!-- For testing less version -->
-		<link rel="stylesheet/less" type="text/css" href="../src/floatz.css" />
-		<link rel="stylesheet/less" type="text/css" href="../src/floatz.layout.liquid.css" />
-		<!-- <link rel="stylesheet/less" type="text/css" href="../src/floatz.layout.center.css" /> -->
-      	<link rel="stylesheet/less" type="text/css" href="../src/debug/floatz.layout.debug.css" />
-		<!-- Only necessary if using one of the provided javascript modules -->
-		<!-- <script type="text/javascript" src="../src/scripts/LAB-2.0.3.min.js"></script>-->
-		<!-- <script type="text/javascript" src="scripts/demo.js"></script> -->
-      <style type="text/css">
-         body {
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>floatz - Test page for layouter</title>
+    <meta http-equiv="content-type" content="text/html; CHARSET=utf-8"/>
+    <meta http-equiv="content-script-type" content="text/javascript"/>
+    <meta http-equiv="content-style-type" content="text/css"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="author" content=""/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content=""/>
+    <!-- For testing shrinked and compiled version -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.fixed.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.liquid.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../floatz/floatz.center.css" /> -->
+    <!-- For testing compiled less css -->
+    <link rel="stylesheet" type="text/css" href="../src/floatz.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="../src/floatz.layout.liquid.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../src/floatz.layout.center.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../src/debug/floatz.layout.debug.css"/>
+    <!-- Only necessary if using one of the provided javascript modules -->
+    <!-- <script type="text/javascript" src="../src/scripts/LAB-2.0.3.min.js"></script>-->
+    <!-- <script type="text/javascript" src="scripts/demo.js"></script> -->
+    <style type="text/css">
+        body {
             background-color: #efefef;
-         }
-      </style>
-   </head>
-   <body>
-      <!-- page container -->
-      <div id="flz_page">
-         <h1>Layouter</h1>
-         <div class="flz_box">
-            default
-         </div>
-         <h1>Layouter 100</h1>
-         <div class="flz_box flz_r100">
-            flz_r100
-         </div>
-         <h1>Layouter 90/10</h1>
-         <div class="flz_box flz_l90">
-            flz_l90
-         </div>
-         <div class="flz_box flz_r10">
-            flz_r10
-         </div>
-         <div class="flz_box flz_l10">
-            flz_l10
-         </div>
-         <div class="flz_box flz_r90">
-            flz_r90
-         </div>
-         <h1>Layouter 80/20</h1>
-         <div class="flz_box flz_l80">
-            flz_l80
-         </div>
-         <div class="flz_box flz_r20">
-            flz_r20
-         </div>
-         <div class="flz_box flz_l20">
-            flz_l20
-         </div>
-         <div class="flz_box flz_r80">
-            flz_r80
-         </div>
-         <h1>Layouter 75/25</h1>
-         <div class="flz_box flz_l75">
-            flz_l75
-         </div>
-         <div class="flz_box flz_r25">
-            flz_r25
-         </div>
-         <div class="flz_box flz_l25">
-            flz_l25
-         </div>
-         <div class="flz_box flz_r75">
-            flz_r75
-         </div>
-         <h1>Layouter 66/33</h1>
-         <div class="flz_box flz_l66">
-            flz_l66
-         </div>
-         <div class="flz_box flz_r33">
-            flz_r33
-         </div>
-         <div class="flz_box flz_l33">
-            flz_l33
-         </div>
-         <div class="flz_box flz_r66">
-            flz_r66
-         </div>
-         <h1>Layouter 60/40</h1>
-         <div class="flz_box flz_l60">
-            flz_l60
-         </div>
-         <div class="flz_box flz_r40">
-            flz_r40
-         </div>
-         <div class="flz_box flz_l40">
-            flz_l40
-         </div>
-         <div class="flz_box flz_r60">
-            flz_r60
-         </div>
-         <h1>Layouter 50/50</h1>
-         <div class="flz_box flz_l50">
-            flz_l50
-         </div>
-         <div class="flz_box flz_r50">
-            flz_r50
-         </div>
-         <h1>Layouter 33/33/33</h1>
-         <div class="flz_box flz_l33">
-            flz_l33
-         </div>
-         <div class="flz_box flz_m33">
-            flz_m33
-         </div>
-         <div class="flz_box flz_r33">
-            flz_r33
-         </div>
-         <h1>Layouter 25/25/25/25</h1>
-         <div class="flz_box flz_l25">
-            flz_l25
-         </div>
-         <div class="flz_box flz_m25">
-            flz_m25
-         </div>
-         <div class="flz_box flz_m25">
-            flz_m25
-         </div>
-         <div class="flz_box flz_r25">
-            flz_r25
-         </div>
-         <h1>Layouter 20/20/20/20/20</h1>
-         <div class="flz_box flz_l20">
-            flz_l20
-         </div>
-         <div class="flz_box flz_m20">
-            flz_m20
-         </div>
-         <div class="flz_box flz_m20">
-            flz_m20
-         </div>
-         <div class="flz_box flz_m20">
-            flz_m20
-         </div>
-         <div class="flz_box flz_r20">
-            flz_r20
-         </div>
-         <h1>Layouter 10/10/10/10/10/10/10/10/10/10</h1>
-         <div class="flz_box flz_l10">
-            flz_l10
-         </div>
-         <div class="flz_box flz_m10">
-            flz_m10
-         </div>
-         <div class="flz_box flz_m10">
-            flz_m10
-         </div>
-         <div class="flz_box flz_m10">
-            flz_m10
-         </div>
-         <div class="flz_box flz_m10">
-            flz_m10
-         </div>
-         <div class="flz_box flz_m10">
-            flz_m10
-         </div>
-         <div class="flz_box flz_m10">
-            flz_m10
-         </div>
-         <div class="flz_box flz_m10">
-            flz_m10
-         </div>
-         <div class="flz_box flz_m10">
-            flz_m10
-         </div>
-         <div class="flz_box flz_r10">
-            flz_r10
-         </div>
-      </div>
-   </body>
+        }
+    </style>
+</head>
+<body>
+<!-- page container -->
+<div id="flz_page">
+    <h1>Layouter</h1>
+
+    <div class="flz_box">
+        default
+    </div>
+    <h1>Layouter 100</h1>
+
+    <div class="flz_box flz_r100">
+        flz_r100
+    </div>
+    <h1>Layouter 90/10</h1>
+
+    <div class="flz_box flz_l90">
+        flz_l90
+    </div>
+    <div class="flz_box flz_r10">
+        flz_r10
+    </div>
+    <div class="flz_box flz_l10">
+        flz_l10
+    </div>
+    <div class="flz_box flz_r90">
+        flz_r90
+    </div>
+    <h1>Layouter 80/20</h1>
+
+    <div class="flz_box flz_l80">
+        flz_l80
+    </div>
+    <div class="flz_box flz_r20">
+        flz_r20
+    </div>
+    <div class="flz_box flz_l20">
+        flz_l20
+    </div>
+    <div class="flz_box flz_r80">
+        flz_r80
+    </div>
+    <h1>Layouter 75/25</h1>
+
+    <div class="flz_box flz_l75">
+        flz_l75
+    </div>
+    <div class="flz_box flz_r25">
+        flz_r25
+    </div>
+    <div class="flz_box flz_l25">
+        flz_l25
+    </div>
+    <div class="flz_box flz_r75">
+        flz_r75
+    </div>
+    <h1>Layouter 66/33</h1>
+
+    <div class="flz_box flz_l66">
+        flz_l66
+    </div>
+    <div class="flz_box flz_r33">
+        flz_r33
+    </div>
+    <div class="flz_box flz_l33">
+        flz_l33
+    </div>
+    <div class="flz_box flz_r66">
+        flz_r66
+    </div>
+    <h1>Layouter 60/40</h1>
+
+    <div class="flz_box flz_l60">
+        flz_l60
+    </div>
+    <div class="flz_box flz_r40">
+        flz_r40
+    </div>
+    <div class="flz_box flz_l40">
+        flz_l40
+    </div>
+    <div class="flz_box flz_r60">
+        flz_r60
+    </div>
+    <h1>Layouter 50/50</h1>
+
+    <div class="flz_box flz_l50">
+        flz_l50
+    </div>
+    <div class="flz_box flz_r50">
+        flz_r50
+    </div>
+    <h1>Layouter 33/33/33</h1>
+
+    <div class="flz_box flz_l33">
+        flz_l33
+    </div>
+    <div class="flz_box flz_m33">
+        flz_m33
+    </div>
+    <div class="flz_box flz_r33">
+        flz_r33
+    </div>
+    <h1>Layouter 25/25/25/25</h1>
+
+    <div class="flz_box flz_l25">
+        flz_l25
+    </div>
+    <div class="flz_box flz_m25">
+        flz_m25
+    </div>
+    <div class="flz_box flz_m25">
+        flz_m25
+    </div>
+    <div class="flz_box flz_r25">
+        flz_r25
+    </div>
+    <h1>Layouter 20/20/20/20/20</h1>
+
+    <div class="flz_box flz_l20">
+        flz_l20
+    </div>
+    <div class="flz_box flz_m20">
+        flz_m20
+    </div>
+    <div class="flz_box flz_m20">
+        flz_m20
+    </div>
+    <div class="flz_box flz_m20">
+        flz_m20
+    </div>
+    <div class="flz_box flz_r20">
+        flz_r20
+    </div>
+    <h1>Layouter 10/10/10/10/10/10/10/10/10/10</h1>
+
+    <div class="flz_box flz_l10">
+        flz_l10
+    </div>
+    <div class="flz_box flz_m10">
+        flz_m10
+    </div>
+    <div class="flz_box flz_m10">
+        flz_m10
+    </div>
+    <div class="flz_box flz_m10">
+        flz_m10
+    </div>
+    <div class="flz_box flz_m10">
+        flz_m10
+    </div>
+    <div class="flz_box flz_m10">
+        flz_m10
+    </div>
+    <div class="flz_box flz_m10">
+        flz_m10
+    </div>
+    <div class="flz_box flz_m10">
+        flz_m10
+    </div>
+    <div class="flz_box flz_m10">
+        flz_m10
+    </div>
+    <div class="flz_box flz_r10">
+        flz_r10
+    </div>
+</div>
+</body>
 </html>
