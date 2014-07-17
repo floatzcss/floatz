@@ -19,6 +19,14 @@
  * @lastmodified  2014-07-17
  */
 
+/**
+ * TODO Test for different user agent strings.
+ * TODO Solve version number in safari, not set
+ * TODO Other platforms? Firefox OS, Blackberry?
+ */
+
+
+
 window.floatz.userAgent = (function () {
 	"use strict";
 
