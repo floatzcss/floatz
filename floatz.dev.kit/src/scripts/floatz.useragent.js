@@ -75,6 +75,7 @@ window.floatz.userAgent = (function () {
 		platform: "",
 		platformVersion: "",
 
+		/* Helper methods */
 		isMobileWebkit: isMobileWebkit,
 		isMobile: isMobile,
 		isBrowser: isBrowser,
