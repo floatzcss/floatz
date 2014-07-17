@@ -9,14 +9,14 @@
  * Depends on: floatz.js
  *
  * @project       floatz CSS Framework
- * @version       1.2.0
+ * @version       1.3.0
  * @since         1.2.0
- * @see           http://code.google.com/p/floatz/
+ * @see           https://github.com/floatzcss/floatz
  * @author        Harald Humml
- * @copyright     Copyright (c) 1998-2012 by :humml:design
+ * @copyright     Copyright (c) 1998-2014 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2012-11-05
+ * @lastmodified  2014-07-17
  */
 
 window.floatz.browser = (function() {
@@ -35,7 +35,7 @@ window.floatz.browser = (function() {
 		/* Fields */
 		module : {
 			name : "floatz.browser",
-			version : "1.2.0",
+			version : "1.3.0",
 			start : start
 		},
 

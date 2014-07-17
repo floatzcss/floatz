@@ -10,16 +10,16 @@
  * Depends on: floatz.js
  *
  * @project       floatz CSS Framework
- * @version       1.2.0
+ * @version       1.3.0
  * @since         1.2.0
- * @see           http://code.google.com/p/floatz/
+ * @see           https://github.com/floatzcss/floatz
  * @author        Harald Humml
- * @copyright     Copyright (c) 1998-2012 by :humml:design
+ * @copyright     Copyright (c) 1998-2014 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
  * @lastmodified  2012-11-05
  */
-(function() {
+window.floatz.skiplink = (function() {
 	"use strict";
 
 	////////////////////////////////////////////////////

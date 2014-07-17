@@ -1,5 +1,6 @@
 // Load jquery, less and floatz in correct order
-$LAB.script("../src/scripts/jquery-1.11.1.min.js")
+// $LAB.script("../src/scripts/jquery-1.11.1.min.js")
+$LAB.script("../src/scripts/jquery-1.8.2.js")
 	 .script("../src/scripts/floatz.js").wait()
 	 .script("../src/scripts/floatz.browser.js").wait()
 	 .script("../src/scripts/floatz.mobile.js")
@@ -10,8 +11,8 @@ $LAB.script("../src/scripts/jquery-1.11.1.min.js")
 			floatz.start({
 				debug : true,
 				logLevel : floatz.LOGLEVEL.DEBUG,
-				modules : ["floatz.browser", 
-				           "floatz.mobile", 
+				modules : ["floatz.browser",
+				           "floatz.mobile",
 				           "floatz.skiplink",
 				           "custom"]
 			});
