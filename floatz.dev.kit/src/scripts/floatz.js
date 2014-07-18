@@ -108,7 +108,8 @@ window.floatz = (function () {
             isBrowser: isBrowser,
             isPlatform: isPlatform,
             isEngine: isEngine,
-            isDevice: isDevice
+            isDevice: isDevice,
+            analyze: analyzeUserAgent
         }
 	};
 
@@ -308,8 +309,8 @@ window.floatz = (function () {
         if (/iphone|ipod/.test(ua) || /ipad/.test(ua)) {
             self.userAgent.platform = PLATFORM.IOS;
             self.userAgent.platformVersion = isDevice(DEVICE.IPHONE) ?
-                (self.match(/.+(?:iphone\ os)[\/: ]([\d_]+)/) || [0, 0])[1].toString().split('_').join('.') :
-                (self.match(/.+(?:cpu\ os)[\/: ]([\d_]+)/) || [0, 0])[1].toString().split('_').join('.');
+                (ua.match(/.+(?:iphone\ os)[\/: ]([\d_]+)/) || [0, 0])[1].toString().split('_').join('.') :
+                (ua.match(/.+(?:cpu\ os)[\/: ]([\d_]+)/) || [0, 0])[1].toString().split('_').join('.');
         } else if (/android/.test(ua)) {
             self.userAgent.platform = PLATFORM.ANDROID;
             self.userAgent.platformVersion = "" + (ua.match(/.+(?:android)[\/: ]([\d.]+)/) || [0, 0])[1];
@@ -318,6 +319,7 @@ window.floatz = (function () {
             self.userAgent.platformVersion = "" + (ua.match(/.+(?:windows\ phone\ os)[\/: ]([\d_]+)/) || [0, 0])[1];
         } else if (/macintosh/.test(ua)) {
             self.userAgent.platform = PLATFORM.MAC;
+            self.userAgent.platformVersion = (ua.match(/.+(?:mac\ os x)[\/: ]([\d_.]+)/) || [0, 0])[1].toString().split('_').join('.');
         } else if (/windows/.test(ua)) {
             self.userAgent.platform = PLATFORM.WIN;
         } else if (/linux/.test(ua)) {
