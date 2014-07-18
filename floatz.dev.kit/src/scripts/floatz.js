@@ -19,6 +19,13 @@
  * @lastmodified  2014-07-17
  */
 
+/**
+ * TODO Test for different user agent strings.
+ * TODO Other platforms? Firefox OS, Blackberry?
+ * TODO Does not work in iOS?
+ */
+
+
 window.floatz = (function () {
 	"use strict";
 
@@ -35,6 +42,39 @@ window.floatz = (function () {
 			DEBUG: 3
 		},
 
+        BROWSER: {
+            CHROME: "Chrome",
+            FIREFOX: "Firefox",
+            MSIE: "Internet Explorer",
+            OPERA: "Opera",
+            SAFARI: "Safari"
+        },
+
+        PLATFORM: {
+            ANDROID: "Android",
+            CHROMEOS: "Chrome OS",
+            IOS: "iOS",
+            LINUX: "Linux",
+            MAC: "Macintosh",
+            WIN: "Windows",
+            WINPHONE: "Windows Phone"
+        },
+
+        DEVICE: {
+            IPAD: "iPad",
+            IPHONE: "iPhone",
+            WINPHONE: "Windows Phone",
+            DESKTOP: "Desktop",
+            NA: "n.a."
+        },
+
+        ENGINE: {
+            GECKO: "Gecko",
+            MOZILLA: "Mozilla",
+            PRESTO: "Presto",
+            WEBKIT: "Webkit"
+        },
+
 		/* Fields */
 		loadedModules: [],
 		module: {
@@ -50,13 +90,36 @@ window.floatz = (function () {
 		string: {
 			lpad: lpad,
 			rpad: rpad
-		}
+		},
+
+        /* User agent */
+        userAgent: {
+            /* Fields */
+            browser: "",
+            browserVersion: "",
+            device: "",
+            engine: "",
+            platform: "",
+            platformVersion: "",
+
+            /* Helper methods */
+            isMobileWebkit: isMobileWebkit,
+            isMobile: isMobile,
+            isBrowser: isBrowser,
+            isPlatform: isPlatform,
+            isEngine: isEngine,
+            isDevice: isDevice
+        }
 	};
 
 	////////////////////////////////////////////////////
 	// Private variables
 
 	var LOGLEVEL = self.LOGLEVEL;
+    var BROWSER = self.BROWSER;
+    var PLATFORM = self.PLATFORM;
+    var DEVICE = self.DEVICE;
+    var ENGINE = self.ENGINE;
 	var loadedModules = self.loadedModules;
 	var module = self.module;
 	var config = {
@@ -87,6 +150,9 @@ window.floatz = (function () {
 
 		// Mix options and defaults
 		$.extend(config, options);
+
+        // Analyze user agent
+        analyzeUserAgent(navigator.userAgent);
 
 		// Find modules to start
 		log(LOGLEVEL.INFO, "Module " + module.name + " started", module.name);
@@ -204,6 +270,139 @@ window.floatz = (function () {
 		}
 		return pstr;
 	}
+
+    /**
+     * Analyze user agent.
+     * @param agent User agent string
+     * @since 1.3.0
+     */
+    function analyzeUserAgent(agent) {
+
+        var ua = agent.toLowerCase();
+        floatz.log(floatz.LOGLEVEL.DEBUG, ua, module.name);
+
+        // Read browser and version
+        if (/chrome/.test(ua)) {
+            self.userAgent.browser = BROWSER.CHROME;
+        } else if (/firefox/.test(ua)) {
+            self.userAgent.browser = BROWSER.FIREFOX;
+        } else if (/msie/.test(ua) && !/opera/.test(ua)) {
+            self.userAgent.browser = BROWSER.MSIE;
+        } else if (/opera/.test(ua)) {
+            self.userAgent.browser = BROWSER.OPERA;
+        } else if (/webkit/.test(ua) && !/chrome/.test(ua)) {
+            self.userAgent.browser = BROWSER.SAFARI;
+        }
+        self.userAgent.browserVersion = (ua.match(/.+(?:rv|it|ra|ie|me|ve|ion)[\/: ]([\d.]+)/) || [])[1];
+
+        // Read device and version
+        if (/ipad/.test(ua)) {
+            self.userAgent.device = DEVICE.IPAD
+        } else if (/iphone|ipod/.test(ua)) {
+            self.userAgent.device = DEVICE.IPHONE;
+        } else if (/windows\ phone/.test(ua)) {
+            self.userAgent.device = DEVICE.WINPHONE;
+        }
+
+        // Read platform and version
+        if (/iphone|ipod/.test(ua) || /ipad/.test(ua)) {
+            self.userAgent.platform = PLATFORM.IOS;
+            self.userAgent.platformVersion = isDevice(DEVICE.IPHONE) ?
+                (self.match(/.+(?:iphone\ os)[\/: ]([\d_]+)/) || [0, 0])[1].toString().split('_').join('.') :
+                (self.match(/.+(?:cpu\ os)[\/: ]([\d_]+)/) || [0, 0])[1].toString().split('_').join('.');
+        } else if (/android/.test(ua)) {
+            self.userAgent.platform = PLATFORM.ANDROID;
+            self.userAgent.platformVersion = "" + (ua.match(/.+(?:android)[\/: ]([\d.]+)/) || [0, 0])[1];
+        } else if (/windows\ phone/.test(ua)) {
+            self.userAgent.platform = PLATFORM.WINPHONE;
+            self.userAgent.platformVersion = "" + (ua.match(/.+(?:windows\ phone\ os)[\/: ]([\d_]+)/) || [0, 0])[1];
+        } else if (/macintosh/.test(ua)) {
+            self.userAgent.platform = PLATFORM.MAC;
+        } else if (/windows/.test(ua)) {
+            self.userAgent.platform = PLATFORM.WIN;
+        } else if (/linux/.test(ua)) {
+            self.userAgent.platform = PLATFORM.LINUX;
+        } else if (/cros/.test(ua)) {
+            self.userAgent.platform = PLATFORM.CHROMEOS;
+        }
+
+        // Read device based on platform if empty
+        if (isDevice("")) {
+            self.userAgent.device = isPlatform(PLATFORM.MAC) || isPlatform(PLATFORM.WIN) ||
+                isPlatform(PLATFORM.LINUX) || isPlatform(PLATFORM.CHROMEOS) ? DEVICE.DESKTOP : DEVICE.NA;
+        }
+
+        // Read engine
+        if (/[^like]{4} gecko/.test(ua)) {
+            self.userAgent.engine = ENGINE.GECKO;
+        } else if (/mozilla/.test(ua) && !/(compatible|webkit)/.test(ua)) {
+            self.userAgent.engine = ENGINE.MOZILLA;
+        } else if (/presto/.test(ua)) {
+            self.userAgent.engine = ENGINE.PRESTO;
+        } else if (/webkit/.test(ua)) {
+            self.userAgent.engine = ENGINE.WEBKIT;
+        }
+    }
+
+    /**
+     * Check if mobile webkit browser.
+     *
+     * @return {boolean} true if mobile webkit, false if not
+     * @since 1.2.0
+     */
+    function isMobileWebkit() {
+        return isEngine(ENGINE.WEBKIT) && (isPlatform(PLATFORM.ANDROID) || isPlatform(PLATFORM.IOS));
+    }
+
+    /**
+     * Check if mobile browser.
+     *
+     * @return {boolean} true if mobile, false if not
+     * @since 1.2.0
+     */
+    function isMobile() {
+        return isPlatform(PLATFORM.ANDROID) || isPlatform(PLATFORM.IOS) || isPlatform(PLATFORM.WINPHONE);
+    }
+
+    /**
+     * Check browser.
+     * @param browser Browser contant
+     * @returns {boolean} true if browser, false if not
+     * @since 1.3.0
+     */
+    function isBrowser(browser) {
+        return self.userAgent.browser === browser;
+    }
+
+    /**
+     * Check engine.
+     * @param engine Engine constant
+     * @returns {boolean} true if engine, false if not
+     * @since 1.3.0
+     */
+    function isEngine(engine) {
+        return self.userAgent.engine === engine;
+    }
+
+    /**
+     * Check platform.
+     * @param platform Platform constant
+     * @returns {boolean} true if platform, false if not
+     * @since 1.3.0
+     */
+    function isPlatform(platform) {
+        return self.userAgent.platform === platform;
+    }
+
+    /**
+     * Check device.
+     * @param device Device constant
+     * @returns {boolean} true if device, false if not
+     * @since 1.3.0
+     */
+    function isDevice(device) {
+        return self.userAgent.device === device;
+    }
 
 	////////////////////////////////////////////////////
 	// Init code
