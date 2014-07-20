@@ -104,8 +104,9 @@ Alternatively the boxes of each row can be surrounded with an additional box whi
 ```
 See it live: http://codepen.io/floatz/pen/foBvy
 
-
 ###Spacers
+Spacers are used to add whitespace to boxes. According to layouters it is necessary that you follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding box to make them work consistently.
+
 ```
 <div class="flz_box flz_r25">
    <div class="flz_lspacer">
@@ -123,3 +124,4 @@ See it live: http://codepen.io/floatz/pen/foBvy
    </div>
 </div>
 ```
+See it live: http://codepen.io/floatz/pen/HzIrA
