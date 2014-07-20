@@ -1,6 +1,6 @@
 // Load jquery, less and floatz in correct order
 $LAB.script("../src/scripts/jquery-1.11.1.min.js")
-	.script("../src/scripts/ua-parser-v0.7.0.min.js").wait()
+	.script("../src/scripts/ua-parser-0.7.0.min.js").wait()
 	.script("../src/scripts/floatz.js").wait()
 	.script("../src/scripts/floatz.mobile.js")
 	.script("../src/scripts/floatz.skiplink.js")
