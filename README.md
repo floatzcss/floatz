@@ -13,15 +13,29 @@ floatz
 
 ##Basic concepts
 
-<p data-height="259" data-theme-id="0" data-slug-hash="BoiLj" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/floatz/pen/BoiLj/'>BoiLj</a> by floatz (<a href='http://codepen.io/floatz'>@floatz</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//codepen.io/assets/embed/ei.js"></script>
-
 ###Boxes
+The basic layout class is the left floating box.
+
 ```
 <div class="flz_box">
    ...
 </div>
 ```
+See it live: http://codepen.io/floatz/pen/BoiLj/
+
+It can be customized easily via CSS.
+
+```
+.header {
+  background-color: #444;
+  color: #fff;
+}
+...
+<div class="flz_box header">
+   ...
+</div>
+```
+See it live: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
 ```
