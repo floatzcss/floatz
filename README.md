@@ -81,7 +81,7 @@ Usually the sum of all layouters in a row should be 100%. If not, clear the floa
 ```
 See it live: http://codepen.io/floatz/pen/kLaeC
 
-Alternatively the boxes of each row can be surrounded with an additional box which is the most stable solution especially when you are dealing with boxes of different heights.
+Alternatively the boxes of each row can be surrounded with an additional box which is the most stable solution especially when dealing with boxes of different heights.
 ```
 <!-- First row -->
 <div class="flz_box">
