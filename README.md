@@ -13,6 +13,9 @@ floatz
 
 ##Basic concepts
 
+<p data-height="259" data-theme-id="0" data-slug-hash="BoiLj" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/floatz/pen/BoiLj/'>BoiLj</a> by floatz (<a href='http://codepen.io/floatz'>@floatz</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//codepen.io/assets/embed/ei.js"></script>
+
 ###Boxes
 ```
 <div class="flz_box">
