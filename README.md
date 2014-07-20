@@ -56,6 +56,49 @@ By default each box gets 100% of the width from its parent element. Use layouter
 ```
 See it live: http://codepen.io/floatz/pen/lzAew
 
+Usually the sum of all layouters in a row should be 100%. If not you have to clear the float by attaching *flz_clear* to the first box of the next row.
+
+```
+<!-- First row -->
+<div class="flz_box flz_l25">
+   ...
+</div>
+<div class="flz_box flz_r50">
+   ...
+</div>
+<!-- Second row -->
+<div class="flz_box flz_l25 flz_clear">
+   ...
+</div>
+<div class="flz_box flz_r75">
+   ...
+</div>
+```
+See it live: http://codepen.io/floatz/pen/kLaeC
+
+Alternatively you can surround each row with an additional box.
+```
+<!-- First row -->
+<div class="flz_box">
+   <div class="flz_box flz_l25">
+      ...
+   </div>
+   <div class="flz_box flz_r50">
+      ...
+   </div>
+</div>
+<!-- Second row -->
+<div class="flz_box">
+   <div class="flz_box flz_l25 flz_clear">
+      ...
+   </div>
+   <div class="flz_box flz_r75">
+      ...
+   </div>
+</div>
+```
+See it live: http://codepen.io/floatz/pen/foBvy
+
 The following layouters are provided out-of-the-box:
 
 | Layouter                | Widths                                          |
