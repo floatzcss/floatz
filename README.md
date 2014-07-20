@@ -38,6 +38,8 @@ It can be customized easily via CSS.
 See it live: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
+By default each box gets 100% width from its parent element. Layouters are used to give them specific widths.
+
 ```
 <div class="flz_box flz_r25">
    ...
@@ -49,6 +51,8 @@ See it live: http://codepen.io/floatz/pen/KLakm
    ...
 </div>
 ```
+See it live: http://codepen.io/floatz/pen/lzAew
+
 
 ###Spacers
 ```
