@@ -11,12 +11,47 @@ floatz
 * April 5th, 2010 - Version 1.1.0 released
 * January 5th, 2010 - Version 1.0.1 released
 
- 
 ##Basic concepts
 
+###Boxes
 ```
 <div class="flz_box">
-  <p>
-  </p>
+   ...
 </div>
 ```
+
+###Layouters
+```
+<div class="flz_box flz_r25">
+   ...
+</div>
+<div class="flz_box flz_m50">
+   ...
+</div>
+<div class="flz_box flz_r25">
+   ...
+</div>
+```
+
+###Spacers
+```
+<div class="flz_box flz_r25">
+   <div class="flz_lspacer">
+   ...
+   </div>
+</div>
+<div class="flz_box flz_m50">
+   <div class="flz_mspacer">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_r25">
+   <div class="flz_rspacer">
+      ...
+   </div>
+</div>
+```
+
+
+
+
