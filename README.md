@@ -38,13 +38,16 @@ It can be customized easily via CSS.
 See it live: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
-By default each box gets 100% of the width from its parent element. Use layouters to give them specific widths.
+By default each box gets 100% of the width from its parent element. Use layouters to give them specific widths. You have to take care that you use the correct depending on the box position (l=left, m=mid, r=right).
 
 ```
 <div class="flz_box flz_l25">
    ...
 </div>
-<div class="flz_box flz_m50">
+<div class="flz_box flz_m25">
+   ...
+</div>
+<div class="flz_box flz_m25">
    ...
 </div>
 <div class="flz_box flz_r25">
