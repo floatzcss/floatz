@@ -38,7 +38,7 @@ It can be customized easily via CSS.
 See it live: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
-By default each box gets 100% of the width from its parent element. Use layouters to give them specific widths. You have to take care that you use the correct depending on the box position (l=left, m=mid, r=right).
+By default each box gets 100% of the width from its parent element. Use layouters to give them specific widths. It is important to use the correct layouter according to the position of the box (l=left, m=mid, r=right) to make them work properly in all browsers.
 
 ```
 <div class="flz_box flz_l25">
@@ -56,7 +56,7 @@ By default each box gets 100% of the width from its parent element. Use layouter
 ```
 See it live: http://codepen.io/floatz/pen/lzAew
 
-Usually the sum of all layouters in a row should be 100%. If not you have to clear the float by attaching *flz_clear* to the first box of the next row.
+Usually the sum of all layouters in a row should be 100%. If not, clear the float by attaching **flz_clear** to the first box of the next row.
 
 ```
 <!-- First row -->
@@ -76,7 +76,7 @@ Usually the sum of all layouters in a row should be 100%. If not you have to cle
 ```
 See it live: http://codepen.io/floatz/pen/kLaeC
 
-Alternatively you can surround each row with an additional box.
+Alternatively the boxes of each row can be surrounded with an additional box.
 ```
 <!-- First row -->
 <div class="flz_box">
