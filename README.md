@@ -14,7 +14,7 @@ floatz
 ##Basic concepts
 
 ###Boxes
-The basic layout class is the left floating box.
+The basic layout class is a box. Each box is left floating (this is where the name of floatz comes from).
 ```
 <div class="flz_box">
    ...
@@ -22,7 +22,7 @@ The basic layout class is the left floating box.
 ```
 See it live: http://codepen.io/floatz/pen/BoiLj/
 
-It can be customized easily via CSS.
+Boxes can be easily customized via CSS.
 ```
 .header {
   background-color: #444;
