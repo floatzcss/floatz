@@ -15,7 +15,6 @@ floatz
 
 ###Boxes
 The basic layout class is the left floating box.
-
 ```
 <div class="flz_box">
    ...
@@ -24,7 +23,6 @@ The basic layout class is the left floating box.
 See it live: http://codepen.io/floatz/pen/BoiLj/
 
 It can be customized easily via CSS.
-
 ```
 .header {
   background-color: #444;
@@ -39,7 +37,6 @@ See it live: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
 By default each box gets 100% of the width from its parent element. Use layouters to give them specific widths. It is important to use the correct layouter according to the position of the box (l=left, m=mid, r=right) to make them work properly in all browsers.
-
 ```
 <div class="flz_box flz_l25">
    ...
@@ -57,7 +54,6 @@ By default each box gets 100% of the width from its parent element. Use layouter
 See it live: http://codepen.io/floatz/pen/lzAew
 
 Usually the sum of all layouters in a row should be 100%. If not, clear the float by attaching **flz_clear** to the first box of the next row.
-
 ```
 <!-- First row -->
 <div class="flz_box flz_l25">
@@ -76,7 +72,7 @@ Usually the sum of all layouters in a row should be 100%. If not, clear the floa
 ```
 See it live: http://codepen.io/floatz/pen/kLaeC
 
-Alternatively the boxes of each row can be surrounded with an additional box.
+Alternatively the boxes of each row can be surrounded with an additional box which is the most stable solution especially when you are dealing with boxes of different heights.
 ```
 <!-- First row -->
 <div class="flz_box">
@@ -89,7 +85,7 @@ Alternatively the boxes of each row can be surrounded with an additional box.
 </div>
 <!-- Second row -->
 <div class="flz_box">
-   <div class="flz_box flz_l25 flz_clear">
+   <div class="flz_box flz_l25">
       ...
    </div>
    <div class="flz_box flz_r75">
