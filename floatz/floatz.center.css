@@ -1,4 +1,4 @@
-/* floatz CSS Framework v1.2.0
+/* floatz CSS Framework v1.3.0
    Copyright (c) 1998-2013 by :humml:design
    Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
@@ -51,12 +51,12 @@ p,h1,h2,h3,h4,h5,h6,address,blockquote,ul,ol,dl,pre{clear:both}
 .flz_l10,.flz_m10,.flz_r10{width:10%}
 .flz_l20,.flz_m20,.flz_r20{width:20%}
 .flz_l25,.flz_m25,.flz_r25{width:25%}
-.flz_l33,.flz_r33{width:33.3%}
-.flz_m33{width:33.4%}
+.flz_l33,.flz_r33{width:33.33333%}
+.flz_m33{width:33.33333%}
 .flz_l40,.flz_m40,.flz_r40{width:40%}
 .flz_l50,.flz_m50,.flz_r50{width:50%}
 .flz_l60,.flz_m60,.flz_r60{width:60%}
-.flz_l66,.flz_r66{width:66.7%}
+.flz_l66,.flz_r66{width:66.66666%}
 .flz_l75,.flz_r75{width:75%}
 .flz_l80,.flz_m80,.flz_r80{width:80%}
 .flz_l90,.flz_r90{width:90%}
@@ -120,13 +120,15 @@ a:active.flz_skiplink,a:focus.flz_skiplink{position:static}
 * html .flz_htabmenu ul li.flz_selected a:hover{background:url(images/htabmenu.gif) no-repeat right -200px;text-decoration:underline}
 * html .flz_htabmenu_bottom ul li{}* html .flz_htabmenu_bottom ul li a:hover{background:url(images/htabmenu_bottom_inactive.gif) no-repeat right bottom;text-decoration:underline}
 * html .flz_htabmenu_bottom ul li.flz_selected a:hover{background:url(images/htabmenu_bottom_active.gif) no-repeat right bottom;text-decoration:underline}
-.flz_workflow ul li{display:inline-block;list-style-type:none;margin:0;padding:0;vertical-align:top;margin-left:-0.85em}.flz_workflow ul li:first-child{margin-left:0}
-.flz_workflow ul li a{background-color:#eee;display:inline-block;padding:1.025em;text-decoration:none;vertical-align:top}.flz_workflow ul li a:hover{text-decoration:underline}
-.flz_workflow ul li .flz_endrect,.flz_workflow ul li .flz_startrect{width:0;height:0;border-top:1.65em solid transparent;border-left:1em solid #eee;border-bottom:1.65em solid transparent;margin:0;padding:0;display:inline-block}
-.flz_workflow ul li .flz_endrect{border-top-color:transparent;border-left-color:#eee;border-bottom-color:transparent}
-.flz_workflow ul li .flz_startrect{border-top-color:#eee;border-left-color:transparent;border-bottom-color:#eee}
+.flz_workflow ul{padding:0}.flz_workflow ul li{float:left;list-style-type:none;margin:0;margin-left:-0.65em;padding:0;vertical-align:top;}.flz_workflow ul li:first-child{margin-left:0}
+.flz_workflow ul li a{background-color:#eee;color:#aaa;cursor:default;float:left;height:1.15em;padding:1.025em;text-decoration:none;vertical-align:top}
+.flz_workflow ul li a{height:1.25em\9;}
 .flz_workflow ul li.flz_selected a{font-weight:bold}
-.flz_workflow ul li.flz_disabled a{color:#aaa;cursor:default}.flz_workflow ul li.flz_disabled a:hover{text-decoration:none}
+.flz_workflow ul li.flz_passed a,.flz_workflow ul li.flz_selected a{color:#000}
+.flz_workflow ul li.flz_passed a:hover,.flz_workflow ul li.flz_selected a:hover{text-decoration:underline}
+.flz_workflow ul li div.flz_start,.flz_workflow ul li div.flz_stop{border-bottom:1.65em solid transparent;border-left:1em solid #eee;border-top:1.65em solid transparent;float:left;height:0;margin:0;padding:0;width:0}
+.flz_workflow ul li div.flz_stop{border-bottom-color:transparent;border-left-color:#eee;border-top-color:transparent}
+.flz_workflow ul li div.flz_start{border-bottom-color:#eee;border-left-color:transparent;border-top-color:#eee}
 form{clear:both}
 label{font-weight:bold}
 optgroup{font-style:italic}
@@ -138,7 +140,7 @@ fieldset{clear:both;font-weight:bold;border:1px solid #000;padding:1em;margin-bo
 .flz_form{}.flz_form input[type="text"],.flz_form input[type="password"]{background-color:#fff;border:1px solid #000;display:block;width:99.4%;padding-left:0;padding-right:0}
 .flz_form label,.flz_form select{display:block;width:100%}
 .flz_form textarea{display:block;width:99.4%}
-.flz_form input[type="checkbox"]+label,.flz_form input[type="radio"]+label{display:inline;width:auto}
+.flz_form input[type="checkbox"],.flz_form input[type="radio"]{margin:0;}.flz_form input[type="checkbox"]+label,.flz_form input[type="radio"]+label{display:inline;width:auto}
 .flz_form .flz_mandatory{background-color:#ff0}
 .flz_form .flz_readonly{background-color:#efefef;color:#aaa}
 .flz_form .flz_inline{display:inline;width:auto}
@@ -146,7 +148,7 @@ fieldset{clear:both;font-weight:bold;border:1px solid #000;padding:1em;margin-bo
 * html .flz_form{}* html .flz_form .flz_textbox{background-color:#fff;border:1px solid #000;display:block;width:99.4%}
 * html .flz_form .flz_textbox,* html .flz_form textarea{margin-right:-10px}
 * html .flz_form .flz_combobox{float:left}
-input[type="button"],input[type="submit"],input[type="reset"],button{padding:.25em .35em}
-* html .flz_button{padding:.25em .35em;overflow:visible;padding:.25em .5em;width:1}
-*:first-child+html input[type=button],*:first-child+html input[type=submit],*:first-child+html input[type=reset],*:first-child+html button{overflow:visible;padding:.25em .5em;width:1}
+input[type="button"],input[type="submit"],input[type="reset"],button{padding:.25em .35em;margin:0}
+* html .flz_button{padding:.25em .35em;margin:0;overflow:visible;padding:.25em .5em;width:1}
+*:first-child+html input[type=button],*:first-child+html input[type=submit],*:first-child+html input[type=reset],*:first-child+html button{overflow:visible;padding:.25em .5em;margin:0;width:1}
 .flz_custombutton{background:transparent;border:0}
