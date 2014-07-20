@@ -53,6 +53,15 @@ By default each box gets 100% of the width from its parent element. Use layouter
 ```
 See it live: http://codepen.io/floatz/pen/lzAew
 
+The following layouters are provided out-of-the-box:
+
+| Layouter                | Widths                                          |
+| ----------------------- | ----------------------------------------------- |
+| flz_l&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90      |
+| flz_m&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80          |
+| flz_r&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
+
+####Clearing the float
 Usually the sum of all layouters in a row should be 100%. If not, clear the float by attaching **flz_clear** to the first box of the next row.
 ```
 <!-- First row -->
@@ -95,14 +104,6 @@ Alternatively the boxes of each row can be surrounded with an additional box whi
 ```
 See it live: http://codepen.io/floatz/pen/foBvy
 
-The following layouters are provided out-of-the-box:
-
-| Layouter                | Widths                                          |
-| ----------------------- | ----------------------------------------------- |
-| flz_l&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90      |
-| flz_m&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80          |
-| flz_r&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
-
 
 ###Spacers
 ```
@@ -122,7 +123,3 @@ The following layouters are provided out-of-the-box:
    </div>
 </div>
 ```
-
-
-
-
