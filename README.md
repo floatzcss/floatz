@@ -126,6 +126,8 @@ Spacers are used to add whitespace to boxes. According to layouters it is necess
 ```
 See it live: http://codepen.io/floatz/pen/HzIrA
 
+####Stacking spacers
+
 It is also possible to stack boxes and spacers (e.g. in form layouts). floatz provides the necessary classes and takes care that each row / column gets its appropriate whitespace. The following example shows such a multiple row / multiple column scenario.
 ```
 <div class="flz_box flz_l33">
@@ -176,6 +178,16 @@ It is also possible to stack boxes and spacers (e.g. in form layouts). floatz pr
 ```
 See it live: http://codepen.io/floatz/pen/aHscp
 
+The following spacers are provides out of the box:
+
+| Spacer                                | Secenario                    |
+| ------------------------------------- | ---------------------------- |
+| flz_spacer                            | Single row / single column   |
+| flz_lspacer, flz_mspacer, flz_rspacer | Single row / multiple column |
+|  |  |
+
+
 ####Nesting spacers
-
-
+In real world scenarios it is usually the case that boxes and spacers should be nested. For such a case floatz provides subspacers.
+```
+```
