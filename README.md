@@ -105,8 +105,7 @@ Alternatively the boxes of each row can be surrounded with an additional box whi
 See it live: http://codepen.io/floatz/pen/foBvy
 
 ###Spacers
-Spacers are used to add whitespace to boxes. According to layouters it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding box to make them work consistently.
-
+Spacers are used to add whitespace to boxes. According to layouters it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding box to make them work consistently. The following example shows spacers in a single row / multiple column scenario.
 ```
 <div class="flz_box flz_r25">
    <div class="flz_lspacer">
@@ -125,3 +124,58 @@ Spacers are used to add whitespace to boxes. According to layouters it is necess
 </div>
 ```
 See it live: http://codepen.io/floatz/pen/HzIrA
+
+For more complex scenarios (e.g. for form layouts) you can stack boxes and spacers in a multiple row / multiple column scenario.
+```
+<div class="flz_box flz_l33">
+   <div class="flz_lspacer_mrmc_top">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_m33">
+   <div class="flz_mspacer_mrmc_top">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_r33">
+   <div class="flz_rspacer_mrmc_top">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_l33">
+   <div class="flz_lspacer_mrmc_mid">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_m33">
+   <div class="flz_mspacer_mrmc_mid">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_r33">
+   <div class="flz_rspacer_mrmc_mid">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_l33">
+   <div class="flz_lspacer_mrmc_bottom">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_m33">
+   <div class="flz_mspacer_mrmc_bottom">
+      ...
+   </div>
+</div>
+<div class="flz_box flz_r33">
+   <div class="flz_rspacer_mrmc_bottom">
+      ...
+   </div>
+</div>
+```
+See it live: http://codepen.io/floatz/pen/aHscp
+
+
+
+
+
