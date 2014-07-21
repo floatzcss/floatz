@@ -181,7 +181,31 @@ See it live: http://codepen.io/floatz/pen/aHscp
 ####Nesting spacers
 In real world scenarios it is usually the case that boxes and spacers should be nested. For such a case floatz provides subspacers.
 ```
+<div class="flz_box">
+  <div class="flz_spacer">
+      <div class="flz_box flz_l25">
+        <div class="flz_lsubspacer">
+          ...
+        </div>
+      </div>
+      <div class="flz_box flz_m50">
+        <div class="flz_msubspacer">
+           ...
+        </div>
+      </div>
+      <div class="flz_box flz_r25">
+        <div class="flz_rsubspacer">
+           ...
+		</div>
+	</div>
+</div>
 ```
+
+See it live: http://codepen.io/floatz/pen/FgJIC
+
+Of course subspacers can be used in nested scenarios too.
+
+See it live: http://codepen.io/floatz/pen/aHscp
 
 The following spacers are provided out of the box:
 
