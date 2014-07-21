@@ -183,7 +183,7 @@ In real world scenarios it is usually the case that boxes and spacers should be 
 ```
 ```
 
-The following spacers are provides out of the box:
+The following spacers are provided out of the box:
 
 | Spacer                  | Subspacer                  | Scenario                   | Description         |
 | ----------------------- | -------------------------- | -------------------------- | ------------------- |
