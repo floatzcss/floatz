@@ -189,6 +189,15 @@ The following spacers are provides out of the box:
 | flz_spacer_mrsc_top                     | Multi row / Single column    | Top spacer                    |
 | flz_spacer_mrsc_mid                     | Multi row / Single column    | Mid spacer                    |
 | flz_spacer_mrsc_bottom                  | Multi row / Single column    | Bottom spacer                 |
+| flz_lspacer_mrmc_top                    | Multi row / Multi column     | Top left spacer               |
+| flz_lspacer_mrmc_mid                    | Multi row / Multi column     | Mid left spacer               |
+| flz_lspacer_mrmc_bottom                 | Multi row / Multi column     | Bottom left spacer            |
+| flz_mspacer_mrmc_top                    | Multi row / Multi column     | Top mid spacer                |
+| flz_mspacer_mrmc_mid                    | Multi row / Multi column     | Mid mid spacer                |
+| flz_mspacer_mrmc_bottom                 | Multi row / Multi column     | Bottom mid spacer             |
+| flz_rspacer_mrmc_top                    | Multi row / Multi column     | Top right spacer              |
+| flz_rspacer_mrmc_mid                    | Multi row / Multi column     | Mid right spacer              |
+| flz_rspacer_mrmc_bottom                 | Multi row / Multi column     | Bottom right spacer           |
 
 ####Nesting spacers
 In real world scenarios it is usually the case that boxes and spacers should be nested. For such a case floatz provides subspacers.
