@@ -29,7 +29,12 @@ window.floatz.custom = (function() {
     * @since 1.1.0
 	*/
 	function start() {
-		floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " started", module.name);		
+
+        floatz.panels.onResize(".flz_panel, .flz_scrollpanel", function(e) {
+            floatz.log(floatz.LOGLEVEL.INFO, "Panel has been resized", module.name);
+        });
+
+		floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " started", module.name);
 	}
 			
 	////////////////////////////////////////////////////
