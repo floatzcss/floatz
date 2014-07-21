@@ -1,7 +1,7 @@
 floatz
 ======
 
-**floatz is a flexible and easy to use CSS framework.** It provides a set of reusable CSS classes, Javascript modules and HTML code snippets that support web designers and developers to create state-of-the-art web sites, web applications as well as HTML based mobile apps that work on all browsers, platforms and devices.
+**floatz is a flexible and easy to use CSS framework.** It provides a set of reusable CSS classes, Javascript modules and HTML code snippets that support web designers and developers to create state-of-the-art web sites, web applications and HTML based mobile apps - on all browsers, platforms and devices.
 
 ##Version history
 * September, 2014 - Version 1.3.0 currently under construction
@@ -14,26 +14,99 @@ floatz
 ##Basic concepts
 
 ###Boxes
+The basic layout class is a box. Each box floats left (this is where the name floatz comes from) and gets a default width of 100%.
 ```
 <div class="flz_box">
    ...
 </div>
 ```
+See it live: http://codepen.io/floatz/pen/BoiLj/
+
+Boxes can be easily customized via CSS.
+```
+.header {
+  background-color: #444;
+  color: #fff;
+}
+...
+<div class="flz_box header">
+   ...
+</div>
+```
+See it live: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
+Use layouters to give boxes specific widths. It is important to use the correct layouter according to the position of the box (l=left, m=mid, r=right) to make them work properly in all browsers.
 ```
+<div class="flz_box flz_l25">
+   ...
+</div>
+<div class="flz_box flz_m25">
+   ...
+</div>
+<div class="flz_box flz_m25">
+   ...
+</div>
 <div class="flz_box flz_r25">
    ...
 </div>
-<div class="flz_box flz_m50">
+```
+See it live: http://codepen.io/floatz/pen/lzAew
+
+The following layouters are provided out-of-the-box:
+
+| Layouter                | Widths                                          |
+| ----------------------- | ----------------------------------------------- |
+| flz_l&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90      |
+| flz_m&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80          |
+| flz_r&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
+
+####Clearing the float
+Usually the sum of all layouters in a row should be 100%. If not, clear the float by attaching **flz_clear** to the first box of the next row.
+```
+<!-- First row -->
+<div class="flz_box flz_l25">
    ...
 </div>
-<div class="flz_box flz_r25">
+<div class="flz_box flz_r50">
+   ...
+</div>
+<!-- Second row -->
+<div class="flz_box flz_l25 flz_clear">
+   ...
+</div>
+<div class="flz_box flz_r75">
    ...
 </div>
 ```
+See it live: http://codepen.io/floatz/pen/kLaeC
+
+Alternatively the boxes of each row can be surrounded with an additional box which is the most stable solution especially when dealing with boxes of different heights.
+```
+<!-- First row -->
+<div class="flz_box">
+   <div class="flz_box flz_l25">
+      ...
+   </div>
+   <div class="flz_box flz_r50">
+      ...
+   </div>
+</div>
+<!-- Second row -->
+<div class="flz_box">
+   <div class="flz_box flz_l25">
+      ...
+   </div>
+   <div class="flz_box flz_r75">
+      ...
+   </div>
+</div>
+```
+See it live: http://codepen.io/floatz/pen/foBvy
 
 ###Spacers
+Spacers are used to add whitespace to boxes. According to layouters it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding box to make them work consistently.
+
 ```
 <div class="flz_box flz_r25">
    <div class="flz_lspacer">
@@ -51,7 +124,4 @@ floatz
    </div>
 </div>
 ```
-
-
-
-
+See it live: http://codepen.io/floatz/pen/HzIrA
