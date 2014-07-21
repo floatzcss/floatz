@@ -180,12 +180,15 @@ See it live: http://codepen.io/floatz/pen/aHscp
 
 The following spacers are provides out of the box:
 
-| Spacer                                | Secenario                    |
-| ------------------------------------- | ---------------------------- |
-| flz_spacer                            | Single row / single column   |
-| flz_lspacer, flz_mspacer, flz_rspacer | Single row / multiple column |
-|  |  |
-
+| Spacer                                  | Scenario                     | Description                   |      
+| --------------------------------------- | ---------------------------- | ----------------------------- |
+| flz_spacer                              | Single row / Single column   | Basic spacer                  |
+| flz_lspacer                             | Single row / Multi column    | Left spacer                   |
+| flz_mspacer                             | Single row / Multi column    | Mid spacer                    |
+| flz_rspacer                             | Single row / Multi column    | Right spacer                  |
+| flz_spacer_mrsc_top                     | Multi row / Single column    | Top spacer                    |
+| flz_spacer_mrsc_mid                     | Multi row / Single column    | Mid spacer                    |
+| flz_spacer_mrsc_bottom                  | Multi row / Single column    | Bottom spacer                 |
 
 ####Nesting spacers
 In real world scenarios it is usually the case that boxes and spacers should be nested. For such a case floatz provides subspacers.
