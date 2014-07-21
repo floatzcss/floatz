@@ -178,28 +178,28 @@ It is also possible to stack boxes and spacers (e.g. in form layouts). floatz pr
 ```
 See it live: http://codepen.io/floatz/pen/aHscp
 
-The following spacers are provides out of the box:
-
-| Spacer                                  | Scenario                     | Description                   |      
-| --------------------------------------- | ---------------------------- | ----------------------------- |
-| flz_spacer                              | Single row / Single column   | Basic spacer                  |
-| flz_lspacer                             | Single row / Multi column    | Left spacer                   |
-| flz_mspacer                             | Single row / Multi column    | Mid spacer                    |
-| flz_rspacer                             | Single row / Multi column    | Right spacer                  |
-| flz_spacer_mrsc_top                     | Multi row / Single column    | Top spacer                    |
-| flz_spacer_mrsc_mid                     | Multi row / Single column    | Mid spacer                    |
-| flz_spacer_mrsc_bottom                  | Multi row / Single column    | Bottom spacer                 |
-| flz_lspacer_mrmc_top                    | Multi row / Multi column     | Top left spacer               |
-| flz_lspacer_mrmc_mid                    | Multi row / Multi column     | Mid left spacer               |
-| flz_lspacer_mrmc_bottom                 | Multi row / Multi column     | Bottom left spacer            |
-| flz_mspacer_mrmc_top                    | Multi row / Multi column     | Top mid spacer                |
-| flz_mspacer_mrmc_mid                    | Multi row / Multi column     | Mid mid spacer                |
-| flz_mspacer_mrmc_bottom                 | Multi row / Multi column     | Bottom mid spacer             |
-| flz_rspacer_mrmc_top                    | Multi row / Multi column     | Top right spacer              |
-| flz_rspacer_mrmc_mid                    | Multi row / Multi column     | Mid right spacer              |
-| flz_rspacer_mrmc_bottom                 | Multi row / Multi column     | Bottom right spacer           |
-
 ####Nesting spacers
 In real world scenarios it is usually the case that boxes and spacers should be nested. For such a case floatz provides subspacers.
 ```
 ```
+
+The following spacers are provides out of the box:
+
+| Spacer                  | Subspacer                  | Scenario                   | Description         |
+| ----------------------- | -------------------------- | -------------------------- | ------------------- |
+| flz_spacer              | flz_subspacer              | Single row / Single column | Basic spacer        |
+| flz_lspacer             | flz_lsubspacer             | Single row / Multi column  | Left spacer         |
+| flz_mspacer             | flz_msubspacer             | Single row / Multi column  | Mid spacer          |
+| flz_rspacer             | flz_rsubspacer             | Single row / Multi column  | Right spacer        |
+| flz_spacer_mrsc_top     | flz_subspacer_mrsc_top     | Multi row / Single column  | Top spacer          |
+| flz_spacer_mrsc_mid     | flz_subspacer_mrsc_mid     | Multi row / Single column  | Mid spacer          |
+| flz_spacer_mrsc_bottom  | flz_subspacer_mrsc_bottom  | Multi row / Single column  | Bottom spacer       |
+| flz_lspacer_mrmc_top    | flz_lsubspacer_mrmc_top    | Multi row / Multi column   | Top left spacer     |
+| flz_lspacer_mrmc_mid    | flz_lsubspacer_mrmc_mid    | Multi row / Multi column   | Mid left spacer     |
+| flz_lspacer_mrmc_bottom | flz_lsubspacer_mrmc_bottom | Multi row / Multi column   | Bottom left spacer  |
+| flz_mspacer_mrmc_top    | flz_msubspacer_mrmc_top    | Multi row / Multi column   | Top mid spacer      |
+| flz_mspacer_mrmc_mid    | flz_msubspacer_mrmc_mid    | Multi row / Multi column   | Mid mid spacer      |
+| flz_mspacer_mrmc_bottom | flz_mspacer_mrmc_bottom    | Multi row / Multi column   | Bottom mid spacer   |
+| flz_rspacer_mrmc_top    | flz_rspacer_mrmc_top       | Multi row / Multi column   | Top right spacer    |
+| flz_rspacer_mrmc_mid    | flz_rspacer_mrmc_mid       | Multi row / Multi column   | Mid right spacer    |
+| flz_rspacer_mrmc_bottom | flz_rspacer_mrmc_bottom    | Multi row / Multi column   | Bottom right spacer |
