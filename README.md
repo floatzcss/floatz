@@ -22,6 +22,7 @@ The basic layout class is a box. Each box floats left (this is where the name fl
 ```
 See it live: http://codepen.io/floatz/pen/BoiLj/
 
+####Customizing boxes
 Boxes can be easily customized via CSS.
 ```
 .header {
@@ -175,7 +176,6 @@ It is also possible to stack boxes and spacers (e.g. in form layouts). floatz pr
 ```
 See it live: http://codepen.io/floatz/pen/aHscp
 
-
-
+####Nesting spacers
 
 
