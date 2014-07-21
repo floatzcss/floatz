@@ -14,7 +14,7 @@ floatz
 ##Basic concepts
 
 ###Boxes
-The basic layout class is a box. Each box floats left (this is where the name floatz comes from) and gets a default width of 100%.
+The basic layout class is a box. Each *box* floats left (this is where the name *floatz* comes from) and gets a default width of 100%.
 ```
 <div class="flz_box">
    ...
@@ -23,7 +23,7 @@ The basic layout class is a box. Each box floats left (this is where the name fl
 See it live: http://codepen.io/floatz/pen/BoiLj/
 
 ####Customizing boxes
-Boxes can be easily customized via CSS.
+*Boxes* can be easily customized via CSS.
 ```
 .header {
   background-color: #444;
@@ -37,7 +37,7 @@ Boxes can be easily customized via CSS.
 See it live: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
-Use layouters to give boxes specific widths. It is important to use the correct layouter according to the position of the box (l=left, m=mid, r=right) to make them work properly in all browsers.
+Use *layouters* to give boxes specific widths. It is important to use the correct *layouter* according to the position of the *box* (l=left, m=mid, r=right) to make them work properly in all browsers.
 ```
 <div class="flz_box flz_l25">
    ...
@@ -54,7 +54,7 @@ Use layouters to give boxes specific widths. It is important to use the correct 
 ```
 See it live: http://codepen.io/floatz/pen/lzAew
 
-The following layouters are provided out-of-the-box:
+The following *layouters* are provided out-of-the-box:
 
 | Layouter                | Widths                                          |
 | ----------------------- | ----------------------------------------------- |
@@ -63,7 +63,7 @@ The following layouters are provided out-of-the-box:
 | flz_r&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
 
 ####Clearing the float
-Usually the sum of all layouters in a row should be 100%. If not, clear the float by attaching **flz_clear** to the first box of the next row.
+Usually the sum of all *layouters* in a row should be 100%. If not, clear the float by attaching **flz_clear** to the first *box* of the next row.
 ```
 <!-- First row -->
 <div class="flz_box flz_l25">
@@ -82,7 +82,7 @@ Usually the sum of all layouters in a row should be 100%. If not, clear the floa
 ```
 See it live: http://codepen.io/floatz/pen/kLaeC
 
-Alternatively the boxes of each row can be surrounded with an additional box which is the most stable solution especially when dealing with boxes of different heights.
+Alternatively the *boxes* of each row can be surrounded with an additional *box* which is the most stable solution especially when dealing with *boxes* of different heights.
 ```
 <!-- First row -->
 <div class="flz_box">
@@ -106,7 +106,7 @@ Alternatively the boxes of each row can be surrounded with an additional box whi
 See it live: http://codepen.io/floatz/pen/foBvy
 
 ###Spacers
-Spacers are used to add whitespace to boxes. According to layouters it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding box to make them work consistently. The following example shows spacers in a single row / multiple column scenario.
+*Spacers* are used to add whitespace to boxes. According to *layouters* it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding *box* to make them work consistently. The following example shows *spacers* in a single row / multiple column scenario.
 ```
 <div class="flz_box flz_r25">
    <div class="flz_lspacer">
@@ -128,7 +128,7 @@ See it live: http://codepen.io/floatz/pen/HzIrA
 
 ####Stacking spacers
 
-It is also possible to stack boxes and spacers (e.g. in form layouts). floatz provides the necessary classes and takes care that each row / column gets its appropriate whitespace. The following example shows such a multiple row / multiple column scenario.
+It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). *floatz* provides the necessary classes and takes care that each row / column gets its appropriate whitespace. The following example shows such a multiple row / multiple column scenario.
 ```
 <div class="flz_box flz_l33">
    <div class="flz_lspacer_mrmc_top">
@@ -179,7 +179,7 @@ It is also possible to stack boxes and spacers (e.g. in form layouts). floatz pr
 See it live: http://codepen.io/floatz/pen/aHscp
 
 ####Nesting spacers
-In real world scenarios it is usually the case that boxes and spacers should be nested. For such a case floatz provides subspacers.
+In real world scenarios it is often the case that *boxes* and *spacers* should be nested. For such a case *floatz* provides *subspacers*.
 ```
 <div class="flz_box">
   <div class="flz_spacer">
@@ -203,7 +203,7 @@ In real world scenarios it is usually the case that boxes and spacers should be 
 
 See it live: http://codepen.io/floatz/pen/FgJIC
 
-Of course subspacers can be used in nested scenarios too.
+*Subspacers* can of course be used in nested scenarios too.
 
 See it live: http://codepen.io/floatz/pen/aHscp
 
@@ -227,3 +227,5 @@ The following spacers are provided out of the box:
 | flz_rspacer_mrmc_top    | flz_rspacer_mrmc_top       | Multi row / Multi column   | Top right spacer    |
 | flz_rspacer_mrmc_mid    | flz_rspacer_mrmc_mid       | Multi row / Multi column   | Mid right spacer    |
 | flz_rspacer_mrmc_bottom | flz_rspacer_mrmc_bottom    | Multi row / Multi column   | Bottom right spacer |
+
+To be continued ...
