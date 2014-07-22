@@ -238,27 +238,25 @@ The root element for a *page* is the **flz_page** id.
   </div>
 </body>
 ```
-###Liquid layout
+Depending on the kind of page layout that should be created, the according *layout module* must be imported into the websites stylesheet.
 
-To create a flexible liquid *page* layout the *liquid layout module* must be imported from the websites stylesheet.
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
 ...
 ```
 See it live: http://codepen.io/floatz/pen/eJbjr
-
-###Fixed layout
-For a fixed *page* layout the *fixed layout module* simply has to be imported in the stylesheet according to the previous example.
-
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.fixed.css);
 ...
 ```
 See it live: http://codepen.io/floatz/pen/wugzl
-
-###Centered layout
-
+```
+/* Loads floatz CSS framework */
+@import url(http://design.humml.eu/toolbox/floatz/latest/floatz.center.css);
+...
+```
+See it live: http://codepen.io/floatz/pen/ayAmd
 
 To be continued ...
