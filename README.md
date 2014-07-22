@@ -229,4 +229,27 @@ The following *spacers* are provided out of the box:
 | flz_rspacer_mrmc_mid    | flz_rspacer_mrmc_mid       | Multi row / Multi column   | Mid right spacer    |
 | flz_rspacer_mrmc_bottom | flz_rspacer_mrmc_bottom    | Multi row / Multi column   | Bottom right spacer |
 
+## Layouting pages
+The root element for a page is the **flz_page** id.
+```
+<body>
+  <div id="flz_page">
+     ...
+  </div>
+</body>
+```
+To get a liquid layout for the page the *liquid layout package* must be important from the websites stylesheet.
+```
+/* Loads floatz CSS framework */
+@import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
+...
+```
+See it live: http://codepen.io/floatz/pen/eJbjr
+
+###Fixed layout
+
+###Centered layout
+
+###Liquid layout
+
 To be continued ...
