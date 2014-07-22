@@ -37,7 +37,7 @@ See it live: http://codepen.io/floatz/pen/BoiLj/
 See it live: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
-Use *layouters* to give boxes specific widths. It is important to use the correct *layouter* according to the position of the *box* (l=left, m=mid, r=right) to make them work properly in all browsers.
+*Layouters* are used to give *boxes* specific widths. It is important to use the correct *layouter* according to the position of the *box* (l=left, m=mid, r=right) to make them work properly in all browsers.
 ```
 <div class="flz_box flz_l25">
    ...
