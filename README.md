@@ -239,7 +239,6 @@ The root element for a *page* is the **flz_page** id.
 </body>
 ```
 Depending on the kind of *page* layout that should be used, the according *layout module* must be imported into the websites stylesheet.
-
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
@@ -258,5 +257,16 @@ See it live: http://codepen.io/floatz/pen/wugzl
 ...
 ```
 See it live: http://codepen.io/floatz/pen/ayAmd
+
+For a centered and liquid *page* layout the *liquid layout module* is required and the body element must get the desired left and right margins.
+```
+/* Loads floatz CSS framework */
+@import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
+...
+body {
+  margin: 0 10em;
+}
+```
+See it live: http://codepen.io/floatz/pen/zraiL
 
 To be continued ...
