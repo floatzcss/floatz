@@ -6,7 +6,7 @@
  * Note: This file contains optional javascript code that progressively enhances browser
  * capabilities in circumstances where no HTML & CSS only solution is available.
  *
- * Depends on: jQuery
+ * Depends on: jQuery, UAParser
  *
  * @project       floatz CSS Framework
  * @version       1.3.0
