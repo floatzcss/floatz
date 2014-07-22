@@ -128,7 +128,7 @@ See it live: http://codepen.io/floatz/pen/HzIrA
 
 ####Stacking spacers
 
-It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). *floatz* provides the necessary classes and takes care that each row / column gets its appropriate whitespace. The following example shows such a *multiple row / multiple column* scenario.
+It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). **floatz** provides the necessary classes and takes care that each row / column gets its appropriate whitespace. The following example shows such a *multiple row / multiple column* scenario.
 ```
 <div class="flz_box flz_l33">
    <div class="flz_lspacer_mrmc_top">
