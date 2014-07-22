@@ -240,7 +240,7 @@ The root element for a *page* is the **flz_page** id.
 ```
 ###Liquid layout
 
-To get a flexible liquid *page* layout the *liquid layout module* must be imported from the websites stylesheet.
+To create a flexible liquid *page* layout the *liquid layout module* must be imported from the websites stylesheet.
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
