@@ -179,7 +179,7 @@ It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). *floa
 See it live: http://codepen.io/floatz/pen/aHscp
 
 ####Nesting spacers
-In real world scenarios it is often the case that *boxes* and *spacers* should be nested. For such a case *floatz* provides *subspacers*.
+In real world scenarios it is often the case that *boxes* and *spacers* must be nested. To handle such situations **floatz** provides *subspacers*.
 ```
 <div class="flz_box">
   <div class="flz_spacer">
