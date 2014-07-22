@@ -238,6 +238,8 @@ The root element for a *page* is the **flz_page** id.
   </div>
 </body>
 ```
+###Liquid layout
+
 To get a liquid layout for the *page* the *liquid layout package* must be imported from the websites stylesheet.
 ```
 /* Loads floatz CSS framework */
@@ -258,6 +260,5 @@ See it live: http://codepen.io/floatz/pen/wugzl
 
 ###Centered layout
 
-###Liquid layout
 
 To be continued ...
