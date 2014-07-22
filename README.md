@@ -54,7 +54,7 @@ See it live: http://codepen.io/floatz/pen/KLakm
 ```
 See it live: http://codepen.io/floatz/pen/lzAew
 
-The following *layouters* are provided out-of-the-box:
+The following *layouters* are provided out of the box:
 
 | Layouter                | Widths                                          |
 | ----------------------- | ----------------------------------------------- |
