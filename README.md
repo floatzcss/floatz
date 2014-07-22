@@ -247,6 +247,14 @@ To get a liquid layout for the *page* the *liquid layout package* must be import
 See it live: http://codepen.io/floatz/pen/eJbjr
 
 ###Fixed layout
+For a fixed *page* layout the *fixed layout package* simply has to be imported in the stylesheet according to the previous example.
+
+```
+/* Loads floatz CSS framework */
+@import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
+...
+```
+See it live: http://codepen.io/floatz/pen/wugzl
 
 ###Centered layout
 
