@@ -208,7 +208,7 @@ See it live: http://codepen.io/floatz/pen/FgJIC
 See it live: http://codepen.io/floatz/pen/aHscp<br />
 See it live: http://codepen.io/floatz/pen/KjzIm
 
-The following spacers are provided out of the box:
+The following *spacers* are provided out of the box:
 
 | Spacer                  | Subspacer                  | Scenario                   | Description         |
 | ----------------------- | -------------------------- | -------------------------- | ------------------- |
