@@ -230,7 +230,7 @@ The following *spacers* are provided out of the box:
 | flz_rspacer_mrmc_bottom | flz_rspacer_mrmc_bottom    | Multi row / Multi column   | Bottom right spacer |
 
 ## Layouting pages
-The root element for a page is the **flz_page** id.
+The root element for a *page* is the **flz_page** id.
 ```
 <body>
   <div id="flz_page">
@@ -238,7 +238,7 @@ The root element for a page is the **flz_page** id.
   </div>
 </body>
 ```
-To get a liquid layout for the page the *liquid layout package* must be important from the websites stylesheet.
+To get a liquid layout for the *page* the *liquid layout package* must be imported from the websites stylesheet.
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
