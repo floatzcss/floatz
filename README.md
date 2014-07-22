@@ -14,7 +14,7 @@ floatz
 ##Basic concepts
 
 ###Boxes
-The basic layout class is a *box*. Each *box* floats left (this is where the name *floatz* comes from) and gets by default a width of 100% of its surrounding parent element.
+The basic layout class is a *box*. Each *box* floats left (this is where the name **floatz** comes from) and gets by default a width of 100% of its surrounding parent element.
 ```
 <div class="flz_box">
    ...
@@ -106,7 +106,7 @@ Alternatively the *boxes* of each row can be surrounded with an additional *box*
 See it live: http://codepen.io/floatz/pen/foBvy
 
 ###Spacers
-*Spacers* are used to add whitespace to *boxes*. According to *layouters* it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding *box* to make them work consistently. The following example shows *spacers* in a single row / multiple column scenario.
+*Spacers* are used to add whitespace to *boxes*. According to *layouters* it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding *box* to make them work accordingly. The following example shows *spacers* in a *single row / multiple column scenario*.
 ```
 <div class="flz_box flz_r25">
    <div class="flz_lspacer">
@@ -128,7 +128,7 @@ See it live: http://codepen.io/floatz/pen/HzIrA
 
 ####Stacking spacers
 
-It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). *floatz* provides the necessary classes and takes care that each row / column gets its appropriate whitespace. The following example shows such a multiple row / multiple column scenario.
+It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). *floatz* provides the necessary classes and takes care that each row / column gets its appropriate whitespace. The following example shows such a *multiple row / multiple column* scenario.
 ```
 <div class="flz_box flz_l33">
    <div class="flz_lspacer_mrmc_top">
