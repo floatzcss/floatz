@@ -238,7 +238,7 @@ The root element for a *page* is the **flz_page** id.
   </div>
 </body>
 ```
-Depending on the kind of page layout that should be created, the according *layout module* must be imported into the websites stylesheet.
+Depending on the kind of *page* layout that should be used, the according *layout module* must be imported into the websites stylesheet.
 
 ```
 /* Loads floatz CSS framework */
