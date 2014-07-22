@@ -63,7 +63,7 @@ The following *layouters* are provided out-of-the-box:
 | flz_r&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
 
 ####Clearing the float
-Usually the sum of all *layouters* in a row should be 100%. If not, clear the float by attaching **flz_clear** to the first *box* of the next row.
+In best cases the sum of all *layouters* in a row gets 100%. If not, clear the float by attaching **flz_clear** to the first *box* of the next row.
 ```
 <!-- First row -->
 <div class="flz_box flz_l25">
