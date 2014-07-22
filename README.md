@@ -251,7 +251,7 @@ For a fixed *page* layout the *fixed layout package* simply has to be imported i
 
 ```
 /* Loads floatz CSS framework */
-@import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
+@import url(http://design.humml.eu/toolbox/floatz/latest/floatz.fixed.css);
 ...
 ```
 See it live: http://codepen.io/floatz/pen/wugzl
