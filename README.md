@@ -205,8 +205,7 @@ See it live: http://codepen.io/floatz/pen/FgJIC
 
 *Subspacers* can of course be used in nested scenarios too and it is possible to create any imanginable combination of stacked and nested *boxes* just by combining the provided *spacers*.
 
-See it live: http://codepen.io/floatz/pen/aHscp
-
+See it live: http://codepen.io/floatz/pen/aHscp<br />
 See it live: http://codepen.io/floatz/pen/KjzIm
 
 The following spacers are provided out of the box:
