@@ -14,7 +14,7 @@ floatz
 ##Basic concepts
 
 ###Boxes
-The basic layout class is a *box*. Each *box* floats left (this is where the name *floatz* comes from) and gets a default width of 100% of its surrounding element.
+The basic layout class is a *box*. Each *box* floats left (this is where the name *floatz* comes from) that gets by default a width of 100% of its surrounding parent element.
 ```
 <div class="flz_box">
    ...
