@@ -229,7 +229,8 @@ The following *spacers* are provided out of the box:
 | flz_rspacer_mrmc_mid    | flz_rspacer_mrmc_mid       | Multi row / Multi column   | Mid right spacer    |
 | flz_rspacer_mrmc_bottom | flz_rspacer_mrmc_bottom    | Multi row / Multi column   | Bottom right spacer |
 
-## Layouting pages
+##Layouting pages
+###Layouting pages with boxes
 The root element for a *page* is the **flz_page** id.
 ```
 <body>
@@ -258,7 +259,27 @@ See it live: http://codepen.io/floatz/pen/wugzl
 ```
 See it live: http://codepen.io/floatz/pen/ayAmd
 
-For a centered and liquid *page* layout the *liquid layout module* is required and the body element must get the desired left and right margins.
+####Combining liquid and fixed layout
+
+When using the basic liquid layout each column increases its width according to the given percentage of the used *layouter*. For situations where only one of the columns should increase dynamically but the other should always have a fixed width, the markup and CSS must be changed like this:
+
+```
+/* Loads floatz CSS framework */
+@import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
+
+.content {
+  margin-left: 20em;
+}
+...
+```
+
+
+See it live: http://codepen.io/floatz/pen/JfAlp
+
+
+####Combining liquid and centered layout
+
+For a liquid and centered *page* layout the *liquid layout module* is required and the body element must get the desired left and right margins.
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
@@ -269,4 +290,13 @@ body {
 ```
 See it live: http://codepen.io/floatz/pen/zraiL
 
+### Layouting pages with panels
+
+
+
+
+
+
 To be continued ...
+
+
