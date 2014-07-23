@@ -361,4 +361,6 @@ The dimensions of the panels are provided via CSS.
 ```
 See it live: http://codepen.io/floatz/pen/pyqeJ
 
+TODO: mobile adaptions for Webkit browsers.
+
 To be continued ...
