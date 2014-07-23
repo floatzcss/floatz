@@ -289,10 +289,8 @@ Next the liquid *box* must get a margin and the fixed *box* an according width.
 }
 ...
 ```
-See it live: http://codepen.io/floatz/pen/JfAlp<br />
-See it live: http://codepen.io/floatz/pen/tHzsB<br />
-See it live: http://codepen.io/floatz/pen/vtnwC<br />
-See it live: http://codepen.io/floatz/pen/uybke
+See it live: http://codepen.io/floatz/pen/JfAlp (Liquid, 1 fixed column)<br />
+See it live: http://codepen.io/floatz/pen/tHzsB (Liquid, 2 fixed columns)
 
 ####Combining liquid and centered layout
 
@@ -305,7 +303,9 @@ body {
   margin: 0 10%;
 }
 ```
-See it live: http://codepen.io/floatz/pen/zraiL
+See it live: http://codepen.io/floatz/pen/zraiL (Centered liquid)<br />
+See it live: http://codepen.io/floatz/pen/vtnwC (Centered liquid, 1 fixed column)<br />
+See it live: http://codepen.io/floatz/pen/uybke (Centered liquid, 2 fixed columns)
 
 ### Layouting pages with panels
 
