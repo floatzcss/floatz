@@ -365,18 +365,20 @@ For smooth scrolling within scroll panels on mobile Webkit based browsers the fo
 ```
 // Load jquery, less and floatz in correct order
 $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.min.js")
-  .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.0.min.js").wait()
-  .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.js")
-  .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.mobile.js").wait(function() {
-     $(document).ready(function() {
-		// Start floatz modules
-		floatz.start({
-			debug : true,
-			logLevel : floatz.LOGLEVEL.DEBUG,
-            modules : ["floatz.mobile"]
-		});
-	 });
-  });
+    .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.0.min.js").wait()
+    .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.js")
+    .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.mobile.js")
+    .wait(function() {
+       $(document).ready(function() {
+       
+          // Start floatz modules
+	  floatz.start({
+	     debug : true,
+	     logLevel : floatz.LOGLEVEL.DEBUG,
+             modules : ["floatz.mobile"]
+	  });
+       });
+    });
 ```
 
 
