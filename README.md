@@ -261,7 +261,7 @@ See it live: http://codepen.io/floatz/pen/ayAmd
 
 ####Combining liquid and fixed layout
 
-When using the *liquid layout module* each *box* increases its width according to the given percentage of the used *layouter*. For situations where only one of the *boxes* should increase dynamically but the others should always have a fixed width, the markup and CSS must be changed as followed.
+When using the *liquid layout module* each *box* increases its width according to the given percentage of the used *layouter*. For situations where only one of the *boxes* should increase dynamically but the others should always have a fixed width, the markup and CSS must be changed as follows.
 
 First the *layouter* must be remove from the fixed *box* and **flz_box** must be removed from the liquid *box*.
 ```
