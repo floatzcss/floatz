@@ -378,7 +378,7 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
 	      modules : ["floatz.mobile"]
 		});
 	});
-    });
+});
 ```
 
 
