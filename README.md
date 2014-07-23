@@ -263,11 +263,11 @@ See it live: http://codepen.io/floatz/pen/ayAmd
 
 When using the *liquid layout module* each *box* increases its width according to the given percentage of the used *layouter*. For situations where only one of the *boxes* should increase dynamically but the others should always have a fixed width, the markup and CSS must be changed as followed.
 
-First **flz_box** must be removed from the content *box*.
+First the *layouter* must be remove from the fixed *box* and **flz_box** must be removed from the liquid *box*.
 ```
 <div id="flz_page">
    ...
-   <div class="flz_box flz_l33 nav">
+   <div class="flz_box nav">
       ...
    </div>
    <div class="content">
@@ -275,10 +275,14 @@ First **flz_box** must be removed from the content *box*.
    </div>
 </div>
 ```
-Next the content *box* must get an appropriate margin. In that example a left margin for the navigation *box*.
+Next the liquid *box* must get a margin and the fixed *box* an according width.
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
+
+.nav {
+  width: 33.33333%;
+}
 
 .content {
   margin-left: 33.33333%;
