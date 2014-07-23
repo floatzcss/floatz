@@ -173,12 +173,12 @@ rm -rf "floatz.dev.kit-$FLOATZ_VERSION/samples/Layouting Content/images"
 rm -rf "floatz.dev.kit-$FLOATZ_VERSION/samples/Layouting Forms/images"
 rm -rf "floatz.dev.kit-$FLOATZ_VERSION/samples/Layouting Navigation/images"
 rm -rf "floatz.dev.kit-$FLOATZ_VERSION/samples/Layouting Pages/images"
-zip -rmq floatz.dev.kit-$FLOATZ_VERSION.zip floatz.dev.kit-$FLOATZ_VERSION
-zip -dq floatz.dev.kit-$FLOATZ_VERSION.zip "*.DS_Store"
+zip -rmq ./download/floatz.dev.kit-$FLOATZ_VERSION.zip floatz.dev.kit-$FLOATZ_VERSION
+#zip -dq floatz.dev.kit-$FLOATZ_VERSION.zip "*.DS_Store"
 
 echo "floatz.build | INFO  | Creating floatz-$FLOATZ_VERSION.zip"
 mkdir floatz-$FLOATZ_VERSION
 cp -r floatz/* floatz-$FLOATZ_VERSION/
-zip -rmq floatz-$FLOATZ_VERSION.zip floatz-$FLOATZ_VERSION
+zip -rmq ./download/floatz-$FLOATZ_VERSION.zip floatz-$FLOATZ_VERSION
 zip -dq floatz-$FLOATZ_VERSION.zip "*.DS_Store"
 cd floatz.dev.kit/tools/build
