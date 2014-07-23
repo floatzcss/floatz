@@ -289,8 +289,6 @@ Next the liquid *box* must get a margin and the fixed *box* an according width.
 }
 ...
 ```
-Now the navgation *box* has a fixed width, while the content *box* automatically increases according to the browser viewport width.
-
 See it live: http://codepen.io/floatz/pen/JfAlp
 
 
