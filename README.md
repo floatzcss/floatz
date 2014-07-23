@@ -369,10 +369,10 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
     .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.js")
     .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.mobile.js")
     .wait(function() {
-       $(document).ready(function() {
+	$(document).ready(function() {
        
-          // Start floatz modules
-	  floatz.start({
+	// Start floatz modules
+	floatz.start({
 	      debug : true,
 	      logLevel : floatz.LOGLEVEL.DEBUG,
 	      modules : ["floatz.mobile"]
