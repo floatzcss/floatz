@@ -311,8 +311,7 @@ TODO: One page layout example<br />
 TODO: Examples with equal heights
 
 ### Layouting pages with panels
-Since version 1.2.0 **floatz** provides a layouting mechanism called *panel layout*. With this mechanism, that has its origins in [Google Web Toolkit](http://www.gwtproject.org/doc/latest/DevGuideUiPanels.html) it is possible to create modern desktop like layouts that are utilizing the whole browser view port. This kind of layout mechanism gets even more interesting in times of mobile apps.
-
+Since version 1.2.0 **floatz** provides a layouting mechanism called *panel layout*. With this mechanism, that has its origins in [Google Web Toolkits layout panels](http://www.gwtproject.org/doc/latest/DevGuideUiPanels.html) it is possible to create modern desktop like layouts that are utilizing the whole browser view port, which can also be interesing for developing HTML based mobile apps.
 
 
 
