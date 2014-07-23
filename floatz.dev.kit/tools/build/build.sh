@@ -56,7 +56,7 @@ function updateTemplate() {
 
 function createFile() {
 	echo "/* floatz CSS Framework v$FLOATZ_VERSION" > $1
-	echo "   Copyright (c) 1998-2013 by :humml:design" >> $1
+	echo "   Copyright (c) 1998-2014 by :humml:design" >> $1
 	echo "   Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */" >> $1
 }
 
