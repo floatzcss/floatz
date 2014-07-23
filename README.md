@@ -304,6 +304,9 @@ body {
 }
 ```
 See it live: http://codepen.io/floatz/pen/zraiL
+See it live: http://codepen.io/floatz/pen/tHzsB
+See it live: http://codepen.io/floatz/pen/vtnwC
+See it live: http://codepen.io/floatz/pen/uybke
 
 ### Layouting pages with panels
 
