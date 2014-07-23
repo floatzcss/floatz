@@ -307,8 +307,13 @@ See it live: http://codepen.io/floatz/pen/zraiL (Centered liquid)<br />
 See it live: http://codepen.io/floatz/pen/vtnwC (Centered liquid, 1 fixed column)<br />
 See it live: http://codepen.io/floatz/pen/uybke (Centered liquid, 2 fixed columns)
 
+TODO: One page layout example<br />
+TODO: Examples with equal heights
+
 ### Layouting pages with panels
+Since version 1.2.0 **floatz** provides a layouting mechanism called *panel layout*. With this mechanism, that has its origins in [Google Web Toolkit](http://www.gwtproject.org/doc/latest/DevGuideUiPanels.html) it is possible to create modern desktop like layouts that are utilizing the whole browser view port. This kind of layout mechanism gets even more interesting in times of mobile apps.
+
+
+
 
 To be continued ...
-
-
