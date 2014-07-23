@@ -261,18 +261,31 @@ See it live: http://codepen.io/floatz/pen/ayAmd
 
 ####Combining liquid and fixed layout
 
-When using the basic liquid layout each column increases its width according to the given percentage of the used *layouter*. For situations where only one of the columns should increase dynamically but the other should always have a fixed width, the markup and CSS must be changed like this:
+When using the *liquid layout module* each *box* increases its width according to the given percentage of the used *layouter*. For situations where only one of the *boxes* should increase dynamically but the others should always have a fixed width, the markup and CSS must be changed as followed.
 
+First **flz_box** must be removed from the content *box*.
+```
+<div id="flz_page">
+   ...
+   <div class="flz_box flz_l33 nav">
+      ...
+   </div>
+   <div class="content">
+      ...
+   </div>
+</div>
+```
+Next the content *box* must get an appropriate margin. In that example a left margin for the navigation *box*.
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
 
 .content {
-  margin-left: 20em;
+  margin-left: 33.33333%;
 }
 ...
 ```
-
+Now the navgation *box* has a fixed width, while the content *box* automatically increases according to the browser viewport width.
 
 See it live: http://codepen.io/floatz/pen/JfAlp
 
