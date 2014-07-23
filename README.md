@@ -317,27 +317,16 @@ Panel layout makes use of the CSS classes *flz_panel* and *flz_scrollpanel* inst
 
 ```
 <div class="flz_panel header">
-   Header
+   ...
 </div>
 <div class="flz_panel nav">
-   Navigation
+   ...
 </div>
 <div class="flz_scrollpanel content">
-   <h1>Header</h1>
-   <p>
-      ...
-   </p>
-   <h2>Header</h2>
-   <p>
-      ...
-   </p>
-   <h3>Header</h3>
-   <p>
-      ...
-  </p>
+   ...
 </div>
 <div class="flz_panel footer">
-   Footer
+   ...
 </div>
 ```
 The dimensions of the panels are provided via CSS.
