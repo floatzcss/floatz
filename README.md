@@ -313,7 +313,7 @@ TODO: Examples with equal heights
 ### Layouting pages with panels
 Since version 1.2.0 **floatz** provides a layouting mechanism called *panel layout*. With this mechanism, that has its origins in [Google Web Toolkits layout panels](http://www.gwtproject.org/doc/latest/DevGuideUiPanels.html) it is possible to create modern desktop like layouts that are utilizing the whole browser view port, which can also be interesing for developing HTML based mobile apps.
 
-Panel layout makes use of the CSS classes *flz_panel* and *flz_scrollpanel* instead of *flz_box*.
+*Panel layouts* make use of the CSS classes *flz_panel* and *flz_scrollpanel* instead of *flz_box*.
 
 ```
 <div class="flz_panel header">
