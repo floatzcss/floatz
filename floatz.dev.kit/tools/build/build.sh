@@ -69,6 +69,7 @@ trap "cleanup" INT TERM EXIT
 
 #Set variables for later user
 FLOATZ_VERSION=1.3.0
+FLOATZ_RELEASE=alpha #beta|
 JQUERY_VERSION=1.11.1
 LAB_VERSION=2.0.3
 LESS_VERSION=1.7.3
@@ -164,7 +165,7 @@ updateTemplate "center" "111"
 
 #Create floatz distribution packages
 cd ../../../
-echo "floatz.build | INFO  | Creating floatz.dev.kit-$FLOATZ_VERSION.zip"
+echo "floatz.build | INFO  | Creating floatz.dev.kit-$FLOATZ_VERSION$FLOATZ_RELEASE.zip"
 mkdir floatz.dev.kit-$FLOATZ_VERSION
 cp -r floatz.dev.kit/* floatz.dev.kit-$FLOATZ_VERSION/
 rm -rf floatz.dev.kit-$FLOATZ_VERSION/sandbox
@@ -173,12 +174,12 @@ rm -rf "floatz.dev.kit-$FLOATZ_VERSION/samples/Layouting Content/images"
 rm -rf "floatz.dev.kit-$FLOATZ_VERSION/samples/Layouting Forms/images"
 rm -rf "floatz.dev.kit-$FLOATZ_VERSION/samples/Layouting Navigation/images"
 rm -rf "floatz.dev.kit-$FLOATZ_VERSION/samples/Layouting Pages/images"
-zip -rmq ./download/floatz.dev.kit-$FLOATZ_VERSION.zip floatz.dev.kit-$FLOATZ_VERSION
-#zip -dq floatz.dev.kit-$FLOATZ_VERSION.zip "*.DS_Store"
+zip -rmq ./download/floatz.dev.kit-$FLOATZ_VERSION$FLOATZ_RELEASE.zip floatz.dev.kit-$FLOATZ_VERSION
+#zip -d -q ./download/floatz.dev.kit-$FLOATZ_VERSION$FLOATZ_RELEASE.zip "*.DS_Store"
 
-echo "floatz.build | INFO  | Creating floatz-$FLOATZ_VERSION.zip"
+echo "floatz.build | INFO  | Creating floatz-$FLOATZ_VERSION$FLOATZ_RELEASE.zip"
 mkdir floatz-$FLOATZ_VERSION
 cp -r floatz/* floatz-$FLOATZ_VERSION/
-zip -rmq ./download/floatz-$FLOATZ_VERSION.zip floatz-$FLOATZ_VERSION
-zip -dq floatz-$FLOATZ_VERSION.zip "*.DS_Store"
+zip -rmq ./download/floatz-$FLOATZ_VERSION$FLOATZ_RELEASE.zip floatz-$FLOATZ_VERSION
+#zip -d -q ./download/floatz-$FLOATZ_VERSION$FLOATZ_RELEASE.zip "*.DS_Store"
 cd floatz.dev.kit/tools/build
