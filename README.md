@@ -11,7 +11,7 @@
 * April 5th, 2010 - Version 1.1.0 released
 * January 5th, 2010 - Version 1.0.1 released
 
-##Supported browser
+##Browser Support
 ![](https://github.com/floatzcss/floatz/blob/master/wiki/browsersupport.png)
 
 ##Basic concepts
