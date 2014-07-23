@@ -384,6 +384,4 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
 
 See it live: http://codepen.io/floatz/pen/pyqeJ
 
-TODO: mobile adaptions for Webkit browsers.
-
 To be continued ...
