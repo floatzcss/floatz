@@ -12,7 +12,7 @@
 * January 5th, 2010 - Version 1.0.1 released
 
 ##Browser Support
-![](https://github.com/floatzcss/floatz/blob/master/wiki/browsersupport.png)
+->![](https://github.com/floatzcss/floatz/blob/master/wiki/browsersupport.png)<-
 
 ##Basic concepts
 
