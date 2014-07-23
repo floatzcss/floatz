@@ -289,8 +289,10 @@ Next the liquid *box* must get a margin and the fixed *box* an according width.
 }
 ...
 ```
-See it live: http://codepen.io/floatz/pen/JfAlp
-
+See it live: http://codepen.io/floatz/pen/JfAlp<br />
+See it live: http://codepen.io/floatz/pen/tHzsB<br />
+See it live: http://codepen.io/floatz/pen/vtnwC<br />
+See it live: http://codepen.io/floatz/pen/uybke
 
 ####Combining liquid and centered layout
 
@@ -300,20 +302,12 @@ For a liquid and centered *page* layout the *liquid layout module* is required a
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
 ...
 body {
-  margin: 0 10em;
+  margin: 0 10%;
 }
 ```
 See it live: http://codepen.io/floatz/pen/zraiL
-See it live: http://codepen.io/floatz/pen/tHzsB
-See it live: http://codepen.io/floatz/pen/vtnwC
-See it live: http://codepen.io/floatz/pen/uybke
 
 ### Layouting pages with panels
-
-
-
-
-
 
 To be continued ...
 
