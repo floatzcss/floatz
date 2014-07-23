@@ -365,7 +365,7 @@ The dimensions of the panels are provided via CSS.
   top: auto;
 }
 ```
-For smooth scrolling within scroll panels on mobile Webkit based browsers the following Javascript module must be loaded during startup.
+For smooth scrolling within scroll panels on mobile Webkit based browsers the following mobile javascript module must be additionally loaded during startup.
 ```
 // Load jquery, less and floatz in correct order
 $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.min.js")
