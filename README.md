@@ -363,7 +363,7 @@ The dimensions of the panels are provided via CSS.
 ```
 For smooth scrolling within scroll panels on mobile Webkit based browsers the following mobile javascript module must be additionally loaded during startup.
 ```
-// Load jquery, less and floatz in correct order
+// Load jquery, ua-parser and floatz in correct order
 $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.min.js")
     .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.0.min.js").wait()
     .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.js")
