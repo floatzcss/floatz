@@ -338,7 +338,6 @@ Since version 1.2.0 **floatz** provides a layouting mechanism called *panel layo
 ```
 The dimensions of the panels are provided via CSS.
 ```
-
 .header {
   bottom: auto;
   height: 3.5em;
@@ -366,6 +365,25 @@ The dimensions of the panels are provided via CSS.
   top: auto;
 }
 ```
+For smooth scrolling within scroll panels on mobile Webkit based browsers the following Javascript module must be loaded during startup.
+```
+// Load jquery, less and floatz in correct order
+$LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.min.js")
+  .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.0.min.js").wait()
+  .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.js")
+  .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.mobile.js").wait(function() {
+     $(document).ready(function() {
+		// Start floatz modules
+		floatz.start({
+			debug : true,
+			logLevel : floatz.LOGLEVEL.DEBUG,
+            modules : ["floatz.mobile"]
+		});
+	 });
+  });
+```
+
+
 See it live: http://codepen.io/floatz/pen/pyqeJ
 
 TODO: mobile adaptions for Webkit browsers.
