@@ -12,11 +12,7 @@ floatz
 * January 5th, 2010 - Version 1.0.1 released
 
 ##Supported browser
-* Internet Explorer 6+
-* Firefox 1+
-* Opera 7+
-* Safari 3+
-* Chrome
+![](https://github.com/floatzcss/floatz/blob/master/wiki/browsersupport.png)
 
 ##Basic concepts
 
