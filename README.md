@@ -281,11 +281,11 @@ Next the liquid *box* must get a margin and the fixed *box* an according width.
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
 
 .nav {
-  width: 33.33333%;
+  width: 25em;
 }
 
 .content {
-  margin-left: 33.33333%;
+  margin-left: 25em;
 }
 ...
 ```
