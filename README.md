@@ -384,6 +384,65 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
 See it live: http://codepen.io/floatz/pen/pyqeJ
 
 ##Layouting Navigation
+Easing the layout of navigational elements is one of the key purposes of **floatz** from the very beginning. Thus it provides a comprehensive set of reusable CSS classes for different navigation scenarios. The underlying markup is based on simple lists.
+
+###List navigations
+They easiest form of navigation is a simple horizontal list navigation using **flz_listnav**.
+
+The following example shows such a list navgation. Each navigation item is separated using a special separator (which could have also be defined within CSS instead). The active item is marked with **flz_selected**.
+```
+<ul class="flz_listnav">
+   <li class="flz_selected"><a href="#">Menu 1</a> |</li>
+   <li><a href="#">Menu 2</a> |</li>
+   <li><a href="#">Menu 3</a> |</li>
+   <li><a href="#">Menu 4</a> |</li>
+   <li><a href="#">Menu 5</a> |</li>
+   <li><a href="#">Menu 6</a> |</li>
+   <li><a href="#">Menu 7</a> |</li>
+   <li><a href="#">Menu 8</a></li>
+</ul>
+```
+See it live: http://codepen.io/floatz/pen/mpiHa
+
+This simple principle is inherent to all other navigation elements. The next example shows how the list navigation can be extended to a top navigation element (usually used for secondary navigation items at the top of the page - e.g. for contact, sitemap, search, language selectors, etc.) just by adding **flz_topnav**.
+```
+<ul class="flz_listnav flz_topnav">
+   <li><a href="#">Menu 6</a> |</li>
+   <li><a href="#">Menu 7</a> |</li>
+   <li><a href="#">Menu 8</a></li>
+</ul>
+```
+See it live: http://codepen.io/floatz/pen/mpiHa
+
+These are the provided CSS classes that can be used for list based navigation:
+
+| Class                   | Purpose                                                                                 |
+| ----------------------- | --------------------------------------------------------------------------------------- |
+| flz_breadcrumb          | Used for breadcrumb navigation, must be combined with flz_listnav                       |
+| flz_listnav             | Base list navigation, can be used alone                                                 |
+| flz_toolbar             | Used for toolbars, must be combined with flz_listnav                                    |
+| flz_topnav              | Used for secondary navigation at the top of the page, must be combined with flz_listnav |
+
+All listed navigation classes instead **flz_listnav** are absolute positioned. Thus they need a surrounding *box* that uses **flz_relative** or **position:relative** within the CSS. If no relative *box* is defined, the navigation elements are positioning in the context of **flz_page** or the HTML **body**.
+
+The following example shows **flz_toolbar** which positions in the context of its surrounding *box*.
+```
+<div class="flz_box flz_relative">
+   <ul class="flz_listnav flz_toolbar">
+      <li class="flz_selected"><a href="#"><span class="icon-camera"></span></a></li>
+      <li><a href="#"><span class="icon-cog"></span></a></li>
+      <li><a href="#"><span class="icon-star"></span></a></li>
+      <li><a href="#"><span class="icon-share"></span></a></li>
+   </ul>
+   <h1>Header</h1>
+   <p>
+      ...
+   </p>
+</div>
+```
+See it live: http://codepen.io/floatz/pen/mpiHa
+
+###Menus
 
 See it live: http://codepen.io/floatz/pen/mpiHa
 
