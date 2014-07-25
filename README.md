@@ -459,7 +459,7 @@ The example shows a horizontal menu using **flz_hmenu**.
 ```
 See it live: http://codepen.io/floatz/pen/mpiHa
 
-The next example shows a vertical menu using **flz_vmenu**. Vertical menus can also be used for hierarchical menus. The example also shows the use of **flz_disabled** for showing disabled menu items.
+The next example shows a vertical menu using **flz_vmenu**. Vertical menus can also be used for hierarchical menus. The example also shows the use of **flz_disabled** for indicating disabled menu items.
 ```      
 <div class="flz_vmenu">
    <ul>
