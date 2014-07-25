@@ -389,7 +389,7 @@ Easing the layout of navigational elements is one of the key purposes of **float
 ###List navigations
 They easiest form of navigation is a simple horizontal list navigation using **flz_listnav**.
 
-The following example shows such a list navigation. Each navigation item is separated using a special separator (which could have also be defined within CSS instead). The active item is marked with **flz_selected**.
+The following example shows such a list navigation. Each navigation item is separated using a separator character(which could have also been defined within CSS instead). The active item is marked with **flz_selected**.
 ```
 <ul class="flz_listnav">
    <li class="flz_selected"><a href="#">Menu 1</a> |</li>
