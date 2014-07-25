@@ -467,7 +467,7 @@ The next example shows a vertical menu using **flz_vmenu**. Vertical menus can a
       <li><a href="#">Menu 2</a>
          <ul>
             <li><a href="#">Submenu 2.1</a></li>
-            <li class="flz_disabled"><a href="">Submenu 2.2</a></li>
+            <li class="flz_disabled"><a>Submenu 2.2</a></li>
             <li><a href="#">Submenu 2.3</a>
                <ul>
                   <li><a href="#">Submenu 2.3.1</a></li>
