@@ -423,7 +423,7 @@ These are the provided CSS classes that can be used for list based navigation:
 | flz_toolbar             | Used for toolbars, must be combined with flz_listnav                                    |
 | flz_topnav              | Used for secondary navigation at the top of the page, must be combined with flz_listnav |
 
-All listed navigation classes instead **flz_listnav** are absolute positioned. Thus they need a surrounding *box* that uses **flz_relative** or **position:relative** within the CSS. If no relative *box* is defined, the navigation elements are positioning in the context of **flz_page** or the HTML **body**.
+All listed navigation classes instead **flz_listnav** are absolute positioned. Thus they need a surrounding *box* that uses **flz_relative** or **position:relative** within CSS. If no relative *box* is defined, the navigation elements are positioned in the context of **flz_page** or the HTML **body**.
 
 The following example shows **flz_toolbar** which positions in the context of its surrounding *box*.
 ```
