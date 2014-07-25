@@ -485,8 +485,8 @@ The next example shows a vertical menu using **flz_vmenu**. Vertical menus can a
 ```
 See it live: http://codepen.io/floatz/pen/mpiHa
 
-##Layouting skip link navigation
-##Layouting tab panel navigation
+###Skip links
+###Tab panels
 ##Layouting Forms
 
 To be continued ...
