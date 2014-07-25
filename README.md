@@ -443,9 +443,50 @@ The following example shows **flz_toolbar** which positions in the context of it
 See it live: http://codepen.io/floatz/pen/mpiHa
 
 ###Menus
+Menus are also simple list elements but visually richer (means you have more possibilities to style them individually). One major difference is that menus must use a **div** element as container which gets the CSS class instead of the **ul** element as for list navigations.
 
+The example shows a horizontal menu using **flz_hmenu**.
+```
+<div class="flz_hmenu">
+   <ul>
+      <li class="flz_selected"><a href="#">Menu 1</a></li>
+      <li><a href="#">Menu 2</a></li>
+      <li><a href="#">Menu 3</a></li>
+      <li><a href="#">Menu 4</a></li>
+      <li><a href="#">Menu 5</a></li>
+   </ul>
+</div>
+```
 See it live: http://codepen.io/floatz/pen/mpiHa
 
+The next example shows a vertical menu using **flz_vmenu**. Vertical menus can also be used for hierarchical menus. The example also shows the use of **flz_disabled** for indicating disabled menu items.
+```      
+<div class="flz_vmenu">
+   <ul>
+      <li class="flz_selected"><a href="#">Menu 1</a></li>
+      <li><a href="#">Menu 2</a>
+         <ul>
+            <li><a href="#">Submenu 2.1</a></li>
+            <li class="flz_disabled"><a>Submenu 2.2</a></li>
+            <li><a href="#">Submenu 2.3</a>
+               <ul>
+                  <li><a href="#">Submenu 2.3.1</a></li>
+                  <li><a href="#">Submenu 2.3.2</a></li>
+                  <li><a href="#">Submenu 2.3.3</a></li>
+               </ul>
+            </li>              
+         </ul>
+      </li>
+      <li><a href="#">Menu 3</a></li>
+      <li><a href="#">Menu 4</a></li>
+      <li><a href="#">Menu 5</a></li>
+   </ul>
+</div>
+```
+See it live: http://codepen.io/floatz/pen/mpiHa
+
+###Skip links
+###Tab panels
 ##Layouting Forms
 
 To be continued ...
