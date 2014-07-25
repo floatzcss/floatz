@@ -313,7 +313,7 @@ See it live: http://codepen.io/floatz/pen/uybke (Centered liquid, 2 fixed column
 ### Layouting pages with panels
 Since version 1.2.0 **floatz** provides a layouting mechanism called *panel layout*. With this mechanism, which has been inspired by [Google Web Toolkits layout panels](http://www.gwtproject.org/doc/latest/DevGuideUiPanels.html), it is possible to create modern desktop like layouts that are utilizing the whole browser view port, which can also be interesing for developing HTML based mobile apps.
 
-> Please note that panel based layouts are supported for all browsers, but in Internet Explorer only starting at 7+.
+> Please note that panel based layouts are supported for all browsers, but in Internet Explorer only starting at version 7+.
 
 *Panel layouts* make use of the CSS classes *flz_panel* and *flz_scrollpanel* instead of *flz_box*.
 
