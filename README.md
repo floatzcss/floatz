@@ -485,7 +485,7 @@ The next example shows a vertical menu using **flz_vmenu**. Vertical menus can a
 See it live: http://codepen.io/floatz/pen/mpiHa
 
 ###Skip links
-To increase accessibility for users that are dependent on screen readers **floatz** offers a skip link navigation that allows users to use the tab keys and to jump directly to sections within the page without the necessity to let screen readers repeatedly read everything again (see http://webaim.org/techniques/skipnav/ for more details on this topic).
+To increase accessibility for users that are dependent on screen readers **floatz** offers a skip link navigation that allows users to use the tab keys and to jump directly to sections within the page without the necessity to let screen readers repeatedly read everything each time a page is loaded again (see http://webaim.org/techniques/skipnav/ for more details on this topic).
 
 To support this it is neccesary to place a skip link navigation as the first element in the *page* so that this links are the first that is shown when the user tabs from the browsers address bar into the page.
 ```
