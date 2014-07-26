@@ -485,6 +485,49 @@ The next example shows a vertical menu using **flz_vmenu**. Vertical menus can a
 See it live: http://codepen.io/floatz/pen/mpiHa
 
 ###Skip links
+To increase accessibility for users that are dependent on screen readers **floatz** offers a skip link navigation that allows users to use the tab keys and to jump directly to sections within the page without the necessity to let screen readers repeatedly read everything again (see http://webaim.org/techniques/skipnav/ for more details on this topic).
+
+To support this it is neccesary to place a skip link navigation as the first element in the *page* so that this links are the first that is shown when the user tabs from the browsers address bar into the page.
+```
+<div id="flz_page">
+   <!-- Skiplink navigation -->
+   <div class="flz_skipnav">
+      <a class="flz_skiplink" href="#menu">Skip to menu</a>
+      <a class="flz_skiplink" href="#submenu">Skip to submenu</a>
+      <a class="flz_skiplink" href="#content">Skip to content</a>
+   </div>
+   ...
+</div>
+```
+Next the relevant skip link targets must be defined within the page using **a** tags marked **flz_anchor**.
+```
+<div class="flz_box flz_r75 content">
+   <a id="content" class="flz_anchor"></a>
+   ...
+</div>  
+...
+```
+At least it is also necessary to load the skiplink javascript module to add support for all browsers.
+```
+// Load jquery, ua-parser and floatz in correct order
+$LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.min.js")
+   .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.0.min.js").wait()
+   .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.js")
+   .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.skiplink.js")
+   .wait(function() {
+      $(document).ready(function() {
+			
+         // Start floatz modules
+         floatz.start({
+            debug : true,
+            logLevel : floatz.LOGLEVEL.DEBUG,
+            modules : ["floatz.skiplink"]
+         });
+      });
+   });
+```
+See it live: http://codepen.io/floatz/pen/mpiHa
+
 ###Tab panels
 ##Layouting Forms
 
