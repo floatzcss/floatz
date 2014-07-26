@@ -499,7 +499,7 @@ To support this it is neccessary to place a skip link navigation as the first el
    ...
 </div>
 ```
-Next the relevant skip link targets must be defined within the page using **a** tags marked **flz_anchor**.
+Next the relevant skip link targets must be defined within the page using **a** tags marked with **flz_anchor**.
 ```
 <div class="flz_box flz_r75 content">
    <a id="content" class="flz_anchor"></a>
