@@ -561,7 +561,7 @@ See it in action: http://codepen.io/floatz/pen/vIkEg?editors=100
 
 ###Tab panels
 
-See it in action: http://codepen.io/floatz/pen/KqEot
+See it in action: http://codepen.io/floatz/pen/KqEot<br />
 See it in action: http://codepen.io/floatz/pen/wrxsj (bottom aligned)
 
 ##Layouting Forms
