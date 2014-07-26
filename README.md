@@ -23,7 +23,7 @@ The basic layout class is a *box*. Each *box* floats left (this is where the nam
    ...
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/BoiLj/
+See it in action: http://codepen.io/floatz/pen/BoiLj/
 
 ####Customizing boxes
 *Boxes* can be easily customized via CSS.
@@ -37,7 +37,7 @@ See it live: http://codepen.io/floatz/pen/BoiLj/
    ...
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/KLakm
+See it in action: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
 *Layouters* are used to give *boxes* specific widths. It is important to use the correct *layouter* according to the position of the *box* (l=left, m=mid, r=right) to make it work properly in all browsers.
@@ -55,7 +55,7 @@ See it live: http://codepen.io/floatz/pen/KLakm
    ...
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/lzAew
+See it in action: http://codepen.io/floatz/pen/lzAew
 
 The following *layouters* are provided out of the box:
 
@@ -83,7 +83,7 @@ In best cases the sum of all *layouters* in a row gets 100%. If not, clear the f
    ...
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/kLaeC
+See it in action: http://codepen.io/floatz/pen/kLaeC
 
 Alternatively the *boxes* of each row can be surrounded with an additional *box* which is the most stable solution especially when dealing with *boxes* of different heights.
 ```
@@ -106,7 +106,7 @@ Alternatively the *boxes* of each row can be surrounded with an additional *box*
    </div>
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/foBvy
+See it in action: http://codepen.io/floatz/pen/foBvy
 
 ###Spacers
 *Spacers* are used to add whitespace to *boxes*. According to *layouters* it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding *box* to make them work accordingly. The following example shows *spacers* in a *single row / multiple column scenario*.
@@ -127,7 +127,7 @@ See it live: http://codepen.io/floatz/pen/foBvy
    </div>
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/HzIrA
+See it in action: http://codepen.io/floatz/pen/HzIrA
 
 ####Stacking spacers
 
@@ -179,7 +179,7 @@ It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). **flo
    </div>
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/aHscp
+See it in action: http://codepen.io/floatz/pen/aHscp
 
 ####Nesting spacers
 In real world scenarios it is often the case that *boxes* and *spacers* must be nested. To handle such situations **floatz** provides *subspacers*.
@@ -204,12 +204,12 @@ In real world scenarios it is often the case that *boxes* and *spacers* must be 
 </div>
 ```
 
-See it live: http://codepen.io/floatz/pen/FgJIC
+See it in action: http://codepen.io/floatz/pen/FgJIC
 
 *Subspacers* can of course be used in nested scenarios too and it is possible to create any imanginable combination of stacked and nested *boxes* just by combining the provided *layouters* and *spacers*.
 
-See it live: http://codepen.io/floatz/pen/aHscp<br />
-See it live: http://codepen.io/floatz/pen/KjzIm
+See it in action: http://codepen.io/floatz/pen/aHscp<br />
+See it in action: http://codepen.io/floatz/pen/KjzIm
 
 The following *spacers* are provided out of the box:
 
@@ -248,7 +248,7 @@ Depending on the kind of *page* layout that should be used, the according *layou
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.liquid.css);
 ...
 ```
-See it live: http://codepen.io/floatz/pen/eJbjr
+See it in action: http://codepen.io/floatz/pen/eJbjr
 ```
 /* Loads floatz CSS framework */
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.fixed.css);
@@ -260,7 +260,7 @@ See it live: http://codepen.io/floatz/pen/wugzl
 @import url(http://design.humml.eu/toolbox/floatz/latest/floatz.center.css);
 ...
 ```
-See it live: http://codepen.io/floatz/pen/ayAmd
+See it in action: http://codepen.io/floatz/pen/ayAmd
 
 ####Combining liquid and fixed layout
 
@@ -292,8 +292,8 @@ Next the liquid *box* must get a margin and the fixed *box* an according width.
 }
 ...
 ```
-See it live: http://codepen.io/floatz/pen/JfAlp (Liquid, 1 fixed column)<br />
-See it live: http://codepen.io/floatz/pen/tHzsB (Liquid, 2 fixed columns)
+See it in action: http://codepen.io/floatz/pen/JfAlp (Liquid, 1 fixed column)<br />
+See it in action: http://codepen.io/floatz/pen/tHzsB (Liquid, 2 fixed columns)
 
 ####Combining liquid and centered layout
 
@@ -306,9 +306,9 @@ body {
   margin: 0 10%;
 }
 ```
-See it live: http://codepen.io/floatz/pen/zraiL (Centered liquid)<br />
-See it live: http://codepen.io/floatz/pen/vtnwC (Centered liquid, 1 fixed column)<br />
-See it live: http://codepen.io/floatz/pen/uybke (Centered liquid, 2 fixed columns)
+See it in action: http://codepen.io/floatz/pen/zraiL (Centered liquid)<br />
+See it in action: http://codepen.io/floatz/pen/vtnwC (Centered liquid, 1 fixed column)<br />
+See it in action: http://codepen.io/floatz/pen/uybke (Centered liquid, 2 fixed columns)
 
 ### Layouting pages with panels
 Since version 1.2.0 **floatz** provides a layouting mechanism called *panel layout*. With this mechanism, which has been inspired by [Google Web Toolkits layout panels](http://www.gwtproject.org/doc/latest/DevGuideUiPanels.html), it is possible to create modern desktop like layouts that are utilizing the whole browser view port, which can also be interesing for developing HTML based mobile apps.
@@ -379,8 +379,7 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
 	});
 });
 ```
-
-See it live: http://codepen.io/floatz/pen/pyqeJ
+See it in action: http://codepen.io/floatz/pen/pyqeJ
 
 ##Layouting Navigation
 Easing the layout of navigational elements is one of the key purposes of **floatz** from the very beginning. Thus it provides a comprehensive set of reusable CSS classes for different navigation scenarios. The underlying markup is based on simple lists.
@@ -401,7 +400,7 @@ The following example shows such a list navigation. Each navigation item is sepa
    <li><a href="#">Menu 8</a></li>
 </ul>
 ```
-See it live: http://codepen.io/floatz/pen/mpiHa
+See it in action: http://codepen.io/floatz/pen/mpiHa
 
 This simple principle is inherent to all other navigation elements. The next example shows how the list navigation can be extended to a top navigation element (usually used for secondary navigation items at the top of the page - e.g. for contact, sitemap, search, language selectors, etc.) just by adding **flz_topnav**.
 ```
@@ -411,7 +410,7 @@ This simple principle is inherent to all other navigation elements. The next exa
    <li><a href="#">Menu 8</a></li>
 </ul>
 ```
-See it live: http://codepen.io/floatz/pen/mpiHa
+See it in action: http://codepen.io/floatz/pen/mpiHa
 
 These are the provided CSS classes that can be used for list based navigation:
 
@@ -439,7 +438,7 @@ The following example shows **flz_toolbar** which positions in the context of it
    </p>
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/mpiHa
+See it in action: http://codepen.io/floatz/pen/mpiHa
 
 ###Menus
 Menus are also simple list elements but visually richer (means you have more possibilities to style them individually). One major difference is that menus must use a **div** element as container which gets the CSS class instead of the **ul** element as for list navigations.
@@ -456,7 +455,7 @@ The example shows a horizontal menu using **flz_hmenu**.
    </ul>
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/mpiHa
+See it in action: http://codepen.io/floatz/pen/mpiHa
 
 The next example shows a vertical menu using **flz_vmenu**. Vertical menus can also be used for hierarchical menus. The example also shows the use of **flz_disabled** for indicating disabled menu items.
 ```      
@@ -482,7 +481,7 @@ The next example shows a vertical menu using **flz_vmenu**. Vertical menus can a
    </ul>
 </div>
 ```
-See it live: http://codepen.io/floatz/pen/mpiHa
+See it in action: http://codepen.io/floatz/pen/mpiHa
 
 ###Skip links
 To increase accessibility for users that are dependent on screen readers **floatz** offers a skip link navigation that allows users to use the tab keys and to jump directly to sections within the page without the necessity to let screen readers repeatedly read everything each time a page is loaded again (see http://webaim.org/techniques/skipnav/ for more details on this topic).
@@ -526,9 +525,11 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
       });
    });
 ```
-See it live: http://codepen.io/floatz/pen/mpiHa
+See it in action: http://codepen.io/floatz/pen/mpiHa
 
 ###Workflow navigation
+
+See it in action: http://codepen.io/floatz/pen/vIkEg?editors=100
 ###Tab panels
 ##Layouting Forms
 
