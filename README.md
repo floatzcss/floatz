@@ -240,7 +240,7 @@ Since **floatz 1.3.0** *boxes* are using *box-sizing: border-box* by default. Th
 Examples
 ```
 
-> Please note: if older browsers have to be supported it is still necessary to use the 'old' method with separate *divs* for each *spacer*, otherwise the layout will collapse. See http://caniuse.com/css3-boxsizing which browsers do not support *box-sizing*.
+> Please note: if older browsers have to be supported it is still necessary to use the 'old' method with separate *divs* for each *spacer*, otherwise the layout will collapse. See http://caniuse.com/css3-boxsizing for which browsers do not support *box-sizing*.
 
 ##Layouting pages
 ###Layouting pages with boxes
