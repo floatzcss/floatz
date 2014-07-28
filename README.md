@@ -232,7 +232,11 @@ The following *spacers* are provided out of the box:
 | flz_rspacer_mrmc_mid    | flz_rspacer_mrmc_mid       | Multi row / Multi column   | Mid right spacer    |
 | flz_rspacer_mrmc_bottom | flz_rspacer_mrmc_bottom    | Multi row / Multi column   | Bottom right spacer |
 
-> Since **floatz 1.3.0** *boxes* and *panels* are using **box-sizing: border-box** by default. Thus you don´t necessary have to use separate **div** elements for adding whitespace. In that case you can assign the spacers together with the *layouters* directly on the *box*.
+> Since **floatz 1.3.0** *boxes* and *panels* are using **box-sizing: border-box** by default. Thus you don´t necessarily have to use separate **div** elements for adding whitespace. In that case you can assign the spacers together with the *layouters* directly on the *box* level.
+>
+> TODO Examples
+>
+> Please note: if you have to support older browser you can NOT use this method. Therefor please check if **box-sizing** is supported by your browsers: http://caniuse.com/css3-boxsizing
 
 ##Layouting pages
 ###Layouting pages with boxes
