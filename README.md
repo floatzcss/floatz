@@ -234,12 +234,13 @@ The following *spacers* are provided out of the box:
 
 ####Using spacers in modern browsers
 
-Since **floatz 1.3.0** *boxes* and *panels* are using **box-sizing: border-box** by default. Thus is is not necessary to add extra **div**s for adding whitespacer with *spacers*.
+Since **floatz 1.3.0** *boxes* are using **box-sizing: border-box** by default. Thus is is not necessary to add extra **div**s for creating whitespace. The *spacers* can simply be added to *boxes* side by side with *layouters*.
 
 ```
+Examples
 ```
->
-> Please note: if you have to support older browser you can NOT use this method. Therefor please check if **box-sizing** is supported by your browsers: http://caniuse.com/css3-boxsizing
+
+> Please note: if older browsers have to be supported it is still necessary to use the 'old' method with separate **div**s for spacers. Otherwise the layout would collapse. See http://caniuse.com/css3-boxsizing which browsers do not support **box-sizing**.
 
 ##Layouting pages
 ###Layouting pages with boxes
