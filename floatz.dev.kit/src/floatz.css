@@ -298,6 +298,21 @@ pre {
  * @lastmodified  2014-07-16
  * @since         1.0.0
  */
+/*****************************************************************************************
+ * floatz.mixins.css
+ * ---------------------------------------------------------------------------------------
+ * TODO
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2014 by :humml:design
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-16
+ * @since         1.3.0
+ */
 /**
  * ---------------------------------------------------------------------------------------
  * @section       Page container
@@ -340,11 +355,17 @@ pre {
  */
 .flz_box {
   background-color: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   clear: none;
   float: left;
   width: 100%;
 }
 .flz_scrollbox {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   overflow: auto;
 }
 /**
