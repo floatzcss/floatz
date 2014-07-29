@@ -29,6 +29,8 @@
  * [Clearing the float](#clearing-the-float)
 * [Spacers](#spacers)
  * [Stacking spacers](#stacking-spacers)
+ * [Nesting spacers](#nesting-spacers)
+ * [Using spacers in modern browsers](#using-spacers-in-modern-browsers)
 
 ###Boxes
 The basic layout class is a *box*. Each *box* floats left (this is where the name **floatz** comes from) and gets by default a width of 100% of its surrounding parent element.
