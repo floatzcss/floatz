@@ -4,14 +4,14 @@
 **floatz is a flexible and easy to use CSS framework.** It provides a set of reusable CSS classes, Javascript modules and HTML code snippets that support web designers and developers to create state-of-the-art web sites, web applications and HTML based mobile apps - on all browsers, platforms and devices.
 
 ##Table of Content
-* [Version History](#version-history)
-* [Browser Support](#browser-support)
-* [Basic Concepts](#basic-concepts)
-* [Layouting Pages](#layouting-pages)
-* [Layouting Navigation](#layouting-navigation)
-* [Layouting Forms](#layouting-forms)
+* [Version history](#version-history)
+* [Browser support](#browser-support)
+* [Basic concepts](#basic-concepts)
+* [Layouting pages](#layouting-pages)
+* [Layouting navigation](#layouting-navigation)
+* [Layouting forms](#layouting-forms)
 
-##Version History
+##Version history
 * September, 2014 - Version 1.3.0 currently under construction
 * July 29th, 2013 - Version 1.2.0 released
 * July 17th, 2012 - Version 1.1.2 released
@@ -19,10 +19,10 @@
 * April 5th, 2010 - Version 1.1.0 released
 * January 5th, 2010 - Version 1.0.1 released
 
-##Browser Support
+##Browser support
 ![](https://github.com/floatzcss/floatz/blob/master/wiki/browsersupport.png)
 
-##Basic Concepts
+##Basic concepts
 
 * [Boxes](#boxes)
 * [Layouters](#layouters)
@@ -418,8 +418,14 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
 ```
 See it in action: http://codepen.io/floatz/pen/pyqeJ
 
-##Layouting Navigation
+##Layouting navigation
 Easing the layout of navigational elements is one of the key purposes of **floatz** from the very beginning. Thus it provides a comprehensive set of reusable CSS classes for different navigation scenarios. The underlying markup is based on simple lists.
+
+* [List navigations](#list-navigations)
+* [Menus](#menus)
+* [Skip links](#skip-links)
+* [Workflow indicators](#workflow-indicators)
+* [Tab panels](#tab-panels)
 
 ###List navigations
 They easiest form of navigation is a simple horizontal list navigation using **flz_listnav**.
@@ -564,8 +570,8 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
 ```
 See it in action: http://codepen.io/floatz/pen/mpiHa
 
-###Workflow navigation
-When dealing with workflows it makes sense to visually indicate the current workflow state. Thus **floatz** offers the CSS class **flz_workflow** which can be used for exactly that kind of use case.
+###Workflow indicators
+When dealing with workflows it makes sense to visualy indicate the current workflow state. Thus **floatz** offers the CSS class **flz_workflow** which can be used for exactly that kind of use case.
 ```
 <div class="flz_box flz_workflow">
    <ul>
@@ -598,9 +604,11 @@ See it in action: http://codepen.io/floatz/pen/vIkEg?editors=100
 
 ###Tab panels
 
+To be continued ...
+
 See it in action: http://codepen.io/floatz/pen/KqEot<br />
 See it in action: http://codepen.io/floatz/pen/wrxsj (bottom aligned)
 
-##Layouting Forms
+##Layouting forms
 
 To be continued ...
