@@ -230,8 +230,20 @@ The following *spacers* are provided out of the box:
 Since **floatz 1.3.0** *boxes* are using *box-sizing: border-box* by default. Thus it is not necessary to add extra *divs* for creating whitespace in such cases. The *spacers* can simply be added to the *boxes* side by side with *layouters*.
 
 ```
-Examples
+<div class="flz_box flz_l25 flz_lspacer">
+   ...
+</div>
+<div class="flz_box flz_m50 flz_mspacer">
+   ...
+</div>
+<div class="flz_box flz_r25 flz_rspacer">
+   ...
+</div>
 ```
+
+See it in action: http://codepen.io/floatz/pen/boiAx<br />
+See it in action: http://codepen.io/floatz/pen/FqJgl<br />
+See it in action: http://codepen.io/floatz/pen/ntpBw
 
 > Please note: if legacy browsers have to be supported it is still necessary to use the 'old' method with separate *divs* for each *spacer*, otherwise the layout will collapse. See http://caniuse.com/css3-boxsizing for information about which browsers do / do not support *box-sizing*.
 
