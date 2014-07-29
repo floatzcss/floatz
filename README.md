@@ -4,12 +4,12 @@
 **floatz is a flexible and easy to use CSS framework.** It provides a set of reusable CSS classes, Javascript modules and HTML code snippets that support web designers and developers to create state-of-the-art web sites, web applications and HTML based mobile apps - on all browsers, platforms and devices.
 
 ##Table of Content
-[Version History](#version-history)
-[Browser Support](#browser-support)
-[Basic Concepts](#basic-concepts)
-[Layouting Pages](#layouting-pages)
-[Layouting Navigation](#layouting-navigation)
-[Layouting Forms](#layouting-forms)
+* [Version History](#version-history)
+* [Browser Support](#browser-support)
+* [Basic Concepts](#basic-concepts)
+* [Layouting Pages](#layouting-pages)
+* [Layouting Navigation](#layouting-navigation)
+* [Layouting Forms](#layouting-forms)
 
 ##Version History
 * September, 2014 - Version 1.3.0 currently under construction
@@ -24,9 +24,9 @@
 
 ##Basic Concepts
 
-[Boxes](#boxes)
-[Layouters](#layouters)
-[Spacers](#spacers)
+* [Boxes](#boxes)
+* [Layouters](#layouters)
+* [Spacers](#spacers)
 
 ###Boxes
 The basic layout class is a *box*. Each *box* floats left (this is where the name **floatz** comes from) and gets by default a width of 100% of its surrounding parent element.
