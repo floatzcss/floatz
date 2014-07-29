@@ -16,6 +16,10 @@
 
 ##Basic concepts
 
+[Boxes](#boxes)
+[Layouters](#layouters)
+[Spacers](#spacers)
+
 ###Boxes
 The basic layout class is a *box*. Each *box* floats left (this is where the name **floatz** comes from) and gets by default a width of 100% of its surrounding parent element.
 
