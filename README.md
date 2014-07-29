@@ -33,7 +33,7 @@ The basic layout class is a *box*. Each *box* floats left (this is where the nam
 See it in action: http://codepen.io/floatz/pen/KLakm
 
 ###Layouters
-*Layouters* are used to give *boxes* specific widths. It is important to use the correct *layouter* according to the position of the *box* (l=left, m=mid, r=right) to make them work properly in all browsers.
+*Layouters* are used to give *boxes* specific widths. It is important to use the correct *layouter* according to the horizontal orientation of the *box* (l=left, m=mid, r=right) to make them work properly in all browsers.
 ```
 <div class="flz_box flz_l25">
    ...
