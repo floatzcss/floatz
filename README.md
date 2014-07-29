@@ -102,7 +102,7 @@ Alternatively the *boxes* of each row can be surrounded with an additional *box*
 See it in action: http://codepen.io/floatz/pen/foBvy
 
 ###Spacers
-*Spacers* are used to add whitespace to *boxes*. According to *layouters* it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the position of the surrounding *box* to make them work accordingly. The following example shows *spacers* in a *single row / multiple column scenario*.
+*Spacers* are used to add whitespace to *boxes*. According to *layouters* it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the horizontal orientation of the surrounding *box* to make them work accordingly. The following example shows *spacers* in a *single row / multiple column scenario*.
 ```
 <div class="flz_box flz_r25">
    <div class="flz_lspacer">
