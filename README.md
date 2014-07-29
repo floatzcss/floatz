@@ -264,6 +264,12 @@ See it in action: http://codepen.io/floatz/pen/FqJgl<br />
 See it in action: http://codepen.io/floatz/pen/ntpBw
 
 ##Layouting pages
+
+* [Layouting pages with boxes](#layouting-pages-with-boxes)
+ * [Combining liquid and fixed layout](#combining-liquid-and-fixed-layout) 
+ * [Combining liquid and centered layout](#combining-liquid-and-centered-layout)
+* [Layouting pages with panels](#layouting-pages-with-panels)
+
 ###Layouting pages with boxes
 The root element for a *page* is the **flz_page** id.
 ```
