@@ -443,6 +443,7 @@ The following example shows such a list navigation. Each navigation item is sepa
    <li><a href="#">Menu 8</a></li>
 </ul>
 ```
+See it in action: http://codepen.io/floatz/pen/zkegd<br />
 See it in action: http://codepen.io/floatz/pen/mpiHa
 
 This simple principle is inherent to all other navigation elements. The next example shows how the list navigation can be extended to a top navigation element (usually used for secondary navigation items at the top of the page - e.g. for contact, sitemap, search, language selectors, etc.) just by adding **flz_topnav**.
@@ -498,6 +499,7 @@ The example shows a horizontal menu using **flz_hmenu**.
    </ul>
 </div>
 ```
+See it in action: http://codepen.io/floatz/pen/GAvlE<br />
 See it in action: http://codepen.io/floatz/pen/mpiHa
 
 The next example shows a vertical menu using **flz_vmenu**. Vertical menus can also be used for hierarchical menus. The example also shows the use of **flz_disabled** for indicating disabled menu items.
