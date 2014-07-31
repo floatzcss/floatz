@@ -615,7 +615,7 @@ See it in action: http://codepen.io/floatz/pen/wrxsj (bottom aligned)
 
 To be continued ...
 
-See it in action: http://codepen.io/floatz/pen/Fdqse
-See it in action: http://codepen.io/floatz/pen/DsBev (layouting with fieldsets)
-See it in action: http://codepen.io/floatz/pen/AeFnD (layouting with spacers)
+See it in action: http://codepen.io/floatz/pen/Fdqse<br />
+See it in action: http://codepen.io/floatz/pen/DsBev (layouting with fieldsets)<br />
+See it in action: http://codepen.io/floatz/pen/AeFnD (layouting with spacers)<br />
 See it in action: http://codepen.io/floatz/pen/Cqcaj (layouting in modern browsers)
