@@ -416,7 +416,8 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
 	});
 });
 ```
-See it in action: http://codepen.io/floatz/pen/pyqeJ
+See it in action: http://codepen.io/floatz/pen/pyqeJ<br />
+See it in action: http://codepen.io/floatz/pen/khgBI
 
 ##Layouting navigation
 Easing the layout of navigational elements is one of the key purposes of **floatz** from the very beginning. Thus it provides a comprehensive set of reusable CSS classes for different navigation scenarios. The underlying markup is based on simple lists.
