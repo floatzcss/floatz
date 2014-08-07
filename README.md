@@ -607,10 +607,34 @@ See it in action: http://codepen.io/floatz/pen/vIkEg?editors=100
 
 ###Tab panels
 
-To be continued ...
+Creating tab panels is just as simple as creating list navigations or menus. 
 
+```
+<div class="flz_htabmenu">
+	<ul>
+		<li class="flz_selected"><a href="#">Tab 1</a></li>
+		<li><a href="#">Tab 2</a></li>
+		<li><a href="#">Tab 3</a></li>
+		<li class="flz_disabled"><a>Disabled Tab</a></li>
+		<li><a href="#">Tab 4</a></li>
+	</ul>
+</div>
+```
 See it in action: http://codepen.io/floatz/pen/KqEot<br />
-See it in action: http://codepen.io/floatz/pen/wrxsj (bottom aligned)
+
+For a bottom aligned tab panel the class simply must be changed to **flz_htabmenu_bottom**
+```
+<div class="flz_htabmenu_bottom">
+				<ul>
+					<li class="flz_selected"><a href="#">Tab 1</a></li>
+					<li><a href="#">Tab 2</a></li>
+					<li><a href="#">Tab 3</a></li>
+					<li class="flz_disabled"><a>Disabled Tab</a></li>
+					<li><a href="#">Tab 4</a></li>
+				</ul>
+			</div>
+```
+See it in action: http://codepen.io/floatz/pen/wrxsj
 
 ##Layouting forms
 
