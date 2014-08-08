@@ -671,6 +671,9 @@ Easing the layout of forms is one of the greatest strengths and initial purposes
 ```
 See it in action: http://codepen.io/floatz/pen/Fdqse
 
+### Form basics
+#### Checkboxes and radio buttons
+
 Usually labels should be in the same row like checkboxes and radio buttons. To acchieve this the corresponding labels must be annotated with **flz_inline**.
 ```
 <input type="checkbox" class="flz_checkbox" id="checkbox1" />
@@ -688,6 +691,21 @@ Usually labels should be in the same row like checkboxes and radio buttons. To a
 <label for="radio3" class="flz_inline">Radio 3</label>
 ```
 See it in action: http://codepen.io/floatz/pen/Fdqse
+
+#### Comboboxes
+
+**floatz** also supports combinations of input fields and images.
+
+```
+<div class="flz_combobox">
+	<input type="text" class="flz_textbox" id="combobox1" />
+	<!-- Image must be in next line - otherwise unnecessary whitespace in IE -->
+	<a href="#">
+		<span class="icon-cog"></span>
+	</a>
+</div>
+```
+###Complex forms
 
 To be continued ...
 
