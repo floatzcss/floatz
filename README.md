@@ -671,12 +671,19 @@ See it in action: http://codepen.io/floatz/pen/Fdqse
 
 Usually labels should be in the same row like checkboxes and radio buttons. To acchieve this the corresponding labels must be annotated with **flz_inline**.
 ```
-<input type="checkbox" class="flz_checkbox" id="checkbox1" /> <label for="checkbox1" class="flz_inline">Checkbox 1</label>
-    <input type="checkbox" class="flz_checkbox" id="checkbox2" /> <label for="checkbox2" class="flz_inline">Checkbox 2</label>
-    <input type="checkbox" class="flz_checkbox" id="checkbox3" /> <label for="checkbox3" class="flz_inline">Checkbox 3</label>
-    <input type="radio" class="flz_radio" id="radio1" name="radioGroup1" /> <label for="radio1" class="flz_inline">Radio 1</label>
-    <input type="radio" class="flz_radio" id="radio2" name="radioGroup1" /> <label for="radio2" class="flz_inline">Radio 2</label>
-    <input type="radio" class="flz_radio" id="radio3" name="radioGroup1" /> <label for="radio3" class="flz_inline">Radio 3</label>
+<input type="checkbox" class="flz_checkbox" id="checkbox1" />
+<label for="checkbox1" class="flz_inline">Checkbox 1</label>
+<input type="checkbox" class="flz_checkbox" id="checkbox2" />
+<label for="checkbox2" class="flz_inline">Checkbox 2</label>
+<input type="checkbox" class="flz_checkbox" id="checkbox3" />
+<label for="checkbox3" class="flz_inline">Checkbox 3</label>
+
+<input type="radio" class="flz_radio" id="radio1" name="radioGroup1" />
+<label for="radio1" class="flz_inline">Radio 1</label>
+<input type="radio" class="flz_radio" id="radio2" name="radioGroup1" />
+<label for="radio2" class="flz_inline">Radio 2</label>
+<input type="radio" class="flz_radio" id="radio3" name="radioGroup1" />
+<label for="radio3" class="flz_inline">Radio 3</label>
 ```
 See it in action: http://codepen.io/floatz/pen/Fdqse
 
