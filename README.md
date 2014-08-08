@@ -622,7 +622,7 @@ Creating tab panels is just as simple as creating list navigations or menus.
 ```
 See it in action: http://codepen.io/floatz/pen/KqEot<br />
 
-For a bottom aligned tab panel the class simply must be changed to **flz_htabmenu_bottom**
+For a bottom aligned tab panel the class simply must be changed to **flz_htabmenu_bottom**.
 ```
 <div class="flz_htabmenu_bottom">
 	<ul>
@@ -639,6 +639,37 @@ See it in action: http://codepen.io/floatz/pen/wrxsj
 The default tab panel implementation uses sprite images to support round corners in all browsers (until IE6). For customization the styles simply have to be overridden with or without sprite images if used in newer browsers.
 
 ##Layouting forms
+
+Easing the layout of forms is one of the greatest strengths and initial purposes of **floatz**. By adding **flz_form** to the *form* tag or any other block level HTML tag each form field spans the whole width of its parent container. 
+
+```
+<form class="flz_form">
+	<label for="field1">Text Field</label>
+	<input type="text" class="flz_textbox" id="field1" />
+	<label for="field2">Password Field</label>
+	<input type="password" class="flz_textbox" id="field2" />
+	<label for="dropdown1">Dropdown 1</label>
+	<select id="dropdown1">
+		<option>Option 1</option>
+		<option>Option 2</option>
+		<option>Option 3</option>
+		<option>Option 4</option>
+	</select>    
+	<label for="textarea1">Textarea 1</label>
+	<textarea id="textarea1"></textarea>
+	
+	...
+	
+	<div class="flz_box">
+		<input type="submit" class="flz_button" value="Save" />
+		<input type="button" class="flz_button" value="Cancel" />
+		<input type="reset" class="flz_button" value="Reset" />
+		<button>Help</button>
+	</div>
+</form>
+```
+
+> To support older browsers that do not support attribute selectors (like IE6) it is necessary to annotate each *input* type with the corresponding floatz style: **flz_textbox**, **flz_checkbox**, **flz_radio**, **flz_button**. These styles can be left in modern browsers.
 
 To be continued ...
 
