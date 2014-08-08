@@ -720,6 +720,8 @@ See it in action: http://codepen.io/floatz/pen/Fdqse
 Layouting complex forms is as easy as layouting pages. It´s just necessary to use *boxes* and *layouters* and *spacers* to create any imaginable form grid.
 
 ####Layouting with spacers
+
+The following sample uses *spacers* to add white space to the input form.
 ```
 <form class="flz_form">
   <div class="flz_box flz_l50">
