@@ -646,6 +646,7 @@ The default tab panel implementation uses sprite images to support round corners
 * [Complex forms](#complex-forms)
  * [Layouting with spacers](#layouting-with-spacers)
  * [Layouting with fieldsets](#layouting-with-fieldsets)
+* [Forms in modern browsers](#forms-in-modern-browsers)
 
 ### Form basics
 
@@ -765,6 +766,10 @@ It is also possible to combine *spacers* and fieldsets for grouping input fields
 ```
 See it in action: http://codepen.io/floatz/pen/DsBev
 
-####Forms in modern browsers
+###Forms in modern browsers
+
+As already [mentioned](#using-spacers-in-modern-browsers) **floatz** supports a wide range of browsers even legacy browsers like IE6 and 7. If it is assured that a website or application is only used in modern browsers the necessary elements and classes for layouting can be reduced to the max.
+
+The following example shows how a form can be layouted in modern browsers.
 
 See it in action: http://codepen.io/floatz/pen/Cqcaj
