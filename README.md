@@ -641,6 +641,8 @@ The default tab panel implementation uses sprite images to support round corners
 ##Layouting forms
 
 Easing the layout of forms is one of the greatest strengths and initial purposes of **floatz**. By adding **flz_form** to the *form* tag or any other block level HTML tag each form field spans the whole width of its parent container by default. 
+> To support older browsers that do not support attribute selectors (like IE6) it is necessary to annotate each *input* type with the corresponding floatz style: **flz_textbox**, **flz_checkbox**, **flz_radio**, **flz_button**. These styles can be left in modern browsers.
+
 ```
 <form class="flz_form">
 	<label for="field1">Text Field</label>
@@ -686,8 +688,6 @@ Usually labels should be in the same row like checkboxes and radio buttons. To a
 <label for="radio3" class="flz_inline">Radio 3</label>
 ```
 See it in action: http://codepen.io/floatz/pen/Fdqse
-
-> To support older browsers that do not support attribute selectors (like IE6) it is necessary to annotate each *input* type with the corresponding floatz style: **flz_textbox**, **flz_checkbox**, **flz_radio**, **flz_button**. These styles can be left in modern browsers.
 
 To be continued ...
 
