@@ -636,7 +636,7 @@ For a bottom aligned tab panel the class simply must be changed to **flz_htabmen
 ```
 See it in action: http://codepen.io/floatz/pen/wrxsj
 
-The default tab panel implementation uses sprite images to support round corners in all browsers (until IE6). For customization the styles simply have to be overridden with or without sprite images if used in newer browsers.
+The default tab panel implementation uses sprite images to support round corners in all browsers (until IE6). For customization the styles simply have to be overridden with or without sprite images if used only in newer browsers.
 
 ##Layouting forms
 
