@@ -717,7 +717,7 @@ See it in action: http://codepen.io/floatz/pen/Fdqse
 
 ###Complex forms
 
-Layouting complex forms is as easy as layouting pages. It´s just necessary to use *boxes* and *layouters* and *spacers* to create any imaginable form grid.
+Layouting complex forms is as easy as layouting pages. It´s just necessary to use *boxes*, *layouters* and *spacers* to create any imaginable form grid.
 
 ####Layouting with spacers
 
