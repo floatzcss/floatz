@@ -640,8 +640,7 @@ The default tab panel implementation uses sprite images to support round corners
 
 ##Layouting forms
 
-Easing the layout of forms is one of the greatest strengths and initial purposes of **floatz**. By adding **flz_form** to the *form* tag or any other block level HTML tag each form field spans the whole width of its parent container. 
-
+Easing the layout of forms is one of the greatest strengths and initial purposes of **floatz**. By adding **flz_form** to the *form* tag or any other block level HTML tag each form field spans the whole width of its parent container by default. 
 ```
 <form class="flz_form">
 	<label for="field1">Text Field</label>
@@ -668,12 +667,23 @@ Easing the layout of forms is one of the greatest strengths and initial purposes
 	</div>
 </form>
 ```
+See it in action: http://codepen.io/floatz/pen/Fdqse
+
+Usually labels should be in the same row like checkboxes and radio buttons. To acchieve this the corresponding labels must be annotated with **flz_inline**.
+```
+<input type="checkbox" class="flz_checkbox" id="checkbox1" /> <label for="checkbox1" class="flz_inline">Checkbox 1</label>
+    <input type="checkbox" class="flz_checkbox" id="checkbox2" /> <label for="checkbox2" class="flz_inline">Checkbox 2</label>
+    <input type="checkbox" class="flz_checkbox" id="checkbox3" /> <label for="checkbox3" class="flz_inline">Checkbox 3</label>
+    <input type="radio" class="flz_radio" id="radio1" name="radioGroup1" /> <label for="radio1" class="flz_inline">Radio 1</label>
+    <input type="radio" class="flz_radio" id="radio2" name="radioGroup1" /> <label for="radio2" class="flz_inline">Radio 2</label>
+    <input type="radio" class="flz_radio" id="radio3" name="radioGroup1" /> <label for="radio3" class="flz_inline">Radio 3</label>
+```
+See it in action: http://codepen.io/floatz/pen/Fdqse
 
 > To support older browsers that do not support attribute selectors (like IE6) it is necessary to annotate each *input* type with the corresponding floatz style: **flz_textbox**, **flz_checkbox**, **flz_radio**, **flz_button**. These styles can be left in modern browsers.
 
 To be continued ...
 
-See it in action: http://codepen.io/floatz/pen/Fdqse<br />
 See it in action: http://codepen.io/floatz/pen/DsBev (layouting with fieldsets)<br />
 See it in action: http://codepen.io/floatz/pen/AeFnD (layouting with spacers)<br />
 See it in action: http://codepen.io/floatz/pen/Cqcaj (layouting in modern browsers)
