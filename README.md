@@ -644,7 +644,7 @@ The default tab panel implementation uses sprite images to support round corners
  * [Checkboxes and radio buttons](#checkboxes-and-radio-buttons)
  * [Comboboxes](#comboboxes)
 * [Complex forms](#complex-forms)
-* 
+
 ### Form basics
 
 Easing the layout of forms is one of the greatest strengths and initial purposes of **floatz**. By adding **flz_form** to the *form* tag or any other block level HTML tag each form field spans the whole width of its parent container by default. 
