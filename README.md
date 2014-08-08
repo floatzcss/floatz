@@ -644,6 +644,8 @@ The default tab panel implementation uses sprite images to support round corners
  * [Checkboxes and radio buttons](#checkboxes-and-radio-buttons)
  * [Comboboxes](#comboboxes)
 * [Complex forms](#complex-forms)
+ * [Layouting with spacers](#layouting-with-spacers)
+ * [Layouting with fieldsets](#layouting-with-fieldsets)
 
 ### Form basics
 
@@ -711,10 +713,56 @@ See it in action: http://codepen.io/floatz/pen/Fdqse
 	</a>
 </div>
 ```
+See it in action: http://codepen.io/floatz/pen/Fdqse
+
 ###Complex forms
 
-To be continued ...
+Layouting complex forms is as easy as layouting pages. It´s just necessary to use *boxes* and *layouters* and *spacers* to create any imaginable form grid.
 
-See it in action: http://codepen.io/floatz/pen/DsBev (layouting with fieldsets)<br />
-See it in action: http://codepen.io/floatz/pen/AeFnD (layouting with spacers)<br />
-See it in action: http://codepen.io/floatz/pen/Cqcaj (layouting in modern browsers)
+####Layouting with spacers
+```
+<form class="flz_form">
+  <div class="flz_box flz_l50">
+    <div class="flz_lsubspacer_mrmc_top ">
+      <label for="field1">Text Field</label>
+      <input type="text" class="flz_textbox" id="field1" />
+    </div>
+  </div>
+  <div class="flz_box flz_r50">
+    <div class="flz_rsubspacer_mrmc_top">
+      <label for="field2">Password Field</label>
+      <input type="password" class="flz_textbox" id="field2" />
+    </div>
+  </div>
+  ...
+</form>
+```
+See it in action: http://codepen.io/floatz/pen/AeFnD
+
+####Layouting with fieldsets
+It is also possible to combine *spacers* and fieldsets for grouping input fields visually into logical units.
+```
+<form class="flz_form">
+  <fieldset>
+    <legend>Fieldset 1</legend>
+    <div class="flz_box flz_l50">
+      <div class="flz_lsubspacer">
+        <label for="field1">Text Field</label>
+        <input type="text" class="flz_textbox" id="field1" />
+      </div>
+    </div>
+    <div class="flz_box flz_r50">
+      <div class="flz_rsubspacer">
+        <label for="field2">Password Field</label>
+        <input type="password" class="flz_textbox" id="field2" />
+      </div>
+    </div>
+  </fieldset>
+  ...
+</form>
+```
+See it in action: http://codepen.io/floatz/pen/DsBev
+
+####Forms in modern browsers
+
+See it in action: http://codepen.io/floatz/pen/Cqcaj
