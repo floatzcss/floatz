@@ -15,68 +15,44 @@
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
  * @lastmodified  2014-07-17
  */
-window.floatz.panels = (function () {
-    "use strict";
+window.floatz.panels = (function (floatz, $) {
+	"use strict";
 
-    ////////////////////////////////////////////////////
-    // Public interface
+	////////////////////////////////////////////////////
+	// Public interface
 
-    var self = {
+	var self = {
 
-        /* Fields */
-        module: {
-            name: "floatz.panels",
-            version: "1.3.0",
-            start: start
-        },
+		/* Fields */
+		module: {
+			name: "floatz.panels",
+			version: "1.3.0",
+			start: start
+		}
+	};
 
-        onResize: addResizeHandler
-    };
+	////////////////////////////////////////////////////
+	// Private variables
 
-    ////////////////////////////////////////////////////
-    // Private variables
+	var module = self.module;
 
-    var floatz = window.floatz;
-    var module = self.module;
-    var resizeware = new Array();
+	////////////////////////////////////////////////////
+	// Private functions
 
-    ////////////////////////////////////////////////////
-    // Private functions
+	/**
+	 * Start module.
+	 * @since 1.2.0
+	 */
+	function start() {
+		floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " started", module.name);
+	}
 
-    /**
-     * Start module.
-     * @since 1.2.0
-     */
-    function start() {
+	////////////////////////////////////////////////////
+	// Init code
 
-        $(window).resize(handleResize);
+	floatz.loadedModules.push(module);
+	floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " loaded", module.name);
 
-        floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " started", module.name);
-    }
-
-    function handleResize(e) {
-        floatz.log(floatz.LOGLEVEL.DEBUG, "Window has been resized", module.name);
-
-        if (resizeware != null) {
-            for(int i=0; i < resizeware.length; i++) {
-                // >>>>>>> TODO
-            }
-        }
-    }
-
-    function addResizeHandler(selector, handler) {
-
-        $(selector).each(function () {
-            resizeware.push({ item: this, handler: handler });
-        })
-    }
-
-    ////////////////////////////////////////////////////
-    // Init code
-
-    floatz.loadedModules.push(module);
-    floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " loaded", module.name);
-
-    // Return public interface
-    return self;
-}());
+	// Return public interface
+	return self;
+}(window.floatz, jQuery));

@@ -19,7 +19,7 @@
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
  * @lastmodified  2014-07-17
  */
-window.floatz.skiplink = (function () {
+window.floatz.skiplink = (function (floatz, $) {
 	"use strict";
 
 	////////////////////////////////////////////////////
@@ -38,7 +38,6 @@ window.floatz.skiplink = (function () {
 	////////////////////////////////////////////////////
 	// Private variables
 
-	var floatz = window.floatz;
 	var module = self.module;
 
 	////////////////////////////////////////////////////
@@ -99,4 +98,4 @@ window.floatz.skiplink = (function () {
 
 	// Return public interface
 	return self;
-}());
+}(window.floatz, jQuery));
