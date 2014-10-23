@@ -18,4 +18,4 @@ var pstr=str;var max=(len-str.length)/c.length;for(var i=0;i<max;i++){pstr=c+pst
 return pstr;}
 function isMobileWebkit(){return ua.engine.name==="WebKit"&&(ua.os.name==="Android"||ua.os.name==="iOS");}
 function isMobile(){return ua.os.name==="Android"||ua.os.name==="iOS"||ua.os.name==="Windows Phone"||ua.os.name==="BlackBerry";}
-log(LOGLEVEL.INFO,"Module "+module.name+" loaded",module.name);return self;}(window.floatz=window.floatz||{},jQuery));
+log(LOGLEVEL.INFO,"Module "+module.name+" loaded",module.name);return self;}(window.floatz,jQuery));
