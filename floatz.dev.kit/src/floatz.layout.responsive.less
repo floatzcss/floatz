@@ -22,7 +22,242 @@
  * Adds responsive layout support.
  */
 @media (min-width: 0px) and (max-width: 480px) {
-
+	/* Spacers */
+	.flz_spacer_xs,
+	.flz_lspacer_xs,
+	.flz_mspacer_xs,
+	.flz_rspacer_xs,
+	.flz_spacer_mrsc_top_xs,
+	.flz_spacer_mrsc_mid_xs,
+	.flz_spacer_mrsc_bottom_xs,
+	.flz_lspacer_mrmc_top_xs,
+	.flz_lspacer_mrmc_mid_xs,
+	.flz_lspacer_mrmc_bottom_xs,
+	.flz_mspacer_mrmc_top_xs,
+	.flz_mspacer_mrmc_mid_xs,
+	.flz_mspacer_mrmc_bottom_xs,
+	.flz_rspacer_mrmc_top_xs,
+	.flz_rspacer_mrmc_mid_xs,
+	.flz_rspacer_mrmc_bottom_xs,
+	.flz_subspacer_xs,
+	.flz_lsubspacer_xs,
+	.flz_msubspacer_xs,
+	.flz_rsubspacer_xs,
+	.flz_subspacer_mrsc_top_xs,
+	.flz_subspacer_mrsc_mid_xs,
+	.flz_subspacer_mrsc_bottom_xs,
+	.flz_lsubspacer_mrmc_top_xs,
+	.flz_lsubspacer_mrmc_mid_xs,
+	.flz_lsubspacer_mrmc_bottom_xs,
+	.flz_msubspacer_mrmc_top_xs,
+	.flz_msubspacer_mrmc_mid_xs,
+	.flz_msubspacer_mrmc_bottom_xs,
+	.flz_rsubspacer_mrmc_top_xs,
+	.flz_rsubspacer_mrmc_mid_xs,
+	.flz_rsubspacer_mrmc_bottom_xs {
+		display: block;
+	}
+	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
+	.flz_spacer_xs:after,
+	.flz_lspacer_xs:after,
+	.flz_mspacer_xs:after,
+	.flz_rspacer_xs:after,
+	.flz_spacer_mrsc_top_xs:after,
+	.flz_spacer_mrsc_mid_xs:after,
+	.flz_spacer_mrsc_bottom_xs:after,
+	.flz_lspacer_mrmc_top_xs:after,
+	.flz_lspacer_mrmc_mid_xs:after,
+	.flz_lspacer_mrmc_bottom_xs:after,
+	.flz_mspacer_mrmc_top_xs:after,
+	.flz_mspacer_mrmc_mid_xs:after,
+	.flz_mspacer_mrmc_bottom_xs:after,
+	.flz_rspacer_mrmc_top_xs:after,
+	.flz_rspacer_mrmc_mid_xs:after,
+	.flz_rspacer_mrmc_bottom_xs:after,
+	.flz_subspacer_xs:after,
+	.flz_lsubspacer_xs:after,
+	.flz_msubspacer_xs:after,
+	.flz_rsubspacer_xs:after,
+	.flz_subspacer_mrsc_top_xs:after,
+	.flz_subspacer_mrsc_mid_xs:after,
+	.flz_subspacer_mrsc_bottom_xs:after,
+	.flz_lsubspacer_mrmc_top_xs:after,
+	.flz_lsubspacer_mrmc_mid_xs:after,
+	.flz_lsubspacer_mrmc_bottom_xs:after,
+	.flz_msubspacer_mrmc_top_xs:after,
+	.flz_msubspacer_mrmc_mid_xs:after,
+	.flz_msubspacer_mrmc_bottom_xs:after,
+	.flz_rsubspacer_mrmc_top_xs:after,
+	.flz_rsubspacer_mrmc_mid_xs:after,
+	.flz_rsubspacer_mrmc_bottom_xs:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.flz_spacer_xs,
+	.flz_lspacer_xs,
+	.flz_mspacer_xs,
+	.flz_rspacer_xs {
+		padding: 1em;
+	}
+	.flz_subspacer_mrsc_top_xs,
+	.flz_lsubspacer_mrmc_top_xs,
+	.flz_msubspacer_mrmc_top_xs,
+	.flz_rsubspacer_mrmc_top_xs {
+		padding-top: 0;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_mid_xs,
+	.flz_lsubspacer_mrmc_mid_xs,
+	.flz_msubspacer_mrmc_mid_xs,
+	.flz_rsubspacer_mrmc_mid_xs {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_bottom_xs,
+	.flz_lsubspacer_mrmc_bottom_xs,
+	.flz_msubspacer_mrmc_bottom_xs,
+	.flz_rsubspacer_mrmc_bottom_xs {
+		padding-top: 0.5em;
+		padding-bottom: 0;
+	}
+	.flz_lsubspacer_xs,
+	.flz_msubspacer_xs,
+	.flz_lsubspacer_mrmc_top_xs,
+	.flz_msubspacer_mrmc_top_xs,
+	.flz_lsubspacer_mrmc_mid_xs,
+	.flz_msubspacer_mrmc_mid_xs,
+	.flz_lsubspacer_mrmc_bottom_xs,
+	.flz_msubspacer_mrmc_bottom_xs {
+		padding-right: 0.5em;
+	}
+	.flz_rsubspacer_xs,
+	.flz_msubspacer_xs,
+	.flz_msubspacer_mrmc_top_xs,
+	.flz_rsubspacer_mrmc_top_xs,
+	.flz_msubspacer_mrmc_mid_xs,
+	.flz_rsubspacer_mrmc_mid_xs,
+	.flz_msubspacer_mrmc_bottom_xs,
+	.flz_rsubspacer_mrmc_bottom_xs {
+		padding-left: 0.5em;
+	}
+	.flz_spacer_mrsc_top_xs,
+	.flz_lspacer_mrmc_top_xs,
+	.flz_mspacer_mrmc_top_xs,
+	.flz_rspacer_mrmc_top_xs {
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_bottom_xs,
+	.flz_lspacer_mrmc_bottom_xs,
+	.flz_mspacer_mrmc_bottom_xs,
+	.flz_rspacer_mrmc_bottom_xs {
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+	}
+	.flz_spacer_mrsc_mid_xs,
+	.flz_lspacer_mrmc_mid_xs,
+	.flz_mspacer_mrmc_mid_xs,
+	.flz_rspacer_mrmc_mid_xs {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_top_xs,
+	.flz_spacer_mrsc_bottom_xs,
+	.flz_spacer_mrsc_mid_xs {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	.flz_lspacer_xs,
+	.flz_mspacer_xs,
+	.flz_lspacer_mrmc_top_xs,
+	.flz_mspacer_mrmc_top_xs,
+	.flz_lspacer_mrmc_mid_xs,
+	.flz_mspacer_mrmc_mid_xs,
+	.flz_lspacer_mrmc_bottom_xs,
+	.flz_mspacer_mrmc_bottom_xs {
+		padding-right: 0.5em;
+	}
+	.flz_mspacer_xs,
+	.flz_rspacer_xs,
+	.flz_mspacer_mrmc_top_xs,
+	.flz_rspacer_mrmc_top_xs,
+	.flz_mspacer_mrmc_mid_xs,
+	.flz_rspacer_mrmc_mid_xs,
+	.flz_mspacer_mrmc_bottom_xs,
+	.flz_rspacer_mrmc_bottom_xs {
+		padding-left: 0.5em;
+	}
+	.flz_lspacer_mrmc_top_xs,
+	.flz_lspacer_mrmc_mid_xs,
+	.flz_lspacer_mrmc_bottom_xs {
+		padding-left: 1em;
+	}
+	.flz_rspacer_mrmc_top_xs,
+	.flz_rspacer_mrmc_mid_xs,
+	.flz_rspacer_mrmc_bottom_xs {
+		padding-right: 1em;
+	}
+	/* Layouters */
+	.flz_l10_xs,
+	.flz_m10_xs,
+	.flz_r10_xs {
+		width: 10%;
+	}
+	.flz_l20_xs,
+	.flz_m20_xs,
+	.flz_r20_xs {
+		width: 20%;
+	}
+	.flz_l25_xs,
+	.flz_m25_xs,
+	.flz_r25_xs {
+		width: 25%;
+	}
+	.flz_l33_xs,
+	.flz_r33_xs {
+		width: 33.33333%;
+	}
+	.flz_m33_xs {
+		width: 33.33333%;
+	}
+	.flz_l40_xs,
+	.flz_m40_xs,
+	.flz_r40_xs {
+		width: 40%;
+	}
+	.flz_l50_xs,
+	.flz_m50_xs,
+	.flz_r50_xs {
+		width: 50%;
+	}
+	.flz_l60_xs,
+	.flz_m60_xs,
+	.flz_r60_xs {
+		width: 60%;
+	}
+	.flz_l66_xs,
+	.flz_r66_xs {
+		width: 66.66666%;
+	}
+	.flz_l75_xs,
+	.flz_r75_xs {
+		width: 75%;
+	}
+	.flz_l80_xs,
+	.flz_m80_xs,
+	.flz_r80_xs {
+		width: 80%;
+	}
+	.flz_l90_xs,
+	.flz_r90_xs {
+		width: 90%;
+	}
+	.flz_r100_xs {
+		width: 100%;
+	}
 }
 
 /**
@@ -33,7 +268,242 @@
  * Adds responsive layout support.
  */
 @media (min-width: 481px) and (max-width: 767px) {
-
+	/* Spacers */
+	.flz_spacer_s,
+	.flz_lspacer_s,
+	.flz_mspacer_s,
+	.flz_rspacer_s,
+	.flz_spacer_mrsc_top_s,
+	.flz_spacer_mrsc_mid_s,
+	.flz_spacer_mrsc_bottom_s,
+	.flz_lspacer_mrmc_top_s,
+	.flz_lspacer_mrmc_mid_s,
+	.flz_lspacer_mrmc_bottom_s,
+	.flz_mspacer_mrmc_top_s,
+	.flz_mspacer_mrmc_mid_s,
+	.flz_mspacer_mrmc_bottom_s,
+	.flz_rspacer_mrmc_top_s,
+	.flz_rspacer_mrmc_mid_s,
+	.flz_rspacer_mrmc_bottom_s,
+	.flz_subspacer_s,
+	.flz_lsubspacer_s,
+	.flz_msubspacer_s,
+	.flz_rsubspacer_s,
+	.flz_subspacer_mrsc_top_s,
+	.flz_subspacer_mrsc_mid_s,
+	.flz_subspacer_mrsc_bottom_s,
+	.flz_lsubspacer_mrmc_top_s,
+	.flz_lsubspacer_mrmc_mid_s,
+	.flz_lsubspacer_mrmc_bottom_s,
+	.flz_msubspacer_mrmc_top_s,
+	.flz_msubspacer_mrmc_mid_s,
+	.flz_msubspacer_mrmc_bottom_s,
+	.flz_rsubspacer_mrmc_top_s,
+	.flz_rsubspacer_mrmc_mid_s,
+	.flz_rsubspacer_mrmc_bottom_s {
+		display: block;
+	}
+	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
+	.flz_spacer_s:after,
+	.flz_lspacer_s:after,
+	.flz_mspacer_s:after,
+	.flz_rspacer_s:after,
+	.flz_spacer_mrsc_top_s:after,
+	.flz_spacer_mrsc_mid_s:after,
+	.flz_spacer_mrsc_bottom_s:after,
+	.flz_lspacer_mrmc_top_s:after,
+	.flz_lspacer_mrmc_mid_s:after,
+	.flz_lspacer_mrmc_bottom_s:after,
+	.flz_mspacer_mrmc_top_s:after,
+	.flz_mspacer_mrmc_mid_s:after,
+	.flz_mspacer_mrmc_bottom_s:after,
+	.flz_rspacer_mrmc_top_s:after,
+	.flz_rspacer_mrmc_mid_s:after,
+	.flz_rspacer_mrmc_bottom_s:after,
+	.flz_subspacer_s:after,
+	.flz_lsubspacer_s:after,
+	.flz_msubspacer_s:after,
+	.flz_rsubspacer_s:after,
+	.flz_subspacer_mrsc_top_s:after,
+	.flz_subspacer_mrsc_mid_s:after,
+	.flz_subspacer_mrsc_bottom_s:after,
+	.flz_lsubspacer_mrmc_top_s:after,
+	.flz_lsubspacer_mrmc_mid_s:after,
+	.flz_lsubspacer_mrmc_bottom_s:after,
+	.flz_msubspacer_mrmc_top_s:after,
+	.flz_msubspacer_mrmc_mid_s:after,
+	.flz_msubspacer_mrmc_bottom_s:after,
+	.flz_rsubspacer_mrmc_top_s:after,
+	.flz_rsubspacer_mrmc_mid_s:after,
+	.flz_rsubspacer_mrmc_bottom_s:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.flz_spacer_s,
+	.flz_lspacer_s,
+	.flz_mspacer_s,
+	.flz_rspacer_s {
+		padding: 1em;
+	}
+	.flz_subspacer_mrsc_top_s,
+	.flz_lsubspacer_mrmc_top_s,
+	.flz_msubspacer_mrmc_top_s,
+	.flz_rsubspacer_mrmc_top_s {
+		padding-top: 0;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_mid_s,
+	.flz_lsubspacer_mrmc_mid_s,
+	.flz_msubspacer_mrmc_mid_s,
+	.flz_rsubspacer_mrmc_mid_s {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_bottom_s,
+	.flz_lsubspacer_mrmc_bottom_s,
+	.flz_msubspacer_mrmc_bottom_s,
+	.flz_rsubspacer_mrmc_bottom_s {
+		padding-top: 0.5em;
+		padding-bottom: 0;
+	}
+	.flz_lsubspacer_s,
+	.flz_msubspacer_s,
+	.flz_lsubspacer_mrmc_top_s,
+	.flz_msubspacer_mrmc_top_s,
+	.flz_lsubspacer_mrmc_mid_s,
+	.flz_msubspacer_mrmc_mid_s,
+	.flz_lsubspacer_mrmc_bottom_s,
+	.flz_msubspacer_mrmc_bottom_s {
+		padding-right: 0.5em;
+	}
+	.flz_rsubspacer_s,
+	.flz_msubspacer_s,
+	.flz_msubspacer_mrmc_top_s,
+	.flz_rsubspacer_mrmc_top_s,
+	.flz_msubspacer_mrmc_mid_s,
+	.flz_rsubspacer_mrmc_mid_s,
+	.flz_msubspacer_mrmc_bottom_s,
+	.flz_rsubspacer_mrmc_bottom_s {
+		padding-left: 0.5em;
+	}
+	.flz_spacer_mrsc_top_s,
+	.flz_lspacer_mrmc_top_s,
+	.flz_mspacer_mrmc_top_s,
+	.flz_rspacer_mrmc_top_s {
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_bottom_s,
+	.flz_lspacer_mrmc_bottom_s,
+	.flz_mspacer_mrmc_bottom_s,
+	.flz_rspacer_mrmc_bottom_s {
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+	}
+	.flz_spacer_mrsc_mid_s,
+	.flz_lspacer_mrmc_mid_s,
+	.flz_mspacer_mrmc_mid_s,
+	.flz_rspacer_mrmc_mid_s {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_top_s,
+	.flz_spacer_mrsc_bottom_s,
+	.flz_spacer_mrsc_mid_s {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	.flz_lspacer_s,
+	.flz_mspacer_s,
+	.flz_lspacer_mrmc_top_s,
+	.flz_mspacer_mrmc_top_s,
+	.flz_lspacer_mrmc_mid_s,
+	.flz_mspacer_mrmc_mid_s,
+	.flz_lspacer_mrmc_bottom_s,
+	.flz_mspacer_mrmc_bottom_s {
+		padding-right: 0.5em;
+	}
+	.flz_mspacer_s,
+	.flz_rspacer_s,
+	.flz_mspacer_mrmc_top_s,
+	.flz_rspacer_mrmc_top_s,
+	.flz_mspacer_mrmc_mid_s,
+	.flz_rspacer_mrmc_mid_s,
+	.flz_mspacer_mrmc_bottom_s,
+	.flz_rspacer_mrmc_bottom_s {
+		padding-left: 0.5em;
+	}
+	.flz_lspacer_mrmc_top_s,
+	.flz_lspacer_mrmc_mid_s,
+	.flz_lspacer_mrmc_bottom_s {
+		padding-left: 1em;
+	}
+	.flz_rspacer_mrmc_top_s,
+	.flz_rspacer_mrmc_mid_s,
+	.flz_rspacer_mrmc_bottom_s {
+		padding-right: 1em;
+	}
+	/* Layouters */
+	.flz_l10_s,
+	.flz_m10_s,
+	.flz_r10_s {
+		width: 10%;
+	}
+	.flz_l20_s,
+	.flz_m20_s,
+	.flz_r20_s {
+		width: 20%;
+	}
+	.flz_l25_s,
+	.flz_m25_s,
+	.flz_r25_s {
+		width: 25%;
+	}
+	.flz_l33_s,
+	.flz_r33_s {
+		width: 33.33333%;
+	}
+	.flz_m33_s {
+		width: 33.33333%;
+	}
+	.flz_l40_s,
+	.flz_m40_s,
+	.flz_r40_s {
+		width: 40%;
+	}
+	.flz_l50_s,
+	.flz_m50_s,
+	.flz_r50_s {
+		width: 50%;
+	}
+	.flz_l60_s,
+	.flz_m60_s,
+	.flz_r60_s {
+		width: 60%;
+	}
+	.flz_l66_s,
+	.flz_r66_s {
+		width: 66.66666%;
+	}
+	.flz_l75_s,
+	.flz_r75_s {
+		width: 75%;
+	}
+	.flz_l80_s,
+	.flz_m80_s,
+	.flz_r80_s {
+		width: 80%;
+	}
+	.flz_l90_s,
+	.flz_r90_s {
+		width: 90%;
+	}
+	.flz_r100_s {
+		width: 100%;
+	}
 }
 
 /**
@@ -44,7 +514,242 @@
  * Adds responsive layout support.
  */
 @media (min-width: 768px) and (max-width: 979px) {
-
+	/* Spacers */
+	.flz_spacer_m,
+	.flz_lspacer_m,
+	.flz_mspacer_m,
+	.flz_rspacer_m,
+	.flz_spacer_mrsc_top_m,
+	.flz_spacer_mrsc_mid_m,
+	.flz_spacer_mrsc_bottom_m,
+	.flz_lspacer_mrmc_top_m,
+	.flz_lspacer_mrmc_mid_m,
+	.flz_lspacer_mrmc_bottom_m,
+	.flz_mspacer_mrmc_top_m,
+	.flz_mspacer_mrmc_mid_m,
+	.flz_mspacer_mrmc_bottom_m,
+	.flz_rspacer_mrmc_top_m,
+	.flz_rspacer_mrmc_mid_m,
+	.flz_rspacer_mrmc_bottom_m,
+	.flz_subspacer_m,
+	.flz_lsubspacer_m,
+	.flz_msubspacer_m,
+	.flz_rsubspacer_m,
+	.flz_subspacer_mrsc_top_m,
+	.flz_subspacer_mrsc_mid_m,
+	.flz_subspacer_mrsc_bottom_m,
+	.flz_lsubspacer_mrmc_top_m,
+	.flz_lsubspacer_mrmc_mid_m,
+	.flz_lsubspacer_mrmc_bottom_m,
+	.flz_msubspacer_mrmc_top_m,
+	.flz_msubspacer_mrmc_mid_m,
+	.flz_msubspacer_mrmc_bottom_m,
+	.flz_rsubspacer_mrmc_top_m,
+	.flz_rsubspacer_mrmc_mid_m,
+	.flz_rsubspacer_mrmc_bottom_m {
+		display: block;
+	}
+	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
+	.flz_spacer_m:after,
+	.flz_lspacer_m:after,
+	.flz_mspacer_m:after,
+	.flz_rspacer_m:after,
+	.flz_spacer_mrsc_top_m:after,
+	.flz_spacer_mrsc_mid_m:after,
+	.flz_spacer_mrsc_bottom_m:after,
+	.flz_lspacer_mrmc_top_m:after,
+	.flz_lspacer_mrmc_mid_m:after,
+	.flz_lspacer_mrmc_bottom_m:after,
+	.flz_mspacer_mrmc_top_m:after,
+	.flz_mspacer_mrmc_mid_m:after,
+	.flz_mspacer_mrmc_bottom_m:after,
+	.flz_rspacer_mrmc_top_m:after,
+	.flz_rspacer_mrmc_mid_m:after,
+	.flz_rspacer_mrmc_bottom_m:after,
+	.flz_subspacer_m:after,
+	.flz_lsubspacer_m:after,
+	.flz_msubspacer_m:after,
+	.flz_rsubspacer_m:after,
+	.flz_subspacer_mrsc_top_m:after,
+	.flz_subspacer_mrsc_mid_m:after,
+	.flz_subspacer_mrsc_bottom_m:after,
+	.flz_lsubspacer_mrmc_top_m:after,
+	.flz_lsubspacer_mrmc_mid_m:after,
+	.flz_lsubspacer_mrmc_bottom_m:after,
+	.flz_msubspacer_mrmc_top_m:after,
+	.flz_msubspacer_mrmc_mid_m:after,
+	.flz_msubspacer_mrmc_bottom_m:after,
+	.flz_rsubspacer_mrmc_top_m:after,
+	.flz_rsubspacer_mrmc_mid_m:after,
+	.flz_rsubspacer_mrmc_bottom_m:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.flz_spacer_m,
+	.flz_lspacer_m,
+	.flz_mspacer_m,
+	.flz_rspacer_m {
+		padding: 1em;
+	}
+	.flz_subspacer_mrsc_top_m,
+	.flz_lsubspacer_mrmc_top_m,
+	.flz_msubspacer_mrmc_top_m,
+	.flz_rsubspacer_mrmc_top_m {
+		padding-top: 0;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_mid_m,
+	.flz_lsubspacer_mrmc_mid_m,
+	.flz_msubspacer_mrmc_mid_m,
+	.flz_rsubspacer_mrmc_mid_m {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_bottom_m,
+	.flz_lsubspacer_mrmc_bottom_m,
+	.flz_msubspacer_mrmc_bottom_m,
+	.flz_rsubspacer_mrmc_bottom_m {
+		padding-top: 0.5em;
+		padding-bottom: 0;
+	}
+	.flz_lsubspacer_m,
+	.flz_msubspacer_m,
+	.flz_lsubspacer_mrmc_top_m,
+	.flz_msubspacer_mrmc_top_m,
+	.flz_lsubspacer_mrmc_mid_m,
+	.flz_msubspacer_mrmc_mid_m,
+	.flz_lsubspacer_mrmc_bottom_m,
+	.flz_msubspacer_mrmc_bottom_m {
+		padding-right: 0.5em;
+	}
+	.flz_rsubspacer_m,
+	.flz_msubspacer_m,
+	.flz_msubspacer_mrmc_top_m,
+	.flz_rsubspacer_mrmc_top_m,
+	.flz_msubspacer_mrmc_mid_m,
+	.flz_rsubspacer_mrmc_mid_m,
+	.flz_msubspacer_mrmc_bottom_m,
+	.flz_rsubspacer_mrmc_bottom_m {
+		padding-left: 0.5em;
+	}
+	.flz_spacer_mrsc_top_m,
+	.flz_lspacer_mrmc_top_m,
+	.flz_mspacer_mrmc_top_m,
+	.flz_rspacer_mrmc_top_m {
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_bottom_m,
+	.flz_lspacer_mrmc_bottom_m,
+	.flz_mspacer_mrmc_bottom_m,
+	.flz_rspacer_mrmc_bottom_m {
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+	}
+	.flz_spacer_mrsc_mid_m,
+	.flz_lspacer_mrmc_mid_m,
+	.flz_mspacer_mrmc_mid_m,
+	.flz_rspacer_mrmc_mid_m {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_top_m,
+	.flz_spacer_mrsc_bottom_m,
+	.flz_spacer_mrsc_mid_m {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	.flz_lspacer_m,
+	.flz_mspacer_m,
+	.flz_lspacer_mrmc_top_m,
+	.flz_mspacer_mrmc_top_m,
+	.flz_lspacer_mrmc_mid_m,
+	.flz_mspacer_mrmc_mid_m,
+	.flz_lspacer_mrmc_bottom_m,
+	.flz_mspacer_mrmc_bottom_m {
+		padding-right: 0.5em;
+	}
+	.flz_mspacer_m,
+	.flz_rspacer_m,
+	.flz_mspacer_mrmc_top_m,
+	.flz_rspacer_mrmc_top_m,
+	.flz_mspacer_mrmc_mid_m,
+	.flz_rspacer_mrmc_mid_m,
+	.flz_mspacer_mrmc_bottom_m,
+	.flz_rspacer_mrmc_bottom_m {
+		padding-left: 0.5em;
+	}
+	.flz_lspacer_mrmc_top_m,
+	.flz_lspacer_mrmc_mid_m,
+	.flz_lspacer_mrmc_bottom_m {
+		padding-left: 1em;
+	}
+	.flz_rspacer_mrmc_top_m,
+	.flz_rspacer_mrmc_mid_m,
+	.flz_rspacer_mrmc_bottom_m {
+		padding-right: 1em;
+	}
+	/* Layouters */
+	.flz_l10_m,
+	.flz_m10_m,
+	.flz_r10_m {
+		width: 10%;
+	}
+	.flz_l20_m,
+	.flz_m20_m,
+	.flz_r20_m {
+		width: 20%;
+	}
+	.flz_l25_m,
+	.flz_m25_m,
+	.flz_r25_m {
+		width: 25%;
+	}
+	.flz_l33_m,
+	.flz_r33_m {
+		width: 33.33333%;
+	}
+	.flz_m33_m {
+		width: 33.33333%;
+	}
+	.flz_l40_m,
+	.flz_m40_m,
+	.flz_r40_m {
+		width: 40%;
+	}
+	.flz_l50_m,
+	.flz_m50_m,
+	.flz_r50_m {
+		width: 50%;
+	}
+	.flz_l60_m,
+	.flz_m60_m,
+	.flz_r60_m {
+		width: 60%;
+	}
+	.flz_l66_m,
+	.flz_r66_m {
+		width: 66.66666%;
+	}
+	.flz_l75_m,
+	.flz_r75_m {
+		width: 75%;
+	}
+	.flz_l80_m,
+	.flz_m80_m,
+	.flz_r80_m {
+		width: 80%;
+	}
+	.flz_l90_m,
+	.flz_r90_m {
+		width: 90%;
+	}
+	.flz_r100_m {
+		width: 100%;
+	}
 }
 
 /**
@@ -55,7 +760,242 @@
  * Adds responsive layout support.
  */
 @media (min-width: 980px) and (max-width: 1199px) {
-
+	/* Spacers */
+	.flz_spacer_l,
+	.flz_lspacer_l,
+	.flz_mspacer_l,
+	.flz_rspacer_l,
+	.flz_spacer_mrsc_top_l,
+	.flz_spacer_mrsc_mid_l,
+	.flz_spacer_mrsc_bottom_l,
+	.flz_lspacer_mrmc_top_l,
+	.flz_lspacer_mrmc_mid_l,
+	.flz_lspacer_mrmc_bottom_l,
+	.flz_mspacer_mrmc_top_l,
+	.flz_mspacer_mrmc_mid_l,
+	.flz_mspacer_mrmc_bottom_l,
+	.flz_rspacer_mrmc_top_l,
+	.flz_rspacer_mrmc_mid_l,
+	.flz_rspacer_mrmc_bottom_l,
+	.flz_subspacer_l,
+	.flz_lsubspacer_l,
+	.flz_msubspacer_l,
+	.flz_rsubspacer_l,
+	.flz_subspacer_mrsc_top_l,
+	.flz_subspacer_mrsc_mid_l,
+	.flz_subspacer_mrsc_bottom_l,
+	.flz_lsubspacer_mrmc_top_l,
+	.flz_lsubspacer_mrmc_mid_l,
+	.flz_lsubspacer_mrmc_bottom_l,
+	.flz_msubspacer_mrmc_top_l,
+	.flz_msubspacer_mrmc_mid_l,
+	.flz_msubspacer_mrmc_bottom_l,
+	.flz_rsubspacer_mrmc_top_l,
+	.flz_rsubspacer_mrmc_mid_l,
+	.flz_rsubspacer_mrmc_bottom_l {
+		display: block;
+	}
+	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
+	.flz_spacer_l:after,
+	.flz_lspacer_l:after,
+	.flz_mspacer_l:after,
+	.flz_rspacer_l:after,
+	.flz_spacer_mrsc_top_l:after,
+	.flz_spacer_mrsc_mid_l:after,
+	.flz_spacer_mrsc_bottom_l:after,
+	.flz_lspacer_mrmc_top_l:after,
+	.flz_lspacer_mrmc_mid_l:after,
+	.flz_lspacer_mrmc_bottom_l:after,
+	.flz_mspacer_mrmc_top_l:after,
+	.flz_mspacer_mrmc_mid_l:after,
+	.flz_mspacer_mrmc_bottom_l:after,
+	.flz_rspacer_mrmc_top_l:after,
+	.flz_rspacer_mrmc_mid_l:after,
+	.flz_rspacer_mrmc_bottom_l:after,
+	.flz_subspacer_l:after,
+	.flz_lsubspacer_l:after,
+	.flz_msubspacer_l:after,
+	.flz_rsubspacer_l:after,
+	.flz_subspacer_mrsc_top_l:after,
+	.flz_subspacer_mrsc_mid_l:after,
+	.flz_subspacer_mrsc_bottom_l:after,
+	.flz_lsubspacer_mrmc_top_l:after,
+	.flz_lsubspacer_mrmc_mid_l:after,
+	.flz_lsubspacer_mrmc_bottom_l:after,
+	.flz_msubspacer_mrmc_top_l:after,
+	.flz_msubspacer_mrmc_mid_l:after,
+	.flz_msubspacer_mrmc_bottom_l:after,
+	.flz_rsubspacer_mrmc_top_l:after,
+	.flz_rsubspacer_mrmc_mid_l:after,
+	.flz_rsubspacer_mrmc_bottom_l:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.flz_spacer_l,
+	.flz_lspacer_l,
+	.flz_mspacer_l,
+	.flz_rspacer_l {
+		padding: 1em;
+	}
+	.flz_subspacer_mrsc_top_l,
+	.flz_lsubspacer_mrmc_top_l,
+	.flz_msubspacer_mrmc_top_l,
+	.flz_rsubspacer_mrmc_top_l {
+		padding-top: 0;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_mid_l,
+	.flz_lsubspacer_mrmc_mid_l,
+	.flz_msubspacer_mrmc_mid_l,
+	.flz_rsubspacer_mrmc_mid_l {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_bottom_l,
+	.flz_lsubspacer_mrmc_bottom_l,
+	.flz_msubspacer_mrmc_bottom_l,
+	.flz_rsubspacer_mrmc_bottom_l {
+		padding-top: 0.5em;
+		padding-bottom: 0;
+	}
+	.flz_lsubspacer_l,
+	.flz_msubspacer_l,
+	.flz_lsubspacer_mrmc_top_l,
+	.flz_msubspacer_mrmc_top_l,
+	.flz_lsubspacer_mrmc_mid_l,
+	.flz_msubspacer_mrmc_mid_l,
+	.flz_lsubspacer_mrmc_bottom_l,
+	.flz_msubspacer_mrmc_bottom_l {
+		padding-right: 0.5em;
+	}
+	.flz_rsubspacer_l,
+	.flz_msubspacer_l,
+	.flz_msubspacer_mrmc_top_l,
+	.flz_rsubspacer_mrmc_top_l,
+	.flz_msubspacer_mrmc_mid_l,
+	.flz_rsubspacer_mrmc_mid_l,
+	.flz_msubspacer_mrmc_bottom_l,
+	.flz_rsubspacer_mrmc_bottom_l {
+		padding-left: 0.5em;
+	}
+	.flz_spacer_mrsc_top_l,
+	.flz_lspacer_mrmc_top_l,
+	.flz_mspacer_mrmc_top_l,
+	.flz_rspacer_mrmc_top_l {
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_bottom_l,
+	.flz_lspacer_mrmc_bottom_l,
+	.flz_mspacer_mrmc_bottom_l,
+	.flz_rspacer_mrmc_bottom_l {
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+	}
+	.flz_spacer_mrsc_mid_l,
+	.flz_lspacer_mrmc_mid_l,
+	.flz_mspacer_mrmc_mid_l,
+	.flz_rspacer_mrmc_mid_l {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_top_l,
+	.flz_spacer_mrsc_bottom_l,
+	.flz_spacer_mrsc_mid_l {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	.flz_lspacer_l,
+	.flz_mspacer_l,
+	.flz_lspacer_mrmc_top_l,
+	.flz_mspacer_mrmc_top_l,
+	.flz_lspacer_mrmc_mid_l,
+	.flz_mspacer_mrmc_mid_l,
+	.flz_lspacer_mrmc_bottom_l,
+	.flz_mspacer_mrmc_bottom_l {
+		padding-right: 0.5em;
+	}
+	.flz_mspacer_l,
+	.flz_rspacer_l,
+	.flz_mspacer_mrmc_top_l,
+	.flz_rspacer_mrmc_top_l,
+	.flz_mspacer_mrmc_mid_l,
+	.flz_rspacer_mrmc_mid_l,
+	.flz_mspacer_mrmc_bottom_l,
+	.flz_rspacer_mrmc_bottom_l {
+		padding-left: 0.5em;
+	}
+	.flz_lspacer_mrmc_top_l,
+	.flz_lspacer_mrmc_mid_l,
+	.flz_lspacer_mrmc_bottom_l {
+		padding-left: 1em;
+	}
+	.flz_rspacer_mrmc_top_l,
+	.flz_rspacer_mrmc_mid_l,
+	.flz_rspacer_mrmc_bottom_l {
+		padding-right: 1em;
+	}
+	/* Layouters */
+	.flz_l10_l,
+	.flz_m10_l,
+	.flz_r10_l {
+		width: 10%;
+	}
+	.flz_l20_l,
+	.flz_m20_l,
+	.flz_r20_l {
+		width: 20%;
+	}
+	.flz_l25_l,
+	.flz_m25_l,
+	.flz_r25_l {
+		width: 25%;
+	}
+	.flz_l33_l,
+	.flz_r33_l {
+		width: 33.33333%;
+	}
+	.flz_m33_l {
+		width: 33.33333%;
+	}
+	.flz_l40_l,
+	.flz_m40_l,
+	.flz_r40_l {
+		width: 40%;
+	}
+	.flz_l50_l,
+	.flz_m50_l,
+	.flz_r50_l {
+		width: 50%;
+	}
+	.flz_l60_l,
+	.flz_m60_l,
+	.flz_r60_l {
+		width: 60%;
+	}
+	.flz_l66_l,
+	.flz_r66_l {
+		width: 66.66666%;
+	}
+	.flz_l75_l,
+	.flz_r75_l {
+		width: 75%;
+	}
+	.flz_l80_l,
+	.flz_m80_l,
+	.flz_r80_l {
+		width: 80%;
+	}
+	.flz_l90_l,
+	.flz_r90_l {
+		width: 90%;
+	}
+	.flz_r100_l {
+		width: 100%;
+	}
 }
 
 /**
@@ -66,5 +1006,240 @@
  * Adds responsive layout support.
  */
 @media (min-width: 1200px) {
-
+	/* Spacers */
+	.flz_spacer_xl,
+	.flz_lspacer_xl,
+	.flz_mspacer_xl,
+	.flz_rspacer_xl,
+	.flz_spacer_mrsc_top_xl,
+	.flz_spacer_mrsc_mid_xl,
+	.flz_spacer_mrsc_bottom_xl,
+	.flz_lspacer_mrmc_top_xl,
+	.flz_lspacer_mrmc_mid_xl,
+	.flz_lspacer_mrmc_bottom_xl,
+	.flz_mspacer_mrmc_top_xl,
+	.flz_mspacer_mrmc_mid_xl,
+	.flz_mspacer_mrmc_bottom_xl,
+	.flz_rspacer_mrmc_top_xl,
+	.flz_rspacer_mrmc_mid_xl,
+	.flz_rspacer_mrmc_bottom_xl,
+	.flz_subspacer_xl,
+	.flz_lsubspacer_xl,
+	.flz_msubspacer_xl,
+	.flz_rsubspacer_xl,
+	.flz_subspacer_mrsc_top_xl,
+	.flz_subspacer_mrsc_mid_xl,
+	.flz_subspacer_mrsc_bottom_xl,
+	.flz_lsubspacer_mrmc_top_xl,
+	.flz_lsubspacer_mrmc_mid_xl,
+	.flz_lsubspacer_mrmc_bottom_xl,
+	.flz_msubspacer_mrmc_top_xl,
+	.flz_msubspacer_mrmc_mid_xl,
+	.flz_msubspacer_mrmc_bottom_xl,
+	.flz_rsubspacer_mrmc_top_xl,
+	.flz_rsubspacer_mrmc_mid_xl,
+	.flz_rsubspacer_mrmc_bottom_xl {
+		display: block;
+	}
+	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
+	.flz_spacer_xl:after,
+	.flz_lspacer_xl:after,
+	.flz_mspacer_xl:after,
+	.flz_rspacer_xl:after,
+	.flz_spacer_mrsc_top_xl:after,
+	.flz_spacer_mrsc_mid_xl:after,
+	.flz_spacer_mrsc_bottom_xl:after,
+	.flz_lspacer_mrmc_top_xl:after,
+	.flz_lspacer_mrmc_mid_xl:after,
+	.flz_lspacer_mrmc_bottom_xl:after,
+	.flz_mspacer_mrmc_top_xl:after,
+	.flz_mspacer_mrmc_mid_xl:after,
+	.flz_mspacer_mrmc_bottom_xl:after,
+	.flz_rspacer_mrmc_top_xl:after,
+	.flz_rspacer_mrmc_mid_xl:after,
+	.flz_rspacer_mrmc_bottom_xl:after,
+	.flz_subspacer_xl:after,
+	.flz_lsubspacer_xl:after,
+	.flz_msubspacer_xl:after,
+	.flz_rsubspacer_xl:after,
+	.flz_subspacer_mrsc_top_xl:after,
+	.flz_subspacer_mrsc_mid_xl:after,
+	.flz_subspacer_mrsc_bottom_xl:after,
+	.flz_lsubspacer_mrmc_top_xl:after,
+	.flz_lsubspacer_mrmc_mid_xl:after,
+	.flz_lsubspacer_mrmc_bottom_xl:after,
+	.flz_msubspacer_mrmc_top_xl:after,
+	.flz_msubspacer_mrmc_mid_xl:after,
+	.flz_msubspacer_mrmc_bottom_xl:after,
+	.flz_rsubspacer_mrmc_top_xl:after,
+	.flz_rsubspacer_mrmc_mid_xl:after,
+	.flz_rsubspacer_mrmc_bottom_xl:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.flz_spacer_xl,
+	.flz_lspacer_xl,
+	.flz_mspacer_xl,
+	.flz_rspacer_xl {
+		padding: 1em;
+	}
+	.flz_subspacer_mrsc_top_xl,
+	.flz_lsubspacer_mrmc_top_xl,
+	.flz_msubspacer_mrmc_top_xl,
+	.flz_rsubspacer_mrmc_top_xl {
+		padding-top: 0;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_mid_xl,
+	.flz_lsubspacer_mrmc_mid_xl,
+	.flz_msubspacer_mrmc_mid_xl,
+	.flz_rsubspacer_mrmc_mid_xl {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_bottom_xl,
+	.flz_lsubspacer_mrmc_bottom_xl,
+	.flz_msubspacer_mrmc_bottom_xl,
+	.flz_rsubspacer_mrmc_bottom_xl {
+		padding-top: 0.5em;
+		padding-bottom: 0;
+	}
+	.flz_lsubspacer_xl,
+	.flz_msubspacer_xl,
+	.flz_lsubspacer_mrmc_top_xl,
+	.flz_msubspacer_mrmc_top_xl,
+	.flz_lsubspacer_mrmc_mid_xl,
+	.flz_msubspacer_mrmc_mid_xl,
+	.flz_lsubspacer_mrmc_bottom_xl,
+	.flz_msubspacer_mrmc_bottom_xl {
+		padding-right: 0.5em;
+	}
+	.flz_rsubspacer_xl,
+	.flz_msubspacer_xl,
+	.flz_msubspacer_mrmc_top_xl,
+	.flz_rsubspacer_mrmc_top_xl,
+	.flz_msubspacer_mrmc_mid_xl,
+	.flz_rsubspacer_mrmc_mid_xl,
+	.flz_msubspacer_mrmc_bottom_xl,
+	.flz_rsubspacer_mrmc_bottom_xl {
+		padding-left: 0.5em;
+	}
+	.flz_spacer_mrsc_top_xl,
+	.flz_lspacer_mrmc_top_xl,
+	.flz_mspacer_mrmc_top_xl,
+	.flz_rspacer_mrmc_top_xl {
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_bottom_xl,
+	.flz_lspacer_mrmc_bottom_xl,
+	.flz_mspacer_mrmc_bottom_xl,
+	.flz_rspacer_mrmc_bottom_xl {
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+	}
+	.flz_spacer_mrsc_mid_xl,
+	.flz_lspacer_mrmc_mid_xl,
+	.flz_mspacer_mrmc_mid_xl,
+	.flz_rspacer_mrmc_mid_xl {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_top_xl,
+	.flz_spacer_mrsc_bottom_xl,
+	.flz_spacer_mrsc_mid_xl {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	.flz_lspacer_xl,
+	.flz_mspacer_xl,
+	.flz_lspacer_mrmc_top_xl,
+	.flz_mspacer_mrmc_top_xl,
+	.flz_lspacer_mrmc_mid_xl,
+	.flz_mspacer_mrmc_mid_xl,
+	.flz_lspacer_mrmc_bottom_xl,
+	.flz_mspacer_mrmc_bottom_xl {
+		padding-right: 0.5em;
+	}
+	.flz_mspacer_xl,
+	.flz_rspacer_xl,
+	.flz_mspacer_mrmc_top_xl,
+	.flz_rspacer_mrmc_top_xl,
+	.flz_mspacer_mrmc_mid_xl,
+	.flz_rspacer_mrmc_mid_xl,
+	.flz_mspacer_mrmc_bottom_xl,
+	.flz_rspacer_mrmc_bottom_xl {
+		padding-left: 0.5em;
+	}
+	.flz_lspacer_mrmc_top_xl,
+	.flz_lspacer_mrmc_mid_xl,
+	.flz_lspacer_mrmc_bottom_xl {
+		padding-left: 1em;
+	}
+	.flz_rspacer_mrmc_top_xl,
+	.flz_rspacer_mrmc_mid_xl,
+	.flz_rspacer_mrmc_bottom_xl {
+		padding-right: 1em;
+	}
+	/* Layouters */
+	.flz_l10_xl,
+	.flz_m10_xl,
+	.flz_r10_xl {
+		width: 10%;
+	}
+	.flz_l20_xl,
+	.flz_m20_xl,
+	.flz_r20_xl {
+		width: 20%;
+	}
+	.flz_l25_xl,
+	.flz_m25_xl,
+	.flz_r25_xl {
+		width: 25%;
+	}
+	.flz_l33_xl,
+	.flz_r33_xl {
+		width: 33.33333%;
+	}
+	.flz_m33_xl {
+		width: 33.33333%;
+	}
+	.flz_l40_xl,
+	.flz_m40_xl,
+	.flz_r40_xl {
+		width: 40%;
+	}
+	.flz_l50_xl,
+	.flz_m50_xl,
+	.flz_r50_xl {
+		width: 50%;
+	}
+	.flz_l60_xl,
+	.flz_m60_xl,
+	.flz_r60_xl {
+		width: 60%;
+	}
+	.flz_l66_xl,
+	.flz_r66_xl {
+		width: 66.66666%;
+	}
+	.flz_l75_xl,
+	.flz_r75_xl {
+		width: 75%;
+	}
+	.flz_l80_xl,
+	.flz_m80_xl,
+	.flz_r80_xl {
+		width: 80%;
+	}
+	.flz_l90_xl,
+	.flz_r90_xl {
+		width: 90%;
+	}
+	.flz_r100_xl {
+		width: 100%;
+	}
 }
