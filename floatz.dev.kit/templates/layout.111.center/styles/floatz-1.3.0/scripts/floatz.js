@@ -2,7 +2,7 @@
    Copyright (c) 1998-2014 by :humml:design
    Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */
 
-window.floatz=(function(){"use strict";var self={LOGLEVEL:{ERROR:0,WARN:1,INFO:2,DEBUG:3},loadedModules:[],module:{name:"floatz",version:"1.3.0"},start:start,log:log,string:{lpad:lpad,rpad:rpad},userAgent:new UAParser().getResult(),isMobileWebkit:isMobileWebkit,isMobile:isMobile};var LOGLEVEL=self.LOGLEVEL;var loadedModules=self.loadedModules;var ua=self.userAgent;var module=self.module;var config={debug:false,logLevel:LOGLEVEL.DEBUG};function start(options){var i,j;$.extend(config,options);log(LOGLEVEL.INFO,self.userAgent.ua,module.name);log(LOGLEVEL.INFO,"Module "+module.name+" started",module.name);for(i=0;i<loadedModules.length;i++){var canStart=config.modules===undefined;if(!canStart){for(j=0;j<config.modules.length;j++){if(loadedModules[i].name===config.modules[j]){canStart=true;break;}}}
+window.floatz=(function(floatz,$){"use strict";var self={LOGLEVEL:{ERROR:0,WARN:1,INFO:2,DEBUG:3},loadedModules:[],module:{name:"floatz",version:"1.3.0"},start:start,log:log,string:{lpad:lpad,rpad:rpad},userAgent:new UAParser().getResult(),isMobileWebkit:isMobileWebkit,isMobile:isMobile};var LOGLEVEL=self.LOGLEVEL;var loadedModules=self.loadedModules;var ua=self.userAgent;var module=self.module;var config={debug:false,logLevel:LOGLEVEL.DEBUG};function start(options){var i,j;$.extend(config,options);log(LOGLEVEL.INFO,self.userAgent.ua,module.name);log(LOGLEVEL.INFO,"Module "+module.name+" started",module.name);for(i=0;i<loadedModules.length;i++){var canStart=config.modules===undefined;if(!canStart){for(j=0;j<config.modules.length;j++){if(loadedModules[i].name===config.modules[j]){canStart=true;break;}}}
 if(canStart){loadedModules[i].start();}}
 if(config.modules!==undefined&&config.modules!==null){for(i=0;i<config.modules.length;i++){var found=false;for(j=0;j<loadedModules.length;j++){if(config.modules[i]===loadedModules[j].name){found=true;}}
 if(!found){log(LOGLEVEL.ERROR,"Module "+config.modules[i]+" is invalid or not loaded",module.name);}}}
@@ -18,4 +18,4 @@ var pstr=str;var max=(len-str.length)/c.length;for(var i=0;i<max;i++){pstr=c+pst
 return pstr;}
 function isMobileWebkit(){return ua.engine.name==="WebKit"&&(ua.os.name==="Android"||ua.os.name==="iOS");}
 function isMobile(){return ua.os.name==="Android"||ua.os.name==="iOS"||ua.os.name==="Windows Phone"||ua.os.name==="BlackBerry";}
-log(LOGLEVEL.INFO,"Module "+module.name+" loaded",module.name);return self;}());
+log(LOGLEVEL.INFO,"Module "+module.name+" loaded",module.name);return self;}(window.floatz=window.floatz||{},jQuery));
