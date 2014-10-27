@@ -180,8 +180,11 @@ fieldset {
         width: 99.4%;
     }
 
+	/* Checkboxes and radio buttons */
     input[type="checkbox"],
-    input[type="radio"]{
+    input[type="radio"],
+    .flz_checkbox,
+	    .flz_radio {
         margin: 0;
 
         /* Label in combination with checkbox or radio should be inline */
@@ -267,8 +270,15 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 button {
-    padding: 0.25em 0.35em;
-    margin: 0
+	background-color: #fff;
+	margin: 0;
+	padding: 0.25em 0.35em;
+
+	/**
+     * @workaround Add border otherwise buttons are not styleable in webkit browsers
+     * @affected All browsers
+     */
+	border: 1px solid #000;
 }
 
 /* Button workarounds */
@@ -278,7 +288,6 @@ button {
      * @workaround Differentiate input type button, submit
      * @affected IE 5, 6
      */
-    padding: 0.25em 0.35em;
     margin: 0;
 
     /**

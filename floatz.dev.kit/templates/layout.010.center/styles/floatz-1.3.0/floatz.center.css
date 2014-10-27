@@ -141,7 +141,7 @@ fieldset{clear:both;font-weight:bold;border:1px solid #000;padding:1em;margin-bo
 .flz_form{}.flz_form input[type="text"],.flz_form input[type="password"]{background-color:#fff;border:1px solid #000;display:block;width:99.4%;padding-left:0;padding-right:0}
 .flz_form label,.flz_form select{display:block;width:100%}
 .flz_form textarea{display:block;width:99.4%}
-.flz_form input[type="checkbox"],.flz_form input[type="radio"]{margin:0;}.flz_form input[type="checkbox"]+label,.flz_form input[type="radio"]+label{display:inline;width:auto}
+.flz_form input[type="checkbox"],.flz_form input[type="radio"],.flz_form .flz_checkbox,.flz_form .flz_radio{margin:0;}.flz_form input[type="checkbox"]+label,.flz_form input[type="radio"]+label,.flz_form .flz_checkbox+label,.flz_form .flz_radio+label{display:inline;width:auto}
 .flz_form .flz_mandatory{background-color:#ff0}
 .flz_form .flz_readonly{background-color:#efefef;color:#aaa}
 .flz_form .flz_inline{display:inline;width:auto}
@@ -149,7 +149,7 @@ fieldset{clear:both;font-weight:bold;border:1px solid #000;padding:1em;margin-bo
 * html .flz_form{}* html .flz_form .flz_textbox{background-color:#fff;border:1px solid #000;display:block;width:99.4%}
 * html .flz_form .flz_textbox,* html .flz_form textarea{margin-right:-10px}
 * html .flz_form .flz_combobox{float:left}
-input[type="button"],input[type="submit"],input[type="reset"],button{padding:.25em .35em;margin:0}
-* html .flz_button{padding:.25em .35em;margin:0;overflow:visible;padding:.25em .5em;width:1}
+input[type="button"],input[type="submit"],input[type="reset"],button{background-color:#fff;margin:0;padding:.25em .35em;border:1px solid #000}
+* html .flz_button{margin:0;overflow:visible;padding:.25em .5em;width:1}
 *:first-child+html input[type=button],*:first-child+html input[type=submit],*:first-child+html input[type=reset],*:first-child+html button{overflow:visible;padding:.25em .5em;margin:0;width:1}
 .flz_custombutton{background:transparent;border:0}
