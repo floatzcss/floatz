@@ -1,4 +1,4 @@
-window.floatz.custom = (function() {
+window.floatz.custom = (function (floatz, $) {
 	"use strict";
 
 	////////////////////////////////////////////////////
@@ -17,7 +17,6 @@ window.floatz.custom = (function() {
 	////////////////////////////////////////////////////
 	// Private variables
 
-	var floatz = window.floatz;
 	var module = self.module;
 	
 	////////////////////////////////////////////////////
@@ -29,11 +28,6 @@ window.floatz.custom = (function() {
     * @since 1.1.0
 	*/
 	function start() {
-
-        floatz.panels.onResize(".flz_panel, .flz_scrollpanel", function(e) {
-            floatz.log(floatz.LOGLEVEL.INFO, "Panel has been resized", module.name);
-        });
-
 		floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " started", module.name);
 	}
 			
@@ -45,4 +39,4 @@ window.floatz.custom = (function() {
 	
 	// Return public interface
 	return self;
-}());
+}(window.floatz, jQuery));

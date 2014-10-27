@@ -12,7 +12,7 @@
 * [Layouting forms](#layouting-forms)
 
 ##Version history
-* September, 2014 - Version 1.3.0 currently under construction
+* November, 2014 - Version 1.3.0 currently under construction
 * July 29th, 2013 - Version 1.2.0 released
 * July 17th, 2012 - Version 1.1.2 released
 * October 26th, 2010 - Version 1.1.1 released
@@ -416,7 +416,8 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.
 	});
 });
 ```
-See it in action: http://codepen.io/floatz/pen/pyqeJ
+See it in action: http://codepen.io/floatz/pen/pyqeJ<br />
+See it in action: http://codepen.io/floatz/pen/khgBI
 
 ##Layouting navigation
 Easing the layout of navigational elements is one of the key purposes of **floatz** from the very beginning. Thus it provides a comprehensive set of reusable CSS classes for different navigation scenarios. The underlying markup is based on simple lists.
@@ -606,11 +607,169 @@ See it in action: http://codepen.io/floatz/pen/vIkEg?editors=100
 
 ###Tab panels
 
-To be continued ...
+Creating tab panels is just as simple as creating list navigations or menus. 
 
+```
+<div class="flz_htabmenu">
+	<ul>
+		<li class="flz_selected"><a href="#">Tab 1</a></li>
+		<li><a href="#">Tab 2</a></li>
+		<li><a href="#">Tab 3</a></li>
+		<li class="flz_disabled"><a>Disabled Tab</a></li>
+		<li><a href="#">Tab 4</a></li>
+	</ul>
+</div>
+```
 See it in action: http://codepen.io/floatz/pen/KqEot<br />
-See it in action: http://codepen.io/floatz/pen/wrxsj (bottom aligned)
+
+For a bottom aligned tab panel the class simply must be changed to **flz_htabmenu_bottom**.
+```
+<div class="flz_htabmenu_bottom">
+	<ul>
+		<li class="flz_selected"><a href="#">Tab 1</a></li>
+		<li><a href="#">Tab 2</a></li>
+		<li><a href="#">Tab 3</a></li>
+		<li class="flz_disabled"><a>Disabled Tab</a></li>
+		<li><a href="#">Tab 4</a></li>
+	</ul>
+</div>
+```
+See it in action: http://codepen.io/floatz/pen/wrxsj
+
+The default tab panel implementation uses sprite images to support round corners in all browsers (until IE6). For customization the styles simply have to be overridden with or without sprite images if used only in newer browsers.
 
 ##Layouting forms
 
-To be continued ...
+* [Form basics](#form-basics)
+ * [Checkboxes and radio buttons](#checkboxes-and-radio-buttons)
+ * [Comboboxes](#comboboxes)
+* [Complex forms](#complex-forms)
+ * [Layouting with spacers](#layouting-with-spacers)
+ * [Layouting with fieldsets](#layouting-with-fieldsets)
+* [Forms in modern browsers](#forms-in-modern-browsers)
+
+### Form basics
+
+Easing the layout of forms is one of the greatest strengths and initial purposes of **floatz**. By adding **flz_form** to the *form* tag or any other block level HTML tag each form field spans the whole width of its parent container by default. 
+> To support older browsers that do not support attribute selectors (like IE6) it is necessary to annotate each *input* type with the corresponding floatz style: **flz_textbox**, **flz_checkbox**, **flz_radio**, **flz_button**. These styles can be left in modern browsers.
+
+```
+<form class="flz_form">
+	<label for="field1">Text Field</label>
+	<input type="text" class="flz_textbox" id="field1" />
+	<label for="field2">Password Field</label>
+	<input type="password" class="flz_textbox" id="field2" />
+	<label for="dropdown1">Dropdown 1</label>
+	<select id="dropdown1">
+		<option>Option 1</option>
+		<option>Option 2</option>
+		<option>Option 3</option>
+		<option>Option 4</option>
+	</select>    
+	<label for="textarea1">Textarea 1</label>
+	<textarea id="textarea1"></textarea>
+	
+	...
+	
+	<div class="flz_box">
+		<input type="submit" class="flz_button" value="Save" />
+		<input type="button" class="flz_button" value="Cancel" />
+		<input type="reset" class="flz_button" value="Reset" />
+		<button>Help</button>
+	</div>
+</form>
+```
+See it in action: http://codepen.io/floatz/pen/Fdqse
+
+#### Checkboxes and radio buttons
+
+Usually labels should be in the same row like checkboxes and radio buttons. To acchieve this the corresponding labels must be annotated with **flz_inline**.
+```
+<input type="checkbox" class="flz_checkbox" id="checkbox1" />
+<label for="checkbox1" class="flz_inline">Checkbox 1</label>
+<input type="checkbox" class="flz_checkbox" id="checkbox2" />
+<label for="checkbox2" class="flz_inline">Checkbox 2</label>
+<input type="checkbox" class="flz_checkbox" id="checkbox3" />
+<label for="checkbox3" class="flz_inline">Checkbox 3</label>
+
+<input type="radio" class="flz_radio" id="radio1" name="radioGroup1" />
+<label for="radio1" class="flz_inline">Radio 1</label>
+<input type="radio" class="flz_radio" id="radio2" name="radioGroup1" />
+<label for="radio2" class="flz_inline">Radio 2</label>
+<input type="radio" class="flz_radio" id="radio3" name="radioGroup1" />
+<label for="radio3" class="flz_inline">Radio 3</label>
+```
+See it in action: http://codepen.io/floatz/pen/Fdqse
+
+#### Comboboxes
+
+**floatz** also supports combinations of input fields and images.
+
+```
+<div class="flz_combobox">
+	<input type="text" class="flz_textbox" id="combobox1" />
+	<!-- Image must be in next line - otherwise unnecessary whitespace in IE -->
+	<a href="#">
+		<span class="icon-cog"></span>
+	</a>
+</div>
+```
+See it in action: http://codepen.io/floatz/pen/Fdqse
+
+###Complex forms
+
+Layouting complex forms is as easy as layouting pages. It´s just necessary to use *boxes*, *layouters* and *spacers* to create any imaginable form grid.
+
+####Layouting with spacers
+
+The following sample uses *spacers* to add white space to the input form.
+```
+<form class="flz_form">
+  <div class="flz_box flz_l50">
+    <div class="flz_lsubspacer_mrmc_top ">
+      <label for="field1">Text Field</label>
+      <input type="text" class="flz_textbox" id="field1" />
+    </div>
+  </div>
+  <div class="flz_box flz_r50">
+    <div class="flz_rsubspacer_mrmc_top">
+      <label for="field2">Password Field</label>
+      <input type="password" class="flz_textbox" id="field2" />
+    </div>
+  </div>
+  ...
+</form>
+```
+See it in action: http://codepen.io/floatz/pen/AeFnD
+
+####Layouting with fieldsets
+It is also possible to combine *spacers* and fieldsets for grouping input fields visually into logical units.
+```
+<form class="flz_form">
+  <fieldset>
+    <legend>Fieldset 1</legend>
+    <div class="flz_box flz_l50">
+      <div class="flz_lsubspacer">
+        <label for="field1">Text Field</label>
+        <input type="text" class="flz_textbox" id="field1" />
+      </div>
+    </div>
+    <div class="flz_box flz_r50">
+      <div class="flz_rsubspacer">
+        <label for="field2">Password Field</label>
+        <input type="password" class="flz_textbox" id="field2" />
+      </div>
+    </div>
+  </fieldset>
+  ...
+</form>
+```
+See it in action: http://codepen.io/floatz/pen/DsBev
+
+###Forms in modern browsers
+
+As already [mentioned](#using-spacers-in-modern-browsers) **floatz** supports a wide range of browsers even legacy browsers like IE6 and 7. If it is assured that a website or application is only used in modern browsers the necessary elements and classes for layouting web forms can be reduced to a minimum.
+
+The following example shows how a form can be layouted in modern browsers.
+
+See it in action: http://codepen.io/floatz/pen/Cqcaj

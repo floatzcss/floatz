@@ -4,7 +4,6 @@ $LAB.script("../src/scripts/jquery-1.11.1.min.js")
 	.script("../src/scripts/floatz.js").wait()
 	.script("../src/scripts/floatz.mobile.js")
 	.script("../src/scripts/floatz.skiplink.js")
-    .script("../src/scripts/floatz.panels.js")
 	.script("scripts/custom.js")
 	.wait(function () {
 		$(document).ready(function () {
@@ -13,7 +12,6 @@ $LAB.script("../src/scripts/jquery-1.11.1.min.js")
 				logLevel: floatz.LOGLEVEL.DEBUG,
 				modules: ["floatz.mobile",
 					"floatz.skiplink",
-                    "floatz.panels",
 					"custom"],
 				onStarted: function () {
 					start();

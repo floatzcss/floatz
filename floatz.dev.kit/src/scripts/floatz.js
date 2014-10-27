@@ -19,14 +19,7 @@
  * @lastmodified  2014-07-17
  */
 
-/**
- * TODO Test for different user agent strings.
- * TODO Other platforms? Firefox OS, Blackberry?
- * TODO Does not work in iOS?
- */
-
-
-window.floatz = (function () {
+window.floatz = (function (floatz, $) {
     "use strict";
 
     ////////////////////////////////////////////////////
@@ -250,4 +243,4 @@ window.floatz = (function () {
 
     // Return public interface
     return self;
-}());
+}(window.floatz, jQuery));
