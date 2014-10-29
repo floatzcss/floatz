@@ -119,46 +119,15 @@
 .flz_rsubspacer_mrmc_mid,
 .flz_rsubspacer_mrmc_bottom {
 	display: block;
-}
 
-/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
-.flz_spacer:after,
-.flz_lspacer:after,
-.flz_mspacer:after,
-.flz_rspacer:after,
-.flz_spacer_mrsc_top:after,
-.flz_spacer_mrsc_mid:after,
-.flz_spacer_mrsc_bottom:after,
-.flz_lspacer_mrmc_top:after,
-.flz_lspacer_mrmc_mid:after,
-.flz_lspacer_mrmc_bottom:after,
-.flz_mspacer_mrmc_top:after,
-.flz_mspacer_mrmc_mid:after,
-.flz_mspacer_mrmc_bottom:after,
-.flz_rspacer_mrmc_top:after,
-.flz_rspacer_mrmc_mid:after,
-.flz_rspacer_mrmc_bottom:after,
-.flz_subspacer:after,
-.flz_lsubspacer:after,
-.flz_msubspacer:after,
-.flz_rsubspacer:after,
-.flz_subspacer_mrsc_top:after,
-.flz_subspacer_mrsc_mid:after,
-.flz_subspacer_mrsc_bottom:after,
-.flz_lsubspacer_mrmc_top:after,
-.flz_lsubspacer_mrmc_mid:after,
-.flz_lsubspacer_mrmc_bottom:after,
-.flz_msubspacer_mrmc_top:after,
-.flz_msubspacer_mrmc_mid:after,
-.flz_msubspacer_mrmc_bottom:after,
-.flz_rsubspacer_mrmc_top:after,
-.flz_rsubspacer_mrmc_mid:after,
-.flz_rsubspacer_mrmc_bottom:after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
+	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
+	&:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
 }
 
 /* Activates hasLayout in IE <= 6 in context of self clearing method */
