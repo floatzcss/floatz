@@ -58,9 +58,6 @@ fieldset {
     /* Clear floats */
     clear: both;
 
-    /* Change font */
-    font-weight: bold;
-
     /**
      * Sets border styles (because of meyer reset), paddings and encloses floating boxes
      * within fieldset using overflow method
@@ -75,12 +72,16 @@ fieldset {
      */
     overflow: hidden; /* Opera <= 8.5 */
 
-    /**
-     * @workaround Wrong padding behaviour of fieldset in IE. (hack works only with one
-     * setting per element)
-     * @affected IE 8
-     */
+	/**
+	 * @workaround Wrong padding behaviour of fieldset in IE. (hack works only with one
+	 * setting per element)
+	 * @affected IE 8
+	 */
     padding: ~"0 1em 1em 1em\0/";
+
+	legend {
+		font-weight: bold;
+	}
 
     /**
      * @workaround Wrong padding behaviour of fieldset in IE (hack works only with one
@@ -88,7 +89,7 @@ fieldset {
      * @affected IE 8
      */
     legend {
-        margin-top: ~"-1em\0/";
+	    margin-top: ~"-1em\0/";
         padding-top: ~"1em\0/";
         padding-bottom: ~"1em\0/";
     }

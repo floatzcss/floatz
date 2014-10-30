@@ -131,7 +131,8 @@ label{font-weight:bold}
 optgroup{font-style:italic}
 button input,label,select,textarea{margin-bottom:.25em;margin-left:0;vertical-align:middle}
 select,textarea{border:1px solid #000}
-fieldset{clear:both;font-weight:bold;border:1px solid #000;padding:1em;margin-bottom:1em;overflow:hidden;padding:0 1em 1em 1em\0/;}fieldset legend{margin-top:-1em\0/;padding-top:1em\0/;padding-bottom:1em\0/}
+fieldset{clear:both;border:1px solid #000;padding:1em;margin-bottom:1em;overflow:hidden;padding:0 1em 1em 1em\0/;}fieldset legend{font-weight:bold}
+fieldset legend{margin-top:-1em\0/;padding-top:1em\0/;padding-bottom:1em\0/}
 * html fieldset{padding:0 1em 1em 1em;margin-top:-1em;}* html fieldset legend{color:#000;margin-left:-0.5em;padding-top:1em;padding-bottom:1em;padding-left:0}
 *:first-child+html fieldset{padding:0 1em 1em 1em;}*:first-child+html fieldset legend{margin-left:-0.5em;margin-top:-1em;padding-top:1em;padding-bottom:1em;padding-left:0}
 .flz_form{}.flz_form input[type="text"],.flz_form input[type="password"]{background-color:#fff;border:1px solid #000;display:block;width:99.4%;padding-left:0;padding-right:0}
