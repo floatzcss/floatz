@@ -12,7 +12,7 @@
 * [Layouting forms](#layouting-forms)
 
 ##Version history
-* November, 2014 - Version 1.3.0 currently under construction
+* December, 2014 - Version 1.3.0 currently under construction
 * July 29th, 2013 - Version 1.2.0 released
 * July 17th, 2012 - Version 1.1.2 released
 * October 26th, 2010 - Version 1.1.1 released
