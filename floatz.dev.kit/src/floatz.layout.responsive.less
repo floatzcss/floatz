@@ -36,8 +36,9 @@ img {
  * Reusable styles
  */
 
-.wrapContent {
+.mx_spacer {
 	display: block;
+	padding: 0; /* Reset all padding to allow full overwrites */
 
 	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
 	&:after {
@@ -94,7 +95,7 @@ img {
 	.flz_rsubspacer_mrmc_top_xs,
 	.flz_rsubspacer_mrmc_mid_xs,
 	.flz_rsubspacer_mrmc_bottom_xs {
-		.wrapContent;
+		.mx_spacer;
 	}
 	.flz_spacer_xs,
 	.flz_lspacer_xs,
@@ -306,7 +307,7 @@ img {
 	.flz_rsubspacer_mrmc_top_s,
 	.flz_rsubspacer_mrmc_mid_s,
 	.flz_rsubspacer_mrmc_bottom_s {
-		.wrapContent;
+		.mx_spacer;
 	}
 	.flz_spacer_s,
 	.flz_lspacer_s,
@@ -518,7 +519,7 @@ img {
 	.flz_rsubspacer_mrmc_top_m,
 	.flz_rsubspacer_mrmc_mid_m,
 	.flz_rsubspacer_mrmc_bottom_m {
-		.wrapContent;
+		.mx_spacer;
 	}
 	.flz_spacer_m,
 	.flz_lspacer_m,
@@ -730,7 +731,7 @@ img {
 	.flz_rsubspacer_mrmc_top_l,
 	.flz_rsubspacer_mrmc_mid_l,
 	.flz_rsubspacer_mrmc_bottom_l {
-		.wrapContent;
+		.mx_spacer;
 	}
 	.flz_spacer_l,
 	.flz_lspacer_l,
@@ -942,7 +943,7 @@ img {
 	.flz_rsubspacer_mrmc_top_xl,
 	.flz_rsubspacer_mrmc_mid_xl,
 	.flz_rsubspacer_mrmc_bottom_xl {
-		.wrapContent;
+		.mx_spacer;
 	}
 	.flz_spacer_xl,
 	.flz_lspacer_xl,
