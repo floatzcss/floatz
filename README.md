@@ -830,6 +830,12 @@ The following *responsive layouters* are provided out of the box:
 
 As described under [Basic concepts](#spacers) *spacers* and *subspacers* are used add whitespace to *boxes*. As shown for *responsive layouters* it is possible to adjust whitespace to the desired device size by simply adding a device size specific postfix to the given styles.
 
+The code example below creates the following layout:
+
+* 3 columns for desktops and tablets in landscape mode (XL, L)
+* 2+1 columns for tablets in portrait mode (M)
+* 1 column for smartphones portrait and landscape mode (S, XS)
+
 ```
 <div class="flz_box flz_l25 flz_l50_m flz_r100_s flz_r100_xs">
   <div class="flz_lspacer flz_spacer_s flz_spacer_xs">
@@ -847,8 +853,12 @@ As described under [Basic concepts](#spacers) *spacers* and *subspacers* are use
   </div>
 </div>
 ```
-See it in action: http://codepen.io/floatz/pen/QwyOWd<br />
-See it in action: http://codepen.io/floatz/pen/raxYOv
+See it in action: http://codepen.io/floatz/pen/QwyOWd
+
+Following this principles any layout based on layouters and spacers can be made responsive.
+
+See it in action: http://codepen.io/floatz/pen/raxYOv<br />
+...
 
 The following *responsive spacers* are provided out of the box:
 
