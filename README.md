@@ -855,7 +855,7 @@ The code example below creates the following layout:
 ```
 See it in action: http://codepen.io/floatz/pen/QwyOWd
 
-Following this principles any layout based on layouters and spacers can be made responsive.
+Following this principles any layout based on *layouters* and *spacers* can be made responsive.
 
 See it in action: http://codepen.io/floatz/pen/raxYOv<br />
 ...
