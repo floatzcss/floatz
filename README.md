@@ -792,7 +792,7 @@ The following *breakpoints* are used within media queries to determine devices.
 | Tablet, Desktop | Landscape    | L    | 980 px    | 1199 px   |
 | Large Desktop   | Landscape    | XL   | 1200 px   | ...       |
 
-## Responsive layouters
+##Responsive layouters
 
 As described under [Basic concepts](#layouters) *layouters* are used to give *boxes* a specific width. Using *responsive layouters*, which are simply *layouters* extended with a device size specific postfix, you can define how each box should behave on different devices. 
 
@@ -826,7 +826,28 @@ The following *responsive layouters* are provided out of the box:
 | flz_m&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80          |
 | flz_r&lt;percentage&gt:_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
 
-## Responsive spacers
+##Responsive spacers
+
+As described under [Basic concepts](#spacers) *spacers* and *subspacers* are used add whitespace to *boxes*. As shown for *responsive layouters* it is possible to adjust whitespace to the desired device size by simply adding a device size specific postfix to the given styles.
+
+```
+<div class="flz_box flz_l25 flz_l50_m flz_r100_s flz_r100_xs">
+  <div class="flz_lspacer flz_spacer_s flz_spacer_xs">
+    ...
+  </div>
+</div>
+<div class="flz_box flz_m50 flz_r50_m flz_r100_s flz_r100_xs">
+  <div class="flz_mspacer flz_rspacer_m flz_spacer_s flz_spacer_xs">
+    ...
+  </div>
+</div>
+<div class="flz_box flz_r25 flz_r100_m flz_r100_s flz_r100_xs">
+  <div class="flz_rspacer flz_spacer_m flz_spacer_s flz_spacer_xs">
+    ...
+  </div>
+</div>
+```
+See it in action: http://codepen.io/floatz/pen/QwyOWd
 
 The following *responsive spacers* are provided out of the box:
 
