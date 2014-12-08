@@ -816,6 +816,8 @@ The code example below creates the following layout:
    ...
 </div>
 ```
+See it in action: http://codepen.io/floatz/pen/ZYQaza
+
 The following *responsive layouters* are provided out of the box:
 
 | Layouter                             | Widths                                          |
