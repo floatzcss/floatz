@@ -824,7 +824,7 @@ The following *responsive layouters* are provided out of the box:
 | ------------------------------------ | ----------------------------------------------- |
 | flz_l&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90      |
 | flz_m&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80          |
-| flz_r&lt;percentage&gt:_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
+| flz_r&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
 
 ##Responsive spacers
 
