@@ -794,7 +794,7 @@ The following *breakpoints* are used within media queries to determine devices.
 
 ## Responsive layouters
 
-As described under [Basic concepts](#layouters) *layouters* are used to give boxes a specific width. Using *responsive layouters*, which are simply *layouters* extended with the device size specific postfix, you can define how each box should behave on different devices. 
+As described under [Basic concepts](#layouters) *layouters* are used to give *boxes* a specific width. Using *responsive layouters*, which are simply *layouters* extended with a device size specific postfix, you can define how each box should behave on different devices. 
 
 The code example below creates the following layout:
 
