@@ -847,7 +847,7 @@ As described under [Basic concepts](#spacers) *spacers* and *subspacers* are use
   </div>
 </div>
 ```
-See it in action: http://codepen.io/floatz/pen/QwyOWd
+See it in action: http://codepen.io/floatz/pen/QwyOWd<br />
 See it in action: http://codepen.io/floatz/pen/raxYOv
 
 The following *responsive spacers* are provided out of the box:
