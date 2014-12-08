@@ -780,7 +780,7 @@ See it in action: http://codepen.io/floatz/pen/Cqcaj
 
 Since version 1.3.0 floatz provides out of the box support for [responsive design](http://en.wikipedia.org/wiki/Responsive_web_design).
 
-##Breakpoints
+##Device sizes
 
 The following *breakpoints* are used within media queries to determine devices.
 
