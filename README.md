@@ -828,7 +828,7 @@ The following *responsive layouters* are provided out of the box:
 
 ##Responsive spacers
 
-As described under [Basic concepts](#spacers) *spacers* and *subspacers* are used add whitespace to *boxes*. As shown for *responsive layouters* it is possible to adjust whitespace to the desired device size by simply adding a device size specific postfix to the given styles.
+As explained under [Basic concepts](#spacers) *spacers* and *subspacers* are used to add whitespace to *boxes*. Similar to *responsive layouters* it is possible to adjust whitespace to the desired device size by simply adding a device size specific postfix to the given styles.
 
 The code example below creates the following layout:
 
