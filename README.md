@@ -838,17 +838,17 @@ The code example below creates the following layout:
 
 ```
 <div class="flz_box flz_l25 flz_l50_m flz_r100_s flz_r100_xs">
-  <div class="flz_lspacer flz_spacer_s flz_spacer_xs">
+  <div class="flz_lspacer flz_lspacer_mrmc_top_m flz_spacer_mrsc_top_s flz_spacer_mrsc_top_xs">
     ...
   </div>
 </div>
 <div class="flz_box flz_m50 flz_r50_m flz_r100_s flz_r100_xs">
-  <div class="flz_mspacer flz_rspacer_m flz_spacer_s flz_spacer_xs">
+  <div class="flz_mspacer flz_rspacer_mrmc_mid_m flz_spacer_mrsc_mid_s flz_spacer_mrsc_mid_xs">
     ...
   </div>
 </div>
 <div class="flz_box flz_r25 flz_r100_m flz_r100_s flz_r100_xs">
-  <div class="flz_rspacer flz_spacer_m flz_spacer_s flz_spacer_xs">
+  <div class="flz_rspacer flz_spacer_mrsc_bottom_m flz_spacer_mrsc_bottom_s flz_spacer_mrsc_bottom_xs">
     ...
   </div>
 </div>
