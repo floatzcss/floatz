@@ -857,10 +857,7 @@ See it in action: http://codepen.io/floatz/pen/QwyOWd
 
 Following this principles any layout based on *layouters* and *spacers* can be made responsive.
 
-See it in action: http://codepen.io/floatz/pen/raxYOv<br />
-See it in action: http://codepen.io/floatz/pen/qEZdyo<br />
-See it in action: http://codepen.io/floatz/pen/pvgZzP
-...
+See it in action: http://codepen.io/collection/XkOQVX
 
 The following *responsive spacers* are provided out of the box:
 
