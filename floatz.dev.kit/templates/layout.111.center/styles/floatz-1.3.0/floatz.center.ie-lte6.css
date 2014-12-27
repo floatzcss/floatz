@@ -1,0 +1,23 @@
+/* floatz CSS Framework v1.3.0
+   Copyright (c) 1998-2014 by :humml:design
+   Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */
+* html sub,* html sup{font-size:1em}
+* html ol li{margin-left:1.5em}
+* html #flz_page{overflow:hidden}
+* html .flz_spacer,* html .flz_lspacer,* html .flz_mspacer,* html .flz_rspacer,* html .flz_spacer_mrsc_top,* html .flz_spacer_mrsc_mid,* html .flz_spacer_mrsc_bottom,* html .flz_lspacer_mrmc_top,* html .flz_lspacer_mrmc_mid,* html .flz_lspacer_mrmc_bottom,* html .flz_mspacer_mrmc_top,* html .flz_mspacer_mrmc_mid,* html .flz_mspacer_mrmc_bottom,* html .flz_rspacer_mrmc_top,* html .flz_rspacer_mrmc_mid,* html .flz_rspacer_mrmc_bottom,* html .flz_subspacer,* html .flz_lsubspacer,* html .flz_msubspacer,* html .flz_rsubspacer,* html .flz_subspacer_mrsc_top,* html .flz_subspacer_mrsc_mid,* html .flz_subspacer_mrsc_bottom,* html .flz_lsubspacer_mrmc_top,* html .flz_lsubspacer_mrmc_mid,* html .flz_lsubspacer_mrmc_bottom,* html .flz_msubspacer_mrmc_top,* html .flz_msubspacer_mrmc_mid,* html .flz_msubspacer_mrmc_bottom,* html .flz_rsubspacer_mrmc_top,* html .flz_rsubspacer_mrmc_mid,* html .flz_rsubspacer_mrmc_bottom{height:1%}
+* html .flz_r20,* html .flz_r25,* html .flz_r40,* html .flz_r33,* html .flz_r50,* html .flz_r60,* html .flz_r66,* html .flz_r75,* html .flz_r80,* html .flz_r90,* html .flz_r100{margin-right:-3px}
+* html .flz_r10{margin-right:-5px}
+* html body{text-align:center;}
+* html #flz_page{text-align:left;}
+* html a:active.flz_skiplink{border:1px dotted #000}
+* html .flz_vmenu ul{}* html .flz_vmenu ul li.flz_selected a{font-weight:expression(/flz_selected/.test(this.parentNode.className) ? "bold" : "inherit")}
+* html .flz_vmenu ul li.flz_disabled a{color:expression(/flz_disabled/.test(this.parentNode.className) ? "#aaa" : "inherit");text-decoration:expression(/flz_disabled/.test(this.parentNode.className) ? "none" : "inherit")}
+* html .flz_htabmenu ul li{}* html .flz_htabmenu ul li a:hover{background:url(images/htabmenu.gif) no-repeat right top;text-decoration:underline}
+* html .flz_htabmenu ul li.flz_selected a:hover{background:url(images/htabmenu.gif) no-repeat right -200px;text-decoration:underline}
+* html .flz_htabmenu_bottom ul li{}* html .flz_htabmenu_bottom ul li a:hover{background:url(images/htabmenu_bottom_inactive.gif) no-repeat right bottom;text-decoration:underline}
+* html .flz_htabmenu_bottom ul li.flz_selected a:hover{background:url(images/htabmenu_bottom_active.gif) no-repeat right bottom;text-decoration:underline}
+* html fieldset{padding:0 1em 1em 1em;margin-top:-1em;}* html fieldset legend{color:#000;margin-left:-0.5em;padding-top:1em;padding-bottom:1em;padding-left:0}
+* html .flz_form{}* html .flz_form .flz_textbox{background-color:#fff;border:1px solid #000;display:block;width:99.4%}
+* html .flz_form .flz_textbox,* html .flz_form textarea{margin-right:-10px}
+* html .flz_form .flz_combobox{float:left}
+* html .flz_button{margin:0;overflow:visible;padding:.25em .5em;width:1}
