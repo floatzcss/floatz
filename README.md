@@ -10,6 +10,7 @@
 * [Layouting pages](#layouting-pages)
 * [Layouting navigation](#layouting-navigation)
 * [Layouting forms](#layouting-forms)
+* [Responsive layouts](#responsive-layouts)
 
 ##Version history
 * December, 2014 - Version 1.3.0 currently under construction
@@ -774,3 +775,109 @@ As already [mentioned](#using-spacers-in-modern-browsers) **floatz** supports a 
 The following example shows how a form can be layouted in modern browsers.
 
 See it in action: http://codepen.io/floatz/pen/Cqcaj
+
+#Responsive layouts
+
+Since version 1.3.0 floatz provides out of the box support for [responsive design](http://en.wikipedia.org/wiki/Responsive_web_design).
+
+##Device sizes
+
+The following *breakpoints* are used within media queries to determine devices.
+
+| Target device   | Orientiation | Size | min-width | max-width |
+| --------------- | ------------ | :--: | --------: | --------: |
+| Smartphone      | Portrait     | XS   | 0 px      | 480 px    |
+| Smartphone      | Landscape    | S    | 481 px    | 767 px    |
+| Tablet          | Portrait     | M    | 768 px    | 979 px    |
+| Tablet, Desktop | Landscape    | L    | 980 px    | 1199 px   |
+| Large Desktop   | Landscape    | XL   | 1200 px   | ...       |
+
+##Responsive layouters
+
+As described under [Basic concepts](#layouters) *layouters* are used to give *boxes* a specific width. Using *responsive layouters*, which are simply *layouters* extended with a device size specific postfix, you can define how each box should behave on different devices. 
+
+The code example below creates the following layout:
+
+* 4 columns for desktops and tablets in landscape mode (XL, L)
+* 2 columns for tablets in portrait mode (M)
+* 1 column for smartphones portrait and landscape mode (S, XS)
+
+```
+<div class="flz_box flz_l25 flz_l50_m flz_r100_s flz_r100_xs">
+   ...
+</div>
+<div class="flz_box flz_m25 flz_r50_m flz_r100_s flz_r100_xs">
+   ...
+</div>
+<div class="flz_box flz_m25 flz_l50_m flz_r100_s flz_r100_xs">
+   ...
+</div>
+<div class="flz_box flz_r25 flz_r50_m flz_r100_s flz_r100_xs">
+   ...
+</div>
+```
+See it in action: http://codepen.io/floatz/pen/ZYQaza
+
+The following *responsive layouters* are provided out of the box:
+
+| Layouter                             | Widths                                          |
+| ------------------------------------ | ----------------------------------------------- |
+| flz_l&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90      |
+| flz_m&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80          |
+| flz_r&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
+
+##Responsive spacers
+
+As explained under [Basic concepts](#spacers) *spacers* and *subspacers* are used to add whitespace to *boxes*. Similar to *responsive layouters* it is possible to adjust whitespace to the desired device size by simply adding a device size specific postfix to the given styles.
+
+The code example below creates the following layout:
+
+* 3 columns for desktops and tablets in landscape mode (XL, L)
+* 2+1 columns for tablets in portrait mode (M)
+* 1 column for smartphones portrait and landscape mode (S, XS)
+
+```
+<div class="flz_box flz_l25 flz_l50_m flz_r100_s flz_r100_xs">
+  <div class="flz_lspacer flz_lspacer_mrmc_top_m flz_spacer_mrsc_top_s flz_spacer_mrsc_top_xs">
+    ...
+  </div>
+</div>
+<div class="flz_box flz_m50 flz_r50_m flz_r100_s flz_r100_xs">
+  <div class="flz_mspacer flz_rspacer_mrmc_mid_m flz_spacer_mrsc_mid_s flz_spacer_mrsc_mid_xs">
+    ...
+  </div>
+</div>
+<div class="flz_box flz_r25 flz_r100_m flz_r100_s flz_r100_xs">
+  <div class="flz_rspacer flz_spacer_mrsc_bottom_m flz_spacer_mrsc_bottom_s flz_spacer_mrsc_bottom_xs">
+    ...
+  </div>
+</div>
+```
+See it in action: http://codepen.io/floatz/pen/QwyOWd
+
+Following this principles any layout based on *layouters* and *spacers* can be made responsive.
+
+See it in action: http://codepen.io/collection/XkOQVX
+
+The following *responsive spacers* are provided out of the box:
+
+| Spacer                  | Subspacer                  | Scenario                   | Description         |
+| ----------------------- | -------------------------- | -------------------------- | ------------------- |
+| flz_spacer_&lt;size&gt;              | flz_subspacer_&lt;size&gt;              | Single row / Single column | Basic spacer        |
+| flz_lspacer_&lt;size&gt;             | flz_lsubspacer_&lt;size&gt;             | Single row / Multi column  | Left spacer         |
+| flz_mspacer_&lt;size&gt;             | flz_msubspacer_&lt;size&gt;             | Single row / Multi column  | Mid spacer          |
+| flz_rspacer_&lt;size&gt;             | flz_rsubspacer_&lt;size&gt;             | Single row / Multi column  | Right spacer        |
+| flz_spacer_mrsc_top_&lt;size&gt;     | flz_subspacer_mrsc_top_&lt;size&gt;     | Multi row / Single column  | Top spacer          |
+| flz_spacer_mrsc_mid_&lt;size&gt;     | flz_subspacer_mrsc_mid_&lt;size&gt;     | Multi row / Single column  | Mid spacer          |
+| flz_spacer_mrsc_bottom_&lt;size&gt;  | flz_subspacer_mrsc_bottom_&lt;size&gt;  | Multi row / Single column  | Bottom spacer       |
+| flz_lspacer_mrmc_top_&lt;size&gt;    | flz_lsubspacer_mrmc_top_&lt;size&gt;    | Multi row / Multi column   | Top left spacer     |
+| flz_lspacer_mrmc_mid_&lt;size&gt;    | flz_lsubspacer_mrmc_mid_&lt;size&gt;    | Multi row / Multi column   | Mid left spacer     |
+| flz_lspacer_mrmc_bottom_&lt;size&gt; | flz_lsubspacer_mrmc_bottom_&lt;size&gt; | Multi row / Multi column   | Bottom left spacer  |
+| flz_mspacer_mrmc_top_&lt;size&gt;    | flz_msubspacer_mrmc_top_&lt;size&gt;    | Multi row / Multi column   | Top mid spacer      |
+| flz_mspacer_mrmc_mid_&lt;size&gt;    | flz_msubspacer_mrmc_mid_&lt;size&gt;    | Multi row / Multi column   | Mid mid spacer      |
+| flz_mspacer_mrmc_bottom_&lt;size&gt; | flz_mspacer_mrmc_bottom_&lt;size&gt;    | Multi row / Multi column   | Bottom mid spacer   |
+| flz_rspacer_mrmc_top_&lt;size&gt;    | flz_rspacer_mrmc_top_&lt;size&gt;       | Multi row / Multi column   | Top right spacer    |
+| flz_rspacer_mrmc_mid_&lt;size&gt;    | flz_rspacer_mrmc_mid_&lt;size&gt;       | Multi row / Multi column   | Mid right spacer    |
+| flz_rspacer_mrmc_bottom_&lt;size&gt; | flz_rspacer_mrmc_bottom_&lt;size&gt;    | Multi row / Multi column   | Bottom right spacer |
+
+
