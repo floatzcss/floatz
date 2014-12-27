@@ -57,16 +57,6 @@ a:focus.flz_skiplink {
 }
 
 /**
- * Highlight active skiplink
- * @workaround Outline does not work for skiplink in IE
- * @cssfor IE 5, 6
- * @affected IE 5, 6
- */
-* html a:active.flz_skiplink {
-   border: 1px dotted #000;
-}
-
-/**
  * ---------------------------------------------------------------------------------------
  * @section       Simple list navigation
  *
@@ -284,24 +274,6 @@ a:focus.flz_skiplink {
 }
 
 /**
-* @workaround Simulate child selector using expressions
-* @affected IE 5, 6
-*/
-* html .flz_vmenu ul {
-
-   /* Highlighting selected anchor (only the first A under selected LI) */
-   li.flz_selected a {
-      font-weight: ~'expression(/flz_selected/.test(this.parentNode.className) ? "bold" : "inherit")';
-   }
-
-   /* Disabled menu item (only the first A under selected LI) */
-   li.flz_disabled a {
-      color: ~'expression(/flz_disabled/.test(this.parentNode.className) ? "#aaa" : "inherit")';
-      text-decoration: ~'expression(/flz_disabled/.test(this.parentNode.className) ? "none" : "inherit")';
-   }
-}
-
-/**
  * ---------------------------------------------------------------------------------------
  * @section       Horizontal Tabbed Menu
  *
@@ -507,54 +479,6 @@ a:focus.flz_skiplink {
                background: url(images/htabmenu_bottom_hover.gif) no-repeat right bottom;
             }
          }
-      }
-   }
-}
-
-/* Workarounds for IE */
-* html .flz_htabmenu {
-   ul li {
-
-      /**
-       * @workaround Reset sprite image with hovered menu item, because li:hover is not supported in IE <= 6
-       * @affected IE 5, 6
-       */
-      a:hover {
-         background: url(images/htabmenu.gif) no-repeat right top;
-         text-decoration: underline;
-      }
-
-      /**
-      * @workaround Reset sprite image with hovered menu item, because li:hover is not supported in IE <= 6
-      * @affected IE 5, 6
-      */
-      &.flz_selected a:hover {
-         background: url(images/htabmenu.gif) no-repeat right -200px;
-         text-decoration: underline;
-      }
-   }
-}
-
-/* Workarounds for IE */
-* html .flz_htabmenu_bottom {
-   ul li {
-   
-      /**
-       * @workaround Reset sprite image with hovered menu item, because li:hover ist not supported in IE <= 6
-       * @affected IE 5, 6
-       */
-      a:hover {
-         background: url(images/htabmenu_bottom_inactive.gif) no-repeat right bottom;
-         text-decoration: underline;
-      }
-
-     /**
-      * @workaround Reset sprite image with hovered menu item, because li:hover ist not supported in IE <= 6
-      * @affected IE 5, 6
-      */
-      &.flz_selected a:hover {
-         background: url(images/htabmenu_bottom_active.gif) no-repeat right bottom;
-         text-decoration: underline;
       }
    }
 }

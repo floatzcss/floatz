@@ -1,7 +1,9 @@
 /*****************************************************************************************
- * floatz.layout.center.css
+ * floatz.reset.ie-7.css
  * ---------------------------------------------------------------------------------------
- * Basic layouting elements for centered layout
+ * Provides a common baseline for the framework itself as well as web pages that are built
+ * on top of it. All form specific elements are defined in separate css file. Attention: 
+ * Load floatz.reset.meyer.css before this stylesheet!
  *
  * @project       floatz CSS Framework
  * @version       1.3.0
@@ -16,14 +18,14 @@
 
 /**
  * ---------------------------------------------------------------------------------------
- * @section       Page container (overloaded)
- * @app-base_css  floatz.layout.css
- *
- * Adds centered layout support to page container.
+ * @section       Baseline styles for basic elements
  */
 
-#flz_page {
-   float: none;                     /* Reset default floating */
-   margin: 0 auto;                  /* For all standard browsers incl. IE 7 */
-   overflow: hidden;                /* encloses inner containers (all non-IE browsers, "auto" does not work for Netscape 7, 8) */
+/*
+ * Corrects meyer reset
+ * @affected IE 7
+ */
+*:first-child+html sub, 
+*:first-child+html sup {
+   font-size: 1em;
 }

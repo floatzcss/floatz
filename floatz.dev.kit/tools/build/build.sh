@@ -2,7 +2,10 @@
 
 # --------------------- Function definitions ---------------------
 cleanup() {
-	if [ -f *.css.tmp ] 
+
+	echo "Finished with return code" $?
+
+	if [ -f *.css.tmp ]
 	then 
 		rm *.css.tmp
 	fi
@@ -38,10 +41,24 @@ function updateTemplate() {
 	if [ -z $1 ]
 	then
 		cp ../../../floatz/floatz.center.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.center.ie-lte6.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.center.ie-7.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.center.ie-8.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+
 		cp ../../../floatz/floatz.fixed.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.fixed.ie-lte6.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.fixed.ie-7.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.fixed.ie-8.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+
 		cp ../../../floatz/floatz.liquid.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
-	else	
+		cp ../../../floatz/floatz.liquid.ie-lte6.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.liquid.ie-7.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.liquid.ie-8.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+	else
 		cp ../../../floatz/floatz.$1.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.$1.ie-lte6.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.$1.ie-7.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
+		cp ../../../floatz/floatz.$1.ie-8.css ../../templates/$template/styles/floatz-$FLOATZ_VERSION/
 	fi
 	
 	cp ../../../floatz/scripts/floatz.js ../../templates/$template/styles/floatz-$FLOATZ_VERSION/scripts/
@@ -91,6 +108,26 @@ then
 	lessc --compress ../../src/floatz.form.less >> floatz.fixed.css.tmp
 	mv floatz.fixed.css.tmp ../../../floatz/floatz.fixed.css
 
+	echo "floatz.build | INFO  | Creating minified version of floatz.fixed.ie-lte6.css"
+	createFile floatz.fixed.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.reset.ie-lte6.less >> floatz.fixed.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-lte6.less >> floatz.fixed.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.nav.ie-lte6.less >> floatz.fixed.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.form.ie-lte6.less >> floatz.fixed.ie-lte6.css.tmp
+	mv floatz.fixed.ie-lte6.css.tmp ../../../floatz/floatz.fixed.ie-lte6.css
+
+	echo "floatz.build | INFO  | Creating minified version of floatz.fixed.ie-7.css"
+	createFile floatz.fixed.ie-7.css.tmp
+	lessc --compress ../../src/floatz.reset.ie-7.less >> floatz.fixed.ie-7.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-7.less >> floatz.fixed.ie-7.css.tmp
+	lessc --compress ../../src/floatz.form.ie-7.less >> floatz.fixed.ie-7.css.tmp
+	mv floatz.fixed.ie-7.css.tmp ../../../floatz/floatz.fixed.ie-7.css
+
+	echo "floatz.build | INFO  | Creating minified version of floatz.fixed.ie-8.css"
+	createFile floatz.fixed.ie-8.css.tmp
+	lessc --compress ../../src/floatz.form.ie-8.less >> floatz.fixed.ie-8.css.tmp
+	mv floatz.fixed.ie-8.css.tmp ../../../floatz/floatz.fixed.ie-8.css
+
 	echo "floatz.build | INFO  | Creating minified version of floatz.liquid.css"
 	createFile floatz.liquid.css.tmp
 	lessc --compress ../../src/floatz.reset.meyer.less >> floatz.liquid.css.tmp
@@ -102,6 +139,27 @@ then
 	lessc --compress ../../src/floatz.form.less >> floatz.liquid.css.tmp
 	mv floatz.liquid.css.tmp ../../../floatz/floatz.liquid.css
 
+	echo "floatz.build | INFO  | Creating minified version of floatz.liquid.ie-lte6.css"
+	createFile floatz.liquid.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.reset.ie-lte6.less >> floatz.liquid.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-lte6.less >> floatz.liquid.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.layout.liquid.ie-lte6.less >> floatz.liquid.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.nav.ie-lte6.less >> floatz.liquid.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.form.ie-lte6.less >> floatz.liquid.ie-lte6.css.tmp
+	mv floatz.liquid.ie-lte6.css.tmp ../../../floatz/floatz.liquid.ie-lte6.css
+
+	echo "floatz.build | INFO  | Creating minified version of floatz.liquid.ie-7.css"
+	createFile floatz.liquid.ie-7.css.tmp
+	lessc --compress ../../src/floatz.reset.ie-7.less >> floatz.liquid.ie-7.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-7.less >> floatz.liquid.ie-7.css.tmp
+	lessc --compress ../../src/floatz.form.ie-7.less >> floatz.liquid.ie-7.css.tmp
+	mv floatz.liquid.ie-7.css.tmp ../../../floatz/floatz.liquid.ie-7.css
+
+	echo "floatz.build | INFO  | Creating minified version of floatz.liquid.ie-8.css"
+	createFile floatz.liquid.ie-8.css.tmp
+	lessc --compress ../../src/floatz.form.ie-8.less >> floatz.liquid.ie-8.css.tmp
+	mv floatz.liquid.ie-8.css.tmp ../../../floatz/floatz.liquid.ie-8.css
+
 	echo "floatz.build | INFO  | Creating minified version of floatz.center.css"
 	createFile floatz.center.css.tmp
 	lessc --compress ../../src/floatz.reset.meyer.less >> floatz.center.css.tmp
@@ -112,6 +170,27 @@ then
 	lessc --compress ../../src/floatz.nav.less >> floatz.center.css.tmp
 	lessc --compress ../../src/floatz.form.less >> floatz.center.css.tmp
 	mv floatz.center.css.tmp ../../../floatz/floatz.center.css
+
+	echo "floatz.build | INFO  | Creating minified version of floatz.center.ie-lte6.css"
+	createFile floatz.center.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.reset.ie-lte6.less >> floatz.center.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-lte6.less >> floatz.center.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.layout.center.ie-lte6.less >> floatz.center.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.nav.ie-lte6.less >> floatz.center.ie-lte6.css.tmp
+	lessc --compress ../../src/floatz.form.ie-lte6.less >> floatz.center.ie-lte6.css.tmp
+	mv floatz.center.ie-lte6.css.tmp ../../../floatz/floatz.center.ie-lte6.css
+
+	echo "floatz.build | INFO  | Creating minified version of floatz.center.ie-7.css"
+	createFile floatz.center.ie-7.css.tmp
+	lessc --compress ../../src/floatz.reset.ie-7.less >> floatz.center.ie-7.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-7.less >> floatz.center.ie-7.css.tmp
+	lessc --compress ../../src/floatz.form.ie-7.less >> floatz.center.ie-7.css.tmp
+	mv floatz.center.ie-7.css.tmp ../../../floatz/floatz.center.ie-7.css
+
+	echo "floatz.build | INFO  | Creating minified version of floatz.center.ie-8.css"
+	createFile floatz.center.ie-8.css.tmp
+	lessc --compress ../../src/floatz.form.ie-8.less >> floatz.center.ie-8.css.tmp
+	mv floatz.center.ie-8.css.tmp ../../../floatz/floatz.center.ie-8.css
 else
 	echo "floatz.build | ERROR | Less compiler could not be found. Please install less compiler before build."
 fi

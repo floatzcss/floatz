@@ -1,5 +1,5 @@
 /*****************************************************************************************
- * floatz.layout.center.css
+ * floatz.layout.center.ie-lte6.css
  * ---------------------------------------------------------------------------------------
  * Basic layouting elements for centered layout
  *
@@ -16,14 +16,23 @@
 
 /**
  * ---------------------------------------------------------------------------------------
+ * @section       Baseline styles for basic elements
+ *
+ * Adds centered layout support to body container.
+ */
+
+* html body { 
+   text-align: center;              /* Only for IE < 7 */
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
  * @section       Page container (overloaded)
  * @app-base_css  floatz.layout.css
  *
  * Adds centered layout support to page container.
  */
 
-#flz_page {
-   float: none;                     /* Reset default floating */
-   margin: 0 auto;                  /* For all standard browsers incl. IE 7 */
-   overflow: hidden;                /* encloses inner containers (all non-IE browsers, "auto" does not work for Netscape 7, 8) */
+* html #flz_page {
+   text-align: left;                /* Only for IE < 7 */
 }

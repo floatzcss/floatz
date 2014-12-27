@@ -1,0 +1,121 @@
+/*****************************************************************************************
+ * floatz.nav.ie-lte6.css
+ * ---------------------------------------------------------------------------------------
+ * Contains navigational elements: simple list navigation, top navigation, breadcrumb 
+ * navigation, toolbar navigation, horizontal menu navigation, vertical menu navigation,
+ * tabbed menu navigation and workflow navigation
+ *
+ * Note: all menu items use a.selected while tabmenu uses li.selected. Latter is not 
+ * possible, though it is inconsistent, because IE would not correctly use the li.selected
+ * style (everything after or within the li.selected class will get the same style)
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2014 by :humml:design
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-15
+ * @since         1.0.0
+ */
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Skiplink navigation
+ *
+ * Skip navigation style for accessibility improvments. Skip navigation hyperlinks must be
+ * used within a DIV element. The skip navigation items will only be visible for users of
+ * screen readers or if the skip links get keyboard focus.
+ */
+
+/**
+ * Highlight active skiplink
+ * @workaround Outline does not work for skiplink in IE
+ * @cssfor IE 5, 6
+ * @affected IE 5, 6
+ */
+* html a:active.flz_skiplink {
+   border: 1px dotted #000;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Vertical menu navigation
+ *
+ * Vertical menu navigation element that supports 5 menu levels (including the 1st). Needs 
+ * a surrounding DIV tag that uses vmenu.
+ */
+
+/**
+* @workaround Simulate child selector using expressions
+* @affected IE 5, 6
+*/
+* html .flz_vmenu ul {
+
+   /* Highlighting selected anchor (only the first A under selected LI) */
+   li.flz_selected a {
+      font-weight: ~'expression(/flz_selected/.test(this.parentNode.className) ? "bold" : "inherit")';
+   }
+
+   /* Disabled menu item (only the first A under selected LI) */
+   li.flz_disabled a {
+      color: ~'expression(/flz_disabled/.test(this.parentNode.className) ? "#aaa" : "inherit")';
+      text-decoration: ~'expression(/flz_disabled/.test(this.parentNode.className) ? "none" : "inherit")';
+   }
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Horizontal Tabbed Menu
+ *
+ * Horizontal tab menu navigation element. Needs a surrounding DIV tag using flz_htabmenu.
+ */
+
+/* Workarounds for IE */
+* html .flz_htabmenu {
+   ul li {
+
+      /**
+       * @workaround Reset sprite image with hovered menu item, because li:hover is not supported in IE <= 6
+       * @affected IE 5, 6
+       */
+      a:hover {
+         background: url(images/htabmenu.gif) no-repeat right top;
+         text-decoration: underline;
+      }
+
+      /**
+      * @workaround Reset sprite image with hovered menu item, because li:hover is not supported in IE <= 6
+      * @affected IE 5, 6
+      */
+      &.flz_selected a:hover {
+         background: url(images/htabmenu.gif) no-repeat right -200px;
+         text-decoration: underline;
+      }
+   }
+}
+
+/* Workarounds for IE */
+* html .flz_htabmenu_bottom {
+   ul li {
+   
+      /**
+       * @workaround Reset sprite image with hovered menu item, because li:hover ist not supported in IE <= 6
+       * @affected IE 5, 6
+       */
+      a:hover {
+         background: url(images/htabmenu_bottom_inactive.gif) no-repeat right bottom;
+         text-decoration: underline;
+      }
+
+     /**
+      * @workaround Reset sprite image with hovered menu item, because li:hover ist not supported in IE <= 6
+      * @affected IE 5, 6
+      */
+      &.flz_selected a:hover {
+         background: url(images/htabmenu_bottom_active.gif) no-repeat right bottom;
+         text-decoration: underline;
+      }
+   }
+}

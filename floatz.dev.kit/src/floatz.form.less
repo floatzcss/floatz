@@ -72,78 +72,9 @@ fieldset {
      */
     overflow: hidden; /* Opera <= 8.5 */
 
-	/**
-	 * @workaround Wrong padding behaviour of fieldset in IE. (hack works only with one
-	 * setting per element)
-	 * @affected IE 8
-	 */
-    padding: ~"0 1em 1em 1em\0/";
-
 	legend {
 		font-weight: bold;
 	}
-
-    /**
-     * @workaround Wrong padding behaviour of fieldset in IE (hack works only with one
-     * setting per element)
-     * @affected IE 8
-     */
-    legend {
-	    margin-top: ~"-1em\0/";
-        padding-top: ~"1em\0/";
-        padding-bottom: ~"1em\0/";
-    }
-}
-
-/* Fieldset workarounds */
-* html fieldset {
-
-    /**
-     * @workaround Wrong padding behaviour of fieldset in IE.
-     * @affected IE 5, 6
-     */
-    padding: 0 1em 1em 1em;
-    margin-top: -1em; /* Margin-top corrects additional padding of legend - see below */
-
-    legend {
-
-        /**
-         * Change color of fieldset
-         * @affected IE 5, 6
-         */
-        color: #000;
-
-        /**
-         * @workaround Wrong padding behaviour of fieldset in IE
-         * @affected IE 5, 6
-         */
-        margin-left: -0.5em;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        padding-left: 0;
-    }
-}
-
-/* Fieldset workarounds */
-*:first-child + html fieldset {
-
-    /**
-     * @workaround Wrong padding behaviour of fieldset in IE.
-     * @affected IE 7
-     */
-    padding: 0 1em 1em 1em;
-
-    /**
-     * @workaround Wrong padding behaviour of fieldset in IE
-     * @affected IE 7
-     */
-    legend {
-        margin-left: -0.5em;
-        margin-top: -1em;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        padding-left: 0;
-    }
 }
 
 /**
@@ -234,38 +165,6 @@ fieldset {
     }
 }
 
-/* Form workarounds */
-* html .flz_form {
-
-    /**
-     * @workaround Differentiate input type text due to lack of selector support
-     * @affected IE 5, 6
-     */
-    .flz_textbox {
-        background-color: #fff;
-        border: 1px solid #000;
-        display: block;
-        width: 99.4%;
-    }
-
-    /**
-     * @workaround Correct margins of input type text and textareas within blocked forms
-     * @affected IE 5, 6
-     */
-    .flz_textbox,
-    textarea {
-        margin-right: -10px;
-    }
-
-    /**
-    * @workaround Correct margins in combobox
-    * @affected IE 5, 6
-    */
-    .flz_combobox {
-        float: left;
-    }
-}
-
 /* Buttons (should also work outside of .flz_form) */
 input[type="button"],
 input[type="submit"],
@@ -280,50 +179,6 @@ button {
      * @affected All browsers
      */
 	border: 1px solid #000;
-}
-
-/* Button workarounds */
-* html .flz_button {
-
-    /**
-     * @workaround Differentiate input type button, submit
-     * @affected IE 5, 6
-     */
-    margin: 0;
-
-    /**
-     * @workaround Omit too much left/right padding
-     * @affected IE 5, 6
-     */
-    overflow: visible;
-    padding: 0.25em 0.5em;
-
-    /**
-     * @workaround Collapse tabele cell around button
-     * @affected IE 5+, 6
-     */
-    width: 1;
-}
-
-/* Button workarounds */
-*:first-child + html input[type=button],
-*:first-child + html input[type=submit],
-*:first-child + html input[type=reset],
-*:first-child + html button {
-
-    /**
-     * @workaround Omit too much left/right padding
-     * @affected IE 7
-     */
-    overflow: visible;
-    padding: 0.25em 0.5em;
-    margin: 0;
-
-    /**
-     * @workaround Collapse table cell around button
-     * @affected IE 7
-     */
-    width: 1;
 }
 
 /* Special class for custom buttons that removes unnecessary formatting */

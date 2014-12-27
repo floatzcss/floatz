@@ -31,26 +31,6 @@
 }
 
 /**
- * @workaround Remove visible overflow that causes horizontal scrollbar in liquid mode that
- *             are caused by sub-pixel bug correction in certain circumstances
- * @cssfor IE 5, 6
- * @affected IE 5, 6
- */
-* html #flz_page {
-	overflow: hidden;
-}
-
-/**
- * @workaround Remove visible overflow that causes horizontal scrollbar in liquid mode that
- *             are caused by sub-pixel bug correction in certain circumstances
- * @cssfor IE 7
- * @affected IE 7
- */
-*:first-child + html #flz_page {
-	overflow: hidden;
-}
-
-/**
  * ---------------------------------------------------------------------------------------
  * @section       Layout containers
  *
@@ -128,78 +108,6 @@
 		clear: both;
 		visibility: hidden;
 	}
-}
-
-/* Activates hasLayout in IE <= 6 in context of self clearing method */
-* html .flz_spacer,
-* html .flz_lspacer,
-* html .flz_mspacer,
-* html .flz_rspacer,
-* html .flz_spacer_mrsc_top,
-* html .flz_spacer_mrsc_mid,
-* html .flz_spacer_mrsc_bottom,
-* html .flz_lspacer_mrmc_top,
-* html .flz_lspacer_mrmc_mid,
-* html .flz_lspacer_mrmc_bottom,
-* html .flz_mspacer_mrmc_top,
-* html .flz_mspacer_mrmc_mid,
-* html .flz_mspacer_mrmc_bottom,
-* html .flz_rspacer_mrmc_top,
-* html .flz_rspacer_mrmc_mid,
-* html .flz_rspacer_mrmc_bottom,
-* html .flz_subspacer,
-* html .flz_lsubspacer,
-* html .flz_msubspacer,
-* html .flz_rsubspacer,
-* html .flz_subspacer_mrsc_top,
-* html .flz_subspacer_mrsc_mid,
-* html .flz_subspacer_mrsc_bottom,
-* html .flz_lsubspacer_mrmc_top,
-* html .flz_lsubspacer_mrmc_mid,
-* html .flz_lsubspacer_mrmc_bottom,
-* html .flz_msubspacer_mrmc_top,
-* html .flz_msubspacer_mrmc_mid,
-* html .flz_msubspacer_mrmc_bottom,
-* html .flz_rsubspacer_mrmc_top,
-* html .flz_rsubspacer_mrmc_mid,
-* html .flz_rsubspacer_mrmc_bottom {
-	height: 1%;
-}
-
-/* Prevents loosing of padding-bottom, margin-bottom in IE 7 in context of self clearing method */
-:first-child + html .flz_spacer,
-:first-child + html .flz_lspacer,
-:first-child + html .flz_mspacer,
-:first-child + html .flz_rspacer,
-:first-child + html .flz_spacer_mrsc_top,
-:first-child + html .flz_spacer_mrsc_mid,
-:first-child + html .flz_spacer_mrsc_bottom,
-:first-child + html .flz_lspacer_mrmc_top,
-:first-child + html .flz_lspacer_mrmc_mid,
-:first-child + html .flz_lspacer_mrmc_bottom,
-:first-child + html .flz_mspacer_mrmc_top,
-:first-child + html .flz_mspacer_mrmc_mid,
-:first-child + html .flz_mspacer_mrmc_bottom,
-:first-child + html .flz_rspacer_mrmc_top,
-:first-child + html .flz_rspacer_mrmc_mid,
-:first-child + html .flz_rspacer_mrmc_bottom,
-:first-child + html .flz_subspacer,
-:first-child + html .flz_lsubspacer,
-:first-child + html .flz_msubspacer,
-:first-child + html .flz_rsubspacer,
-:first-child + html .flz_subspacer_mrsc_top,
-:first-child + html .flz_subspacer_mrsc_mid,
-:first-child + html .flz_subspacer_mrsc_bottom,
-:first-child + html .flz_lsubspacer_mrmc_top,
-:first-child + html .flz_lsubspacer_mrmc_mid,
-:first-child + html .flz_lsubspacer_mrmc_bottom,
-:first-child + html .flz_msubspacer_mrmc_top,
-:first-child + html .flz_msubspacer_mrmc_mid,
-:first-child + html .flz_msubspacer_mrmc_bottom,
-:first-child + html .flz_rsubspacer_mrmc_top,
-:first-child + html .flz_rsubspacer_mrmc_mid,
-:first-child + html .flz_rsubspacer_mrmc_bottom {
-	display: inline-block;
 }
 
 .flz_spacer,
@@ -399,46 +307,6 @@
 	width: 100%;
 }
 
-/* Addresses IE 5+ and 6 using star hack */
-* html .flz_r20,
-* html .flz_r25,
-* html .flz_r40,
-* html .flz_r33,
-* html .flz_r50,
-* html .flz_r60,
-* html .flz_r66,
-* html .flz_r75,
-* html .flz_r80,
-* html .flz_r90,
-* html .flz_r100 {
-	margin-right: -3px;
-}
-
-/* See: http://jacksleight.com/old/blog/2008/01/20/ie-floated-columns-totaling-100-percent-bug */
-* html .flz_r10 {
-	margin-right: -5px;
-}
-
-/* Addresses IE 7 using first child star hack */
-*:first-child + html .flz_r20,
-*:first-child + html .flz_r25,
-*:first-child + html .flz_r40,
-*:first-child + html .flz_r33,
-*:first-child + html .flz_r50,
-*:first-child + html .flz_r60,
-*:first-child + html .flz_r66,
-*:first-child + html .flz_r75,
-*:first-child + html .flz_r80,
-*:first-child + html .flz_r90,
-*:first-child + html .flz_r100 {
-	margin-right: -3px;
-}
-
-/* See: http://jacksleight.com/old/blog/2008/01/20/ie-floated-columns-totaling-100-percent-bug */
-*:first-child + html .flz_r10 {
-	margin-right: -5px;
-}
-
 /**
  * ---------------------------------------------------------------------------------------
  * @section       Helper classes for layouting
@@ -452,6 +320,16 @@
 /* Clears floating elements */
 .flz_clear {
 	clear: both;
+}
+.flz_lclear {
+	clear: left;
+}
+.flz_rclear {
+	clear: right;
+}
+
+.flz_hide {
+	display: none;
 }
 
 /**

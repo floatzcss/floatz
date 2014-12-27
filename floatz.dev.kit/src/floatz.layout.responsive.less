@@ -10,19 +10,21 @@
  * @copyright     Copyright (c) 1998-2014 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-11-27
+ * @lastmodified  2014-12-11
  * @since         1.3.0
  */
 
-@screen-size-xs-min: 0;
-@screen-size-xs-max: 480px;
-@screen-size-s-min: 481px;
-@screen-size-s-max: 767px;
-@screen-size-m-min: 768px;
-@screen-size-m-max: 979px;
-@screen-size-l-min: 980px;
-@screen-size-l-max: 1199px;
-@screen-size-xl-min: 1200px;
+/* Screen sizes */
+@xs: ~"(min-width: 0) and (max-width: 480px)";
+@s: ~"(min-width: 481px) and (max-width: 767px)";
+@m: ~"(min-width: 768px) and (max-width: 979px)";
+@l: ~"(min-width: 980px) and (max-width: 1199px)";
+@xl: ~"(min-width: 1200px)";
+
+/* Screen sizes by natural names */
+@smartphone: @xs, @s;
+@tablet: @m;
+@desktop: @l, @xl;
 
 img {
 	max-width: 100%;
@@ -36,7 +38,7 @@ img {
  * Reusable styles
  */
 
-.mx_spacer {
+.flz_mx_spacer {
 	display: block;
 	padding: 0; /* Reset all padding to allow full overwrites */
 
@@ -57,9 +59,18 @@ img {
  *
  * Adds responsive layout support.
  */
-@media (min-width: @screen-size-xs-min) and (max-width: @screen-size-xs-max) {
+@media @xs {
 	.flz_clear_xs {
 		clear: both;
+	}
+	.flz_lclear_xs {
+		clear: left;
+	}
+    .flz_rclear_xs {
+	    clear: right;
+    }
+	.flz_hide_xs {
+		display: none;
 	}
 
 	/* Spacers */
@@ -95,7 +106,7 @@ img {
 	.flz_rsubspacer_mrmc_top_xs,
 	.flz_rsubspacer_mrmc_mid_xs,
 	.flz_rsubspacer_mrmc_bottom_xs {
-		.mx_spacer;
+		.flz_mx_spacer;
 	}
 	.flz_spacer_xs,
 	.flz_lspacer_xs,
@@ -106,7 +117,7 @@ img {
 	.flz_subspacer_xs {
 		padding: 0;
 	}
-	.flz_subspacer_mrsc_top_xs,
+    .flz_subspacer_mrsc_top_xs,
 	.flz_lsubspacer_mrmc_top_xs,
 	.flz_msubspacer_mrmc_top_xs,
 	.flz_rsubspacer_mrmc_top_xs {
@@ -120,7 +131,7 @@ img {
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
 	}
-	.flz_subspacer_mrsc_bottom_xs,
+    .flz_subspacer_mrsc_bottom_xs,
 	.flz_lsubspacer_mrmc_bottom_xs,
 	.flz_msubspacer_mrmc_bottom_xs,
 	.flz_rsubspacer_mrmc_bottom_xs {
@@ -147,21 +158,21 @@ img {
 	.flz_rsubspacer_mrmc_bottom_xs {
 		padding-left: 0.5em;
 	}
-	.flz_spacer_mrsc_top_xs,
+    .flz_spacer_mrsc_top_xs,
 	.flz_lspacer_mrmc_top_xs,
 	.flz_mspacer_mrmc_top_xs,
 	.flz_rspacer_mrmc_top_xs {
 		padding-top: 1em;
 		padding-bottom: 0.5em;
 	}
-	.flz_spacer_mrsc_bottom_xs,
+    .flz_spacer_mrsc_bottom_xs,
 	.flz_lspacer_mrmc_bottom_xs,
 	.flz_mspacer_mrmc_bottom_xs,
 	.flz_rspacer_mrmc_bottom_xs {
 		padding-top: 0.5em;
 		padding-bottom: 1em;
 	}
-	.flz_spacer_mrsc_mid_xs,
+    .flz_spacer_mrsc_mid_xs,
 	.flz_lspacer_mrmc_mid_xs,
 	.flz_mspacer_mrmc_mid_xs,
 	.flz_rspacer_mrmc_mid_xs {
@@ -199,7 +210,7 @@ img {
 	.flz_lspacer_mrmc_bottom_xs {
 		padding-left: 1em;
 	}
-	.flz_rspacer_mrmc_top_xs,
+    .flz_rspacer_mrmc_top_xs,
 	.flz_rspacer_mrmc_mid_xs,
 	.flz_rspacer_mrmc_bottom_xs {
 		padding-right: 1em;
@@ -269,9 +280,18 @@ img {
  *
  * Adds responsive layout support.
  */
-@media (min-width: @screen-size-s-min) and (max-width: @screen-size-s-max) {
+@media @s {
 	.flz_clear_s {
 		clear: both;
+	}
+	.flz_lclear_s {
+		clear: left;
+	}
+	.flz_rclear_s {
+		clear: right;
+	}
+	.flz_hide_s {
+		display: none;
 	}
 
 	/* Spacers */
@@ -307,7 +327,7 @@ img {
 	.flz_rsubspacer_mrmc_top_s,
 	.flz_rsubspacer_mrmc_mid_s,
 	.flz_rsubspacer_mrmc_bottom_s {
-		.mx_spacer;
+		.flz_mx_spacer;
 	}
 	.flz_spacer_s,
 	.flz_lspacer_s,
@@ -481,9 +501,18 @@ img {
  *
  * Adds responsive layout support.
  */
-@media (min-width: @screen-size-m-min) and (max-width: @screen-size-m-max) {
+@media @m {
 	.flz_clear_m {
 		clear: both;
+	}
+	.flz_lclear_m {
+		clear: left;
+	}
+	.flz_rclear_m {
+		clear: right;
+	}
+	.flz_hide_m {
+		display: none;
 	}
 
 	/* Spacers */
@@ -519,7 +548,7 @@ img {
 	.flz_rsubspacer_mrmc_top_m,
 	.flz_rsubspacer_mrmc_mid_m,
 	.flz_rsubspacer_mrmc_bottom_m {
-		.mx_spacer;
+		.flz_mx_spacer;
 	}
 	.flz_spacer_m,
 	.flz_lspacer_m,
@@ -693,9 +722,18 @@ img {
  *
  * Adds responsive layout support.
  */
-@media (min-width: @screen-size-l-min) and (max-width: @screen-size-l-max) {
+@media @l {
 	.flz_clear_l {
 		clear: both;
+	}
+	.flz_lclear_l {
+		clear: left;
+	}
+	.flz_rclear_l {
+		clear: right;
+	}
+	.flz_hide_l {
+		display: none;
 	}
 
 	/* Spacers */
@@ -731,7 +769,7 @@ img {
 	.flz_rsubspacer_mrmc_top_l,
 	.flz_rsubspacer_mrmc_mid_l,
 	.flz_rsubspacer_mrmc_bottom_l {
-		.mx_spacer;
+		.flz_mx_spacer;
 	}
 	.flz_spacer_l,
 	.flz_lspacer_l,
@@ -905,9 +943,18 @@ img {
  *
  * Adds responsive layout support.
  */
-@media (min-width: @screen-size-xl-min) {
+@media @xl {
 	.flz_clear_xl {
 		clear: both;
+	}
+	.flz_lclear_xl {
+		clear: left;
+	}
+	.flz_rclear_xl {
+		clear: right;
+	}
+	.flz_hide_xl {
+		display: none;
 	}
 
 	/* Spacers */
@@ -943,7 +990,7 @@ img {
 	.flz_rsubspacer_mrmc_top_xl,
 	.flz_rsubspacer_mrmc_mid_xl,
 	.flz_rsubspacer_mrmc_bottom_xl {
-		.mx_spacer;
+		.flz_mx_spacer;
 	}
 	.flz_spacer_xl,
 	.flz_lspacer_xl,

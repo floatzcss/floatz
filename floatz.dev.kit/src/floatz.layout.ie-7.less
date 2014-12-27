@@ -1,0 +1,112 @@
+/*****************************************************************************************
+ * floatz.layout.ie-7.css
+ * ---------------------------------------------------------------------------------------
+ * Basic layouting elements for fixed (and also fluid) layout
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2014 by :humml:design
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-16
+ * @since         1.0.0
+ */
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Page container
+ *
+ * Page container that represents the nutshell of each web page. Acts also as target for
+ * absolute positioned elements like toolbars, breadcrumbs, etc.
+ */
+
+/**
+ * @workaround Remove visible overflow that causes horizontal scrollbar in liquid mode that
+ *             are caused by sub-pixel bug correction in certain circumstances
+ * @cssfor IE 7
+ * @affected IE 7
+ */
+*:first-child + html #flz_page {
+	overflow: hidden;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Spacing containers
+ * @see           http://www.satzansatz.de/cssd/onhavinglayout.html
+ * @see           http://www.ejeliot.com/blog/59
+ *
+ * Spacing containers provide margin and padding functionality to layout containers. Using
+ * self clearing method workaround to enwrap contained content as well as floating elements. 
+ * To prevent duplicated paddings if spacers are used in single or multi row and single or 
+ * multi column scenario, you can use spacers and subspacers to correct whitespaces.
+ */
+
+/* Prevents loosing of padding-bottom, margin-bottom in IE 7 in context of self clearing method */
+:first-child + html .flz_spacer,
+:first-child + html .flz_lspacer,
+:first-child + html .flz_mspacer,
+:first-child + html .flz_rspacer,
+:first-child + html .flz_spacer_mrsc_top,
+:first-child + html .flz_spacer_mrsc_mid,
+:first-child + html .flz_spacer_mrsc_bottom,
+:first-child + html .flz_lspacer_mrmc_top,
+:first-child + html .flz_lspacer_mrmc_mid,
+:first-child + html .flz_lspacer_mrmc_bottom,
+:first-child + html .flz_mspacer_mrmc_top,
+:first-child + html .flz_mspacer_mrmc_mid,
+:first-child + html .flz_mspacer_mrmc_bottom,
+:first-child + html .flz_rspacer_mrmc_top,
+:first-child + html .flz_rspacer_mrmc_mid,
+:first-child + html .flz_rspacer_mrmc_bottom,
+:first-child + html .flz_subspacer,
+:first-child + html .flz_lsubspacer,
+:first-child + html .flz_msubspacer,
+:first-child + html .flz_rsubspacer,
+:first-child + html .flz_subspacer_mrsc_top,
+:first-child + html .flz_subspacer_mrsc_mid,
+:first-child + html .flz_subspacer_mrsc_bottom,
+:first-child + html .flz_lsubspacer_mrmc_top,
+:first-child + html .flz_lsubspacer_mrmc_mid,
+:first-child + html .flz_lsubspacer_mrmc_bottom,
+:first-child + html .flz_msubspacer_mrmc_top,
+:first-child + html .flz_msubspacer_mrmc_mid,
+:first-child + html .flz_msubspacer_mrmc_bottom,
+:first-child + html .flz_rsubspacer_mrmc_top,
+:first-child + html .flz_rsubspacer_mrmc_mid,
+:first-child + html .flz_rsubspacer_mrmc_bottom {
+	display: inline-block;
+}
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Layouters
+ * @see           http://www.positioniseverything.net/explorer/dup-characters.html
+ *                http://ejohn.org/blog/sub-pixel-problems-in-css/ 
+ *                http://jacksleight.com/old/blog/2008/01/20/ie-floated-columns-totaling-100-percent-bug
+ *
+ * Layouters provide auto calculated widths (based on percentages) for layout and spacing 
+ * containers. To avoid duplicated character bug and wrapping of floated containers in IE 
+ * 5+, 6 and 7, each right most layouter must have a negative right margin of 3 pixels.
+ */
+
+/* Addresses IE 7 using first child star hack */
+*:first-child + html .flz_r20,
+*:first-child + html .flz_r25,
+*:first-child + html .flz_r40,
+*:first-child + html .flz_r33,
+*:first-child + html .flz_r50,
+*:first-child + html .flz_r60,
+*:first-child + html .flz_r66,
+*:first-child + html .flz_r75,
+*:first-child + html .flz_r80,
+*:first-child + html .flz_r90,
+*:first-child + html .flz_r100 {
+	margin-right: -3px;
+}
+
+/* See: http://jacksleight.com/old/blog/2008/01/20/ie-floated-columns-totaling-100-percent-bug */
+*:first-child + html .flz_r10 {
+	margin-right: -5px;
+}

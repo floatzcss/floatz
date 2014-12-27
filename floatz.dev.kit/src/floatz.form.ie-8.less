@@ -1,7 +1,7 @@
 /*****************************************************************************************
- * floatz.layout.center.css
+ * floatz.form.ie.8.css
  * ---------------------------------------------------------------------------------------
- * Basic layouting elements for centered layout
+ * Workarounds for specific IE version.
  *
  * @project       floatz CSS Framework
  * @version       1.3.0
@@ -10,20 +10,30 @@
  * @copyright     Copyright (c) 1998-2014 by :humml:design
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-07-15
+ * @lastmodified  2014-12-27
  * @since         1.0.0
  */
 
 /**
  * ---------------------------------------------------------------------------------------
- * @section       Page container (overloaded)
- * @app-base_css  floatz.layout.css
+ * @section       Form baseline
  *
- * Adds centered layout support to page container.
+ * Baseline styles for standard form elements
  */
 
-#flz_page {
-   float: none;                     /* Reset default floating */
-   margin: 0 auto;                  /* For all standard browsers incl. IE 7 */
-   overflow: hidden;                /* encloses inner containers (all non-IE browsers, "auto" does not work for Netscape 7, 8) */
+/* Fieldset */
+fieldset {
+	/**
+	 * @workaround Wrong padding behaviour of fieldset in IE.
+	 */
+    padding: 0 1em 1em 1em;
+
+    /**
+     * @workaround Wrong padding behaviour of fieldset in IE
+     */
+    legend {
+	    margin-top: -1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
 }

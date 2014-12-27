@@ -1,0 +1,72 @@
+/*****************************************************************************************
+ * floatz.form.ie-7.css
+ * ---------------------------------------------------------------------------------------
+ * Provides a common baseline as well as specific classes for form elements
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2014 by :humml:design
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-16
+ * @since         1.0.0
+ */
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form baseline
+ *
+ * Baseline styles for standard form elements
+ */
+
+/* Fieldset workarounds */
+*:first-child + html fieldset {
+
+    /**
+     * @workaround Wrong padding behaviour of fieldset in IE.
+     * @affected IE 7
+     */
+    padding: 0 1em 1em 1em;
+
+    /**
+     * @workaround Wrong padding behaviour of fieldset in IE
+     * @affected IE 7
+     */
+    legend {
+        margin-left: -0.5em;
+        margin-top: -1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 0;
+    }
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Form elements
+ *
+ * Form elements
+ */
+
+/* Button workarounds */
+*:first-child + html input[type=button],
+*:first-child + html input[type=submit],
+*:first-child + html input[type=reset],
+*:first-child + html button {
+
+    /**
+     * @workaround Omit too much left/right padding
+     * @affected IE 7
+     */
+    overflow: visible;
+    padding: 0.25em 0.5em;
+    margin: 0;
+
+    /**
+     * @workaround Collapse table cell around button
+     * @affected IE 7
+     */
+    width: 1;
+}
