@@ -24,7 +24,7 @@
 ##Browser support
 ![](https://github.com/floatzcss/floatz/blob/master/wiki/browsersupport.png)
 
-> Please note: since version 1.3.0 ie specific CSS hacks have been moved into own stylesheets to reduce CSS size for modern browsers. Thus if you want to support older browsers you have to use the conditional statements within HTML to load IE specific stylesheets (see example below). Take care that these styles are loaded AFTER the used stylesheets.
+> Please note: since *version 1.3.0* IE specific CSS hacks have moved into own stylesheets to reduce CSS size for modern browsers. Thus if you want to support older browsers you have to use the conditional statements within HTML to load IE specific stylesheets (see example below). Take care that these styles are loaded AFTER the used stylesheets.
 
 ```
 <head>
