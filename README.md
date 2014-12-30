@@ -597,32 +597,12 @@ See it in action: http://codepen.io/floatz/pen/mpiHa
 ###Workflow indicators
 When dealing with workflows it makes sense to visualy indicate the current workflow state. Thus **floatz** offers the CSS class **flz_workflow** which can be used for exactly that kind of use case.
 ```
-<div class="flz_box flz_workflow">
-   <ul>
-      <li class="flz_passed"><a href="#">First step</a>
-         <div class="flz_stop">&nbsp;</div>
-      </li>
-      <li class="flz_passed">
-         <div class="flz_start">&nbsp;</div>
-         <a href="#">Second step</a>
-         <div class="flz_stop">&nbsp;</div>
-      </li>
-      <li class="flz_selected">
-         <div class="flz_start">&nbsp;</div>
-         <a href="#">Three</a>
-         <div class="flz_stop">&nbsp;</div>
-      </li>
-      <li>
-         <div class="flz_start">&nbsp;</div>
-         <a>The fourth step</a>
-         <div class="flz_stop">&nbsp;</div>
-      </li>
-      <li>
-         <div class="flz_start">&nbsp;</div>
-         <a>The last step</a>
-      </li>
-   </ul>
-</div>
+<ul class="flz_workflow">
+   <li class="flz_passed"><a href="#" />First</a></li>
+   <li class="flz_passed"><a href="#" />Second</a></li>
+   <li class="flz_selected"><a href="#" />The third</a></li>
+   <li><a href="#" />Forth and last</a></li>
+</ul>
 ```
 See it in action: http://codepen.io/floatz/pen/vIkEg?editors=100
 
