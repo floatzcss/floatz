@@ -104,15 +104,15 @@ a:active.flz_skiplink,a:focus.flz_skiplink{position:static}
 .flz_htabmenu_bottom ul li:hover{background:url(images/htabmenu_bottom_hover.gif) no-repeat left bottom;}.flz_htabmenu_bottom ul li:hover a{background:url(images/htabmenu_bottom_hover.gif) no-repeat right bottom}
 .flz_htabmenu_bottom ul li:hover.flz_selected{background:url(images/htabmenu_bottom_hover.gif) no-repeat left bottom;}.flz_htabmenu_bottom ul li:hover.flz_selected a{background:url(images/htabmenu_bottom_hover.gif) no-repeat right bottom}
 .flz_htabmenu_bottom ul li.flz_selected{margin-top:-1px;background:url(images/htabmenu_bottom_active.gif) no-repeat left bottom;}.flz_htabmenu_bottom ul li.flz_selected a{background:url(images/htabmenu_bottom_active.gif) no-repeat right bottom;margin-top:1px;}.flz_htabmenu_bottom ul li.flz_selected a:hover{background:url(images/htabmenu_bottom_hover.gif) no-repeat right bottom}
-.flz_workflow ul{padding:0}.flz_workflow ul li{float:left;list-style-type:none;margin:0;margin-left:-0.65em;padding:0;vertical-align:top;}.flz_workflow ul li:first-child{margin-left:0}
-.flz_workflow ul li a{background-color:#eee;color:#aaa;cursor:default;float:left;height:1.15em;padding:1.025em;text-decoration:none;vertical-align:top}
-.flz_workflow ul li a{height:1.25em\9;}
-.flz_workflow ul li.flz_selected a{font-weight:bold}
-.flz_workflow ul li.flz_passed a,.flz_workflow ul li.flz_selected a{color:#000}
-.flz_workflow ul li.flz_passed a:hover,.flz_workflow ul li.flz_selected a:hover{text-decoration:underline}
-.flz_workflow ul li div.flz_start,.flz_workflow ul li div.flz_stop{border-bottom:1.65em solid transparent;border-left:1em solid #eee;border-top:1.65em solid transparent;float:left;height:0;margin:0;padding:0;width:0}
-.flz_workflow ul li div.flz_stop{border-bottom-color:transparent;border-left-color:#eee;border-top-color:transparent}
-.flz_workflow ul li div.flz_start{border-bottom-color:#eee;border-left-color:transparent;border-top-color:#eee}
+.flz_workflow{padding:0;margin:0}.flz_workflow li{display:inline-block;list-style-type:none;text-align:center;margin-left:-0.65em;}.flz_workflow li a{background-color:#eee;color:#aaa;display:inline-block;height:1.25em;padding:1em;vertical-align:bottom;text-decoration:none}.flz_workflow li a:hover{cursor:text}
+.flz_workflow li:before{content:"";border-top:1.65em solid #eee;border-left:1em solid transparent;border-bottom:1.65em solid #eee;float:left}
+.flz_workflow li:after{content:"";border-top:1.65em solid transparent;border-left:1em solid #eee;border-bottom:1.65em solid transparent;float:right}
+.flz_workflow li:first-child{margin-left:0}.flz_workflow li:first-child:before{border:0}
+.flz_workflow li:first-child a{padding-left:1em}
+.flz_workflow li:last-child:after{border:0}
+.flz_workflow li:last-child a{padding-right:1em}
+.flz_workflow li.flz_passed a{color:#000}.flz_workflow li.flz_passed a:hover{text-decoration:underline;cursor:pointer}
+.flz_workflow li.flz_selected a{color:#000;font-weight:bold}.flz_workflow li.flz_selected a:hover{text-decoration:underline;cursor:pointer}
 form{clear:both}
 label{font-weight:bold}
 optgroup{font-style:italic}
