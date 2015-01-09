@@ -1,5 +1,7 @@
+@import 'floatz.mixins.less';
+
 /*****************************************************************************************
- * floatz.layout.css
+ * floatz.layout.less
  * ---------------------------------------------------------------------------------------
  * Basic layouting elements for fixed (and also fluid) layout
  *
@@ -13,7 +15,6 @@
  * @lastmodified  2014-07-16
  * @since         1.0.0
  */
-@import 'floatz.mixins.less';
 
 /**
  * ---------------------------------------------------------------------------------------
@@ -56,8 +57,8 @@
 /**
  * ---------------------------------------------------------------------------------------
  * @section       Spacing containers
- * @see           http://www.satzansatz.de/cssd/onhavinglayout.html
- * @see           http://www.ejeliot.com/blog/59
+ * @see
+ * @see
  *
  * Spacing containers provide margin and padding functionality to layout containers. Using
  * self clearing method workaround to enwrap contained content as well as floating elements. 
@@ -98,16 +99,7 @@
 .flz_rsubspacer_mrmc_top,
 .flz_rsubspacer_mrmc_mid,
 .flz_rsubspacer_mrmc_bottom {
-	display: block;
-
-	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
-	&:after {
-		content: ".";
-		display: block;
-		height: 0;
-		clear: both;
-		visibility: hidden;
-	}
+	.flz_mx_spacer;
 }
 
 .flz_spacer,

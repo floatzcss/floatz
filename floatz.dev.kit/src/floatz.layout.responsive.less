@@ -1,5 +1,7 @@
+@import 'floatz.mixins.less';
+
 /*****************************************************************************************
- * floatz.layout.responsive.css
+ * floatz.layout.responsive.less
  * ---------------------------------------------------------------------------------------
  * Basic layouting elements for responsive layout
  *
@@ -28,28 +30,6 @@
 
 img {
 	max-width: 100%;
-}
-
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Mixins
- * @app-base_css  floatz.layout.css
- *
- * Reusable styles
- */
-
-.flz_mx_spacer {
-	display: block;
-	padding: 0; /* Reset all padding to allow full overwrites */
-
-	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
-	&:after {
-		content: ".";
-		display: block;
-		height: 0;
-		clear: both;
-		visibility: hidden;
-	}
 }
 
 /**

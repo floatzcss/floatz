@@ -14,12 +14,29 @@
  * @since         1.3.0
  */
 
+.flz_mx_wrapcontent() {
+	/* Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self clearing method */
+	&:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+
+.flz_mx_spacer() {
+	display: block;
+	padding: 0; /* Reset all padding to allow full overwrites */
+	.flz_mx_wrapcontent;
+}
+
 /**
  * Set box model via box-sizing property.
  *
  * @type content-box|border-box|initial|inherit
  */
-.flz_mx_box-sizing (@type: content-box) {
+.flz_mx_box-sizing(@type: content-box) {
 	-webkit-box-sizing: @type;
 	-moz-box-sizing: @type;
 	box-sizing: @type;
