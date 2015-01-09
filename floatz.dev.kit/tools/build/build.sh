@@ -73,7 +73,7 @@ function updateTemplate() {
 
 function createFile() {
 	echo "/* floatz CSS Framework v$FLOATZ_VERSION" > $1
-	echo "   Copyright (c) 1998-2014 by :humml:design" >> $1
+	echo "   Copyright (c) 1998-2015 by :hummldesign" >> $1
 	echo "   Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */" >> $1
 }
 
@@ -87,10 +87,10 @@ trap "cleanup" INT TERM EXIT
 #Set variables for later user
 FLOATZ_VERSION=1.3.0
 FLOATZ_RELEASE=alpha #beta|
-JQUERY_VERSION=1.11.1
+JQUERY_VERSION=1.11.2
 LAB_VERSION=2.0.3
-LESS_VERSION=1.7.3
-UA_VERSION=0.7.0
+LESS_VERSION=2.2.0
+UA_VERSION=0.7.3
 
 LESSC=/usr/local/bin/lessc
 JSMIN="../jsmin/jsmin"
@@ -218,6 +218,7 @@ then
 	cp ../../src/scripts/LAB-$LAB_VERSION.min.js ../../../floatz/scripts/
 	cp ../../src/scripts/less-$LESS_VERSION.min.js ../../../floatz/scripts/
 	cp ../../src/scripts/ua-parser-$UA_VERSION.min.js ../../../floatz/scripts/
+	cp ../../src/floatz.mixins.less ../../../floatz/
 	cp ../../NOTICE.txt ../../../floatz/
 	cp ../../src/images/* ../../../floatz/images	
 else

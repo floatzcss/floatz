@@ -421,8 +421,8 @@ The dimensions of the panels are provided via CSS.
 For smooth scrolling within scroll panels on mobile Webkit based browsers the following mobile javascript module must be additionally loaded during startup.
 ```
 // Load jquery, ua-parser and floatz in correct order
-$LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.min.js")
-    .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.0.min.js").wait()
+$LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.2.min.js")
+    .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.3.min.js").wait()
     .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.js")
     .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.mobile.js")
     .wait(function() {
@@ -576,8 +576,8 @@ Next the relevant skip link targets must be defined within the page using **a** 
 At least it is also necessary to load the skiplink javascript module to add support for all browsers.
 ```
 // Load jquery, ua-parser and floatz in correct order
-$LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.1.min.js")
-   .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.0.min.js").wait()
+$LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.2.min.js")
+   .script("http://design.humml.eu/toolbox/floatz/latest/scripts/ua-parser-0.7.3.min.js").wait()
    .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.js")
    .script("http://design.humml.eu/toolbox/floatz/latest/scripts/floatz.skiplink.js")
    .wait(function() {

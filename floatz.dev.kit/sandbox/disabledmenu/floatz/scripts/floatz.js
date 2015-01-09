@@ -8,7 +8,7 @@
  * @version       1.1.1
  * @see           http://code.google.com/p/floatz/
  * @author        Harald Humml
- * @copyright     Copyright (c) 1998-2010 by :humml:design
+ * @copyright     Copyright (c) 1998-2010 by :hummldesign
  * @link          http://design.humml.eu/toolbox/floatz
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
  * @lastmodified  2010-02-13

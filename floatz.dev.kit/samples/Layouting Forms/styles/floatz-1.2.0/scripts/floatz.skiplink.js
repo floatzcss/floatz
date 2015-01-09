@@ -1,5 +1,5 @@
 /* floatz CSS Framework v1.2.0
-   Copyright (c) 1998-2013 by :humml:design
+   Copyright (c) 1998-2013 by :hummldesign
    Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */
 
 (function(){"use strict";var self={module:{name:"floatz.skiplink",version:"1.2.0",start:start}};var floatz=window.floatz;var module=self.module;function start(){fixSkipLinks();fixSkipLinkAnchors();floatz.log(floatz.LOGLEVEL.INFO,"Module "+module.name+" started",module.name);}

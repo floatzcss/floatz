@@ -1,5 +1,5 @@
 /* floatz CSS Framework v1.2.0
-   Copyright (c) 1998-2013 by :humml:design
+   Copyright (c) 1998-2013 by :hummldesign
    Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */
 
 window.floatz=(function(){"use strict";var self={LOGLEVEL:{ERROR:0,WARN:1,INFO:2,DEBUG:3},loadedModules:[],module:{name:"floatz",version:"1.2.0"},start:start,log:log,string:{lpad:lpad,rpad:rpad}};var LOGLEVEL=self.LOGLEVEL;var loadedModules=self.loadedModules;var module=self.module;var config={debug:false,logLevel:LOGLEVEL.DEBUG};function start(options){var i,j;$.extend(config,options);log(LOGLEVEL.INFO,"Module "+module.name+" started",module.name);for(i=0;i<loadedModules.length;i++){var canStart=config.modules===undefined;if(!canStart){for(j=0;j<config.modules.length;j++){if(loadedModules[i].name===config.modules[j]){canStart=true;break;}}}
