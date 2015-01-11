@@ -85,3 +85,29 @@
 	background-color: @rgba; /* Modern browsers and IE9+ */
 	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d')", argb(@rgba),argb(@rgba)));
 }
+
+/**
+ * Set border radius.
+ *
+ * @radius auto | none | text;
+ */
+.flz_mx_border-radius(@radius) {
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+}
+
+// Prevent selection when clicking on an item
+
+/**
+ * Set user selection.
+ * This is usefull if you want to prevent that the browser selects text when a user
+ * selects e.g. an icon or an anchor.
+ *
+ * @@select auto | none | text;
+ */
+.flz_mx_user-select(@select) {
+	-webkit-user-select: @select; /* webkit (safari, chrome) browsers */
+	-moz-user-select: @select; /* mozilla browsers */
+	-ms-user-select: @select; /* IE10+ */
+}
