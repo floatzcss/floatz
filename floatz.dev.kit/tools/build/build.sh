@@ -128,6 +128,11 @@ then
 	lessc --compress ../../src/floatz.form.ie-8.less >> floatz.fixed.ie-8.css.tmp
 	mv floatz.fixed.ie-8.css.tmp ../../../floatz/floatz.fixed.ie-8.css
 
+	echo "floatz.build | INFO  | Creating minified version of floatz.fixed.ie-9.css"
+	createFile floatz.fixed.ie-9.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-9.less >> floatz.fixed.ie-9.css.tmp
+	mv floatz.fixed.ie-9.css.tmp ../../../floatz/floatz.fixed.ie-9.css
+
 	echo "floatz.build | INFO  | Creating minified version of floatz.liquid.css"
 	createFile floatz.liquid.css.tmp
 	lessc --compress ../../src/floatz.reset.meyer.less >> floatz.liquid.css.tmp
@@ -160,6 +165,11 @@ then
 	lessc --compress ../../src/floatz.form.ie-8.less >> floatz.liquid.ie-8.css.tmp
 	mv floatz.liquid.ie-8.css.tmp ../../../floatz/floatz.liquid.ie-8.css
 
+	echo "floatz.build | INFO  | Creating minified version of floatz.liquid.ie-9.css"
+	createFile floatz.liquid.ie-9.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-9.less >> floatz.liquid.ie-9.css.tmp
+	mv floatz.liquid.ie-9.css.tmp ../../../floatz/floatz.liquid.ie-9.css
+
 	echo "floatz.build | INFO  | Creating minified version of floatz.center.css"
 	createFile floatz.center.css.tmp
 	lessc --compress ../../src/floatz.reset.meyer.less >> floatz.center.css.tmp
@@ -191,6 +201,11 @@ then
 	createFile floatz.center.ie-8.css.tmp
 	lessc --compress ../../src/floatz.form.ie-8.less >> floatz.center.ie-8.css.tmp
 	mv floatz.center.ie-8.css.tmp ../../../floatz/floatz.center.ie-8.css
+
+	echo "floatz.build | INFO  | Creating minified version of floatz.center.ie-9.css"
+	createFile floatz.center.ie-9.css.tmp
+	lessc --compress ../../src/floatz.layout.ie-9.less >> floatz.center.ie-9.css.tmp
+	mv floatz.center.ie-9.css.tmp ../../../floatz/floatz.center.ie-9.css
 else
 	echo "floatz.build | ERROR | Less compiler could not be found. Please install less compiler before build."
 fi
