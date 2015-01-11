@@ -39,6 +39,9 @@
 <!--[if IE 8]>
 <link rel="stylesheet" type="text/css" href="styles/floatz-1.3.0/floatz.liquid.ie-8.css" />
 <![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="styles/floatz-1.3.0/floatz.liquid.ie-9.css" />
+<![endif]-->
 ...
 </head>
 ```
