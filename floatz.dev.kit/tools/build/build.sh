@@ -234,6 +234,7 @@ then
 	cp ../../src/scripts/less-$LESS_VERSION.min.js ../../../floatz/scripts/
 	cp ../../src/scripts/ua-parser-$UA_VERSION.min.js ../../../floatz/scripts/
 	cp ../../src/floatz.mixins.less ../../../floatz/
+	cp ../../src/floatz.constants.less ../../../floatz/
 	cp ../../NOTICE.txt ../../../floatz/
 	cp ../../src/images/* ../../../floatz/images	
 else
