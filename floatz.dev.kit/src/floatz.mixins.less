@@ -48,9 +48,9 @@
 /**
  * Set box model via box-sizing property.
  *
- * @type content-box|border-box|initial|inherit
+ * @type - content-box|border-box|initial|inherit
  */
-.flz_mx_box-sizing(@type: content-box) {
+.flz_mx_boxsizing(@type: content-box) {
 	-webkit-box-sizing: @type;
 	-moz-box-sizing: @type;
 	box-sizing: @type;
@@ -76,7 +76,7 @@
  * **) Interestingly -ms-filter does not work at all, even if you can find it in many propagates solutions.
  *     Also zoom: 1, and background: transparent (for IE8) often found are not necessary
  *
- * @color - Hex color or color name
+ * @color   - Hex color or color name
  * @opacity - Opacity value between 0.0 (full opacity) - 1.0 (no opacity)
  */
 
@@ -89,9 +89,9 @@
 /**
  * Set border radius.
  *
- * @radius auto | none | text;
+ * @radius - auto | none | text;
  */
-.flz_mx_border-radius(@radius) {
+.flz_mx_borderradius(@radius) {
 	border-radius: @radius;
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
@@ -104,10 +104,40 @@
  * This is usefull if you want to prevent that the browser selects text when a user
  * selects e.g. an icon or an anchor.
  *
- * @@select auto | none | text;
+ * @select - auto | none | text;
  */
-.flz_mx_user-select(@select) {
+.flz_mx_userselect(@select) {
 	-webkit-user-select: @select; /* webkit (safari, chrome) browsers */
 	-moz-user-select: @select; /* mozilla browsers */
 	-ms-user-select: @select; /* IE10+ */
+}
+
+/**
+ * Create box shadow.
+ *
+ * @x       - Position of horizontal shadow
+ * @y       - Position of vertical shadow
+ * @blur    - Blur distance
+ * @spread  - Size of the shadow (default 0)
+ * @color   - Color of the shadow
+ * @opactiy - Opacity of the shadow (0.0 - 1.0)
+ */
+.flz_mx_shadow(@x, @y, @blur, @spread: 0, @color, @opacity) {
+	@rgba: rgba(red(@color), green(@color), blue(@color), @opacity);
+	-webkit-box-shadow: @x @y @blur @spread @rgba;
+	-moz-box-shadow: @x @y @blur @spread @rgba;
+	box-shadow: @x @y @blur @spread @rgba;
+}
+
+/**
+ * Rotate box.
+ *
+ * @angle Rotation angle (-360 - 360)
+ */
+.flz_mx_rotate(@angle) {
+	-webkit-transform: rotate(@angle);
+	-moz-transform: rotate(@angle);
+	-o-transform: rotate(@angle);
+	-ms-transform: rotate(@angle);
+	transform: rotate(@angle);
 }
