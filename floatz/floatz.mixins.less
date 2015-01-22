@@ -15,7 +15,7 @@
  */
 
 /**
- * Wrap content using self clearing method.
+ * Enwrap content using self clearing method.
  *
  * Using self clearing method workaround to enwrap contained content as well as floating elements.
  * Prevents loosing of padding-bottom, margin-bottom in all non-IE browsers in context of self
@@ -24,7 +24,7 @@
  * @see http://www.satzansatz.de/cssd/onhavinglayout.html
  * @see http://www.ejeliot.com/blog/59
  */
-.flz_mx_wrapcontent() {
+.flz_mx_enwrap() {
 	/*  */
 	&:after {
 		content: ".";
@@ -42,7 +42,7 @@
 .flz_mx_spacer() {
 	display: block;
 	padding: 0; /* Reset all padding to allow full overwrites */
-	.flz_mx_wrapcontent;
+	.flz_mx_enwrap;
 }
 
 /**
