@@ -120,6 +120,7 @@ then
 	createFile floatz.fixed.ie-7.css.tmp
 	lessc --compress ../../src/floatz.reset.ie-7.less >> floatz.fixed.ie-7.css.tmp
 	lessc --compress ../../src/floatz.layout.ie-7.less >> floatz.fixed.ie-7.css.tmp
+	lessc --compress ../../src/floatz.nav.ie-7.less >> floatz.fixed.ie-7.css.tmp
 	lessc --compress ../../src/floatz.form.ie-7.less >> floatz.fixed.ie-7.css.tmp
 	mv floatz.fixed.ie-7.css.tmp ../../../floatz/floatz.fixed.ie-7.css
 
@@ -157,6 +158,7 @@ then
 	createFile floatz.liquid.ie-7.css.tmp
 	lessc --compress ../../src/floatz.reset.ie-7.less >> floatz.liquid.ie-7.css.tmp
 	lessc --compress ../../src/floatz.layout.ie-7.less >> floatz.liquid.ie-7.css.tmp
+	lessc --compress ../../src/floatz.nav.ie-7.less >> floatz.liquid.ie-7.css.tmp
 	lessc --compress ../../src/floatz.form.ie-7.less >> floatz.liquid.ie-7.css.tmp
 	mv floatz.liquid.ie-7.css.tmp ../../../floatz/floatz.liquid.ie-7.css
 
@@ -194,6 +196,7 @@ then
 	createFile floatz.center.ie-7.css.tmp
 	lessc --compress ../../src/floatz.reset.ie-7.less >> floatz.center.ie-7.css.tmp
 	lessc --compress ../../src/floatz.layout.ie-7.less >> floatz.center.ie-7.css.tmp
+	lessc --compress ../../src/floatz.nav.ie-7.less >> floatz.center.ie-7.css.tmp
 	lessc --compress ../../src/floatz.form.ie-7.less >> floatz.center.ie-7.css.tmp
 	mv floatz.center.ie-7.css.tmp ../../../floatz/floatz.center.ie-7.css
 

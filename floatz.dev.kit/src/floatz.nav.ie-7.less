@@ -1,0 +1,31 @@
+/*****************************************************************************************
+ * floatz.nav.ie-7.less
+ * ---------------------------------------------------------------------------------------
+ * Contains navigational elements: simple list navigation, top navigation, breadcrumb 
+ * navigation, toolbar navigation, horizontal menu navigation, vertical menu navigation,
+ * tabbed menu navigation and workflow navigation
+ *
+ * Note: all menu items use a.selected while tabmenu uses li.selected. Latter is not 
+ * possible, though it is inconsistent, because IE would not correctly use the li.selected
+ * style (everything after or within the li.selected class will get the same style)
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2015 by :hummldesign
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-15
+ * @since         1.0.0
+ */
+
+/**
+ * Highlight active skiplink
+ * @workaround Outline does not work for skiplink in IE
+ * @cssfor IE 7
+ * @affected IE 7
+ */
+a:active.flz_skiplink {
+	border: 1px dotted #000;
+}
