@@ -22,7 +22,7 @@
  */
 
 /* Fieldset workarounds */
-*:first-child + html fieldset {
+fieldset {
 
     /**
      * @workaround Wrong padding behaviour of fieldset in IE.
@@ -51,10 +51,10 @@
  */
 
 /* Button workarounds */
-*:first-child + html input[type=button],
-*:first-child + html input[type=submit],
-*:first-child + html input[type=reset],
-*:first-child + html button {
+input[type=button],
+input[type=submit],
+input[type=reset],
+button {
 
     /**
      * @workaround Omit too much left/right padding
