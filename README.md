@@ -3,7 +3,7 @@
 
 **floatz is a flexible and easy to use CSS framework.** It provides a set of reusable CSS classes, Javascript modules and HTML code snippets that support web designers and developers to create state-of-the-art web sites, web applications and HTML based mobile apps - on all browsers, platforms and devices.
 
-##Table of Content
+##Table of content
 * [Version history](#version-history)
 * [Browser support](#browser-support)
 * [Basic concepts](#basic-concepts)
@@ -13,7 +13,7 @@
 * [Responsive layouts](#responsive-layouts)
 
 ##Version history
-* January, 2015 - Version 1.3.0 currently under construction
+* February, 2015 - Version 1.3.0 currently under construction
 * 2nd December, 2014 - [Hotfix](https://github.com/floatzcss/floatz.gwt/blob/master/download/floatz.gwt-1.2.0hotfix01.jar) for GWT 2.7.0 
 * July 29th, 2013 - Version 1.2.0 released
 * July 17th, 2012 - Version 1.1.2 released
