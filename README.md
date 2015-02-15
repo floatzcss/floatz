@@ -601,9 +601,9 @@ See it in action: http://codepen.io/floatz/pen/mpiHa
 When dealing with workflows it makes sense to visualy indicate the current workflow state. Thus **floatz** offers the CSS class **flz_workflow** which can be used for exactly that kind of use case.
 ```
 <ul class="flz_workflow">
-   <li class="flz_passed"><a href="#" />First</a></li>
-   <li class="flz_passed"><a href="#" />Second</a></li>
-   <li class="flz_selected"><a href="#" />The third</a></li>
+   <li class="flz_passed"><a href="#">First</a></li>
+   <li class="flz_passed"><a href="#">Second</a></li>
+   <li class="flz_selected"><a href="#">The third</a></li>
    <li><a>Forth and last</a></li>
 </ul>
 ```
