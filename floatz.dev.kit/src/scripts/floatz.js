@@ -16,7 +16,7 @@
  * @copyright     Copyright (c) 1998-2015 by :hummldesign
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-07-17
+ * @lastmodified  2015-02-20
  */
 
 window.floatz = (function (floatz, $) {
@@ -52,8 +52,8 @@ window.floatz = (function (floatz, $) {
 			rpad: rpad
 		},
 
-		/* User agent */
-		userAgent: new UAParser().getResult(),
+		/* User agent - Filled in init code at the bottom */
+		userAgent: window.UAParser ? new UAParser().getResult() : {},
 		isMobileWebkit: isMobileWebkit,
 		isMobile: isMobile
 	};
@@ -92,7 +92,7 @@ window.floatz = (function (floatz, $) {
 		var i, j;
 
 		// Mix options and defaults
-		$.extend(config, options);
+		updateConfig(options);
 
 		// Show user agent info
 		log(LOGLEVEL.INFO, self.userAgent.ua, module.name);
@@ -143,6 +143,26 @@ window.floatz = (function (floatz, $) {
 	}
 
 	/**
+	 * Update config containing defaults with options.
+	 *
+	 * @param options Options
+	 */
+	function updateConfig(options) {
+		if(options.debug !== null) {
+			config.debug = options.debug;
+		}
+		if(options.logLevel != null) {
+			config.logLevel = options.logLevel;
+		}
+		if(options.modules != null) {
+			config["modules"] = options.modules;
+		}
+		if(options.onStarted != null) {
+			config["onStarted"] = options.onStarted;
+		}
+	}
+
+	/**
 	 * Log into browser console.
 	 *
 	 * @param level Log level
@@ -153,7 +173,7 @@ window.floatz = (function (floatz, $) {
 	function log(level, msg, context) {
 
 		// Check if console is available (IE 8 and below) and log level is allowed
-		if (window.console !== undefined && level <= config.logLevel) {
+		if (window.console  !== undefined && level <= config.logLevel) {
 			console.log(rpad(context, " ", 20) + " | " + module.version + " | " +
 			rpad(logLevelName(level), " ", 6) + " | " + msg);
 		}
@@ -239,8 +259,14 @@ window.floatz = (function (floatz, $) {
 	////////////////////////////////////////////////////
 	// Init code
 
+	// Check if dependent modules are loaded
+	if(! window.UAParser) {
+		log(LOGLEVEL.ERROR, "Module " + module.name + " depends on ua-parser.js which is not loaded", module.name);
+		return;
+	}
+
 	log(LOGLEVEL.INFO, "Module " + module.name + " loaded", module.name);
 
 	// Return public interface
 	return self;
-}(window.floatz, jQuery));
+}(window.floatz, window.jQuery || null));

@@ -39,4 +39,4 @@ window.floatz.custom = (function (floatz, $) {
 	
 	// Return public interface
 	return self;
-}(window.floatz, jQuery));
+}(window.floatz,  window.jQuery || null));
