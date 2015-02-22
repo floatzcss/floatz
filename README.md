@@ -13,7 +13,7 @@
 * [Responsive layouts](#responsive-layouts)
 
 ##Version history
-* February, 2015 - Version 1.3.0 currently under construction
+* 22th February, 2015 - Version 1.3.0 released
 * 2nd December, 2014 - [Hotfix](https://github.com/floatzcss/floatz.gwt/blob/master/download/floatz.gwt-1.2.0hotfix01.jar) for GWT 2.7.0 
 * July 29th, 2013 - Version 1.2.0 released
 * July 17th, 2012 - Version 1.1.2 released
