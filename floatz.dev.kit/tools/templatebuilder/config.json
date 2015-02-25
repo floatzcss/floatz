@@ -14,7 +14,7 @@
 					"version": "0.7.3"
 				},
 				"floatzmobile" : false,
-				"floatzskiplink" : true
+				"floatzskiplink" : false
 			},
 			"stylesheets": {
 			}
