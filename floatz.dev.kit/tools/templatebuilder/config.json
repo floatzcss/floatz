@@ -3,6 +3,8 @@
 		"name": "demo",
 		"floatz": {
 			"version": "1.3.0",
+			"debug": false,
+			"loglevel" : "floatz.LOGLEVEL.WARN",
 			"scripts": {
 				"lab": {
 					"version": "2.0.3"
@@ -13,8 +15,8 @@
 				"uaparser": {
 					"version": "0.7.3"
 				},
-				"floatzmobile" : false,
-				"floatzskiplink" : false
+				"floatzmobile" : true,
+				"floatzskiplink" : true
 			},
 			"stylesheets": {
 			}
