@@ -26,12 +26,10 @@ Used third party libraries / tools
 	Copyright 2005-2014, jQuery Foundation
 	Licensed under MIT License
 	http://jquery.org/license
-	
-	LESS - Leaner CSS v2.2.0
-	http://lesscss.org
-	Copyright (c) 2009-2015, Alexis Sellier
-	Licensed under the Apache 2.0 License
-	http://www.apache.org/licenses/LICENSE-2.0
+
+	JSMin (Javascript minifier) v2013-02-25
+    http://www.crockford.com/javascript/jsmin.html
+    Copyright (c) 2002-2013, Douglas Crockford
 
 	LAB.js (Loading And Blocking JavaScript) v2.0.3
 	http://labjs.com/
@@ -39,15 +37,23 @@ Used third party libraries / tools
 	Licensed under MIT License
 	http://opensource.org/licenses/MIT
 
-	UAParser.js v0.7.3
-	https://github.com/faisalman/ua-parser-js
-	Dual licensed under GPLv2 & MIT
-	Copyright (c) 2012-2014 Faisalman
+	LESS - Leaner CSS v2.2.0
+	http://lesscss.org
+	Copyright (c) 2009-2015, Alexis Sellier
+	Licensed under the Apache 2.0 License
+	http://www.apache.org/licenses/LICENSE-2.0
 
-	JSMin (Javascript minifier) v2013-02-25
-	http://www.crockford.com/javascript/jsmin.html
-	Copyright (c) 2002-2013, Douglas Crockford
+	mustache.js
+	https://github.com/janl/mustache.js
+	Copyright (c) 2009, Chris Wanstrath (Ruby
+	Copyright (c) 2010-2014, Jan Lehnhardt (Javascript)
+	http://opensource.org/licenses/MIT
 
 	Reset CSS v2.0
 	http://meyerweb.com/eric/tools/css/reset/index.html
 	Copyright (c) 2011, Eric Meyer
+
+	UAParser.js v0.7.3
+	https://github.com/faisalman/ua-parser-js
+	Dual licensed under GPLv2 & MIT
+	Copyright (c) 2012-2014 Faisalman
