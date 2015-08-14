@@ -30,7 +30,7 @@ window.floatz.skiplink = (function (floatz, $) {
 		/* Fields */
 		module: {
 			name: "floatz.skiplink",
-			version: "1.2.0",
+			version: "1.4.0",
 			start: start
 		}
 	};

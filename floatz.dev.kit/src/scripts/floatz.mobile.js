@@ -29,7 +29,7 @@ window.floatz.mobile = (function (floatz, $) {
 		/* Fields */
 		module: {
 			name: "floatz.mobile",
-			version: "1.3.0",
+			version: "1.4.0",
 			start: start,
 			bind: bind
 		},
