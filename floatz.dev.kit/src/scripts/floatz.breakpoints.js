@@ -1,5 +1,5 @@
 /**
- * floatz.skiplink.js
+ * floatz.breakpoints.js
  *
  * Skiplink module that adds some fixes that are necessary for providing accessible
  * skip link functionality.

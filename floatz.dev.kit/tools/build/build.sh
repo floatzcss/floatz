@@ -85,12 +85,12 @@ set -e
 trap "cleanup" INT TERM EXIT
 
 #Set variables for later user
-FLOATZ_VERSION=1.3.0
+FLOATZ_VERSION=1.4.0
 FLOATZ_RELEASE=alpha #beta|
-JQUERY_VERSION=1.11.2
+JQUERY_VERSION=1.11.3
 LAB_VERSION=2.0.3
-LESS_VERSION=2.2.0
-UA_VERSION=0.7.3
+LESS_VERSION=2.5.1
+UA_VERSION=0.7.9
 
 LESSC=/usr/local/bin/lessc
 JSMIN="../jsmin/jsmin"

@@ -1,4 +1,4 @@
-/* floatz CSS Framework v1.3.0
+/* floatz CSS Framework v1.4.0
    Copyright (c) 1998-2015 by :hummldesign
    Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0 */
 

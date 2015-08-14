@@ -1,5 +1,5 @@
 /**
- * mobile.js
+ * floatz.mobile.js
  *
  * Mobile module that adds some fixes to mobile webkit browsers.
  *
