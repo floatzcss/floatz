@@ -28,7 +28,8 @@ window.floatz.breakpoints = (function (floatz, $) {
 			name: "floatz.breakpoints",
 			version: "1.4.0",
 			start: start
-		}
+		},
+		add: add
 	};
 
 	////////////////////////////////////////////////////
@@ -42,10 +43,18 @@ window.floatz.breakpoints = (function (floatz, $) {
 	/**
 	 * Start module.
 	 *
-	 * @since 1.1.0
+	 * @since 1.4.0
 	 */
 	function start() {
 		floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " started", module.name);
+	}
+
+	/**
+	 * Add breakpoint.
+	 * @param fn Callback function
+	 */
+	function add(fn) {
+		fn();
 	}
 
 	////////////////////////////////////////////////////

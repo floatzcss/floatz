@@ -52,7 +52,7 @@ window.floatz = (function (floatz, $) {
 			rpad: rpad
 		},
 
-		/* User agent - Filled in init code at the bottom */
+		matchMedia: matchMedia,
 		userAgent: window.UAParser ? new UAParser().getResult() : {},
 		isMobileWebkit: isMobileWebkit,
 		isMobile: isMobile
@@ -254,6 +254,30 @@ window.floatz = (function (floatz, $) {
 	 */
 	function isMobile() {
 		return ua.os.name === "Android" || ua.os.name === "iOS" || ua.os.name === "Windows Phone" || ua.os.name === "BlackBerry";
+	}
+
+	/**
+	 * Execute media query.
+	 *
+	 * @param query Media query string
+	 * @param matcher Matcher object containing a mandatory onMatch and an optional onUnmatch method
+	 * @since 1.4.0
+	 */
+	function matchMedia(query, matcher) {
+		if(window.matchMedia1) {
+			var mq = window.matchMedia(query);
+			var callback = function(mq) {
+				if(mq.matches) {
+					matcher.onMatch();
+				} else if(matcher.onUnMatch) {
+					matcher.onUnMatch();
+				}
+			};
+			mq.addListener(callback);
+			callback(mq);
+		} else {
+			log(LOGLEVEL.WARN, "Media query via Javascript not supported in browser", module.name);
+		}
 	}
 
 	////////////////////////////////////////////////////

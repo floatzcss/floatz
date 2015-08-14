@@ -2,6 +2,7 @@
 $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 	.script("../src/scripts/ua-parser-0.7.9.min.js").wait()
 	.script("../src/scripts/floatz.js").wait()
+	.script("../src/scripts/floatz.breakpoints.js")
 	.script("../src/scripts/floatz.mobile.js")
 	.script("../src/scripts/floatz.skiplink.js")
 	.script("scripts/custom.js")
@@ -11,6 +12,7 @@ $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 				debug: true,
 				logLevel: floatz.LOGLEVEL.DEBUG,
 				modules: ["floatz.mobile",
+					"floatz.breakpoints",
 					"floatz.skiplink",
 					"custom"],
 				onStarted: function () {
@@ -41,4 +43,15 @@ function start() {
 		html += "<b>isMobile: </b>" + floatz.isMobile() + "<br />";
 		panel.append(html);
 	}
+
+	floatz.breakpoints.add(function() {
+		floatz.matchMedia("(min-width: 0px) and (max-width: 767px)", {
+			onMatch : function() {
+				console.log("match");
+			},
+			onUnMatch : function() {
+				console.log("unmatch");
+			}
+		});
+	});
 }
