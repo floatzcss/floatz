@@ -1,5 +1,5 @@
 // Load jquery, less and floatz in correct order
-$LAB.script("../../src/scripts/jquery-1.11.2.min.js")
+$LAB.script("../../src/scripts/jquery-1.11.3.min.js")
 	 .script("../../src/scripts/floatz.js").wait()
 	 .script("../../src/scripts/floatz.useragent.js").wait()
 	 // .script("../../src/scripts/less-1.3.1.min.js")
