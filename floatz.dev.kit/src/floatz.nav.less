@@ -47,16 +47,6 @@ a:focus.flz_skiplink {
 }
 
 /**
- * Highlight active skiplink
- * @workaround Outline does not work for skiplink in IE
- * @cssfor IE 7
- * @affected IE 7
- */
-:first-child+html a:active.flz_skiplink {
-   border: 1px dotted #000;
-}
-
-/**
  * ---------------------------------------------------------------------------------------
  * @section       Simple list navigation
  *
@@ -89,7 +79,7 @@ a:focus.flz_skiplink {
          }
             
          /* focused or hovered navigation item */
-         &:focused,    
+         &:focus,
          &:hover {
             text-decoration: underline;
          }

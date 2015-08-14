@@ -16,7 +16,7 @@
  * @copyright     Copyright (c) 1998-2015 by :hummldesign
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-07-17
+ * @lastmodified  2015-02-20
  */
 window.floatz.mobile = (function (floatz, $) {
 	"use strict";
@@ -51,6 +51,12 @@ window.floatz.mobile = (function (floatz, $) {
 	 * @since 1.2.0
 	 */
 	function start() {
+
+		// Check if dependent modules are loaded
+		if(! $) {
+			floatz.log(floatz.LOGLEVEL.ERROR, "Module " + module.name + " depends on jquery.js which is not loaded", module.name);
+			return;
+		}
 
 		// Optimize mobile webkit behavior
 		if (floatz.isMobileWebkit()) {
@@ -93,10 +99,10 @@ window.floatz.mobile = (function (floatz, $) {
 
 	////////////////////////////////////////////////////
 	// Init code
-
+	
 	floatz.loadedModules.push(module);
 	floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " loaded", module.name);
 
 	// Return public interface
 	return self;
-}(window.floatz, jQuery));
+}(window.floatz,  window.jQuery || null));

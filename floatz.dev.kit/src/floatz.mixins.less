@@ -80,7 +80,7 @@
  * @opacity - Opacity value between 0.0 (full opacity) - 1.0 (no opacity)
  */
 
-.flz_mx_alphaopacity(@color, @opacity) {
+.flz_mx_transparent(@color, @opacity) {
 	@rgba: rgba(red(@color), green(@color), blue(@color), @opacity);
 	background-color: @rgba; /* Modern browsers and IE9+ */
 	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d')", argb(@rgba),argb(@rgba)));

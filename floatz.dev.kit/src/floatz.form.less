@@ -1,3 +1,5 @@
+@import 'floatz.mixins.less';
+
 /*****************************************************************************************
  * floatz.form.less
  * ---------------------------------------------------------------------------------------
@@ -86,6 +88,14 @@ fieldset {
 
 /* Form */
 .flz_form {
+
+    /* Enable paddings in modern browsers */
+    input[type="text"],
+    input[type="password"],
+    select,
+    textarea {
+        .flz_mx_boxsizing(border-box);
+    }
 
     /* Textbox */
     input[type="text"],
