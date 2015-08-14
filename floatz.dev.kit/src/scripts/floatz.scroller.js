@@ -10,7 +10,7 @@
  * Depends on: floatz.js
  *
  * @project       floatz CSS Framework
- * @version       1.3.0
+ * @version       1.4.0
  * @since         1.2.0
  * @see           https://github.com/floatzcss/floatz
  * @author        Harald Humml
