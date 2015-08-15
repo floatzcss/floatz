@@ -1126,3 +1126,224 @@ img {
 		width: 100%;
 	}
 }
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Large Desktop mode (XXL)
+ * @app-base_css  floatz.layout.css
+ *
+ * Adds responsive layout support.
+ */
+@media @flz_media_xxl {
+	.flz_clear_xxl {
+		clear: both;
+	}
+	.flz_lclear_xxl {
+		clear: left;
+	}
+	.flz_rclear_xxl {
+		clear: right;
+	}
+	.flz_hide_xxl {
+		display: none;
+	}
+
+	/* Spacers */
+	.flz_spacer_xxl,
+	.flz_lspacer_xxl,
+	.flz_mspacer_xxl,
+	.flz_rspacer_xxl,
+	.flz_spacer_mrsc_top_xxl,
+	.flz_spacer_mrsc_mid_xxl,
+	.flz_spacer_mrsc_bottom_xxl,
+	.flz_lspacer_mrmc_top_xxl,
+	.flz_lspacer_mrmc_mid_xxl,
+	.flz_lspacer_mrmc_bottom_xxl,
+	.flz_mspacer_mrmc_top_xxl,
+	.flz_mspacer_mrmc_mid_xxl,
+	.flz_mspacer_mrmc_bottom_xxl,
+	.flz_rspacer_mrmc_top_xxl,
+	.flz_rspacer_mrmc_mid_xxl,
+	.flz_rspacer_mrmc_bottom_xxl,
+	.flz_subspacer_xxl,
+	.flz_lsubspacer_xxl,
+	.flz_msubspacer_xxl,
+	.flz_rsubspacer_xxl,
+	.flz_subspacer_mrsc_top_xxl,
+	.flz_subspacer_mrsc_mid_xxl,
+	.flz_subspacer_mrsc_bottom_xxl,
+	.flz_lsubspacer_mrmc_top_xxl,
+	.flz_lsubspacer_mrmc_mid_xxl,
+	.flz_lsubspacer_mrmc_bottom_xxl,
+	.flz_msubspacer_mrmc_top_xxl,
+	.flz_msubspacer_mrmc_mid_xxl,
+	.flz_msubspacer_mrmc_bottom_xxl,
+	.flz_rsubspacer_mrmc_top_xxl,
+	.flz_rsubspacer_mrmc_mid_xxl,
+	.flz_rsubspacer_mrmc_bottom_xxl {
+		.flz_mx_spacer;
+	}
+	.flz_spacer_xxl,
+	.flz_lspacer_xxl,
+	.flz_mspacer_xxl,
+	.flz_rspacer_xxl {
+		padding: 1em;
+	}
+	.flz_subspacer_xxl {
+		padding: 0;
+	}
+	.flz_subspacer_mrsc_top_xxl,
+	.flz_lsubspacer_mrmc_top_xxl,
+	.flz_msubspacer_mrmc_top_xxl,
+	.flz_rsubspacer_mrmc_top_xxl {
+		padding-top: 0;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_mid_xxl,
+	.flz_lsubspacer_mrmc_mid_xxl,
+	.flz_msubspacer_mrmc_mid_xxl,
+	.flz_rsubspacer_mrmc_mid_xxl {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_subspacer_mrsc_bottom_xxl,
+	.flz_lsubspacer_mrmc_bottom_xxl,
+	.flz_msubspacer_mrmc_bottom_xxl,
+	.flz_rsubspacer_mrmc_bottom_xxl {
+		padding-top: 0.5em;
+		padding-bottom: 0;
+	}
+	.flz_lsubspacer_xxl,
+	.flz_msubspacer_xxl,
+	.flz_lsubspacer_mrmc_top_xxl,
+	.flz_msubspacer_mrmc_top_xxl,
+	.flz_lsubspacer_mrmc_mid_xxl,
+	.flz_msubspacer_mrmc_mid_xxl,
+	.flz_lsubspacer_mrmc_bottom_xxl,
+	.flz_msubspacer_mrmc_bottom_xxl {
+		padding-right: 0.5em;
+	}
+	.flz_rsubspacer_xxl,
+	.flz_msubspacer_xxl,
+	.flz_msubspacer_mrmc_top_xxl,
+	.flz_rsubspacer_mrmc_top_xxl,
+	.flz_msubspacer_mrmc_mid_xxl,
+	.flz_rsubspacer_mrmc_mid_xxl,
+	.flz_msubspacer_mrmc_bottom_xxl,
+	.flz_rsubspacer_mrmc_bottom_xxl {
+		padding-left: 0.5em;
+	}
+	.flz_spacer_mrsc_top_xxl,
+	.flz_lspacer_mrmc_top_xxl,
+	.flz_mspacer_mrmc_top_xxl,
+	.flz_rspacer_mrmc_top_xxl {
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_bottom_xxl,
+	.flz_lspacer_mrmc_bottom_xxl,
+	.flz_mspacer_mrmc_bottom_xxl,
+	.flz_rspacer_mrmc_bottom_xxl {
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+	}
+	.flz_spacer_mrsc_mid_xxl,
+	.flz_lspacer_mrmc_mid_xxl,
+	.flz_mspacer_mrmc_mid_xxl,
+	.flz_rspacer_mrmc_mid_xxl {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	.flz_spacer_mrsc_top_xxl,
+	.flz_spacer_mrsc_bottom_xxl,
+	.flz_spacer_mrsc_mid_xxl {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	.flz_lspacer_xxl,
+	.flz_mspacer_xxl,
+	.flz_lspacer_mrmc_top_xxl,
+	.flz_mspacer_mrmc_top_xxl,
+	.flz_lspacer_mrmc_mid_xxl,
+	.flz_mspacer_mrmc_mid_xxl,
+	.flz_lspacer_mrmc_bottom_xxl,
+	.flz_mspacer_mrmc_bottom_xxl {
+		padding-right: 0.5em;
+	}
+	.flz_mspacer_xxl,
+	.flz_rspacer_xxl,
+	.flz_mspacer_mrmc_top_xxl,
+	.flz_rspacer_mrmc_top_xxl,
+	.flz_mspacer_mrmc_mid_xxl,
+	.flz_rspacer_mrmc_mid_xxl,
+	.flz_mspacer_mrmc_bottom_xxl,
+	.flz_rspacer_mrmc_bottom_xxl {
+		padding-left: 0.5em;
+	}
+	.flz_lspacer_mrmc_top_xxl,
+	.flz_lspacer_mrmc_mid_xxl,
+	.flz_lspacer_mrmc_bottom_xxl {
+		padding-left: 1em;
+	}
+	.flz_rspacer_mrmc_top_xxl,
+	.flz_rspacer_mrmc_mid_xxl,
+	.flz_rspacer_mrmc_bottom_xxl {
+		padding-right: 1em;
+	}
+	/* Layouters */
+	.flz_l10_xxl,
+	.flz_m10_xxl,
+	.flz_r10_xxl {
+		width: 10%;
+	}
+	.flz_l20_xxl,
+	.flz_m20_xxl,
+	.flz_r20_xxl {
+		width: 20%;
+	}
+	.flz_l25_xxl,
+	.flz_m25_xxl,
+	.flz_r25_xxl {
+		width: 25%;
+	}
+	.flz_l33_xxl,
+	.flz_m33_xxl,
+	.flz_r33_xxl {
+		width: 33.33333%;
+	}
+	.flz_l40_xxl,
+	.flz_m40_xxl,
+	.flz_r40_xxl {
+		width: 40%;
+	}
+	.flz_l50_xxl,
+	.flz_m50_xxl,
+	.flz_r50_xxl {
+		width: 50%;
+	}
+	.flz_l60_xxl,
+	.flz_m60_xxl,
+	.flz_r60_xxl {
+		width: 60%;
+	}
+	.flz_l66_xxl,
+	.flz_r66_xxl {
+		width: 66.66666%;
+	}
+	.flz_l75_xxl,
+	.flz_r75_xxl {
+		width: 75%;
+	}
+	.flz_l80_xxl,
+	.flz_m80_xxl,
+	.flz_r80_xxl {
+		width: 80%;
+	}
+	.flz_l90_xxl,
+	.flz_r90_xxl {
+		width: 90%;
+	}
+	.flz_r100_xxl {
+		width: 100%;
+	}
+}
