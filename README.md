@@ -792,7 +792,8 @@ The following *breakpoints* are used within media queries to determine devices.
 | Smartphone      | Landscape    | S    | 481 px    | 767 px    |
 | Tablet          | Portrait     | M    | 768 px    | 979 px    |
 | Tablet, Desktop | Landscape    | L    | 980 px    | 1199 px   |
-| Large Desktop   | Landscape    | XL   | 1200 px   | ...       |
+| Desktop         | Landscape    | XL   | 1200 px   | 1919 px   |
+| Super Large Desktop | Landscape    | XXL   | 1920 px   | ...       |
 
 ##Responsive layouters
 
