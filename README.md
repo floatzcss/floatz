@@ -240,7 +240,7 @@ In real world scenarios it is often the case that *boxes* and *spacers* must be 
 
 See it in action: http://codepen.io/floatz/pen/FgJIC
 
-*Subspacers* can of course be used in nested scenarios too and it is possible to create any imanginable combination of stacked and nested *boxes* just by combining the provided *layouters* and *spacers*.
+*Subspacers* can of course be used in stacked scenarios too and it is possible to create any imanginable combination of stacked and nested *boxes* just by combining the provided *layouters* and *spacers*.
 
 See it in action: http://codepen.io/floatz/pen/aHscp<br />
 See it in action: http://codepen.io/floatz/pen/KjzIm
