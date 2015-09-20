@@ -795,6 +795,8 @@ The following *breakpoints* are used within media queries to determine devices.
 | Large Desktop   | Landscape    | XL   | 1200 px   | 1599 px   |
 | Super Large Desktop | Landscape    | XXL   | 1600 px   | ...       |
 
+> Please note: when creating responsive layouts you have to take care that the font size does not increase dynamically using the following meta tag in the HTML header: ```<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">```
+
 ##Responsive layouters
 
 As described under [Basic concepts](#layouters) *layouters* are used to give *boxes* a specific width. Using *responsive layouters*, which are simply *layouters* extended with a device size specific postfix, you can define how each box should behave on different devices. 
