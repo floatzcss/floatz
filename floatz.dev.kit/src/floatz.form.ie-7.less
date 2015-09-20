@@ -50,10 +50,28 @@ fieldset {
  * Form elements
  */
 
+/* Form workarounds */
+.flz_form {
+
+    .flz_textbox,
+    textarea {
+        width: 99.4%;
+    }
+
+    .flz_checkbox,
+    .flz_radio {
+        margin: 0;
+
+        /* Label in combination with checkbox or radio should be inline */
+        & + label {
+            display: inline;
+            width: auto;
+        }
+    }
+}
+
 /* Button workarounds */
-input[type=button],
-input[type=submit],
-input[type=reset],
+.flz_button,
 button {
 
     /**

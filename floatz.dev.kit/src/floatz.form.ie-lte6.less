@@ -71,6 +71,22 @@ fieldset {
         width: 99.4%;
     }
 
+    /* Textarea */
+    textarea {
+        width: 99.4%;
+    }
+
+    .flz_checkbox,
+    .flz_radio {
+        margin: 0;
+
+        /* Label in combination with checkbox or radio should be inline */
+        & + label {
+            display: inline;
+            width: auto;
+        }
+    }
+
     /**
      * @workaround Correct margins of input type text and textareas within blocked forms
      * @affected IE 5, 6
