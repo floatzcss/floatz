@@ -240,7 +240,7 @@ In real world scenarios it is often the case that *boxes* and *spacers* must be 
 
 See it in action: http://codepen.io/floatz/pen/FgJIC
 
-*Subspacers* can of course be used in nested scenarios too and it is possible to create any imanginable combination of stacked and nested *boxes* just by combining the provided *layouters* and *spacers*.
+*Subspacers* can of course be used in stacked scenarios too and it is possible to create any imaginable combination of stacked and nested *boxes* just by combining the provided *layouters* and *spacers*.
 
 See it in action: http://codepen.io/floatz/pen/aHscp<br />
 See it in action: http://codepen.io/floatz/pen/KjzIm
@@ -794,6 +794,8 @@ The following *breakpoints* are used within media queries to determine devices.
 | Tablet, Desktop | Landscape    | L    | 980 px    | 1199 px   |
 | Large Desktop   | Landscape    | XL   | 1200 px   | 1599 px   |
 | Super Large Desktop | Landscape    | XXL   | 1600 px   | ...       |
+
+> Please note: when creating responsive layouts you have to take care that the font size does not increase dynamically using the following meta tag in the HTML header: ```<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">```
 
 ##Responsive layouters
 
