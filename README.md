@@ -95,11 +95,13 @@ See it in action: http://codepen.io/floatz/pen/lzAew
 
 The following *layouters* are provided out of the box:
 
-| Layouter                | Widths                                          |
-| ----------------------- | ----------------------------------------------- |
-| flz_l&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90      |
-| flz_m&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80          |
-| flz_r&lt;percentage&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
+| Layouter                | Widths                                                     |
+| ----------------------- | ---------------------------------------------------------- |
+| flz_l&lt;percentage&gt; | 10, 20, 25, 30*, 33, 40, 50, 60, 66, 70*, 75, 80, 90       |
+| flz_m&lt;percentage&gt; | 10, 20, 25, 30*, 33, 40, 50, 60, 66, 70*, 75, 80           |
+| flz_r&lt;percentage&gt; | 10, 20, 25, 30*, 33, 40, 50, 60, 66, 70*, 75, 80, 90, 100  |
+
+*Since version 1.4.0
 
 ####Clearing the float
 In best cases the sum of all *layouters* in a row gets 100%. If not, clear the float by attaching **flz_clear** to the first *box* of the next row.
@@ -788,14 +790,17 @@ Since version 1.3.0 floatz provides out of the box support for [responsive desig
 
 The following *breakpoints* are used within media queries to determine devices.
 
-| Target device   | Orientiation | Size | min-width | max-width |
-| --------------- | ------------ | :--: | --------: | --------: |
-| Smartphone      | Portrait     | XS   | 0 px      | 480 px    |
-| Smartphone      | Landscape    | S    | 481 px    | 767 px    |
-| Tablet          | Portrait     | M    | 768 px    | 979 px    |
-| Tablet, Desktop | Landscape    | L    | 980 px    | 1199 px   |
-| Large Desktop   | Landscape    | XL   | 1200 px   | 1599 px   |
-| Super Large Desktop | Landscape    | XXL   | 1600 px   | ...       |
+| Target device                | Orientiation        | Size | min-width | max-width |
+| ---------------------------- | ------------------- | :--: | --------: | --------: |
+| Small Smartphone             | Portrait            | XXS* | 0 px      | 320 px    |
+| Smartphone, Small Smartphone | Portrait, Landscape | XS   | 321 px    | 480 px    |
+| Smartphone                   | Landscape           | S    | 481 px    | 767 px    |
+| Tablet                       | Portrait            | M    | 768 px    | 979 px    |
+| Tablet, Desktop              | Landscape           | L    | 980 px    | 1199 px   |
+| Large Desktop                | Landscape           | XL   | 1200 px   | 1599 px   |
+| Super Large Desktop          | Landscape           | XXL* | 1600 px   | ...       |
+
+*Since version 1.4.0
 
 > Please note: when creating responsive layouts you have to take care that the font size does not increase dynamically using the following meta tag in the HTML header: ```<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">```
 
