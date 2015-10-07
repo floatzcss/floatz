@@ -14,7 +14,7 @@
 
 ##Version history
 * Version 2.0.0 - planned
-* Version 1.4.0 - pre-released
+* 7th October, 2015 - Version 1.4.0 released
 * 22th February, 2015 - Version 1.3.0 released
 * 2nd December, 2014 - [Hotfix](https://github.com/floatzcss/floatz.gwt/blob/master/download/floatz.gwt-1.2.0hotfix01.jar) for GWT 2.7.0 
 * July 29th, 2013 - Version 1.2.0 released
