@@ -86,7 +86,7 @@ trap "cleanup" INT TERM EXIT
 
 #Set variables for later user
 FLOATZ_VERSION=1.4.0
-FLOATZ_RELEASE=beta #alpha|beta
+FLOATZ_RELEASE= #alpha|beta
 JQUERY_VERSION=1.11.3
 LAB_VERSION=2.0.3
 LESS_VERSION=2.5.1
