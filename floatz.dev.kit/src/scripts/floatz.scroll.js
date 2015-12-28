@@ -30,10 +30,15 @@ window.floatz.scroll = (function (floatz, $) {
 
 	var self = {
 
-		/* Enumarations */
+		/* Enumerations */
 		Orientation: {
 			VERTICAL: 0,
 			HORIZONTAL: 1
+		},
+
+		Direction: {
+			FORWARD: 1,
+			BACKWARD: 2
 		},
 
 		/* Fields */
@@ -43,10 +48,10 @@ window.floatz.scroll = (function (floatz, $) {
 			start: start
 		},
 
-		config : config,
-		scroll : scroll,
-		scrollIn : scrollIn,
-		scrollOut : scrollOut,
+		config: config,
+		scroll: scroll,
+		scrollIn: scrollIn,
+		scrollOut: scrollOut,
 		scrollTo: scrollTo,
 		scrollToTop: scrollToTop,
 		scrollToBottom: scrollToBottom,
@@ -57,12 +62,21 @@ window.floatz.scroll = (function (floatz, $) {
 	// Private variables
 
 	var Orientation = self.Orientation;
+	var Direction = self.Direction;
 	var module = self.module;
 	var sections = [];
 	var SCROLLABLE = "flz_scrollable";
 	var HSCROLLABLE = "flz_hscrollable";
 	var SCROLLANCHOR = "flz_scrollAnchor";
-
+	var DEFAULTCONTAINER = "body";
+	var scrollInfo = {
+		container: null,
+		direction: Direction.FORWARD,
+		eventData: null,
+		scrollLeft: 0,
+		scrollTop: 0,
+		orientation: Orientation.VERTICAL
+	};
 
 	////////////////////////////////////////////////////
 	// Private functions
@@ -80,7 +94,7 @@ window.floatz.scroll = (function (floatz, $) {
 		}
 
 		// Initialize scrolling
-		init();
+		init(DEFAULTCONTAINER);
 
 		floatz.log(floatz.LOGLEVEL.INFO, "Module " + module.name + " started", module.name);
 	}
@@ -117,8 +131,47 @@ window.floatz.scroll = (function (floatz, $) {
 	 * @returns Scroll context for chaining
 	 */
 	function scroll(container, handler) {
-		// TODO Implement
-		// $(panel).scroll(handler);
+
+		if($.isFunction(container)) {
+			handler = container;
+			container = DEFAULTCONTAINER;
+		}
+
+		var scrollContainer = $(container);
+		if (scrollContainer.is(DEFAULTCONTAINER)) {
+			scrollContainer = $(window);
+		}
+
+		$(scrollContainer).scroll(function (e) {
+			var hPos = scrollContainer.scrollLeft();
+			var vPos = scrollContainer.scrollTop();
+
+			// Determine scroll direction
+			if (hPos > scrollInfo.scrollLeft) {
+				scrollInfo.direction = Direction.FORWARD;
+				scrollInfo.orientation = Orientation.HORIZONTAL;
+			} else if (hPos < scrollInfo.scrollLeft) {
+				scrollInfo.direction = Direction.BACKWARD;
+				scrollInfo.orientation = Orientation.HORIZONTAL;
+			} else if (vPos > scrollInfo.scrollTop) {
+				scrollInfo.direction = Direction.FORWARD;
+				scrollInfo.orientation = Orientation.VERTICAL;
+			} else if (vPos < scrollInfo.scrollTop) {
+				scrollInfo.direction = Direction.BACKWARD;
+				scrollInfo.orientation = Orientation.VERTICAL;
+			}
+
+			// Determine scroll positions
+			scrollInfo.scrollLeft = hPos;
+			scrollInfo.scrollTop = vPos;
+
+			// Determine scroll data
+			scrollInfo.container = scrollContainer;
+			scrollInfo.eventData = e;
+
+			// Execute scroll handler
+			handler(scrollInfo);
+		});
 		return self;
 	}
 
@@ -240,16 +293,8 @@ window.floatz.scroll = (function (floatz, $) {
 	 */
 	function init(container, config) {
 		floatz.log(floatz.LOGLEVEL.DEBUG, "Reading scroll sections", module.name);
-		container = container ? $(container) : $("body");
+		container = $(container);
 		var section;
-
-		// Add scroll handler
-		// TODO: Prevent adding the handler twice
-		// TODO: Window is different from "body" container - how to add scroll handler to other panels?
-
-//		scroll(window, function() {
-//			floatz.log(floatz.LOGLEVEL.DEBUG, "Scrolled ...", module.name);
-//		});
 
 		// Read scroll sections
 		sections = [];

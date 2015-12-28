@@ -14,11 +14,19 @@ $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 				modules: ["floatz.mobile",
 					      "floatz.scroll"],
 				onStarted: function () {
-					start();
+					handleStarted();
 				}
 			});
 		});
 	});
 
-function start() {
+function handleStarted() {
+
+	floatz.scroll.scroll(function(e) {
+		var msg = "Scroll position: " + e.scrollTop + "/" + e.scrollLeft +
+				", Direction: " + (e.direction === floatz.scroll.Direction.FORWARD ? "FORWARD" : e.direction === floatz.scroll.Direction.BACKWARD ? "BACKWARD" : "" ) +
+			    ", Orientation: " + ( e.orientation === floatz.scroll.Orientation.HORIZONTAL ? "HORIZONTAL" : "VERTICAL") +
+				", Container: " + (e.container.nodeName === undefined ? "Window" : e.container.nodeName );
+		console.log(msg);
+	});
 }
