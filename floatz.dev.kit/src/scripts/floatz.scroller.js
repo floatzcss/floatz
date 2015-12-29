@@ -13,7 +13,7 @@
  * @copyright     Copyright (c) 1998-2016 by :hummldesign
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2015-12-23
+ * @lastmodified  2015-12-29
  */
 
 // TODO Add full page support
@@ -70,6 +70,10 @@ window.floatz.scroller = (function (floatz, $) {
 	var SCROLLANCHOR = "flz_scrollAnchor";
 	var DEFAULTCONTAINER = "body";
 	var scrollInfo = {
+
+		/**
+		 * Fields
+		 */
 		container: null,
 		direction: Direction.FORWARD,
 		eventData: null,
@@ -77,7 +81,23 @@ window.floatz.scroller = (function (floatz, $) {
 		lastScrollTop: 0,
 		scrollLeft: 0,
 		scrollTop: 0,
-		orientation: Orientation.VERTICAL
+		orientation: Orientation.VERTICAL,
+
+		/**
+		 * Convenience functions
+		 */
+		isVertical: function () {
+			return this.orientation === Orientation.VERTICAL;
+		},
+		isHorizontal: function () {
+			return this.orientation === Orientation.HORIZONTAL;
+		},
+		isForward: function () {
+			return this.direction === Direction.FORWARD;
+		},
+		isBackward: function () {
+			return this.direction === Direction.BACKWARD;
+		}
 	};
 
 	////////////////////////////////////////////////////
@@ -137,7 +157,7 @@ window.floatz.scroller = (function (floatz, $) {
 		if ($.isFunction(container)) {
 			handler = container;
 			container = DEFAULTCONTAINER;
-		} else if(! $.isFunction(handler)) {
+		} else if (!$.isFunction(handler)) {
 			floatz.log(floatz.LOGLEVEL.ERROR, "Scroll handler is not set or not a function", module.name);
 		}
 
@@ -229,6 +249,17 @@ window.floatz.scroller = (function (floatz, $) {
 	 */
 	function scrollTo(container, sectionId, completeHandler) {
 
+		if(! container) {
+			if(sectionId) {
+				container = DEFAULTCONTAINER;
+			}
+		} else {
+			if(! sectionId) {
+				sectionId = container;
+				container = DEFAULTCONTAINER;
+			}
+		}
+
 		// TODO Use complete handler
 
 		var found = false;
@@ -249,7 +280,7 @@ window.floatz.scroller = (function (floatz, $) {
 			}
 		}
 		if (!found) {
-			floatz.log(floatz.LOGLEVEL.WARN, "Scroll section " + sectionId + " not found", module.name);
+			floatz.log(floatz.LOGLEVEL.WARN, "Scroll section '" + sectionId + "' not found", module.name);
 		}
 		return self;
 	}
@@ -266,8 +297,7 @@ window.floatz.scroller = (function (floatz, $) {
 	 * @returns Scroll context for chaining
 	 */
 	function scrollToTop(container, completeHandler) {
-		scrollTo(container, sections[0].id, completeHandler);
-		return self;
+		return scrollTo(container, sections[0].id, completeHandler);
 	}
 
 	/**
@@ -282,8 +312,7 @@ window.floatz.scroller = (function (floatz, $) {
 	 * @returns Scroll context for chaining
 	 */
 	function scrollToBottom(container, completeHandler) {
-		scrollTo(container, sections[sections.length - 1].id, completeHandler);
-		return self;
+		return scrollTo(container, sections[sections.length - 1].id, completeHandler);
 	}
 
 	/**

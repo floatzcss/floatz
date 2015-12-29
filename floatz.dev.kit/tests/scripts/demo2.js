@@ -12,7 +12,7 @@ $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 				debug: true,
 				logLevel: floatz.LOGLEVEL.DEBUG,
 				modules: ["floatz.mobile",
-					      "floatz.scroll"],
+					"floatz.scroll"],
 				onStarted: function () {
 					handleStarted();
 				}
@@ -22,13 +22,13 @@ $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 
 function handleStarted() {
 
-	floatz.scroller.scroll(function(e) {
+	floatz.scroller.scroll(function (e) {
 		var msg =
-			    "Scroll position: " + e.scrollTop + "/" + e.scrollLeft +
-			    ", Last scroll position: " + e.lastScrollTop + "/" + e.lastScrollLeft +
-				", Direction: " + (e.direction === floatz.scroller.Direction.FORWARD ? "FORWARD" : e.direction === floatz.scroller.Direction.BACKWARD ? "BACKWARD" : "" ) +
-			    ", Orientation: " + ( e.orientation === floatz.scroller.Orientation.HORIZONTAL ? "HORIZONTAL" : "VERTICAL") +
-				", Container: " + (e.container.nodeName === undefined ? "Window" : e.container.nodeName );
+			"Scroll position: " + e.scrollTop + "/" + e.scrollLeft +
+			", Last scroll position: " + e.lastScrollTop + "/" + e.lastScrollLeft +
+			", Direction: " + (e.isForward() ? "FORWARD" : "BACKWARD" ) +
+			", Orientation: " + ( e.isHorizontal() ? "HORIZONTAL" : "VERTICAL") +
+			", Container: " + (e.container.nodeName === undefined ? "Window" : e.container.nodeName );
 		console.log(msg);
 	});
 }
