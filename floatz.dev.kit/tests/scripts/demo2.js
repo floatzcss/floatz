@@ -2,7 +2,7 @@
 $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 	.script("../src/scripts/ua-parser-0.7.9.min.js").wait()
 	.script("../src/scripts/floatz.js").wait()
-	.script("../src/scripts/floatz.scroll.js")
+	.script("../src/scripts/floatz.scroller.js")
 	.script("../src/scripts/floatz.mobile.js")
 	.script("../src/scripts/floatz.skiplink.js")
 	.script("scripts/custom.js")
@@ -22,10 +22,12 @@ $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 
 function handleStarted() {
 
-	floatz.scroll.scroll(function(e) {
-		var msg = "Scroll position: " + e.scrollTop + "/" + e.scrollLeft +
-				", Direction: " + (e.direction === floatz.scroll.Direction.FORWARD ? "FORWARD" : e.direction === floatz.scroll.Direction.BACKWARD ? "BACKWARD" : "" ) +
-			    ", Orientation: " + ( e.orientation === floatz.scroll.Orientation.HORIZONTAL ? "HORIZONTAL" : "VERTICAL") +
+	floatz.scroller.scroll(function(e) {
+		var msg =
+			    "Scroll position: " + e.scrollTop + "/" + e.scrollLeft +
+			    ", Last scroll position: " + e.lastScrollTop + "/" + e.lastScrollLeft +
+				", Direction: " + (e.direction === floatz.scroller.Direction.FORWARD ? "FORWARD" : e.direction === floatz.scroller.Direction.BACKWARD ? "BACKWARD" : "" ) +
+			    ", Orientation: " + ( e.orientation === floatz.scroller.Orientation.HORIZONTAL ? "HORIZONTAL" : "VERTICAL") +
 				", Container: " + (e.container.nodeName === undefined ? "Window" : e.container.nodeName );
 		console.log(msg);
 	});

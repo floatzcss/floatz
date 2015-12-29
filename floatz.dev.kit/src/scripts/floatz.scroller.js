@@ -1,5 +1,5 @@
 /**
- * floatz.scroll.js
+ * floatz.scroller.js
  *
  * Module that adds scroll management support to the viewport as well as desired containers.
  *
@@ -22,7 +22,7 @@
 // TODO Add configuration support
 // FIXME Only read sections immediately below the container to avoid reading sections of other containers!
 
-window.floatz.scroll = (function (floatz, $) {
+window.floatz.scroller = (function (floatz, $) {
 	"use strict";
 
 	////////////////////////////////////////////////////
@@ -73,6 +73,8 @@ window.floatz.scroll = (function (floatz, $) {
 		container: null,
 		direction: Direction.FORWARD,
 		eventData: null,
+		lastScrollLeft: 0,
+		lastScrollTop: 0,
 		scrollLeft: 0,
 		scrollTop: 0,
 		orientation: Orientation.VERTICAL
@@ -132,9 +134,11 @@ window.floatz.scroll = (function (floatz, $) {
 	 */
 	function scroll(container, handler) {
 
-		if($.isFunction(container)) {
+		if ($.isFunction(container)) {
 			handler = container;
 			container = DEFAULTCONTAINER;
+		} else if(! $.isFunction(handler)) {
+			floatz.log(floatz.LOGLEVEL.ERROR, "Scroll handler is not set or not a function", module.name);
 		}
 
 		var scrollContainer = $(container);
@@ -162,6 +166,8 @@ window.floatz.scroll = (function (floatz, $) {
 			}
 
 			// Determine scroll positions
+			scrollInfo.lastScrollLeft = scrollInfo.scrollLeft;
+			scrollInfo.lastScrollTop = scrollInfo.scrollTop;
 			scrollInfo.scrollLeft = hPos;
 			scrollInfo.scrollTop = vPos;
 
