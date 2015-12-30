@@ -49,13 +49,13 @@ window.floatz.scroller = (function (floatz, $) {
 		},
 
 		config: config,
+		init: init,
 		scroll: scroll,
 		scrollIn: scrollIn,
 		scrollOut: scrollOut,
 		scrollTo: scrollTo,
 		scrollToTop: scrollToTop,
-		scrollToBottom: scrollToBottom,
-		init: init
+		scrollToBottom: scrollToBottom
 	};
 
 	////////////////////////////////////////////////////
@@ -69,6 +69,9 @@ window.floatz.scroller = (function (floatz, $) {
 	var HSCROLLABLE = "flz_hscrollable";
 	var SCROLLANCHOR = "flz_scrollAnchor";
 	var DEFAULTCONTAINER = "body";
+	var scrollInHandlers = [];
+	var scrollOutHandlers = [];
+
 	var scrollInfo = {
 
 		/**
@@ -77,11 +80,11 @@ window.floatz.scroller = (function (floatz, $) {
 		container: null,
 		direction: Direction.FORWARD,
 		eventData: null,
-		lastScrollLeft: 0,
-		lastScrollTop: 0,
 		scrollLeft: 0,
 		scrollTop: 0,
 		orientation: Orientation.VERTICAL,
+		sections: [],
+		visibleSections: [],
 
 		/**
 		 * Convenience functions
@@ -154,6 +157,9 @@ window.floatz.scroller = (function (floatz, $) {
 	 */
 	function scroll(container, handler) {
 
+		// TODO Find reusable approach for multi params without code duplication
+
+		// Normalize parameters
 		if ($.isFunction(container)) {
 			handler = container;
 			container = DEFAULTCONTAINER;
@@ -161,11 +167,13 @@ window.floatz.scroller = (function (floatz, $) {
 			floatz.log(floatz.LOGLEVEL.ERROR, "Scroll handler is not set or not a function", module.name);
 		}
 
+		// Determine scroll container
 		var scrollContainer = $(container);
 		if (scrollContainer.is(DEFAULTCONTAINER)) {
 			scrollContainer = $(window);
 		}
 
+		// Handle scroll event
 		$(scrollContainer).scroll(function (e) {
 			var hPos = scrollContainer.scrollLeft();
 			var vPos = scrollContainer.scrollTop();
@@ -185,20 +193,86 @@ window.floatz.scroller = (function (floatz, $) {
 				scrollInfo.orientation = Orientation.VERTICAL;
 			}
 
+			// Determine visible sections
+			var scrollTop = $(scrollContainer).scrollTop();
+			var scrollBottom = scrollTop + $(scrollContainer).outerHeight(true);
+			var scrollLeft = $(scrollContainer).scrollLeft();
+			var scrollRight = scrollLeft + $(scrollContainer).outerWidth(true);
+			var scrolledIn = [];
+			var scrolledOut = [];
+
+			for (var i = 0; i < sections.length; i++) {
+				if ((sections[i].orientation === Orientation.VERTICAL &&
+					((sections[i].offsetTop >= scrollTop && sections[i].offsetTop <= scrollBottom) ||
+					(sections[i].offsetBottom <= scrollBottom && sections[i].offsetBottom >= scrollTop)))
+					||
+					(sections[i].orientation === Orientation.HORIZONTAL &&
+					((sections[i].offsetLeft >= scrollLeft && sections[i].offsetLeft <= scrollRight) ||
+					(sections[i].offsetRight <= scrollRight && sections[i].offsetRight >= scrollLeft)))) {
+
+					if (!sections[i].visible) {
+						sections[i].visible = true;
+						scrollInfo.visibleSections.push(sections[i]);
+						scrolledIn.push(sections[i]);
+					}
+
+				} else {
+					if (sections[i].visible) {
+						sections[i].visible = false;
+						remove(scrollInfo.visibleSections, sections[i]);
+						scrolledOut.push(sections[i]);
+					}
+				}
+			}
+
 			// Determine scroll positions
-			scrollInfo.lastScrollLeft = scrollInfo.scrollLeft;
-			scrollInfo.lastScrollTop = scrollInfo.scrollTop;
 			scrollInfo.scrollLeft = hPos;
 			scrollInfo.scrollTop = vPos;
 
 			// Determine scroll data
 			scrollInfo.container = scrollContainer;
+			scrollInfo.sections = sections;
 			scrollInfo.eventData = e;
 
-			// Execute scroll handler
+			// Execute scroll handlers
 			handler(scrollInfo);
+			executeHandlers(scrollInHandlers, scrolledIn);
+			executeHandlers(scrollOutHandlers, scrolledOut);
 		});
 		return self;
+	}
+
+	/**
+	 * Execute scrolled in/out handlers for specific sections.
+	 *
+	 * @param handlers Handlers
+	 * @param sections Sections
+	 */
+	function executeHandlers(handlers, sections) {
+
+		// TODO Consider breakpoints (conditions) for executing scroll handlers (e.g. FORWARD, BACKWARD, PERCENTAGE OF VISIBILITY, ...)
+
+		for (var i = 0; i < handlers.length; i++) {
+			var section = $.grep(sections, function (e) {
+				return handlers[i].sectionId === e.id;
+			});
+
+			if (section.length > 0) {
+				handlers[i].handler(scrollInfo, section[0]);
+			}
+		}
+	}
+
+	/**
+	 * Remove an item from an array.
+	 * @param array Array
+	 * @param item ite
+	 */
+	function remove(array, item) {
+		var i = array.indexOf(item);
+		if (i > -1) {
+			array.splice(i, 1);
+		}
 	}
 
 	/**
@@ -206,15 +280,40 @@ window.floatz.scroller = (function (floatz, $) {
 	 *
 	 * Syntax:
 	 *
-	 *    scrollIn([<container>][[,]<section>,]<handler>)
+	 *    scrollIn([<container>,]<section>,<handler>)
 	 *
 	 * @param container Scroll container (optional)
-	 * @param section Section (optional)
+	 * @param sectionId Section Id
 	 * @param handler Scroll event handler
 	 * @returns Scroll context for chaining
 	 */
-	function scrollIn(container, section, handler) {
-		// TODO Implement
+	function scrollIn(container, sectionId, handler) {
+
+		// TODO Find reusable approach for multi params without code duplication
+
+		if ($.isFunction(sectionId)) {
+			handler = sectionId;
+			sectionId = null;
+		}
+
+		if (!container) {
+			if (sectionId) {
+				container = DEFAULTCONTAINER;
+			}
+		} else {
+			if (!sectionId) {
+				sectionId = container;
+				container = DEFAULTCONTAINER;
+			}
+		}
+
+		scrollInHandlers.push({
+			sectionId: sectionId,
+			handler: function(scrollInfo, section) {
+				floatz.log(floatz.LOGLEVEL.DEBUG, "Scrolled into section " + section.id, module.name);
+				handler(scrollInfo, section)
+			}
+		});
 		return self;
 	}
 
@@ -223,15 +322,39 @@ window.floatz.scroller = (function (floatz, $) {
 	 *
 	 * Syntax:
 	 *
-	 *    scrollOut([<container>][[,]<section>,]<handler>)
+	 *    scrollOut([<container>,]<section>,<handler>)
 	 *
 	 * @param container Scroll container (optional)
-	 * @param section Section (optional)
+	 * @param sectionId Section Id
 	 * @param handler Scroll event handler
 	 * @returns Scroll context for chaining
 	 */
-	function scrollOut(container, section, handler) {
-		// TODO Implement
+	function scrollOut(container, sectionId, handler) {
+
+		// TODO Find reusable approach for multi params without code duplication
+
+		if ($.isFunction(sectionId)) {
+			handler = sectionId;
+			sectionId = null;
+		}
+
+		if (!container) {
+			if (sectionId) {
+				container = DEFAULTCONTAINER;
+			}
+		} else {
+			if (!sectionId) {
+				sectionId = container;
+				container = DEFAULTCONTAINER;
+			}
+		}
+		scrollOutHandlers.push({
+			sectionId: sectionId,
+			handler: function(scrollInfo, section) {
+				floatz.log(floatz.LOGLEVEL.DEBUG, "Scrolled out of section " + section.id, module.name);
+				handler(scrollInfo, section)
+			}
+		});
 		return self;
 	}
 
@@ -249,12 +372,14 @@ window.floatz.scroller = (function (floatz, $) {
 	 */
 	function scrollTo(container, sectionId, completeHandler) {
 
-		if(! container) {
-			if(sectionId) {
+		// TODO Find reusable approach for multi params without code duplication
+
+		if (!container) {
+			if (sectionId) {
 				container = DEFAULTCONTAINER;
 			}
 		} else {
-			if(! sectionId) {
+			if (!sectionId) {
 				sectionId = container;
 				container = DEFAULTCONTAINER;
 			}
@@ -331,14 +456,19 @@ window.floatz.scroller = (function (floatz, $) {
 		container = $(container);
 		var section;
 
+		// TODO Determine initial visibility of sections
+
 		// Read scroll sections
 		sections = [];
 		$("." + SCROLLABLE + ", ." + HSCROLLABLE, container).each(function () {
 			section = {
 				id: "#" + $(this).attr("id"),
 				offsetTop: $(this).offset().top,
+				offsetBottom: $(this).offset().top + $(this).outerHeight(true),
 				offsetLeft: $(this).offset().left,
-				orientation: $(this).hasClass(SCROLLABLE) ? Orientation.VERTICAL : Orientation.HORIZONTAL
+				offsetRight: $(this).offset().left + $(this).outerWidth(true),
+				orientation: $(this).hasClass(SCROLLABLE) ? Orientation.VERTICAL : Orientation.HORIZONTAL,
+				visible: false
 			};
 			sections.push(section);
 			floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll section " + section.id + " with offset top " + section.offsetTop

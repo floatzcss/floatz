@@ -1,0 +1,90 @@
+	/**
+	 * Add scroll event handler.
+	 *
+	 * Syntax:
+	 *
+	 *    scroll([<container>,]<handler>)
+	 *
+	 * @param container Scroll container (optional)
+	 * @param handler Scroll event handler
+	 * @returns Scroll context for chaining
+	 */
+	function scroll(container, handler) {
+
+		// Normalize parameters
+		if ($.isFunction(container)) {
+			handler = container;
+			container = DEFAULTCONTAINER;
+		} else if (!$.isFunction(handler)) {
+			floatz.log(floatz.LOGLEVEL.ERROR, "Scroll handler is not set or not a function", module.name);
+		}
+
+		// Determine scroll container
+		var scrollContainer = $(container);
+		if (scrollContainer.is(DEFAULTCONTAINER)) {
+			scrollContainer = $(window);
+		}
+
+		// Handle scroll event
+		$(scrollContainer).scroll(function (e) {
+			var hPos = scrollContainer.scrollLeft();
+			var vPos = scrollContainer.scrollTop();
+
+			// Determine scroll direction
+			if (hPos > scrollInfo.scrollLeft) {
+				scrollInfo.direction = Direction.FORWARD;
+				scrollInfo.orientation = Orientation.HORIZONTAL;
+			} else if (hPos < scrollInfo.scrollLeft) {
+				scrollInfo.direction = Direction.BACKWARD;
+				scrollInfo.orientation = Orientation.HORIZONTAL;
+			} else if (vPos > scrollInfo.scrollTop) {
+				scrollInfo.direction = Direction.FORWARD;
+				scrollInfo.orientation = Orientation.VERTICAL;
+			} else if (vPos < scrollInfo.scrollTop) {
+				scrollInfo.direction = Direction.BACKWARD;
+				scrollInfo.orientation = Orientation.VERTICAL;
+			}
+
+			// Determine visible sections
+			var scrollTop = $(scrollContainer).scrollTop();
+			var scrollBottom = scrollTop + $(scrollContainer).outerHeight(true);
+			var scrollLeft = $(scrollContainer).scrollLeft();
+			var scrollRight = scrollLeft + $(scrollContainer).outerWidth(true);
+			for (var i = 0; i < sections.length; i++) {
+
+				if ((sections[i].orientation === Orientation.VERTICAL &&
+					(sections[i].offsetTop >= scrollTop && sections[i].offsetTop <= scrollBottom) ||
+					(sections[i].offsetBottom <= scrollBottom && sections[i].offsetBottom >= scrollTop))
+					||
+					(sections[i].orientation === Orientation.HORIZONTAL &&
+					(sections[i].offsetLeft >= scrollLeft && sections[i].offsetLeft <= scrollRight) ||
+					(sections[i].offsetRight <= scrollRight && sections[i].offsetRight >= scrollLeft))
+				) {
+
+					if (!sections[i].visible) {
+						scrollInfo.visibleSections.push(sections[i]);
+						sections[i].visible = true;
+					}
+
+				} else {
+					if (sections[i].visible) {
+						remove(scrollInfo.visibleSections, sections[i]);
+						sections[i].visible = false;
+					}
+				}
+			}
+
+			// Determine scroll positions
+			scrollInfo.scrollLeft = hPos;
+			scrollInfo.scrollTop = vPos;
+
+			// Determine scroll data
+			scrollInfo.container = scrollContainer;
+			scrollInfo.sections = sections;
+			scrollInfo.eventData = e;
+
+			// Execute scroll handlers
+			handler(scrollInfo);
+		});
+	return self;
+}
