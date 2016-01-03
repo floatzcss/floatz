@@ -12,7 +12,7 @@ $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 				debug: true,
 				logLevel: floatz.LOGLEVEL.DEBUG,
 				modules: ["floatz.mobile",
-					"floatz.scroll"],
+					"floatz.scroller"],
 				onStarted: function () {
 					handleStarted();
 				}
@@ -22,7 +22,7 @@ $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 
 function handleStarted() {
 
-	floatz.scroller
+	floatz.scroller.context
 		.scroll(handleScroll)
 		.scrollIn("#section1", handleScrollInSection)
 		.scrollOut("#section1", handleScrollOutSection)

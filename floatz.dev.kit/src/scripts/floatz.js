@@ -27,7 +27,7 @@ window.floatz = (function (floatz, $) {
 
 	var self = {
 
-		/* Enumerations */
+		/* Enumarations */
 		LOGLEVEL: {
 			ERROR: 0,
 			WARN: 1,
