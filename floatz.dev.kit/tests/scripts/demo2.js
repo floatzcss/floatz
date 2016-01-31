@@ -44,13 +44,13 @@ function handleScroll(scrollInfo) {
 		", Orientation: " + ( scrollInfo.isHorizontal() ? "HORIZONTAL" : "VERTICAL") +
 		", Container: " + (scrollInfo.container.nodeName === undefined ? "Window" : scrollInfo.container.nodeName );
 
-
 	msg += ", Visible sections: ";
 	for(var i=0; i < scrollInfo.visibleSections.length; i++) {
 		msg += scrollInfo.visibleSections[i].id;
+		msg += " (" + (scrollInfo.isVertical() ? scrollInfo.visibleSections[i].visibility.vertical : scrollInfo.visibleSections[i].visibility.horizontal) + ") ";
 	}
 
-	// console.log(msg);
+	console.log(msg);
 }
 
 function handleScrollInSection(scrollInfo, section) {

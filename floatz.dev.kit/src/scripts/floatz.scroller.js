@@ -13,7 +13,9 @@
  * @copyright     Copyright (c) 1998-2016 by :hummldesign
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2015-12-31
+ * @lastmodified  2016-01-31
+ *
+ * TODO Breakpoints in handlers
  */
 
 window.floatz.scroller = (function (container) {
@@ -90,17 +92,23 @@ window.floatz.scroller = (function (container) {
 			$("." + SCROLLABLE + ", ." + HSCROLLABLE, container).each(function () {
 				section = {
 					id: "#" + $(this).attr("id"),
-					offsetTop: $(this).offset().top,
-					offsetBottom: $(this).offset().top + $(this).outerHeight(true),
-					offsetLeft: $(this).offset().left,
-					offsetRight: $(this).offset().left + $(this).outerWidth(true),
+					height: $(this).outerHeight(true),
+					width: $(this).outerWidth(true),
+					top: $(this).offset().top,
+					bottom: $(this).offset().top + $(this).outerHeight(true),
+					left: $(this).offset().left,
+					right: $(this).offset().left + $(this).outerWidth(true),
 					orientation: $(this).hasClass(SCROLLABLE) ? Orientation.VERTICAL : Orientation.HORIZONTAL,
-					visible: false
+					visibility: {
+						vertical: 0,
+						horizontal: 0
+					},
+					visible: false,
+					element: this
 				};
 				sections.push(section);
-				floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll section " + section.id + " with offset top " + section.offsetTop
-					+ " left " + section.offsetLeft + " found", module.name);
-
+				floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll section " + section.id + " with offset top " + section.top
+					+ " left " + section.left + " found", module.name);
 			});
 
 			// Read scroll anchors
@@ -134,41 +142,34 @@ window.floatz.scroller = (function (container) {
 
 			// Handle scroll event
 			$(viewport).scroll(function (e) {
-				var hPos = viewport.scrollLeft();
-				var vPos = viewport.scrollTop();
+				var height = $(viewport).outerHeight(true);
+				var width = $(viewport).outerWidth(true);
+				var top = $(viewport).scrollTop();
+				var bottom = top + height;
+				var left = $(viewport).scrollLeft();
+				var right = left + width;
+				var scrolledIn = [];
+				var scrolledOut = [];
 
 				// Determine scroll direction
-				if (hPos > scrollInfo.scrollLeft) {
+				if (left > scrollInfo.scrollLeft) {
 					scrollInfo.direction = Direction.FORWARD;
 					scrollInfo.orientation = Orientation.HORIZONTAL;
-				} else if (hPos < scrollInfo.scrollLeft) {
+				} else if (left < scrollInfo.scrollLeft) {
 					scrollInfo.direction = Direction.BACKWARD;
 					scrollInfo.orientation = Orientation.HORIZONTAL;
-				} else if (vPos > scrollInfo.scrollTop) {
+				} else if (top > scrollInfo.scrollTop) {
 					scrollInfo.direction = Direction.FORWARD;
 					scrollInfo.orientation = Orientation.VERTICAL;
-				} else if (vPos < scrollInfo.scrollTop) {
+				} else if (top < scrollInfo.scrollTop) {
 					scrollInfo.direction = Direction.BACKWARD;
 					scrollInfo.orientation = Orientation.VERTICAL;
 				}
 
-				// Determine visible sections
-				var scrollTop = $(viewport).scrollTop();
-				var scrollBottom = scrollTop + $(viewport).outerHeight(true);
-				var scrollLeft = $(viewport).scrollLeft();
-				var scrollRight = scrollLeft + $(viewport).outerWidth(true);
-				var scrolledIn = [];
-				var scrolledOut = [];
-
 				for (var i = 0; i < sections.length; i++) {
-					if ((sections[i].orientation === Orientation.VERTICAL &&
-						((sections[i].offsetTop >= scrollTop && sections[i].offsetTop <= scrollBottom) ||
-						(sections[i].offsetBottom <= scrollBottom && sections[i].offsetBottom >= scrollTop)))
-						||
-						(sections[i].orientation === Orientation.HORIZONTAL &&
-						((sections[i].offsetLeft >= scrollLeft && sections[i].offsetLeft <= scrollRight) ||
-						(sections[i].offsetRight <= scrollRight && sections[i].offsetRight >= scrollLeft)))) {
-
+					// Determine visible sections
+					if (sections[i].orientation === Orientation.VERTICAL && isVisible(sections[i].top, sections[i].bottom, top, bottom) ||
+						sections[i].orientation === Orientation.HORIZONTAL && isVisible(sections[i].left, sections[i].right, left, right)) {
 						if (!sections[i].visible) {
 							sections[i].visible = true;
 							scrollInfo.visibleSections.push(sections[i]);
@@ -182,11 +183,42 @@ window.floatz.scroller = (function (container) {
 							scrolledOut.push(sections[i]);
 						}
 					}
+
+					// Determine section visibility in percentage
+					if (sections[i].orientation === Orientation.VERTICAL) {
+						// Clipped
+						if (sections[i].top < top && sections[i].bottom > bottom) {
+							sections[i].visibility.vertical = Math.round((sections[i].height - (sections[i].height - height)) * 100 / sections[i].height);
+							// Above
+						} else if (sections[i].top < top) {
+							sections[i].visibility.vertical = Math.round((sections[i].bottom - top) * 100 / sections[i].height);
+							// Below
+						} else if (sections[i].bottom > bottom) {
+							sections[i].visibility.vertical = Math.round((bottom - sections[i].top) * 100 / sections[i].height);
+							// Between
+						} else {
+							sections[i].visibility.vertical = 100;
+						}
+					} else {
+						// Clipped
+						if (sections[i].left < left && sections[i].right > right) {
+							sections[i].visibility.horizontal = Math.round((sections[i].width - (sections[i].width - width)) * 100 / sections[i].width);
+							// Above
+						} else if (sections[i].left < left) {
+							sections[i].visibility.horizontal = Math.round((sections[i].right - left) * 100 / sections[i].width);
+							// Below
+						} else if (sections[i].right > right) {
+							sections[i].visibility.horizontal = Math.round((right - sections[i].left) * 100 / sections[i].width);
+							// Between
+						} else {
+							sections[i].visibility.horizontal = 100;
+						}
+					}
 				}
 
 				// Determine scroll positions
-				scrollInfo.scrollLeft = hPos;
-				scrollInfo.scrollTop = vPos;
+				scrollInfo.scrollLeft = left;
+				scrollInfo.scrollTop = top;
 
 				// Determine scroll data
 				scrollInfo.viewport = viewport;
@@ -200,6 +232,21 @@ window.floatz.scroller = (function (container) {
 				executeHandlers(scrollOutHandlers, scrolledOut);
 			});
 			return this;
+		}
+
+		/**
+		 * Check if section is visible within viewport
+		 *
+		 * @param offsetTop Top or left offset position
+		 * @param offsetBottom Bottom or right offset position
+		 * @param scrollTop Top or left scroll position
+		 * @param scrollBottom Bottom or right scroll position
+		 * @returns {boolean} true if visible, false if not
+		 */
+		function isVisible(offsetTop, offsetBottom, scrollTop, scrollBottom) {
+			return (offsetTop >= scrollTop && offsetTop <= scrollBottom) ||
+				(offsetBottom <= scrollBottom && offsetBottom >= scrollTop) ||
+				(offsetTop <= scrollTop && offsetBottom >= scrollBottom);
 		}
 
 		/**
@@ -244,7 +291,7 @@ window.floatz.scroller = (function (container) {
 
 			scrollOutHandlers.push({
 				sectionId: sectionId,
-				handler: function(scrollInfo, section) {
+				handler: function (scrollInfo, section) {
 					floatz.log(floatz.LOGLEVEL.DEBUG, "Scrolled out of section " + section.id, module.name);
 					handler(scrollInfo, section)
 				}
@@ -276,12 +323,12 @@ window.floatz.scroller = (function (container) {
 					found = true;
 					if (sections[i].orientation === Orientation.VERTICAL) {
 						$(container).animate({
-							scrollTop: sections[i].offsetTop
+							scrollTop: sections[i].top
 						}, 'slow');
 
 					} else {
 						$(container).animate({
-							scrollLeft: sections[i].offsetLeft
+							scrollLeft: sections[i].left
 						}, 'slow');
 					}
 					break;
