@@ -53,8 +53,8 @@ sup {
 }
 
 /**
- * Corrects meyer reset for accessibility & usability reasons. Each navigable jQuery
- * should show if it has the keyboard focus. Each navigable jQuery should be highlighted
+ * Corrects meyer reset for accessibility & usability reasons. Each navigable element
+ * should show if it has the keyboard focus. Each navigable element should be highlighted
  * if it gets keyboard focus.
  */
 a:focus img, a:focus {

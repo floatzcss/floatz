@@ -91,7 +91,7 @@ fieldset {
 
 /**
  * @workaround Wrong padding behaviour of fieldset in IE. (hack works only with one 
- * setting per jQuery)
+ * setting per element)
  * @affected IE 8
  */
 fieldset {
@@ -130,7 +130,7 @@ fieldset {
 
 /**
  * @workaround Wrong padding behaviour of fieldset in IE (hack works only with one 
- * setting per jQuery)
+ * setting per element)
  * @affected IE 8
  */
 legend {
