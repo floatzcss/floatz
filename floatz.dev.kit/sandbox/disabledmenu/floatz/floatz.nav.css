@@ -24,7 +24,7 @@
  * @section       Skiplink navigation
  *
  * Skip navigation style for accessibility improvments. Skip navigation hyperlinks must be
- * used within a DIV element. The skip navigation items will only be visible for users of
+ * used within a DIV jQuery. The skip navigation items will only be visible for users of
  * screen readers or if the skip links get keyboard focus.
  */
 
@@ -69,7 +69,7 @@ a:focus.flz_skiplink {
  * ---------------------------------------------------------------------------------------
  * @section       Simple list navigation
  *
- * Simple list navigation element, thats the base for the derived top, breadcrumb and 
+ * Simple list navigation jQuery, thats the base for the derived top, breadcrumb and
  * toolbar navigation elements (see next section). Simple list navigation and derived 
  * elements do not need an extra surrounding DIV tag, thus can be used directly with UL. 
  */
@@ -163,7 +163,7 @@ a:focus.flz_skiplink {
  * ---------------------------------------------------------------------------------------
  * @section       Horizontal menu navigation
  *
- * Horizontal menu navigation element. Needs a surrounding DIV tag that uses hmenu.
+ * Horizontal menu navigation jQuery. Needs a surrounding DIV tag that uses hmenu.
  */
 
 /* Setting defaults for surrounding DIV tag */
@@ -215,7 +215,7 @@ a:focus.flz_skiplink {
  * ---------------------------------------------------------------------------------------
  * @section       Vertical menu navigation
  *
- * Vertical menu navigation element that supports 5 menu levels (including the 1st). Needs 
+ * Vertical menu navigation jQuery that supports 5 menu levels (including the 1st). Needs
  * a surrounding DIV tag that uses vmenu.
  */
 
@@ -277,7 +277,7 @@ a:focus.flz_skiplink {
  * ---------------------------------------------------------------------------------------
  * @section       Horizontal Tabbed Menu
  *
- * Horizontal tab menu navigation element. Needs a surrounding DIV tag using flz_htabmenu.
+ * Horizontal tab menu navigation jQuery. Needs a surrounding DIV tag using flz_htabmenu.
  */
 
 /* Menu container (background image acts as horizontal separator line) */
@@ -294,7 +294,7 @@ a:focus.flz_skiplink {
    padding: 0;
 }
 
-/* Menu item (list element as closing part of the sliding door) */
+/* Menu item (list jQuery as closing part of the sliding door) */
 .flz_htabmenu li,
 .flz_htabmenu_bottom li {
    float: left;
@@ -309,7 +309,7 @@ a:focus.flz_skiplink {
    background: url(images/htabmenu_bottom_inactive.gif) no-repeat left bottom;
 }
 
-/* Menu item (hyperlink element as opening part of sliding door)*/
+/* Menu item (hyperlink jQuery as opening part of sliding door)*/
 .flz_htabmenu a,
 .flz_htabmenu_bottom a{
    display: block;
@@ -334,7 +334,7 @@ a:focus.flz_skiplink {
    color: inherit;
 }
 
-/* Hovered menu item (hyperlink element as opening part of the sliding doors) */
+/* Hovered menu item (hyperlink jQuery as opening part of the sliding doors) */
 .flz_htabmenu a:hover,
 .flz_htabmenu li:hover a {
    background: url(images/htabmenu.gif) no-repeat right -100px;
@@ -366,7 +366,7 @@ a:focus.flz_skiplink {
    text-decoration: underline;
 }
 
-/* Hovered menu item (list element as closing part of the sliding doors) */
+/* Hovered menu item (list jQuery as closing part of the sliding doors) */
 .flz_htabmenu li:hover {
    background: url(images/htabmenu.gif) no-repeat left -100px;
 }
@@ -374,7 +374,7 @@ a:focus.flz_skiplink {
    background: url(images/htabmenu_bottom_hover.gif) no-repeat left bottom;
 }
 
-/* Selected menu item (list element as closing part of the sliding door) */
+/* Selected menu item (list jQuery as closing part of the sliding door) */
 .flz_htabmenu li.flz_selected {
    background: url(images/htabmenu.gif) no-repeat left -200px;
 }
@@ -382,7 +382,7 @@ a:focus.flz_skiplink {
    background: url(images/htabmenu_bottom_active.gif) no-repeat left bottom;
 }
 
-/* Selected menu item (hyperlink element as opening part of sliding door)*/
+/* Selected menu item (hyperlink jQuery as opening part of sliding door)*/
 .flz_htabmenu li.flz_selected a {
    background: url(images/htabmenu.gif) no-repeat right -200px;
    color: inherit;
@@ -400,7 +400,7 @@ a:focus.flz_skiplink {
    color: #aaa;
 }
 
-/* Focused or hovered selected menu item (hyperlink element as opening part of the sliding doors) */
+/* Focused or hovered selected menu item (hyperlink jQuery as opening part of the sliding doors) */
 .flz_htabmenu li.flz_selected a:hover,
 .flz_htabmenu li:hover.flz_selected a {
    background: url(images/htabmenu.gif) no-repeat right -100px;
@@ -425,7 +425,7 @@ a:focus.flz_skiplink {
    text-decoration: underline;
 }
 
-/* Focused or hovered selected menu item (list element as closing part of the sliding doors) */
+/* Focused or hovered selected menu item (list jQuery as closing part of the sliding doors) */
 .flz_htabmenu li:hover.flz_selected {
    background: url(images/htabmenu.gif) no-repeat left -100px;
 }

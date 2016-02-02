@@ -15,7 +15,20 @@
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
  * @lastmodified  2016-01-31
  *
- * TODO Breakpoints in handlers
+ * FIXME scrollIn/Out not executed if no scroll event is attached
+ * FIXME scroll handlers are not executed when section is activated immediately on page load
+ *
+ * TODO Test multiple handlers could be attached => grep
+ * TODO Breakpoints based on CSS classes (based on default percentage)
+ * TODO Complete handler for scroll easing
+ * TODO Support for custom easings
+ * TODO Update menus (flz_hmenu, flz_vmenu, flz_breadcrumb, flz_topnav) - or just the anchor that forced the click event
+ * TODO Support scroll without scrollbar (slideshow)
+ * TODO Show sections in browser address bar (only real sections that are also in menu?!)
+ * TODO Support full screen
+ *
+ * TODO Test other panels that are not sections
+ * TODO Test percentage based animation
  */
 
 window.floatz.scroller = (function (container) {
@@ -104,7 +117,7 @@ window.floatz.scroller = (function (container) {
 						horizontal: 0
 					},
 					visible: false,
-					element: this
+					jQuery: this
 				};
 				sections.push(section);
 				floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll section " + section.id + " with offset top " + section.top
@@ -139,7 +152,6 @@ window.floatz.scroller = (function (container) {
 		 */
 		function scroll(handler) {
 
-
 			// Handle scroll event
 			$(viewport).scroll(function (e) {
 				var height = $(viewport).outerHeight(true);
@@ -150,6 +162,16 @@ window.floatz.scroller = (function (container) {
 				var right = left + width;
 				var scrolledIn = [];
 				var scrolledOut = [];
+
+				// Determine scroll positions
+				scrollInfo.scrollLeft = left;
+				scrollInfo.scrollTop = top;
+
+				// Determine scroll data
+				scrollInfo.viewport = viewport;
+				scrollInfo.container = container;
+				scrollInfo.sections = sections;
+				scrollInfo.eventData = e;
 
 				// Determine scroll direction
 				if (left > scrollInfo.scrollLeft) {
@@ -167,22 +189,6 @@ window.floatz.scroller = (function (container) {
 				}
 
 				for (var i = 0; i < sections.length; i++) {
-					// Determine visible sections
-					if (sections[i].orientation === Orientation.VERTICAL && isVisible(sections[i].top, sections[i].bottom, top, bottom) ||
-						sections[i].orientation === Orientation.HORIZONTAL && isVisible(sections[i].left, sections[i].right, left, right)) {
-						if (!sections[i].visible) {
-							sections[i].visible = true;
-							scrollInfo.visibleSections.push(sections[i]);
-							scrolledIn.push(sections[i]);
-						}
-
-					} else {
-						if (sections[i].visible) {
-							sections[i].visible = false;
-							remove(scrollInfo.visibleSections, sections[i]);
-							scrolledOut.push(sections[i]);
-						}
-					}
 
 					// Determine section visibility in percentage
 					if (sections[i].orientation === Orientation.VERTICAL) {
@@ -214,17 +220,34 @@ window.floatz.scroller = (function (container) {
 							sections[i].visibility.horizontal = 100;
 						}
 					}
+
+					// Determine visible sections
+					if (sections[i].orientation === Orientation.VERTICAL && isVisible(sections[i].top, sections[i].bottom, top, bottom) ||
+						sections[i].orientation === Orientation.HORIZONTAL && isVisible(sections[i].left, sections[i].right, left, right)) {
+						if (!sections[i].visible) {
+							sections[i].visible = true;
+							scrollInfo.visibleSections.push(sections[i]);
+						}
+
+						// Run breakpoints to prevent execution of scrollIn handlers until breakpoints are met
+						$.grep(scrollInHandlers, function (e) {
+							if (e.sectionId === sections[i].id) {
+								if (e.breakpoint) {
+									if (e.breakpoint(scrollInfo, sections[i])) {
+										scrolledIn.push(sections[i]);
+									}
+								}
+							}
+						});
+
+					} else {
+						if (sections[i].visible) {
+							sections[i].visible = false;
+							remove(scrollInfo.visibleSections, sections[i]);
+							scrolledOut.push(sections[i]);
+						}
+					}
 				}
-
-				// Determine scroll positions
-				scrollInfo.scrollLeft = left;
-				scrollInfo.scrollTop = top;
-
-				// Determine scroll data
-				scrollInfo.viewport = viewport;
-				scrollInfo.container = container;
-				scrollInfo.sections = sections;
-				scrollInfo.eventData = e;
 
 				// Execute scroll handlers
 				handler(scrollInfo);
@@ -254,18 +277,19 @@ window.floatz.scroller = (function (container) {
 		 *
 		 * Syntax:
 		 *
-		 *    scrollIn(<section>,<handler>)
+		 *    scrollIn(<section>,<handler>[,<breakpoint>])
 		 *
 		 * @param section Section or section ID
 		 * @param handler Scroll event handler
+		 * @param breakpoint Breakpoint callback
 		 * @returns Scroll context
 		 */
-		function scrollIn(section, handler) {
+		function scrollIn(section, handler, breakpoint) {
 			section = $(section);
 			var sectionId = "#" + section.attr("id");
-
 			scrollInHandlers.push({
 				sectionId: sectionId,
+				breakpoint: breakpoint,
 				handler: function (scrollInfo, section) {
 					floatz.log(floatz.LOGLEVEL.DEBUG, "Scrolled into section " + section.id, module.name);
 					handler(scrollInfo, section)
@@ -324,12 +348,12 @@ window.floatz.scroller = (function (container) {
 					if (sections[i].orientation === Orientation.VERTICAL) {
 						$(container).animate({
 							scrollTop: sections[i].top
-						}, 'slow');
+						}, 'slow', 'swing');
 
 					} else {
 						$(container).animate({
 							scrollLeft: sections[i].left
-						}, 'slow');
+						}, 'slow', 'swing');
 					}
 					break;
 				}
@@ -375,9 +399,6 @@ window.floatz.scroller = (function (container) {
 		 * @param sections Sections
 		 */
 		function executeHandlers(handlers, sections) {
-
-			// TODO Consider breakpoints (conditions) for executing scroll handlers (e.g. FORWARD, BACKWARD, PERCENTAGE OF VISIBILITY, ...)
-
 			for (var i = 0; i < handlers.length; i++) {
 				var section = $.grep(sections, function (e) {
 					return handlers[i].sectionId === e.id;
