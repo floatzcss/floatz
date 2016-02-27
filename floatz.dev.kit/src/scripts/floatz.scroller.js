@@ -19,7 +19,7 @@
  * FIXME scroll handlers are not executed when section is activated immediately on page load
  *
  * TODO Test multiple handlers could be attached => grep
- * TODO Breakpoints based on CSS classes (based on default percentage)
+ * TODO Breakpoints based on CSS classes (based on default percentage) => animate css, lazy loading for images
  * TODO Complete handler for scroll easing
  * TODO Support for custom easings
  * TODO Update menus (flz_hmenu, flz_vmenu, flz_breadcrumb, flz_topnav) - or just the anchor that forced the click event
@@ -47,7 +47,7 @@ window.floatz.scroller = (function (container) {
 
 		var SCROLLABLE = "flz_scrollable";
 		var HSCROLLABLE = "flz_hscrollable";
-		var SCROLLANCHOR = "flz_scrollAnchor";
+		var SCROLLANCHOR = "flz_scrollanchor";
 		var DEFAULTCONTAINER = "body";
 
 		////////////////////////////////////////////////////
@@ -86,31 +86,77 @@ window.floatz.scroller = (function (container) {
 			}
 		};
 
+		var config = {
+			offsetCorrection: {
+				auto: true,
+				horizontal: 0,
+				vertical: 0
+			}
+		};
+
 		////////////////////////////////////////////////////
 		// Private functions
 
 		/**
 		 * Initialize the scroll context.
 		 *
+		 * Syntax:
+		 *
+		 *    init([<config>])
+		 *
+		 * @params config Scroller configuration
 		 * @returns Scroll context
 		 */
-		function init() {
-			floatz.log(floatz.LOGLEVEL.DEBUG, "Reading scroll sections of '" + container[0].tagName + "'", module.name);
-			var section;
+		function init(_config) {
 
-			// TODO Determine initial visibility of sections
+			// Read configuration
+			$.extend(config, _config);
 
 			// Read scroll sections
+			readScrollSections();
+
+			// Read scroll anchors
+			readScrollAnchors();
+
+			// Re-read scroll section on viewport resize
+			$(viewport).resize(function () {
+				readScrollSections();
+			});
+
+			return this;
+		}
+
+		/**
+		 * Read scroll sections.
+		 */
+		function readScrollSections() {
+			var section, header;
+			var correction = {
+				horizontal: 0,
+				vertical: 0
+			};
+
+			floatz.log(floatz.LOGLEVEL.DEBUG, "Reading scroll sections of '" + container[0].tagName + "'", module.name);
+
+			// Determine horizontal offset correction based on fixed header if it is not set from outside
+			if (config.offsetCorrection.auto === true) {
+				header = $(container).find("header, #header, .header");
+				if (header.length > 0 && $(header[0]).css("position").toLowerCase() === "fixed") {
+					config.offsetCorrection.horizontal = $(header[0]).outerHeight(true) * -1;
+				}
+			}
+
 			sections = [];
 			$("." + SCROLLABLE + ", ." + HSCROLLABLE, container).each(function () {
+				// Math.round removes decimals caused by offset.top / offset.left
 				section = {
 					id: "#" + $(this).attr("id"),
 					height: $(this).outerHeight(true),
 					width: $(this).outerWidth(true),
-					top: $(this).offset().top,
-					bottom: $(this).offset().top + $(this).outerHeight(true),
-					left: $(this).offset().left,
-					right: $(this).offset().left + $(this).outerWidth(true),
+					top: Math.round($(this).offset().top + config.offsetCorrection.horizontal),
+					bottom: Math.round($(this).offset().top + config.offsetCorrection.horizontal + $(this).outerHeight(true)),
+					left: Math.round($(this).offset().left + config.offsetCorrection.vertical),
+					right: Math.round($(this).offset().left + config.offsetCorrection.vertical + $(this).outerWidth(true)),
 					orientation: $(this).hasClass(SCROLLABLE) ? Orientation.VERTICAL : Orientation.HORIZONTAL,
 					visibility: {
 						vertical: 0,
@@ -123,21 +169,36 @@ window.floatz.scroller = (function (container) {
 				floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll section " + section.id + " with offset top " + section.top
 					+ " left " + section.left + " found", module.name);
 			});
+		}
 
-			// Read scroll anchors
+		/**
+		 * Read scroll anchors.
+		 */
+		function readScrollAnchors() {
 			floatz.log(floatz.LOGLEVEL.DEBUG, "Preparing scroll anchors", module.name);
 			$("." + SCROLLANCHOR, container).each(function () {
-
-				// Navigate to scroll section when anchor is clicked
 				$(this).click(function (e) {
-					scrollTo($(this).attr("href"));
+					// Navigate to scroll section when anchor is clicked
+					scrollTo($(this).attr("href"), function (scrollInfo, section, e) {
+						selectScrollAnchor(e.target);
+					}, e);
 					e.preventDefault();
 				});
 				floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll anchor for section " + $(this).attr("href") + " found",
 					module.name);
 			});
+		}
 
-			return this;
+		/**
+		 * Set selected state for given anchor.
+		 * Removes selected state from previous anchor.
+		 *
+		 * @param anchor Anchor
+		 */
+		function selectScrollAnchor(anchor) {
+			var ul = $(anchor).parent().parent();
+			ul.find(".flz_selected").removeClass("flz_selected");
+			$(anchor).parent().addClass("flz_selected");
 		}
 
 		/**
@@ -329,13 +390,14 @@ window.floatz.scroller = (function (container) {
 		 *
 		 * Syntax:
 		 *
-		 *    scrollTo(<section>|<sectionId>[,<completeHandler>])
+		 *    scrollTo(<section>|<sectionId>[,<completeHandler>][,<eventParam>])
 		 *
 		 * @param section Section or section ID
 		 * @param completeHandler Complete handler function
+		 * @param data Custom event data that is passed through
 		 * @returns Scroll context
 		 */
-		function scrollTo(section, completeHandler) {
+		function scrollTo(section, completeHandler, data) {
 			section = $(section);
 			var sectionId = "#" + section.attr("id");
 
@@ -348,12 +410,12 @@ window.floatz.scroller = (function (container) {
 					if (sections[i].orientation === Orientation.VERTICAL) {
 						$(container).animate({
 							scrollTop: sections[i].top
-						}, 'slow', 'swing');
+						}, 'slow', 'swing', completeHandler(scrollInfo, sections[i], data));
 
 					} else {
 						$(container).animate({
 							scrollLeft: sections[i].left
-						}, 'slow', 'swing');
+						}, 'slow', 'swing', completeHandler(scrollInfo, sections[i], data));
 					}
 					break;
 				}
