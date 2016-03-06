@@ -22,7 +22,6 @@
  * TODO Breakpoints based on CSS classes (based on default percentage) => animate css, lazy loading for images
  * TODO Complete handler for scroll easing
  * TODO Support for custom easings
- * TODO Update menus (flz_hmenu, flz_vmenu, flz_breadcrumb, flz_topnav) - or just the anchor that forced the click event
  * TODO Support scroll without scrollbar (slideshow)
  * TODO Show sections in browser address bar (only real sections that are also in menu?!)
  * TODO Support full screen
@@ -53,8 +52,8 @@ window.floatz.scroller = (function (container) {
 		////////////////////////////////////////////////////
 		// Private variables
 
-		var viewport = $(_container);
-		var container = $.isWindow(viewport[0]) ? $(DEFAULTCONTAINER) : $(viewport);
+		var viewport = $(_container); // TODO Move to scrollInfo
+		var container = $.isWindow(viewport[0]) ? $(DEFAULTCONTAINER) : $(viewport); // TODO Move to scrollInfo
 		var sections = [];
 		var scrollInHandlers = [];
 		var scrollOutHandlers = [];
@@ -70,6 +69,7 @@ window.floatz.scroller = (function (container) {
 			orientation: Orientation.VERTICAL,
 			sections: [],
 			visibleSections: [],
+			menuSelection: false,
 
 			/* Convenience functions */
 			isVertical: function () {
@@ -138,11 +138,11 @@ window.floatz.scroller = (function (container) {
 
 			floatz.log(floatz.LOGLEVEL.DEBUG, "Reading scroll sections of '" + container[0].tagName + "'", module.name);
 
-			// Determine horizontal offset correction based on fixed header if it is not set from outside
+			// Determine vertical offset correction based on fixed header if it is not set from outside
 			if (config.offsetCorrection.auto === true) {
 				header = $(container).find("header, #header, .header");
 				if (header.length > 0 && $(header[0]).css("position").toLowerCase() === "fixed") {
-					config.offsetCorrection.horizontal = $(header[0]).outerHeight(true) * -1;
+					config.offsetCorrection.vertical = $(header[0]).outerHeight(true) * -1;
 				}
 			}
 
@@ -153,10 +153,10 @@ window.floatz.scroller = (function (container) {
 					id: "#" + $(this).attr("id"),
 					height: $(this).outerHeight(true),
 					width: $(this).outerWidth(true),
-					top: Math.round($(this).offset().top + config.offsetCorrection.horizontal),
-					bottom: Math.round($(this).offset().top + config.offsetCorrection.horizontal + $(this).outerHeight(true)),
-					left: Math.round($(this).offset().left + config.offsetCorrection.vertical),
-					right: Math.round($(this).offset().left + config.offsetCorrection.vertical + $(this).outerWidth(true)),
+					top: Math.round($(this).offset().top) + config.offsetCorrection.vertical,
+					bottom: Math.round($(this).offset().top + config.offsetCorrection.vertical + $(this).outerHeight(true)),
+					left: Math.round($(this).offset().left) + config.offsetCorrection.horizontal,
+					right: Math.round($(this).offset().left + config.offsetCorrection.horizontal + $(this).outerWidth(true)),
 					orientation: $(this).hasClass(SCROLLABLE) ? Orientation.VERTICAL : Orientation.HORIZONTAL,
 					visibility: {
 						vertical: 0,
@@ -179,8 +179,10 @@ window.floatz.scroller = (function (container) {
 			$("." + SCROLLANCHOR, container).each(function () {
 				$(this).click(function (e) {
 					// Navigate to scroll section when anchor is clicked
+					scrollInfo.menuSelection = true;
 					scrollTo($(this).attr("href"), function (scrollInfo, section, e) {
 						selectScrollAnchor(e.target);
+						scrollInfo.menuSelection = false;
 					}, e);
 					e.preventDefault();
 				});
@@ -215,26 +217,16 @@ window.floatz.scroller = (function (container) {
 
 			// Handle scroll event
 			$(viewport).scroll(function (e) {
-				var height = $(viewport).outerHeight(true);
-				var width = $(viewport).outerWidth(true);
-				var top = $(viewport).scrollTop();
-				var bottom = top + height;
-				var left = $(viewport).scrollLeft();
-				var right = left + width;
+				var height = $(viewport).outerHeight(true); // TODO Move to scrollInfo
+				var width = $(viewport).outerWidth(true); // TODO Move to scrollInfo
+				var top = $(viewport).scrollTop(); // TODO Move to scrollInfo
+				var bottom = top + config.offsetCorrection.vertical + height;  // TODO Move to scrollInfo
+				var left = $(viewport).scrollLeft();  // TODO Move to scrollInfo
+				var right = left + config.offsetCorrection.horizontal + width;  // TODO Move to scrollInfo
 				var scrolledIn = [];
 				var scrolledOut = [];
 
-				// Determine scroll positions
-				scrollInfo.scrollLeft = left;
-				scrollInfo.scrollTop = top;
-
-				// Determine scroll data
-				scrollInfo.viewport = viewport;
-				scrollInfo.container = container;
-				scrollInfo.sections = sections;
-				scrollInfo.eventData = e;
-
-				// Determine scroll direction
+				// Determine scroll direction (before setting new scroll positions!)
 				if (left > scrollInfo.scrollLeft) {
 					scrollInfo.direction = Direction.FORWARD;
 					scrollInfo.orientation = Orientation.HORIZONTAL;
@@ -248,6 +240,16 @@ window.floatz.scroller = (function (container) {
 					scrollInfo.direction = Direction.BACKWARD;
 					scrollInfo.orientation = Orientation.VERTICAL;
 				}
+
+				// Determine scroll positions
+				scrollInfo.scrollLeft = left;
+				scrollInfo.scrollTop = top;
+
+				// Determine scroll data
+				scrollInfo.viewport = viewport;
+				scrollInfo.container = container;
+				scrollInfo.sections = sections;
+				scrollInfo.eventData = e;
 
 				for (var i = 0; i < sections.length; i++) {
 
@@ -285,21 +287,33 @@ window.floatz.scroller = (function (container) {
 					// Determine visible sections
 					if (sections[i].orientation === Orientation.VERTICAL && isVisible(sections[i].top, sections[i].bottom, top, bottom) ||
 						sections[i].orientation === Orientation.HORIZONTAL && isVisible(sections[i].left, sections[i].right, left, right)) {
+
+						// Remember visible sections
 						if (!sections[i].visible) {
-							sections[i].visible = true;
 							scrollInfo.visibleSections.push(sections[i]);
 						}
 
 						// Run breakpoints to prevent execution of scrollIn handlers until breakpoints are met
 						$.grep(scrollInHandlers, function (e) {
-							if (e.sectionId === sections[i].id) {
+
+							// Consider every section or specific sections
+							if ($.isEmptyObject(e.sectionId) || e.sectionId === sections[i].id) {
 								if (e.breakpoint) {
 									if (e.breakpoint(scrollInfo, sections[i])) {
+										scrolledIn.push(sections[i]);
+									}
+								} else {
+									if (!sections[i].visible) {
 										scrolledIn.push(sections[i]);
 									}
 								}
 							}
 						});
+
+						// Set section to visible AFTER breakpoint handling
+						if (!sections[i].visible) {
+							sections[i].visible = true;
+						}
 
 					} else {
 						if (sections[i].visible) {
@@ -338,7 +352,7 @@ window.floatz.scroller = (function (container) {
 		 *
 		 * Syntax:
 		 *
-		 *    scrollIn(<section>,<handler>[,<breakpoint>])
+		 *    scrollIn([<section>,]<handler>[,<breakpoint>])
 		 *
 		 * @param section Section or section ID
 		 * @param handler Scroll event handler
@@ -346,8 +360,15 @@ window.floatz.scroller = (function (container) {
 		 * @returns Scroll context
 		 */
 		function scrollIn(section, handler, breakpoint) {
-			section = $(section);
-			var sectionId = "#" + section.attr("id");
+			var sectionId;
+			if (!$.isFunction(section)) {
+				section = $(section);
+				sectionId = "#" + section.attr("id");
+			} else {
+				breakpoint = handler;
+				handler = section;
+			}
+
 			scrollInHandlers.push({
 				sectionId: sectionId,
 				breakpoint: breakpoint,
@@ -364,15 +385,20 @@ window.floatz.scroller = (function (container) {
 		 *
 		 * Syntax:
 		 *
-		 *    scrollOut(<section>,<handler>)
+		 *    scrollOut([<section>,]<handler>)
 		 *
 		 * @param section Section or section ID
 		 * @param handler Scroll event handler
 		 * @returns Scroll context
 		 */
 		function scrollOut(section, handler) {
-			section = $(section);
-			var sectionId = "#" + section.attr("id");
+			var sectionId;
+			if (!$.isFunction(section)) {
+				section = $(section);
+				sectionId = "#" + section.attr("id");
+			} else {
+				handler = section;
+			}
 
 			scrollOutHandlers.push({
 				sectionId: sectionId,
@@ -400,22 +426,23 @@ window.floatz.scroller = (function (container) {
 		function scrollTo(section, completeHandler, data) {
 			section = $(section);
 			var sectionId = "#" + section.attr("id");
-
-			// TODO Use complete handler
-
 			var found = false;
 			for (var i = 0; i < sections.length; i++) {
 				if (sections[i].id === sectionId) {
 					found = true;
+
+					var handleComplete = function () {
+						completeHandler(scrollInfo, sections[i], data);
+					};
+
 					if (sections[i].orientation === Orientation.VERTICAL) {
 						$(container).animate({
 							scrollTop: sections[i].top
-						}, 'slow', 'swing', completeHandler(scrollInfo, sections[i], data));
-
+						}, 'slow', 'swing', handleComplete);
 					} else {
 						$(container).animate({
 							scrollLeft: sections[i].left
-						}, 'slow', 'swing', completeHandler(scrollInfo, sections[i], data));
+						}, 'slow', 'swing', handleComplete);
 					}
 					break;
 				}
@@ -461,9 +488,16 @@ window.floatz.scroller = (function (container) {
 		 * @param sections Sections
 		 */
 		function executeHandlers(handlers, sections) {
+			var section;
 			for (var i = 0; i < handlers.length; i++) {
-				var section = $.grep(sections, function (e) {
-					return handlers[i].sectionId === e.id;
+				section = $.grep(sections, function (e) {
+
+					// Consider every section or specific sections
+					if ($.isEmptyObject(handlers[i].sectionId)) {
+						return true;
+					} else {
+						return handlers[i].sectionId === e.id
+					}
 				});
 
 				if (section.length > 0) {
@@ -474,6 +508,7 @@ window.floatz.scroller = (function (container) {
 
 		/**
 		 * Remove an item from an array.
+		 *
 		 * @param array Array
 		 * @param item ite
 		 */
@@ -555,8 +590,8 @@ window.floatz.scroller = (function (container) {
 	// Public interface
 	return {
 		/* Enumerations */
-		Orientation: context.Orientation,
-		Direction: context.Direction,
+		Orientation: Orientation,
+		Direction: Direction,
 
 		/* Fields */
 		module: module,

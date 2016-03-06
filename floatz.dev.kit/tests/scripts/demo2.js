@@ -23,17 +23,17 @@ $LAB.script("../src/scripts/jquery-1.11.3.min.js")
 function handleStarted() {
 
 	floatz.scroller.context
-		.scroll(handleScroll)/*
+		.scroll(handleScroll)
 		.scrollIn("#section1", handleScrollInSection)
 		.scrollOut("#section1", handleScrollOutSection)
 		.scrollIn("#section2", handleScrollInSection)
 		.scrollOut("#section2", handleScrollOutSection)
-		.scrollIn("#section3", handleScrollInSection)
+/*		.scrollIn("#section3", handleScrollInSection)
 		.scrollOut("#section3", handleScrollOutSection)
 		.scrollIn("#section4", handleScrollInSection)
-		.scrollOut("#section4", handleScrollOutSection)
+		.scrollOut("#section4", handleScrollOutSection)*/
 		.scrollIn("#section5", handleScrollInSection)
-		.scrollOut("#section5", handleScrollOutSection)*/
+		.scrollOut("#section5", handleScrollOutSection)
 		.scrollIn("#section3", handleScrollInSection, handleScrollInBreakPoint)
 		.scrollIn("#section4", handleScrollInSection, handleScrollInBreakPoint)
 	;
@@ -66,11 +66,11 @@ function handleScrollOutSection(scrollInfo, section) {
 function handleScrollInBreakPoint(scrollInfo, section) {
 
 	// Percentage value can´t be exact because of jumps due to fast scrolling
-	if(section.visibility.vertical >= 15) {
+	if(section.visibility.vertical >= 15 && section.visibility.vertical <= 30) {
 		var article = $("article", section.jQuery);
+		console.log("Section " + section.id + " visible at " + section.visibility.vertical+ "%");
 		if(article.is(":hidden")) {
 			article.fadeIn();
-			console.log("Section 4 visible at " + section.visibility.vertical+ "%");
 		}
 	}
 }
