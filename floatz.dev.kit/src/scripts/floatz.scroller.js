@@ -13,21 +13,22 @@
  * @copyright     Copyright (c) 1998-2016 by :hummldesign
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2016-01-31
+ * @lastmodified  2016-03-12
  *
  * FIXME scrollIn/Out not executed if no scroll event is attached
- * FIXME scroll handlers are not executed when section is activated immediately on page load
  *
  * TODO Test multiple handlers could be attached => grep
  * TODO Breakpoints based on CSS classes (based on default percentage) => animate css, lazy loading for images
  * TODO Complete handler for scroll easing
  * TODO Support for custom easings
  * TODO Support scroll without scrollbar (slideshow)
- * TODO Show sections in browser address bar (only real sections that are also in menu?!)
+ * TODO Show sections in browser address bar (only real sections that are also in menu?!) => pretty URLs?
  * TODO Support full screen
  *
  * TODO Test other panels that are not sections
  * TODO Test percentage based animation
+ *
+ * TODO Add function to determine end of scroll (last section reached) => does not work in all cases
  */
 
 window.floatz.scroller = (function (container) {
@@ -53,10 +54,11 @@ window.floatz.scroller = (function (container) {
 		// Private variables
 
 		var viewport = $(_container); // TODO Move to scrollInfo
-		var container = $.isWindow(viewport[0]) ? $(DEFAULTCONTAINER) : $(viewport); // TODO Move to scrollInfo
+		var container = $.isWindow(viewport[0]) ? ( floatz.userAgent.browser.name === "IE" ? $("html") : $(DEFAULTCONTAINER)) : $(viewport); // TODO Move to scrollInfo
 		var sections = [];
 		var scrollInHandlers = [];
 		var scrollOutHandlers = [];
+		var updateNavigationContextHandler;
 		var scrollInfo = {
 
 			/* Fields */
@@ -69,7 +71,7 @@ window.floatz.scroller = (function (container) {
 			orientation: Orientation.VERTICAL,
 			sections: [],
 			visibleSections: [],
-			menuSelection: false,
+			updateNavigationContextCompleted: true,
 
 			/* Convenience functions */
 			isVertical: function () {
@@ -118,6 +120,9 @@ window.floatz.scroller = (function (container) {
 			// Read scroll anchors
 			readScrollAnchors();
 
+			// Scroll to section by URL
+			scrollToSectionByUrl();
+
 			// Re-read scroll section on viewport resize
 			$(viewport).resize(function () {
 				readScrollSections();
@@ -130,7 +135,7 @@ window.floatz.scroller = (function (container) {
 		 * Read scroll sections.
 		 */
 		function readScrollSections() {
-			var section, header;
+			var section, header, sectionId, techId;
 			var correction = {
 				horizontal: 0,
 				vertical: 0
@@ -149,13 +154,16 @@ window.floatz.scroller = (function (container) {
 			sections = [];
 			$("." + SCROLLABLE + ", ." + HSCROLLABLE, container).each(function () {
 				// Math.round removes decimals caused by offset.top / offset.left
+				sectionId = $(this).attr("data-id");
+				techId = $(this).attr("id");
 				section = {
-					id: "#" + $(this).attr("id"),
+					id: "#" + (sectionId ? sectionId : techId),
+					techId: "#" + techId,
 					height: $(this).outerHeight(true),
 					width: $(this).outerWidth(true),
-					top: Math.round($(this).offset().top) + config.offsetCorrection.vertical,
+					top: Math.round($(this).offset().top + config.offsetCorrection.vertical),
 					bottom: Math.round($(this).offset().top + config.offsetCorrection.vertical + $(this).outerHeight(true)),
-					left: Math.round($(this).offset().left) + config.offsetCorrection.horizontal,
+					left: Math.round($(this).offset().left + config.offsetCorrection.horizontal),
 					right: Math.round($(this).offset().left + config.offsetCorrection.horizontal + $(this).outerWidth(true)),
 					orientation: $(this).hasClass(SCROLLABLE) ? Orientation.VERTICAL : Orientation.HORIZONTAL,
 					visibility: {
@@ -166,8 +174,13 @@ window.floatz.scroller = (function (container) {
 					jQuery: this
 				};
 				sections.push(section);
-				floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll section " + section.id + " with offset top " + section.top
-					+ " left " + section.left + " found", module.name);
+
+
+				if(section)
+
+
+					floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll section " + section.id + " with offset top " + section.top
+						+ " left " + section.left + " found", module.name);
 			});
 		}
 
@@ -177,14 +190,13 @@ window.floatz.scroller = (function (container) {
 		function readScrollAnchors() {
 			floatz.log(floatz.LOGLEVEL.DEBUG, "Preparing scroll anchors", module.name);
 			$("." + SCROLLANCHOR, container).each(function () {
+				// Navigate to scroll section when anchor is clicked
 				$(this).click(function (e) {
-					// Navigate to scroll section when anchor is clicked
-					scrollInfo.menuSelection = true;
-					scrollTo($(this).attr("href"), function (scrollInfo, section, e) {
-						selectScrollAnchor(e.target);
-						scrollInfo.menuSelection = false;
-					}, e);
-					e.preventDefault();
+					var section = getSection($(this).attr("href"));
+					if(section) {
+						scrollToSection(section);
+						e.preventDefault();
+					}
 				});
 				floatz.log(floatz.LOGLEVEL.DEBUG, "> Scroll anchor for section " + $(this).attr("href") + " found",
 					module.name);
@@ -192,16 +204,60 @@ window.floatz.scroller = (function (container) {
 		}
 
 		/**
-		 * Set selected state for given anchor.
-		 * Removes selected state from previous anchor.
-		 *
-		 * @param anchor Anchor
+		 * Scroll to section by URL parameter.
 		 */
-		function selectScrollAnchor(anchor) {
-			var ul = $(anchor).parent().parent();
-			ul.find(".flz_selected").removeClass("flz_selected");
-			$(anchor).parent().addClass("flz_selected");
+		function scrollToSectionByUrl() {
+			var sectionId = window.location.hash;
+			if (sectionId != null && sectionId.length > 0) {
+				floatz.log(floatz.LOGLEVEL.DEBUG, "Scrolling to section by URL hash '" + sectionId + "'", module.name);
+				scrollTo(sectionId, function () {
+					scrollToSection(sectionId);
+				});
+			}
 		}
+
+		/**
+		 * Scroll to section via section ID
+		 *
+		 * @param sectionId Section ID
+		 */
+		function scrollToSection(sectionId) {
+
+			// Set indicator for active menu selection
+			scrollInfo.updateNavigationContextCompleted = false;
+
+			// Scroll to section and call update navigation context handler
+			scrollTo(sectionId, function (scrollInfo, section) {
+				if ($.isFunction(updateNavigationContextHandler)) {
+					updateNavigationContextHandler(scrollInfo, section);
+				}
+
+				// Reset indicator for active menu selection
+				scrollInfo.updateNavigationContextCompleted = true;
+			});
+		}
+
+		/**
+		 * Get section.
+		 *
+		 * Syntax: getSection(<section> | <sectionId>)
+		 *
+		 * @param section Section or section ID
+		 * @returns Section or null if not found
+		 */
+		function getSection(section) {
+			if ($.isPlainObject(section)) {
+				return section;
+			} else {
+				for (var i = 0; i < sections.length; i++) {
+					if (sections[i].id === section) {
+						return sections[i];
+					}
+				}
+			}
+			return null;
+		}
+
 
 		/**
 		 * Add scroll event handler.
@@ -362,8 +418,9 @@ window.floatz.scroller = (function (container) {
 		function scrollIn(section, handler, breakpoint) {
 			var sectionId;
 			if (!$.isFunction(section)) {
-				section = $(section);
-				sectionId = "#" + section.attr("id");
+				// section = $(section);
+				section = getSection(section);
+				sectionId = section.id;
 			} else {
 				breakpoint = handler;
 				handler = section;
@@ -394,8 +451,9 @@ window.floatz.scroller = (function (container) {
 		function scrollOut(section, handler) {
 			var sectionId;
 			if (!$.isFunction(section)) {
-				section = $(section);
-				sectionId = "#" + section.attr("id");
+				// section = $(section);
+				section = getSection(section);
+				sectionId = section.id;
 			} else {
 				handler = section;
 			}
@@ -411,6 +469,18 @@ window.floatz.scroller = (function (container) {
 			return this;
 		}
 
+
+		/**
+		 * Add handler to update navigation context according to scrolling position.
+		 *
+		 * Syntax: updateNavigationContext(<handler>)
+		 *
+		 * @param handler Update navigation context event handler
+		 */
+		function updateNavigationContext(handler) {
+			updateNavigationContextHandler = handler;
+		}
+
 		/**
 		 * Scroll to section.
 		 *
@@ -424,33 +494,26 @@ window.floatz.scroller = (function (container) {
 		 * @returns Scroll context
 		 */
 		function scrollTo(section, completeHandler, data) {
-			section = $(section);
-			var sectionId = "#" + section.attr("id");
-			var found = false;
-			for (var i = 0; i < sections.length; i++) {
-				if (sections[i].id === sectionId) {
-					found = true;
-
-					var handleComplete = function () {
-						completeHandler(scrollInfo, sections[i], data);
-					};
-
-					if (sections[i].orientation === Orientation.VERTICAL) {
-						$(container).animate({
-							scrollTop: sections[i].top
-						}, 'slow', 'swing', handleComplete);
-					} else {
-						$(container).animate({
-							scrollLeft: sections[i].left
-						}, 'slow', 'swing', handleComplete);
+			section = getSection(section);
+			if (section) {
+				var handleComplete = function () {
+					if (completeHandler) {
+						completeHandler(scrollInfo, section, data);
 					}
-					break;
+				};
+
+				if (section.orientation === Orientation.VERTICAL) {
+					$(container).animate({
+						scrollTop: section.top
+					}, 'slow', 'swing', handleComplete);
+				} else {
+					$(container).animate({
+						scrollLeft: section.left
+					}, 'slow', 'swing', handleComplete);
 				}
+			} else {
+				floatz.log(floatz.LOGLEVEL.WARN, "Scroll section '" + section.id + "' not found", module.name);
 			}
-			if (!found) {
-				floatz.log(floatz.LOGLEVEL.WARN, "Scroll section '" + sectionId + "' not found", module.name);
-			}
-			return this;
 		}
 
 		/**
@@ -529,13 +592,15 @@ window.floatz.scroller = (function (container) {
 			container: container,
 
 			/* Methods */
+			getSection: getSection,
 			init: init,
 			scroll: scroll,
 			scrollIn: scrollIn,
 			scrollOut: scrollOut,
 			scrollTo: scrollTo,
 			scrollToTop: scrollToTop,
-			scrollToBottom: scrollToBottom
+			scrollToBottom: scrollToBottom,
+			updateNavigationContext: updateNavigationContext,
 		};
 	};
 
