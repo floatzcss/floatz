@@ -48,13 +48,15 @@ window.floatz.scroller = (function (container) {
 		var SCROLLABLE = "flz_scrollable";
 		var HSCROLLABLE = "flz_hscrollable";
 		var SCROLLANCHOR = "flz_scrollanchor";
-		var DEFAULTCONTAINER = "body";
+		// var DEFAULTCONTAINER = "body";
+		var DEFAULTCONTAINER = "html, body";
 
 		////////////////////////////////////////////////////
 		// Private variables
 
 		var viewport = $(_container); // TODO Move to scrollInfo
-		var container = $.isWindow(viewport[0]) ? ( floatz.userAgent.browser.name === "IE" ? $("html") : $(DEFAULTCONTAINER)) : $(viewport); // TODO Move to scrollInfo
+		// var container = $.isWindow(viewport[0]) ? ( floatz.userAgent.browser.name === "IE" ? $("html") : $(DEFAULTCONTAINER)) : $(viewport); // TODO Move to scrollInfo
+		var container = $.isWindow(viewport[0]) ? $(DEFAULTCONTAINER) : $(viewport); // TODO Move to scrollInfo
 		var sections = [];
 		var scrollInHandlers = [];
 		var scrollOutHandlers = [];
