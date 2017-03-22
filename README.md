@@ -3,7 +3,7 @@
 
 **floatz is a flexible and easy to use CSS framework.** It provides a set of reusable CSS classes, Javascript modules and HTML code snippets that support web designers and developers to create state-of-the-art responsive web sites, web applications and HTML based mobile apps - on all browsers, platforms and devices.
 
-##Table of content
+## Table of content
 * [Version history](#version-history)
 * [Browser support](#browser-support)
 * [Basic concepts](#basic-concepts)
@@ -12,7 +12,7 @@
 * [Layouting forms](#layouting-forms)
 * [Responsive layouts](#responsive-layouts)
 
-##Version history
+## Version history
 * Version 2.0.0 - planned
 * 7th October, 2015 - Version 1.4.0 released
 * 22th February, 2015 - Version 1.3.0 released
