@@ -23,7 +23,7 @@
 * April 5th, 2010 - Version 1.1.0 released
 * January 5th, 2010 - Version 1.0.1 released
 
-##Browser support
+## Browser support
 ![](https://github.com/floatzcss/floatz/blob/master/wiki/browsersupport.png)
 
 > Please note: since **version 1.3.0** IE specific CSS hacks have moved into own stylesheets to reduce CSS size for modern browsers. Thus if you want to support older browsers you have to use the conditional statements within HTML to load IE specific stylesheets (see example below). Take care that these styles are loaded AFTER the used stylesheets.
@@ -48,7 +48,7 @@
 </head>
 ```
 
-##Basic concepts
+## Basic concepts
 
 * [Boxes](#boxes)
 * [Layouters](#layouters)
@@ -58,7 +58,7 @@
  * [Nesting spacers](#nesting-spacers)
  * [Using spacers in modern browsers](#using-spacers-in-modern-browsers)
 
-###Boxes
+### Boxes
 The basic layout class is a *box*. Each *box* floats left (this is where the name **floatz** comes from) and gets by default a width of 100% of its surrounding parent element.
 
 *Boxes* can be easily customized via CSS.
@@ -74,7 +74,7 @@ The basic layout class is a *box*. Each *box* floats left (this is where the nam
 ```
 See it in action: http://codepen.io/floatz/pen/KLakm
 
-###Layouters
+### Layouters
 
 *Layouters* are used to give *boxes* specific widths. It is important to use the correct *layouter* according to the horizontal orientation of the *box* (l=left, m=mid, r=right) to make them work properly in all browsers.
 ```
@@ -103,7 +103,7 @@ The following *layouters* are provided out of the box:
 
 *Since version 1.4.0
 
-####Clearing the float
+#### Clearing the float
 In best cases the sum of all *layouters* in a row gets 100%. If not, clear the float by attaching **flz_clear** to the first *box* of the next row.
 ```
 <!-- First row -->
@@ -146,7 +146,7 @@ Alternatively the *boxes* of each row can be surrounded with an additional *box*
 ```
 See it in action: http://codepen.io/floatz/pen/foBvy
 
-###Spacers
+### Spacers
 *Spacers* are used to add whitespace to *boxes*. According to *layouters* it is necessary to follow the same (l=left, m=mid, r=right) semantic depending on the horizontal orientation of the surrounding *box* to make them work accordingly. The following example shows *spacers* in a *single row / multiple column scenario*.
 ```
 <div class="flz_box flz_r25">
@@ -167,7 +167,7 @@ See it in action: http://codepen.io/floatz/pen/foBvy
 ```
 See it in action: http://codepen.io/floatz/pen/HzIrA
 
-####Stacking spacers
+#### Stacking spacers
 
 It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). **floatz** provides the necessary classes and takes care that each row / column gets its appropriate whitespace. The following example shows such a *multiple row / multiple column* scenario.
 ```
@@ -219,7 +219,7 @@ It is also possible to stack *boxes* and *spacers* (e.g. in form layouts). **flo
 ```
 See it in action: http://codepen.io/floatz/pen/aHscp
 
-####Nesting spacers
+#### Nesting spacers
 In real world scenarios it is often the case that *boxes* and *spacers* must be nested. To handle such situations **floatz** provides *subspacers*.
 ```
 <div class="flz_box">
@@ -270,7 +270,7 @@ The following *spacers* are provided out of the box:
 | flz_rspacer_mrmc_mid    | flz_rspacer_mrmc_mid       | Multi row / Multi column   | Mid right spacer    |
 | flz_rspacer_mrmc_bottom | flz_rspacer_mrmc_bottom    | Multi row / Multi column   | Bottom right spacer |
 
-####Using spacers in modern browsers
+#### Using spacers in modern browsers
 
 Since **floatz 1.3.0** *boxes* are using *box-sizing: border-box* by default. Thus it is not necessary to add extra *divs* for creating whitespace in such cases. The *spacers* can simply be added to the *boxes* side by side with *layouters*.
 
@@ -291,14 +291,14 @@ See it in action: http://codepen.io/floatz/pen/boiAx<br />
 See it in action: http://codepen.io/floatz/pen/FqJgl<br />
 See it in action: http://codepen.io/floatz/pen/ntpBw
 
-##Layouting pages
+## Layouting pages
 
 * [Layouting pages with boxes](#layouting-pages-with-boxes)
  * [Combining liquid and fixed layout](#combining-liquid-and-fixed-layout) 
  * [Combining liquid and centered layout](#combining-liquid-and-centered-layout)
 * [Layouting pages with panels](#layouting-pages-with-panels)
 
-###Layouting pages with boxes
+### Layouting pages with boxes
 The root element for a *page* is the **flz_page** id.
 ```
 <body>
@@ -327,7 +327,7 @@ See it live: http://codepen.io/floatz/pen/wugzl
 ```
 See it in action: http://codepen.io/floatz/pen/ayAmd
 
-####Combining liquid and fixed layout
+#### Combining liquid and fixed layout
 
 When using the *liquid layout module* each *box* increases its width according to the given percentage of the used *layouter*. For situations where only one of the *boxes* should increase dynamically but the others should always have a fixed width, the markup and CSS must be changed as follows.
 
@@ -360,7 +360,7 @@ Next the liquid *box* must get a margin and the fixed *box* an according width.
 See it in action: http://codepen.io/floatz/pen/JfAlp (Liquid, 1 fixed column)<br />
 See it in action: http://codepen.io/floatz/pen/tHzsB (Liquid, 2 fixed columns)
 
-####Combining liquid and centered layout
+#### Combining liquid and centered layout
 
 For a liquid and centered *page* layout the *liquid layout module* is required and the body element must get the desired left and right margins.
 ```
@@ -447,7 +447,7 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.2.
 See it in action: http://codepen.io/floatz/pen/pyqeJ<br />
 See it in action: http://codepen.io/floatz/pen/khgBI
 
-##Layouting navigation
+## Layouting navigation
 Easing the layout of navigational elements is one of the key purposes of **floatz** from the very beginning. Thus it provides a comprehensive set of reusable CSS classes for different navigation scenarios. The underlying markup is based on simple lists.
 
 * [List navigations](#list-navigations)
@@ -456,7 +456,7 @@ Easing the layout of navigational elements is one of the key purposes of **float
 * [Workflow indicators](#workflow-indicators)
 * [Tab panels](#tab-panels)
 
-###List navigations
+### List navigations
 They easiest form of navigation is a simple horizontal list navigation using **flz_listnav**.
 
 The following example shows such a list navigation. Each navigation item is separated using a separator character(which could have also been defined within CSS instead). The active item is marked with **flz_selected**.
@@ -513,7 +513,7 @@ The following example shows **flz_toolbar** which positions in the context of it
 ```
 See it in action: http://codepen.io/floatz/pen/mpiHa
 
-###Menus
+### Menus
 Menus are also simple list elements but visually richer (means you have more possibilities to style them individually). One major difference is that menus must use a **div** element as container which gets the CSS class instead of the **ul** element as for list navigations.
 
 The example shows a horizontal menu using **flz_hmenu**.
@@ -557,7 +557,7 @@ The next example shows a vertical menu using **flz_vmenu**. Vertical menus can a
 ```
 See it in action: http://codepen.io/floatz/pen/mpiHa
 
-###Skip links
+### Skip links
 To increase accessibility for users that are dependent on screen readers **floatz** offers a skip link navigation that allows users to use the tab keys and to jump directly to sections within the page without the necessity to let screen readers repeatedly read everything each time a page is loaded again (see http://webaim.org/techniques/skipnav/ for more details on this topic).
 
 To support this it is neccessary to place a skip link navigation as the first element in the *page* so that this links are the first that is shown when the user tabs from the browsers address bar into the page.
@@ -601,7 +601,7 @@ $LAB.script("http://design.humml.eu/toolbox/floatz/latest/scripts/jquery-1.11.2.
 ```
 See it in action: http://codepen.io/floatz/pen/mpiHa
 
-###Workflow indicators
+### Workflow indicators
 When dealing with workflows it makes sense to visualy indicate the current workflow state. Thus **floatz** offers the CSS class **flz_workflow** which can be used for exactly that kind of use case.
 ```
 <ul class="flz_workflow">
@@ -613,7 +613,7 @@ When dealing with workflows it makes sense to visualy indicate the current workf
 ```
 See it in action: http://codepen.io/floatz/pen/vIkEg?editors=100
 
-###Tab panels
+### Tab panels
 
 Creating tab panels is just as simple as creating list navigations or menus. 
 
@@ -646,7 +646,7 @@ See it in action: http://codepen.io/floatz/pen/wrxsj
 
 The default tab panel implementation uses sprite images to support round corners in all browsers (until IE6). For customization the styles simply have to be overridden with or without sprite images if used only in newer browsers.
 
-##Layouting forms
+## Layouting forms
 
 * [Form basics](#form-basics)
  * [Checkboxes and radio buttons](#checkboxes-and-radio-buttons)
@@ -724,11 +724,11 @@ See it in action: http://codepen.io/floatz/pen/Fdqse
 ```
 See it in action: http://codepen.io/floatz/pen/Fdqse
 
-###Complex forms
+### Complex forms
 
 Layouting complex forms is as easy as layouting pages. It´s just necessary to use *boxes*, *layouters* and *spacers* to create any imaginable form grid.
 
-####Layouting with spacers
+#### Layouting with spacers
 
 The following sample uses *spacers* to add white space to the input form.
 ```
@@ -750,7 +750,7 @@ The following sample uses *spacers* to add white space to the input form.
 ```
 See it in action: http://codepen.io/floatz/pen/AeFnD
 
-####Layouting with fieldsets
+#### Layouting with fieldsets
 It is also possible to combine *spacers* and fieldsets for grouping input fields visually into logical units.
 ```
 <form class="flz_form">
@@ -774,7 +774,7 @@ It is also possible to combine *spacers* and fieldsets for grouping input fields
 ```
 See it in action: http://codepen.io/floatz/pen/DsBev
 
-###Forms in modern browsers
+### Forms in modern browsers
 
 As already [mentioned](#using-spacers-in-modern-browsers) **floatz** supports a wide range of browsers even legacy browsers like IE6 and 7. If it is assured that a website or application is only used in modern browsers the necessary elements and classes for layouting web forms can be reduced to a minimum.
 
@@ -782,7 +782,7 @@ The following example shows how a form can be layouted in modern browsers.
 
 See it in action: http://codepen.io/floatz/pen/Cqcaj
 
-#Responsive layouts
+# Responsive layouts
 
 Since version 1.3.0 floatz provides out of the box support for [responsive design](http://en.wikipedia.org/wiki/Responsive_web_design).
 
@@ -804,7 +804,7 @@ The following *breakpoints* are used within media queries to determine devices.
 
 > Please note: when creating responsive layouts you have to take care that the font size does not increase dynamically using the following meta tag in the HTML header: ```<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">```
 
-##Responsive layouters
+## Responsive layouters
 
 As described under [Basic concepts](#layouters) *layouters* are used to give *boxes* a specific width. Using *responsive layouters*, which are simply *layouters* extended with a device size specific postfix, you can define how each box should behave on different devices. 
 
@@ -838,7 +838,7 @@ The following *responsive layouters* are provided out of the box:
 | flz_m&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80          |
 | flz_r&lt;percentage&gt;_&lt;size&gt; | 10, 20, 25, 33, 40, 50, 60, 66, 75, 80, 90, 100 |
 
-##Responsive spacers
+## Responsive spacers
 
 As explained under [Basic concepts](#spacers) *spacers* and *subspacers* are used to add whitespace to *boxes*. Similar to *responsive layouters* it is possible to adjust whitespace to the desired device size by simply adding a device size specific postfix to the given styles.
 
