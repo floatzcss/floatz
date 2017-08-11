@@ -14,7 +14,7 @@
 * [Responsive layouts](#responsive-layouts)
 
 ## Version history
-* Version 2.0.0 - planned
+* Version 2.0.0 - [under construction](https://github.com/floatzcss/floatz-2.0)
 * 7th October, 2015 - Version 1.4.0 released
 * 22th February, 2015 - Version 1.3.0 released
 * 2nd December, 2014 - [Hotfix](https://github.com/floatzcss/floatz.gwt/blob/master/download/floatz.gwt-1.2.0hotfix01.jar) for GWT 2.7.0 
