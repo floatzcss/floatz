@@ -12,6 +12,7 @@
 * [Layouting navigation](#layouting-navigation)
 * [Layouting forms](#layouting-forms)
 * [Responsive layouts](#responsive-layouts)
+* [Supporters](#supporters)
 
 ## Version history
 * Version 2.0.0 - [under construction](https://github.com/floatzcss/floatz-2.0)
@@ -893,4 +894,6 @@ The following *responsive spacers* are provided out of the box:
 | flz_rspacer_mrmc_mid_&lt;size&gt;    | flz_rspacer_mrmc_mid_&lt;size&gt;       | Multi row / Multi column   | Mid right spacer    |
 | flz_rspacer_mrmc_bottom_&lt;size&gt; | flz_rspacer_mrmc_bottom_&lt;size&gt;    | Multi row / Multi column   | Bottom right spacer |
 
-
+## Supporters
+To ensure that floatz is working properly in all major browsers we use [BrowserStack](https://www.browserstack.com/) for cross browser testing.
+<img src="https://user-images.githubusercontent.com/7689394/34140703-c60a6020-e47c-11e7-9f54-1ef83d9c4a8a.png" width="200">
